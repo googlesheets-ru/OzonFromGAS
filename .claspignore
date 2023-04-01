@@ -1,0 +1,11 @@
+node_modules
+node_modules/**
+node_modules/**/*.* 
+node_modules/**/*.MD
+node_modules/**/*.js
+./node_modules
+dist
+docs
+src
+ozon_api/**
+./ozon_api/**

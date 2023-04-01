@@ -1,0 +1,34 @@
+{
+  "name": "public_ozon_connector",
+  "version": "1.0.0",
+  "description": "Реализация методов Ozon Seller Api",
+  "main": "",
+  "scripts": {
+    "updateApi": "npx swagger-typescript-api -p https://docs.ozon.ru/api/seller/swagger.json -o ./ozon_api -n ozonDoc.ts --modular --extract-request-params --extract-request-body --extract-response-body  --extract-response-error -r --single-http-client --patch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/googlesheets-ru/OzonFromGAS"
+  },
+  "keywords": [
+    "GAS",
+    "Script",
+    "API",
+    "OZON",
+    "OZON Seller API"
+  ],
+  "author": "@Mityayka1",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/googlesheets-ru/OzonFromGAS/issues"
+  },
+  "homepage": "https://github.com/googlesheets-ru/OzonFromGAS#readme",
+  "dependencies": {
+    "@googleapis/sheets": "^4.0.1",
+    "@types/google-apps-script": "^1.0.59"
+  },
+  "devDependencies": {
+    "clasp": "^1.0.0",
+    "swagger-typescript-api": "^12.0.4"
+  }
+}
