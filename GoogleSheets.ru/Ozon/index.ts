@@ -9,3 +9,4 @@
 function client({ clientId, apiKey }: Ozon_.Types.Keys) {
     return new Ozon_.Api({ clientId, apiKey });
 }
+
