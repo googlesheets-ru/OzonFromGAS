@@ -223,5 +223,58 @@ namespace Ozon_ {
             });
             return response;
         }
+
+        /**
+         * @description [Метод] для получения информации о ценах товара
+         * в запросе вы можете передать максимум 1000 товаров.
+         * @tags Prices&StocksAPI
+         * @name ProductApiGetProductInfoPricesV4
+         * @summary Получить информацию о цене товара
+         * @request POST:/v4/product/info/prices
+         * @response `200` `ProductApiGetProductInfoPricesV4Data` Информация о цене товара
+         * @response `400` `RpcStatus` Неверный параметр
+         * @response `403` `RpcStatus` Доступ запрещён
+         * @response `404` `RpcStatus` Ответ не найден
+         * @response `409` `RpcStatus` Конфликт запроса
+         * @response `500` `RpcStatus` Внутренняя ошибка сервера
+         *
+         *
+         * [Метод]: https://docs.ozon.ru/api/seller/#operation/ProductAPI_GetProductInfoPricesV4
+         */
+        productApiGetProductInfoPricesV4 = (data: Types.Productv4GetProductInfoPricesV4Request) => {
+            const response = this.request<Types.ProductApiGetProductInfoPricesV4Data>({
+                endpoint: `/v4/product/info/prices`,
+                method: 'POST',
+                payload: data,
+            });
+            return response;
+        };
+
+        /**
+         * @description Позволяет [изменить цену одного или нескольких товаров][1].
+         *  За один запрос можно изменить цены для 1000 товаров. Чтобы сбросить
+         * `old_price` или `premium_price` — поставьте `0` у этих параметров.
+         * #### Новая цена должна отличаться от старой минимум на 5%.
+         * @tags Prices&StocksAPI
+         * @name ProductApiImportProductsPrices
+         * @summary Обновить цену
+         * @request POST:/v1/product/import/prices
+         * @response `200` `ProductApiImportProductsPricesData` Цена обновлена
+         * @response `400` `RpcStatus` Неверный параметр
+         * @response `403` `RpcStatus` Доступ запрещён
+         * @response `404` `RpcStatus` Ответ не найден
+         * @response `409` `RpcStatus` Конфликт запроса
+         * @response `500` `RpcStatus` Внутренняя ошибка сервера
+         *
+         * [1]: https://api-seller.ozon.ru/v1/product/import/prices
+         */
+        productApiImportProductsPrices = (data: Types.ProductImportProductsPricesRequest) => {
+            const response = this.request<Types.ProductApiImportProductsPricesData>({
+                endpoint: `/v1/product/import/prices`,
+                method: 'POST',
+                payload: data,
+            });
+            return response;
+        };
     }
 }
