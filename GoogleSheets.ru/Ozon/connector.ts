@@ -276,5 +276,27 @@ namespace Ozon_ {
             });
             return response;
         };
+
+        /**
+         * @description Отчёт по остаткам и товарам в перемещении по складам Ozon.
+         *
+         * @tags AnalyticsAPI
+         * @name AnalyticsApiAnalyticsGetStockOnWarehousesV2
+         * @summary Отчёт по остаткам и товарам (версия 2)
+         * @request POST:/v2/analytics/stock_on_warehouses
+         * @response `200` `AnalyticsApiAnalyticsGetStockOnWarehousesV2Data` Отчёт по остаткам и товарам
+         * @response `400` `RpcStatus` Неверный параметр
+         * @response `403` `RpcStatus` Доступ запрещён
+         * @response `404` `RpcStatus` Ответ не найден
+         * @response `409` `RpcStatus` Конфликт запроса
+         * @response `500` `RpcStatus` Внутренняя ошибка сервера
+         */
+        analyticsApiAnalyticsGetStockOnWarehousesV2 = (data: Types.AnalyticsStockOnWarehouseRequest) => {
+            this.request<Types.AnalyticsApiAnalyticsGetStockOnWarehousesV2Data>({
+                endpoint: `/v2/analytics/stock_on_warehouses`,
+                method: 'POST',
+                payload: data,
+            });
+        };
     }
 }
