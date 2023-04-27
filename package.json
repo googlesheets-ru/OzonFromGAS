@@ -28,7 +28,6 @@
     "@types/google-apps-script": "^1.0.59"
   },
   "devDependencies": {
-    "clasp": "^1.0.0",
     "swagger-typescript-api": "^12.0.4"
   }
 }
