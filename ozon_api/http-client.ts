@@ -10,7 +10,7 @@
  */
 
 export type QueryParamsType = Record<string | number, any>;
-// export type ResponseFormat = keyof Omit<Body, 'body' | 'bodyUsed'>;
+export type ResponseFormat = keyof Omit<Body, 'body' | 'bodyUsed'>;
 
 export interface FullRequestParams extends Omit<RequestInit, 'body'> {
     /** set parameter to `true` for call `securityWorker` for this request */
@@ -21,6 +21,8 @@ export interface FullRequestParams extends Omit<RequestInit, 'body'> {
     type?: ContentType;
     /** query params */
     query?: QueryParamsType;
+    /** format of response (i.e. response.json() -> format: "json") */
+    format?: ResponseFormat;
     /** request body */
     body?: unknown;
     /** base url */

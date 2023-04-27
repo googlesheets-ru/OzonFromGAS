@@ -868,6 +868,67 @@ namespace Ozon_ {
             reserved?: number;
         }
 
+        /** Цена товара у конкурентов на других площадках. */
+        export interface PriceIndexesIndexDataExternal {
+            /** Минимальная цена товара у конкурентов на другой площадке. */
+            minimal_price?: string;
+            /** Валюта цены. */
+            minimal_price_currency?: string;
+            /**
+             * Значение индекса цены.
+             * @format double
+             */
+            price_index_value?: number;
+        }
+
+        /** Цена товара у конкурентов на Ozon. */
+        export interface PriceIndexesIndexDataOzon {
+            /** Минимальная цена товара у конкурентов на Ozon. */
+            minimal_price?: string;
+            /** Валюта цены. */
+            minimal_price_currency?: string;
+            /**
+             * Значение индекса цены.
+             * @format double
+             */
+            price_index_value?: number;
+        }
+
+        /** Цена вашего товара на других площадках. */
+        export interface PriceIndexesIndexDataSelf {
+            /** Минимальная цена вашего товара на других площадках. */
+            minimal_price?: string;
+            /** Валюта цены. */
+            minimal_price_currency?: string;
+            /**
+             * Значение индекса цены.
+             * @format double
+             */
+            price_index_value?: number;
+        }
+
+        /**
+         * Ценовые индексы товара.
+         *
+         * Подробнее в [Базе знаний продавца](https://docs.ozon.ru/global/launch/quality-assurance/rating).
+         */
+        export interface CommonPriceIndexes {
+            /** Цена товара у конкурентов на других площадках. */
+            external_index_data?: PriceIndexesIndexDataExternal;
+            /** Цена товара у конкурентов на Ozon. */
+            ozon_index_data?: PriceIndexesIndexDataOzon;
+            /**
+             * Итоговый ценовой индекс товара:
+             * - `WITHOUT_INDEX` — без индекса,
+             * - `PROFIT` — выгодный,
+             * - `AVG_PROFIT` — умеренный,
+             * - `NON_PROFIT` — невыгодный.
+             */
+            price_index?: 'WITHOUT_INDEX' | 'PROFIT' | 'AVG_PROFIT' | 'NON_PROFIT';
+            /** Цена вашего товара на других площадках. */
+            self_marketplaces_index_data?: PriceIndexesIndexDataSelf;
+        }
+
         export interface V2ItemError {
             /** Код ошибки. */
             code?: string;
@@ -1061,8 +1122,18 @@ namespace Ozon_ {
             premium_price?: string;
             /** Цена товара с учётом скидок — это значение показывается на карточке товара. */
             price?: string;
-            /** Ценовой индекс. Подробнее в [Базе знаний продавца](https://seller-edu.ozon.ru/docs/kontrol-kachestva/kak-my-kontroliruem-kachestvo-raboty-partnera.html). */
+            /**
+             * Параметр неактуален и будет удалён 1 мая 2023 года.
+             *
+             * Ценовой индекс.
+             */
             price_index?: string;
+            /**
+             * Ценовые индексы товара.
+             *
+             * Подробнее в [Базе знаний продавца](https://docs.ozon.ru/global/launch/quality-assurance/rating).
+             */
+            price_indexes?: CommonPriceIndexes;
             /** Цена на товар, рекомендованная системой на основании схожих предложений. */
             recommended_price?: string;
             /** Описание состояния товара. */
@@ -1316,8 +1387,18 @@ namespace Ozon_ {
             premium_price?: string;
             /** Цена товара с учётом скидок — это значение показывается на карточке товара. */
             price?: string;
-            /** Ценовой индекс. Подробнее в [Базе знаний продавца](https://seller-edu.ozon.ru/docs/kontrol-kachestva/kak-my-kontroliruem-kachestvo-raboty-partnera.html#индекс-цен/). */
+            /**
+             * Параметр неактуален и будет удалён 1 мая 2023 года.
+             *
+             * Ценовой индекс.
+             */
             price_index?: string;
+            /**
+             * Ценовые индексы товара.
+             *
+             * Подробнее в [Базе знаний продавца](https://docs.ozon.ru/global/launch/quality-assurance/rating).
+             */
+            price_indexes?: CommonPriceIndexes;
             /** Цена на товар, рекомендованная системой на основании схожих предложений. */
             recommended_price?: string;
             /** Описание состояния товара. */
@@ -1894,6 +1975,29 @@ namespace Ozon_ {
             result?: V1ProductUploadDigitalCodesResponseInfoResult;
         }
 
+        export interface V1GetProductInfoSubscriptionRequest {
+            /** Список SKU, идентификаторов товара в системе Ozon. */
+            skus?: string[];
+        }
+
+        export interface V1GetProductInfoSubscriptionResponseResult {
+            /**
+             * Количество подписавшихся пользователей.
+             * @format int64
+             */
+            count?: number;
+            /**
+             * Идентификатор товара в системе Ozon, SKU.
+             * @format int64
+             */
+            sku?: number;
+        }
+
+        export interface V1GetProductInfoSubscriptionResponse {
+            /** Результат работы метода. */
+            result?: V1GetProductInfoSubscriptionResponseResult[];
+        }
+
         export interface ProductImportProductsStocksRequestStock {
             /** Идентификатор товара в системе продавца — артикул. */
             offer_id?: string;
@@ -2422,8 +2526,18 @@ namespace Ozon_ {
             offer_id?: string;
             /** Цена товара. */
             price?: ItemPrice;
-            /** Ценовой индекс. */
+            /**
+             * Параметр неактуален и будет удалён 1 мая 2023 года.
+             *
+             * Ценовой индекс.
+             */
             price_index?: string;
+            /**
+             * Ценовые индексы товара.
+             *
+             * Подробнее в [Базе знаний продавца](https://docs.ozon.ru/global/launch/quality-assurance/rating).
+             */
+            price_indexes?: CommonPriceIndexes;
             /**
              * Идентификатор товара.
              * @format int64
@@ -3199,6 +3313,313 @@ namespace Ozon_ {
         export interface V1DeclineDiscountTasksRequest {
             /** Список заявок. */
             tasks?: V1DeclineDiscountTasksRequestTask[];
+        }
+
+        export interface V1GetCompetitorsRequest {
+            /**
+             * Страница списка, с которой нужно выгрузить конкурентов. Минимальное значение — `1`.
+             * @format int64
+             */
+            page?: number;
+            /**
+             * Максимальное количество конкурентов на странице. Допустимы значения от `1` до `50`.
+             * @format int64
+             */
+            limit?: number;
+        }
+
+        export interface GetCompetitorsResponseCompetitorInfo {
+            /** Название конкурента. */
+            name?: string;
+            /**
+             * Идентификатор конкурента.
+             * @format int64
+             */
+            id?: number;
+        }
+
+        export interface V1GetCompetitorsResponse {
+            /** Список конкурентов. */
+            competitor?: GetCompetitorsResponseCompetitorInfo[];
+            /**
+             * Общее количество конкурентов.
+             * @format int32
+             */
+            total?: number;
+        }
+
+        export interface V1GetStrategyListRequest {
+            /**
+             * Страница списка, с которой нужно выгрузить стратегии. Минимальное значение — `1`.
+             * @format int64
+             */
+            page?: number;
+            /**
+             * Максимальное количество стратегий на странице. Допустимые значения — от `1` до `50`.
+             * @format int64
+             */
+            limit?: number;
+        }
+
+        export interface GetStrategyListResponseStrategy {
+            /** Идентификатор стратегии */
+            id?: string;
+            /** Название стратегии. */
+            name?: string;
+            /**
+             * Тип стратегии:
+             * - `MIN_EXT_PRICE` — системная,
+             * - `COMP_PRICE` — пользовательская.
+             */
+            type?: string;
+            /**
+             * Тип последнего изменения стратегии:
+             * - `strategyEnabled` — возобновлена,
+             * - `strategyDisabled` — остановлена,
+             * - `strategyChanged` — обновлена,
+             * - `strategyCreated` — создана,
+             * - `strategyItemsListChanged` — изменён набор товаров в стратегии.
+             */
+            update_type?: string;
+            /** Дата последнего изменения. */
+            updated_at?: string;
+            /**
+             * Количество товаров в стратегии.
+             * @format int64
+             */
+            products_count?: number;
+            /**
+             * Количество выбранных конкурентов.
+             * @format int64
+             */
+            competitors_count?: number;
+            /**
+             * Статус стратегии:
+             * - `true` — включена,
+             * - `false` — отключена.
+             */
+            enabled?: boolean;
+        }
+
+        export interface V1GetStrategyListResponse {
+            /** Список стратегий. */
+            strategies?: GetStrategyListResponseStrategy[];
+            /**
+             * Общее количество стратегий.
+             * @format int32
+             */
+            total?: number;
+        }
+
+        export interface V1Competitor {
+            /**
+             * Коэффициент, на который будет умножаться минимальная цена среди конкурентов. Допустимый диапазон — от `0.5` до `1.2`.
+             * @format float
+             */
+            coefficient?: number;
+            /**
+             * Идентификатор конкурента.
+             * @format int64
+             */
+            competitor_id?: number;
+        }
+
+        export interface V1CreatePricingStrategyRequest {
+            /** Список конкурентов. */
+            competitors?: V1Competitor[];
+            /** Название стратегии. */
+            strategy_name?: string;
+        }
+
+        /** Результат работы метода. */
+        export interface V1CreatePricingStrategyResponseResult {
+            /** Идентификатор стратегии. */
+            strategy_id?: string;
+        }
+
+        export interface V1CreatePricingStrategyResponse {
+            /** Результат работы метода. */
+            result?: V1CreatePricingStrategyResponseResult;
+        }
+
+        export interface V1StrategyRequest {
+            /** Идентификатор стратегии. */
+            strategy_id?: string;
+        }
+
+        /** Результат работы метода. */
+        export interface V1GetStrategyResponseResult {
+            /** Список конкурентов. */
+            competitors?: V1Competitor[];
+            /**
+             * Статус стратегии:
+             * - `true` — включена,
+             * - `false` — отключена.
+             */
+            enabled?: boolean;
+            /** Название стратегии. */
+            name?: string;
+            /**
+             * Тип стратегии:
+             * - `MIN_EXT_PRICE` — системная стратегия,
+             * - `COMP_PRICE` — пользовательская стратегия.
+             */
+            type?: string;
+            /**
+             * Тип последнего изменения стратегии:
+             *   - `strategyEnabled` — возобновлена,
+             *   - `strategyDisabled` — остановлена,
+             *   - `strategyChanged` — обновлена,
+             *   - `strategyCreated` — создана,
+             *   - `strategyItemsListChanged` — изменён набор товаров в стратегии.
+             */
+            update_type?: string;
+        }
+
+        export interface V1GetStrategyResponse {
+            /** Результат работы метода. */
+            result?: V1GetStrategyResponseResult;
+        }
+
+        export interface V1UpdatePricingStrategyRequest {
+            /** Список конкурентов. */
+            competitors?: V1Competitor[];
+            /** Идентификатор стратегии. */
+            strategy_id?: string;
+            /** Название стратегии. */
+            strategy_name?: string;
+        }
+
+        export interface V1AddStrategyItemsRequest {
+            /** Список идентификаторов товаров. Максимальное количество — 50. */
+            product_id?: string[];
+            /** Идентификатор стратегии. */
+            strategy_id?: string;
+        }
+
+        export interface AddStrategyItemsResponseError {
+            /** Код ошибки. */
+            code?: string;
+            /** Текст ошибки. */
+            error?: string;
+            /**
+             * Идентификатор товара.
+             * @format int64
+             */
+            product_id?: number;
+        }
+
+        /** Результат работы метода. */
+        export interface V1AddStrategyItemsResponseResult {
+            /** Товары с ошибками. */
+            errors?: AddStrategyItemsResponseError[];
+            /**
+             * Количество товаров с ошибками.
+             * @format int32
+             */
+            failed_product_count?: number;
+        }
+
+        export interface V1AddStrategyItemsResponse {
+            /** Результат работы метода. */
+            result?: V1AddStrategyItemsResponseResult;
+        }
+
+        export interface V1ItemIDsRequest {
+            /** Список идентификаторов товаров. Максимальное количество — 50. */
+            product_id?: string[];
+        }
+
+        export interface GetStrategyIDsByItemIDsResponseProductInfo {
+            /**
+             * Идентификатор товара.
+             * @format int64
+             */
+            product_id?: number;
+            /** Идентификатор стратегии, в которую добавлен товар. */
+            strategy_id?: string;
+        }
+
+        /** Результат работы метода. */
+        export interface V1GetStrategyIDsByItemIDsResponseResult {
+            /** Информация о товаре. */
+            products_info?: GetStrategyIDsByItemIDsResponseProductInfo[];
+        }
+
+        export interface V1GetStrategyIDsByItemIDsResponse {
+            /** Результат работы метода. */
+            result?: V1GetStrategyIDsByItemIDsResponseResult;
+        }
+
+        /** Список товаров. */
+        export interface V1GetStrategyItemsResponseResult {
+            /** Идентификатор товара. */
+            product_id?: string[];
+        }
+
+        export interface V1GetStrategyItemsResponse {
+            /** Список товаров. */
+            result?: V1GetStrategyItemsResponseResult;
+        }
+
+        export interface V1GetStrategyItemInfoRequest {
+            /**
+             * Идентификатор товара.
+             * @format int64
+             */
+            product_id?: number;
+        }
+
+        /** Результат работы метода. */
+        export interface V1GetStrategyItemInfoResponseResult {
+            /** Идентификатор стратегии. */
+            strategy_id?: string;
+            /** `true`, если товар участвует в стратегии ценообразования. */
+            is_enabled?: boolean;
+            /**
+             * Цена по стратегии.
+             * @format int32
+             */
+            strategy_product_price?: number;
+            /** Дата установки цены по стратегии. */
+            price_downloaded_at?: string;
+            /**
+             * Идентификатор конкурента.
+             * @format int64
+             */
+            strategy_competitor_id?: number;
+            /** Ссылка на товар конкурента. */
+            strategy_competitor_product_url?: string;
+        }
+
+        export interface V1GetStrategyItemInfoResponse {
+            /** Результат работы метода. */
+            result?: V1GetStrategyItemInfoResponseResult;
+        }
+
+        /** Результат работы метода. */
+        export interface V1DeleteStrategyItemsResponseResult {
+            /**
+             * Количество товаров с ошибками.
+             * @format int32
+             */
+            failed_product_count?: number;
+        }
+
+        export interface V1DeleteStrategyItemsResponse {
+            /** Результат работы метода. */
+            result?: V1DeleteStrategyItemsResponseResult;
+        }
+
+        export interface V1UpdateStatusStrategyRequest {
+            /**
+             * Статус стратегии:
+             * - `true` — включена,
+             * - `false` — отключена.
+             */
+            enabled?: boolean;
+            /** Идентификатор стратегии. */
+            strategy_id?: string;
         }
 
         export interface BrandBrandCompanyCertificationListRequest {
@@ -4190,6 +4611,289 @@ namespace Ozon_ {
             result?: V2FboPosting;
         }
 
+        export interface V1GetSupplyOrdersListRequest {
+            /**
+             * Номер страницы, возвращаемой в запросе.
+             * @format int32
+             */
+            page: number;
+            /**
+             * Количество элементов на странице.
+             * @format int32
+             */
+            page_size: number;
+            /**
+             * Фильтр по статусу поставки по заявке:
+             * - `DRAFT` — черновик заявки. Только для заявок с вРЦ.
+             * - `SUPPLY_VARIANTS_ARRANGING` — подбор вариантов отгрузки. Только для заявок с вРЦ.
+             * - `HAS_NO_SUPPLY_VARIANTS_ARCHIVE` — нет вариантов отгрузки. Заявка в архиве. Только для заявок с вРЦ.
+             * - `HAS_NO_SUPPLY_VARIANTS_NEW` — нет вариантов отгрузки. Только для заявок с вРЦ.
+             * - `SUPPLY_VARIANT_CONFIRMATION` — согласование отгрузки. Только для заявок с вРЦ.
+             * - `TIMESLOT_BOOKING` — бронирование времени.
+             * - `DATA_FILLING` — заполнение данных.
+             * - `READY_TO_SUPPLY` — готова к отгрузке.
+             * - `ACCEPTED_AT_SUPPLY_WAREHOUSE` — принята на точке отгрузки.
+             * - `IN_TRANSIT` — в пути.
+             * - `ACCEPTANCE_AT_STORAGE_WAREHOUSE` — приёмка на складе.
+             * - `REPORTS_CONFIRMATION_AWAITING` — согласование актов.
+             * - `REPORT_REJECTED` — спор.
+             * - `COMPLETED` — завершена.
+             * - `REJECTED_AT_SUPPLY_WAREHOUSE` — отказано в приёмке.
+             * - `CANCELLED` — отменена.
+             * - `OVERDUE` — просрочена.
+             */
+            states?: string[];
+        }
+
+        /** Интервал поставки по местному времени. */
+        export interface V1Timeslot {
+            /** Начало интервала. */
+            from?: string;
+            /** Конец интервала. */
+            to?: string;
+        }
+
+        /** Склад поставки. */
+        export interface V1Warehouse {
+            /** Адрес склада. */
+            address?: string;
+            /** Название склада. */
+            name?: string;
+            /**
+             * Идентификатор склада.
+             * @format int64
+             */
+            warehouse_id?: number;
+        }
+
+        export interface GetSupplyOrdersListResponseSupplyOrder {
+            /** Дата создания заявки на поставку. */
+            created_at?: string;
+            /** Интервал поставки по местному времени. */
+            local_timeslot?: V1Timeslot;
+            /** Дата, с которой вы хотите привезти поставку на склад. Только для заявок с вРЦ. */
+            preferred_supply_date_from?: string;
+            /** Дата, до которой вы хотите привезти поставку на склад. Только для заявок с вРЦ. */
+            preferred_supply_date_to?: string;
+            /**
+             * Статус поставки по заявке:
+             * - `DRAFT` — черновик заявки. Только для заявок с вРЦ.
+             * - `SUPPLY_VARIANTS_ARRANGING` — подбор вариантов отгрузки. Только для заявок с вРЦ.
+             * - `HAS_NO_SUPPLY_VARIANTS_ARCHIVE` — нет вариантов отгрузки. Заявка в архиве.
+             * - `HAS_NO_SUPPLY_VARIANTS_NEW` — нет вариантов отгрузки.
+             * - `SUPPLY_VARIANT_CONFIRMATION` — согласование отгрузки. Только для заявок с вРЦ.
+             * - `TIMESLOT_BOOKING` — бронирование времени.
+             * - `DATA_FILLING` — заполнение данных.
+             * - `READY_TO_SUPPLY` — готова к отгрузке.
+             * - `ACCEPTED_AT_SUPPLY_WAREHOUSE` — принята на точке отгрузки.
+             * - `IN_TRANSIT` — в пути.
+             * - `ACCEPTANCE_AT_STORAGE_WAREHOUSE` — приёмка на складе.
+             * - `REPORTS_CONFIRMATION_AWAITING` — согласование актов.
+             * - `REPORT_REJECTED` — спор.
+             * - `COMPLETED` — завершена.
+             * - `REJECTED_AT_SUPPLY_WAREHOUSE` — отказано в приёмке.
+             * - `CANCELLED` — отменена.
+             * - `OVERDUE` — просрочена.
+             */
+            state?: string;
+            /**
+             * Идентификатор заявки на поставку.
+             * @format int64
+             */
+            supply_order_id?: number;
+            /** Номер заявки. */
+            supply_order_number?: string;
+            /** Склад поставки. */
+            supply_warehouse?: V1Warehouse;
+            /**
+             * Время в секундах, оставшееся на заполнение данных по поставке. Только для заявок с вРЦ.
+             * @format int64
+             */
+            time_left_to_prepare_supply?: number;
+            /**
+             * Время в секундах, оставшееся на выбор варианта отгрузки. Только для заявок с вРЦ.
+             * @format int64
+             */
+            time_left_to_select_supply_variant?: number;
+            /**
+             * Общее количество товаров в заявке.
+             * @format int32
+             */
+            total_items_count?: number;
+            /**
+             * Общее количество единиц товара в заявке.
+             * @format int32
+             */
+            total_quantity?: number;
+        }
+
+        export interface V1GetSupplyOrdersListResponse {
+            /**
+             * Признак, ответ содержит не все заявки по запросу:
+             * - `true` — сделайте повторный запрос с новыми значениями параметров `page` и `page_size` для получения информации об остальных заявках;
+             * - `false` — ответ содержит все заявки по запросу.
+             */
+            has_next?: boolean;
+            /** Список заявок на поставку. */
+            supply_orders?: GetSupplyOrdersListResponseSupplyOrder[];
+            /**
+             * Общее количество заявок.
+             * @format int32
+             */
+            total_supply_orders_count?: number;
+        }
+
+        export interface V1GetSupplyOrderRequest {
+            /**
+             * Идентификатор заявки на поставку.
+             * @format int64
+             */
+            supply_order_id: number;
+        }
+
+        /** Ваш собственный склад, с которого вы повезёте товары на склад поставки. Только для заявок с вРЦ. */
+        export interface V1SellerWarehouse {
+            /** Адрес склада. */
+            address?: string;
+            /** Название склада. */
+            name?: string;
+            /**
+             * Идентификатор склада.
+             * @format int64
+             */
+            warehouse_id?: number;
+        }
+
+        /** Информация о водителе и автомобиле. */
+        export interface V1VehicleInfo {
+            /** Имя водителя. */
+            driver_name?: string;
+            /** Телефон водителя. */
+            driver_phone?: string;
+            /** Модель автомобиля. */
+            vehicle_model?: string;
+            /** Номер автомобиля. */
+            vehicle_number?: string;
+        }
+
+        export interface V1GetSupplyOrderResponse {
+            /** Дата создания заявки на поставку. */
+            created_at?: string;
+            /** Интервал поставки по местному времени. */
+            local_timeslot?: V1Timeslot;
+            /** Дата, с которой вы хотите привезти поставку на склад. Только для заявок с вРЦ. */
+            preferred_supply_date_from?: string;
+            /** Дата, до которой вы хотите привезти поставку на склад. Только для заявок с вРЦ. */
+            preferred_supply_date_to?: string;
+            /** Ваш собственный склад, с которого вы повезёте товары на склад поставки. Только для заявок с вРЦ. */
+            seller_warehouse?: V1SellerWarehouse;
+            /**
+             * Статус поставки по заявке:
+             * - `DRAFT` — черновик заявки. Только для заявок с вРЦ.
+             * - `SUPPLY_VARIANTS_ARRANGING` — подбор вариантов отгрузки. Только для заявок с вРЦ.
+             * - `HAS_NO_SUPPLY_VARIANTS_ARCHIVE` — нет вариантов отгрузки. Заявка в архиве.
+             * - `HAS_NO_SUPPLY_VARIANTS_NEW` — нет вариантов отгрузки.
+             * - `SUPPLY_VARIANT_CONFIRMATION` — согласование отгрузки. Только для заявок с вРЦ.
+             * - `TIMESLOT_BOOKING` — бронирование времени.
+             * - `DATA_FILLING` — заполнение данных.
+             * - `READY_TO_SUPPLY` — готова к отгрузке.
+             * - `ACCEPTED_AT_SUPPLY_WAREHOUSE` — принята на точке отгрузки.
+             * - `IN_TRANSIT` — в пути.
+             * - `ACCEPTANCE_AT_STORAGE_WAREHOUSE` — приёмка на складе.
+             * - `REPORTS_CONFIRMATION_AWAITING` — согласование актов.
+             * - `REPORT_REJECTED` — спор.
+             * - `COMPLETED` — завершена.
+             * - `REJECTED_AT_SUPPLY_WAREHOUSE` — отказано в приёмке.
+             * - `CANCELLED` — отменена.
+             * - `OVERDUE` — просрочена.
+             */
+            state?: string;
+            /**
+             * Идентификатор заявки на поставку.
+             * @format int64
+             */
+            supply_order_id?: number;
+            /** Номер заявки на поставку. */
+            supply_order_number?: string;
+            /** Склад поставки. */
+            supply_warehouse?: V1Warehouse;
+            /**
+             * Время в секундах, оставшееся на заполнение данных по поставке. Только для заявок с вРЦ.
+             * @format int64
+             */
+            time_left_to_prepare_supply?: number;
+            /**
+             * Время в секундах, оставшееся на выбор варианта отгрузки. Только для заявок с вРЦ.
+             * @format int64
+             */
+            time_left_to_select_supply_variant?: number;
+            /**
+             * Количество товаров в заявке.
+             * @format int32
+             */
+            total_items_count?: number;
+            /**
+             * Общее количеств единиц товара в заявке.
+             * @format int32
+             */
+            total_quantity?: number;
+            /** Информация о водителе и автомобиле. */
+            vehicle_info?: V1VehicleInfo;
+        }
+
+        export interface V1GetSupplyOrderItemsRequest {
+            /**
+             * Номер страницы, возвращаемой в запросе.
+             * @format int32
+             */
+            page: number;
+            /**
+             * Количество элементов на странице.
+             * @format int32
+             */
+            page_size: number;
+            /**
+             * Идентификатор заявки на поставку.
+             * @format int64
+             */
+            supply_order_id: number;
+        }
+
+        export interface GetSupplyOrderItemsResponseItem {
+            /** Ссылка на изображение товара. */
+            icon_path?: string;
+            /** Название товара. */
+            name?: string;
+            /** Артикул товара. */
+            offer_id?: string;
+            /**
+             * Количество товара.
+             * @format int64
+             */
+            quantity?: number;
+            /**
+             * Идентификатор товара в системе Ozon — SKU.
+             * @format int64
+             */
+            sku?: number;
+        }
+
+        export interface V1GetSupplyOrderItemsResponse {
+            /**
+             * Признак, ответ содержит не все товары из заявки:
+             * - `true` — сделайте повторный запрос с новыми значениями параметров `page` и `page_size` для получения информации об остальных товаров;
+             * - `false` — ответ содержит все товары по запросу.
+             */
+            has_next?: boolean;
+            /** Список товаров. */
+            items?: GetSupplyOrderItemsResponseItem[];
+            /**
+             * Общее количество товаров в заявке.
+             * @format int32
+             */
+            total_items_count?: number;
+        }
+
         export interface Postingv4FbsPostingProductExemplarValidateRequestProductExemplar {
             /** Номер грузовой таможенной декларации (ГТД). */
             gtd?: string;
@@ -4833,8 +5537,56 @@ namespace Ozon_ {
              * @format date-time
              */
             shipment_date?: string;
-            /** Статус отправления. */
+            /**
+             * Статус отправления:
+             * - `acceptance_in_progress` — идёт приёмка,
+             * - `arbitration` — арбитраж,
+             * - `awaiting_approve` — ожидает подтверждения,
+             * - `awaiting_deliver` — ожидает отгрузки,
+             * - `awaiting_packaging` — ожидает упаковки,
+             * - `awaiting_registration` — ожидает регистрации,
+             * - `awaiting_verification` — создано,
+             * - `cancelled` — отменено,
+             * - `cancelled_from_split_pending` — отменено,
+             * - `client_arbitration` — клиентский арбитраж доставки,
+             * - `delivered` — доставлено,
+             * - `delivering` — доставляется,
+             * - `driver_pickup` — у водителя,
+             * - `not_accepted` — не принят на сортировочном центре,
+             * - `sent_by_seller` – отправлено продавцом.
+             */
             status?: string;
+            /**
+             * Подстатус отправления:
+             * - `posting_acceptance_in_progress`— идёт приёмка,
+             * - `posting_in_arbitration` — арбитраж,
+             * - `posting_created` — создано,
+             * - `posting_in_carriage` — в перевозке,
+             * - `posting_not_in_carriage` — не добавлено в перевозку,
+             * - `posting_registered` — зарегистрировано,
+             * - `posting_transferring_to_delivery` — передаётся в доставку,
+             * - `posting_awaiting_passport_data` — ожидает паспортных данных,
+             * - `posting_created` — создано,
+             * - `posting_awaiting_registration` — ожидает регистрации,
+             * - `posting_registration_error` — ошибка регистрации,
+             * - `posting_transferring_to_delivery` — передаётся курьеру,
+             * - `posting_split_pending` — создано,
+             * - `posting_canceled` — отменено,
+             * - `posting_in_client_arbitration` — клиентский арбитраж доставки,
+             * - `posting_delivered` — доставлено,
+             * - `posting_received` — получено,
+             * - `posting_conditionally_delivered` — условно доставлено,
+             * - `posting_in_courier_service` — курьер в пути,
+             * - `posting_in_pickup_point` — в пункте выдачи
+             * - `posting_on_way_to_city` — в пути в ваш город,
+             * - `posting_on_way_to_pickup_point` — в пути в пункт выдачи,
+             * - `posting_returned_to_warehouse` — возвращено на склад,
+             * - `posting_transferred_to_courier_service` — передаётся в службу доставки,
+             * - posting_driver_pick_up` — у водителя,
+             * - `posting_not_in_sort_center` — не принято на сортировочном центре,
+             * - `sent_by_seller` — отправлено продавцом.
+             */
+            substatus?: string;
             /**
              * Тип интеграции со службой доставки:
              *   - `ozon` — доставка службой Ozon.
@@ -5184,21 +5936,54 @@ namespace Ozon_ {
             shipment_date?: string;
             /**
              * Статус отправления:
-             * - `awaiting_registration` — ожидает регистрации,
              * - `acceptance_in_progress` — идёт приёмка,
-             * - `awaiting_approve` — ожидает подтверждения,
-             * - `awaiting_packaging` — ожидает упаковки,
-             * - `awaiting_deliver` — ожидает отгрузки,
              * - `arbitration` — арбитраж,
+             * - `awaiting_approve` — ожидает подтверждения,
+             * - `awaiting_deliver` — ожидает отгрузки,
+             * - `awaiting_packaging` — ожидает упаковки,
+             * - `awaiting_registration` — ожидает регистрации,
+             * - `awaiting_verification` — создано,
+             * - `cancelled` — отменено,
+             * - `cancelled_from_split_pending` — отменено,
              * - `client_arbitration` — клиентский арбитраж доставки,
+             * - `delivered` — доставлено,
              * - `delivering` — доставляется,
              * - `driver_pickup` — у водителя,
-             * - `delivered` — доставлено,
-             * - `cancelled` — отменено,
              * - `not_accepted` — не принят на сортировочном центре,
              * - `sent_by_seller` – отправлено продавцом.
              */
             status?: string;
+            /**
+             * Подстатус отправления:
+             * - `posting_acceptance_in_progress` — идёт приёмка,
+             * - `posting_in_arbitration` — арбитраж,
+             * - `posting_created` — создано,
+             * - `posting_in_carriage` — в перевозке,
+             * - `posting_not_in_carriage` — не добавлено в перевозку,
+             * - `posting_registered` — зарегистрировано,
+             * - `posting_transferring_to_delivery` — передаётся в доставку,
+             * - `posting_awaiting_passport_data` — ожидает паспортных данных,
+             * - `posting_created` — создано,
+             * - `posting_awaiting_registration` — ожидает регистрации,
+             * - `posting_registration_error` — ошибка регистрации,
+             * - `posting_transferring_to_delivery` — передаётся курьеру,
+             * - `posting_split_pending` — создано,
+             * - `posting_canceled` — отменено,
+             * - `posting_in_client_arbitration` — клиентский арбитраж доставки,
+             * - `posting_delivered` — доставлено,
+             * - `posting_received` — получено,
+             * - `posting_conditionally_delivered` — условно доставлено,
+             * - `posting_in_courier_service` — курьер в пути,
+             * - `posting_in_pickup_point` — в пункте выдачи,
+             * - `posting_on_way_to_city` — в пути в ваш город,
+             * - `posting_on_way_to_pickup_point` — в пути в пункт выдачи,
+             * - `posting_returned_to_warehouse` — возвращено на склад,
+             * - `posting_transferred_to_courier_service` — передаётся в службу доставки,
+             * - `posting_driver_pick_up` — у водителя,
+             * - `posting_not_in_sort_center` — не принято на сортировочном центре,
+             * - `sent_by_seller` — отправлено продавцом.
+             */
+            substatus?: string;
             /**
              * Тип интеграции со службой доставки:
              *   - `ozon` — доставка через Ozon логистику.
@@ -8025,6 +8810,8 @@ namespace Ozon_ {
              * @format int32
              */
             page: number;
+            /** `true`, если нужно добавить дополнительные параметры в ответ. */
+            with_details?: boolean;
             /**
              * Количество элементов на странице.
              * @format int32
@@ -8032,13 +8819,8 @@ namespace Ozon_ {
             page_size: number;
         }
 
-        /** Данные о периоде. */
+        /** Период. */
         export interface V3FinanceCashFlowStatementListResponsePeriod {
-            /**
-             * Идентификатор периода.
-             * @format int64
-             */
-            id?: number;
             /**
              * Начало периода.
              * @format date-time
@@ -8049,10 +8831,15 @@ namespace Ozon_ {
              * @format date-time
              */
             end?: string;
+            /**
+             * Идентификатор.
+             * @format int64
+             */
+            id?: number;
         }
 
         export interface FinanceCashFlowStatementListResponseCashFlow {
-            /** Данные о периоде. */
+            /** Период. */
             period?: V3FinanceCashFlowStatementListResponsePeriod;
             /**
              * Сумма цен реализованных товаров.
@@ -8083,10 +8870,250 @@ namespace Ozon_ {
             currency_code?: string;
         }
 
+        /** Детализация. */
+        export interface FinanceCashFlowStatementListResponseDeliveryService {
+            /**
+             * Название операции. Возможные значения:
+             *  - `MarketplaceServiceItemDirectFlowLogisticSum` — логистика,
+             *  - `MarketplaceServiceItemDropoff` — обработка отправления Drop-off,
+             *  - `MarketplaceServiceItemDelivToCustomer` — последняя миля.
+             */
+            name?: string;
+            /**
+             * Сумма по операции.
+             * @format double
+             */
+            price?: number;
+        }
+
+        /** Плата за обработку и доставку. */
+        export interface DetailsServices {
+            /**
+             * Общая сумма.
+             * @format double
+             */
+            total?: number;
+            /** Детализация. */
+            items?: FinanceCashFlowStatementListResponseDeliveryService;
+        }
+
+        /** Заказы. */
+        export interface DetailsDeliveryDetails {
+            /**
+             * Общая сумма.
+             * @format double
+             */
+            total?: number;
+            /**
+             * Сумма, на которую выкуплено товаров с учётом комиссий.
+             * @format double
+             */
+            amount?: number;
+            /** Плата за обработку и доставку. */
+            delivery_services?: DetailsServices;
+        }
+
+        /** Выплачено за период. */
+        export interface DetailsPayment {
+            /** Валюта. */
+            currency_code?: string;
+            /**
+             * Сумма выплаты.
+             * @format double
+             */
+            payment?: number;
+        }
+
+        /** Детализация. */
+        export interface FinanceCashFlowStatementListResponseReturnService {
+            /**
+             * Название операции. Возможные значения:
+             *  - `MarketplaceServiceItemReturnAfterDelivToCustomer` — обработка возвратов,
+             *  - `MarketplaceServiceItemReturnPartGoodsCustomer` — обработка частичного невыкупа,
+             *  - `MarketplaceServiceItemReturnNotDelivToCustomer` — обработка отменённых и невостребованных товаров,
+             *  - `MarketplaceServiceItemReturnFlowLogistic` — обратная логистика.
+             */
+            name?: string;
+            /**
+             * Сумма по операции.
+             * @format double
+             */
+            price?: number;
+        }
+
+        /** Плата за возвраты и отмены. */
+        export interface DetailsReturns {
+            /**
+             * Общая сумма.
+             * @format double
+             */
+            total?: number;
+            /** Детализация. */
+            items?: FinanceCashFlowStatementListResponseReturnService;
+        }
+
+        /** Возвраты и отмены. */
+        export interface DetailsReturnDetails {
+            /**
+             * Общая сумма.
+             * @format double
+             */
+            total?: number;
+            /**
+             * Сумма, на которую получено возвратов с учётом комиссий.
+             * @format double
+             */
+            amount?: number;
+            /** Плата за возвраты и отмены. */
+            return_services?: DetailsReturns;
+        }
+
+        /** Перечисления по схеме rFBS. */
+        export interface DetailsRfbsDetails {
+            /**
+             * Общая сумма.
+             * @format double
+             */
+            total?: number;
+            /**
+             * Перечисления от покупателей.
+             * @format double
+             */
+            transfer_delivery?: number;
+            /**
+             * Возврат перечислений покупателям.
+             * @format double
+             */
+            transfer_delivery_return?: number;
+            /**
+             * Компенсация перечислений за доставку.
+             * @format double
+             */
+            compensation_delivery_return?: number;
+            /**
+             * Перечисления частичных компенсаций покупателям.
+             * @format double
+             */
+            partial_compensation?: number;
+            /**
+             * Возврат частичных компенсаций.
+             * @format double
+             */
+            partial_compensation_return?: number;
+        }
+
+        /** Детализация. */
+        export interface FinanceCashFlowStatementListResponseService {
+            /**
+             * Название операции. Возможные значения:
+             *  - `MarketplaceServiceItemOtherMarketAndTechService` — иные маркетинговые и технические услуги,
+             *  - `MarketplaceReturnStorageServiceAtThePickupPointFbsItem` — краткосрочное размещение возврата FBS,
+             *  - `MarketplaceSaleReviewsItem` — приобретение отзывов на платформе,
+             *  - `MarketplaceServicePremiumCashbackIndividualPoints` — услуга продвижения «Бонусы продавца»,
+             *  - `MarketplaceServiceStorageItem` — услуга размещения товаров,
+             *  - `MarketplaceServiceStockDisposal` — утилизация со стока,
+             *  - `MarketplaceReturnDisposalServiceFbsItem` — утилизация FBS,
+             *  - `MarketplaceServiceItemFlexiblePaymentSchedule` — услуга «Гибкий график выплат»,
+             *  - `MarketplaceServiceProcessingSpoilage` — обработка брака,
+             *  - `MarketplaceServiceProcessingIdentifiedSurplus` — обработка опознанных излишков,
+             *  - `MarketplaceServiceProcessingIdentifiedDiscrepancies` — бронирование места для размещения на складе,
+             *  - `MarketplaceServiceItemInternetSiteAdvertising` — реклама на сайте Ozon,
+             *  - `MarketplaceServiceItemPremiumSubscribtion` — премиум-подписка,
+             *  - `MarketplaceAgencyFeeAggregator3PLGlobalItem` — агентское вознаграждение Ozon.
+             */
+            name?: string;
+            /**
+             * Сумма по операции.
+             * @format double
+             */
+            price?: number;
+        }
+
+        /** Услуги. */
+        export interface DetailsService {
+            /**
+             * Общая сумма.
+             * @format double
+             */
+            total?: number;
+            /** Детализация. */
+            items?: FinanceCashFlowStatementListResponseService;
+        }
+
+        /** Детализация. */
+        export interface FinanceCashFlowStatementListResponseDetailsOthers {
+            /**
+             * Название операции. Возможные значения:
+             *  - `MarketplaceRedistributionOfAcquiringOperation` — оплата эквайринга,
+             *  - `MarketplaceSellerCompensationLossOfGoodsOperation` — компенсация за уничтоженный товар,
+             *  - `MarketplaceSellerCorrectionOperation` — корректировка стоимости услуг,
+             *  - `OperationCorrectionSeller` — инвентаризация взаиморасчётов,
+             *  - `OperationMarketplaceWithHoldingForUndeliverableGoods` — компенсация за недовложение товаров,
+             *  - `OperationClaim` — начисления по претензиям.
+             */
+            name?: string;
+            /**
+             * Сумма по операции.
+             * @format double
+             */
+            price?: number;
+        }
+
+        /** Компенсация и прочие начисления. */
+        export interface DetailsOthers {
+            /**
+             * Общая сумма.
+             * @format double
+             */
+            total?: number;
+            /** Детализация. */
+            items?: FinanceCashFlowStatementListResponseDetailsOthers;
+        }
+
+        /** Детализированная информация. */
+        export interface FinanceCashFlowStatementListResponseDetails {
+            /**
+             * Баланс на начало периода.
+             * @format double
+             */
+            begin_balance_amount?: number;
+            /** Результат работы метода. */
+            delivery?: DetailsDeliveryDetails;
+            /**
+             * Сумма к выплате за период.
+             * @format double
+             */
+            invoice_transfer?: number;
+            /**
+             * Перевод по договорам займа.
+             * @format double
+             */
+            loan?: number;
+            /** Выплачено в периоде. */
+            payments?: DetailsPayment;
+            /** Период. */
+            period?: V3FinanceCashFlowStatementListResponsePeriod;
+            /** Возвраты и отмены. */
+            return?: DetailsReturnDetails;
+            /** Перечисления по схеме rFBS. */
+            rfbs?: DetailsRfbsDetails;
+            /** Услуги. */
+            services?: DetailsService;
+            /** Компенсация и прочие начисления. */
+            others?: DetailsOthers;
+            /**
+             * Баланс на конец периода.
+             * @format double
+             */
+            end_balance_amount?: number;
+        }
+
         /** Результат работы метода. */
         export interface V3FinanceCashFlowStatementListResponseResult {
             /** Список отчётов. */
             cash_flows?: FinanceCashFlowStatementListResponseCashFlow[];
+            /** Детализированная информация. */
+            details?: FinanceCashFlowStatementListResponseDetails;
             /**
              * Количество страниц с отчётами.
              * @format int64
@@ -8903,7 +9930,7 @@ namespace Ozon_ {
              *   - `OperationReturnGoodsFBSofRMS` — доставка и обработка возврата, отмены, невыкупа;
              *   - `ReturnAgentOperationRFBS` — возврат перечисления за доставку покупателю;
              *   - `MarketplaceSellerShippingCompensationReturnOperation` — компенсация перечисления за доставку;
-             *   - `OperationMarketplaceServicePremiumCashback` — услуга продвижения Premium.
+             *   - `OperationMarketplaceServicePremiumCashback` — услуга продвижения Premium;
              *   - `MarketplaceServicePremiumPromotion` — услуга продвижения Premium, фиксированная комиссия;
              *   - `MarketplaceRedistributionOfAcquiringOperation` — оплата эквайринга;
              *   - `MarketplaceReturnStorageServiceAtThePickupPointFbsItem` — краткосрочное размещение возврата FBS;
@@ -8911,7 +9938,7 @@ namespace Ozon_ {
              *   - `MarketplaceServiceItemDeliveryKGT` — доставка КГТ;
              *   - `MarketplaceServiceItemDirectFlowLogistic` — логистика;
              *   - `MarketplaceServiceItemReturnFlowLogistic` — обратная логистика;
-             *   - `MarketplaceServicePremiumCashbackIndividualPoints` — услуга продвижения «Бонусы продавца».
+             *   - `MarketplaceServicePremiumCashbackIndividualPoints` — услуга продвижения «Бонусы продавца»;
              *   - `OperationMarketplaceWithHoldingForUndeliverableGoods` — удержание за недовложение товара.
              */
             operation_type?: string[];
@@ -9493,6 +10520,10 @@ namespace Ozon_ {
 
         export type ProductApiUploadDigitalCodeInfoError = RpcStatus;
 
+        export type ProductApiGetProductInfoSubscriptionData = V1GetProductInfoSubscriptionResponse;
+
+        export type ProductApiGetProductInfoSubscriptionError = RpcStatus;
+
         export type ProductApiImportProductsStocksData = ProductImportProductsStocksResponse;
 
         export type ProductApiImportProductsStocksError = RpcStatus;
@@ -9573,6 +10604,54 @@ namespace Ozon_ {
 
         export type PromosTaskDeclineError = RpcStatus;
 
+        export type PricingCompetitorsData = V1GetCompetitorsResponse;
+
+        export type PricingCompetitorsError = RpcStatus;
+
+        export type PricingListData = V1GetStrategyListResponse;
+
+        export type PricingListError = RpcStatus;
+
+        export type PricingCreateData = V1CreatePricingStrategyResponse;
+
+        export type PricingCreateError = RpcStatus;
+
+        export type PricingInfoData = V1GetStrategyResponse;
+
+        export type PricingInfoError = RpcStatus;
+
+        export type PricingUpdateData = V1Empty;
+
+        export type PricingUpdateError = RpcStatus;
+
+        export type PricingItemsAddData = V1AddStrategyItemsResponse;
+
+        export type PricingItemsAddError = RpcStatus;
+
+        export type PricingIdsData = V1GetStrategyIDsByItemIDsResponse;
+
+        export type PricingIdsError = RpcStatus;
+
+        export type PricingItemsListData = V1GetStrategyItemsResponse;
+
+        export type PricingItemsListError = RpcStatus;
+
+        export type PricingItemsInfoData = V1GetStrategyItemInfoResponse;
+
+        export type PricingItemsInfoError = RpcStatus;
+
+        export type PricingItemsDeleteData = V1DeleteStrategyItemsResponse;
+
+        export type PricingItemsDeleteError = RpcStatus;
+
+        export type PricingStatusData = V1Empty;
+
+        export type PricingStatusError = RpcStatus;
+
+        export type PricingDeleteData = V1Empty;
+
+        export type PricingDeleteError = RpcStatus;
+
         export type BrandApiBrandCompanyCertificationListData = BrandBrandCompanyCertificationListResponse;
 
         export type BrandApiBrandCompanyCertificationListError = RpcStatus;
@@ -9595,7 +10674,7 @@ namespace Ozon_ {
 
         export interface ProductApiProductCertificateCreatePayload {
             /** Массив сертификатов для товара. Допустимые расширения jpg, jpeg, png, pdf. */
-            // files: File[];
+            files: any[];
             /** Название сертификата. Максимум 100 символов. */
             name: string;
             /** Номер сертификата. Максимум 100 символов. */
@@ -9692,6 +10771,18 @@ namespace Ozon_ {
         export type PostingApiGetFboPostingData = V2FboPostingResponse;
 
         export type PostingApiGetFboPostingError = RpcStatus;
+
+        export type SupplyOrderApiGetSupplyOrdersListData = V1GetSupplyOrdersListResponse;
+
+        export type SupplyOrderApiGetSupplyOrdersListError = RpcStatus;
+
+        export type SupplyOrderApiGetSupplyOrderData = V1GetSupplyOrderResponse;
+
+        export type SupplyOrderApiGetSupplyOrderError = RpcStatus;
+
+        export type SupplyOrderApiGetSupplyOrderItemsData = V1GetSupplyOrderItemsResponse;
+
+        export type SupplyOrderApiGetSupplyOrderItemsError = RpcStatus;
 
         export type PostingApiFbsPostingProductExemplarValidateData =
             Postingv4FbsPostingProductExemplarValidateResponse;

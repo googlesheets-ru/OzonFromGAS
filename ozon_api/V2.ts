@@ -133,7 +133,7 @@ import {
     V2PostingFBSDigitalActCheckStatusRequest,
     V2PostingFBSDigitalActDocumentSignRequest,
     V2PostingFBSGetDigitalActRequest,
-} = './data-contracts';
+} from './data-contracts';
 import { ContentType, HttpClient, RequestParams } from './http-client';
 
 export class V2<SecurityDataType = unknown> {

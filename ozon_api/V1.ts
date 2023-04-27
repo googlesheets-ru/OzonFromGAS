@@ -105,6 +105,30 @@ import {
     PostingApiSetPostingTimeslotError,
     PostingCancelReasonRequest,
     Postingv1GetCarriageAvailableListRequest,
+    PricingCompetitorsData,
+    PricingCompetitorsError,
+    PricingCreateData,
+    PricingCreateError,
+    PricingDeleteData,
+    PricingDeleteError,
+    PricingIdsData,
+    PricingIdsError,
+    PricingInfoData,
+    PricingInfoError,
+    PricingItemsAddData,
+    PricingItemsAddError,
+    PricingItemsDeleteData,
+    PricingItemsDeleteError,
+    PricingItemsInfoData,
+    PricingItemsInfoError,
+    PricingItemsListData,
+    PricingItemsListError,
+    PricingListData,
+    PricingListError,
+    PricingStatusData,
+    PricingStatusError,
+    PricingUpdateData,
+    PricingUpdateError,
     ProductApiGetGeoRestrictionsV1Data,
     ProductApiGetGeoRestrictionsV1Error,
     ProductApiGetImportProductsInfoData,
@@ -113,6 +137,8 @@ import {
     ProductApiGetProductInfoDescriptionError,
     ProductApiGetProductInfoDiscountedData,
     ProductApiGetProductInfoDiscountedError,
+    ProductApiGetProductInfoSubscriptionData,
+    ProductApiGetProductInfoSubscriptionError,
     ProductApiGetProductRatingBySkuData,
     ProductApiGetProductRatingBySkuError,
     ProductApiImportProductsBySkuData,
@@ -229,14 +255,23 @@ import {
     SellerApiActivateProductV1Request,
     SellerApiGetSellerProductV1Request,
     SellerApiProductIDsV1Request,
+    SupplyOrderApiGetSupplyOrderData,
+    SupplyOrderApiGetSupplyOrderError,
+    SupplyOrderApiGetSupplyOrderItemsData,
+    SupplyOrderApiGetSupplyOrderItemsError,
+    SupplyOrderApiGetSupplyOrdersListData,
+    SupplyOrderApiGetSupplyOrdersListError,
     V1ActivateHotSalesProductsRequest,
+    V1AddStrategyItemsRequest,
     V1AnalyticsItemTurnoverDataV3Request,
     V1ApproveDiscountTasksRequest,
     V1ConditionalCancellationMoveRequest,
     V1CreateLabelBatchRequest,
+    V1CreatePricingStrategyRequest,
     V1DeactivateHotSalesProductsRequest,
     V1DeclineDiscountTasksRequest,
     V1Empty,
+    V1GetCompetitorsRequest,
     V1GetConditionalCancellationListRequest,
     V1GetConditionalCancellationRequest,
     V1GetDiscountTaskListRequest,
@@ -245,11 +280,18 @@ import {
     V1GetHotSalesProductsRequest,
     V1GetLabelBatchRequest,
     V1GetProductInfoDiscountedRequest,
+    V1GetProductInfoSubscriptionRequest,
     V1GetProductRatingBySkuRequest,
     V1GetRestrictionsRequest,
+    V1GetStrategyItemInfoRequest,
+    V1GetStrategyListRequest,
+    V1GetSupplyOrderItemsRequest,
+    V1GetSupplyOrderRequest,
+    V1GetSupplyOrdersListRequest,
     V1InvoiceCreateOrUpdateRequest,
     V1InvoiceDeleteRequest,
     V1InvoiceGetRequest,
+    V1ItemIDsRequest,
     V1PostingFbsTimeslotChangeRestrictionsRequest,
     V1PostingFbsTimeslotSetRequest,
     V1ProductCertificateDeleteRequest,
@@ -265,6 +307,9 @@ import {
     V1ProductUploadDigitalCodesRequest,
     V1ProductUploadDigitalCodesRequestInfo,
     V1RatingHistoryV1Request,
+    V1StrategyRequest,
+    V1UpdatePricingStrategyRequest,
+    V1UpdateStatusStrategyRequest,
     V3FinanceCashFlowStatementListRequest,
     WarehouseApiDeliveryMethodListData,
     WarehouseApiDeliveryMethodListError,
@@ -540,6 +585,24 @@ export class V1<SecurityDataType = unknown> {
     productApiUploadDigitalCodeInfo = (data: V1ProductUploadDigitalCodesRequestInfo, params: RequestParams = {}) =>
         this.http.request<ProductApiUploadDigitalCodeInfoData, ProductApiUploadDigitalCodeInfoError>({
             path: `/v1/product/upload_digital_codes/info`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Метод для получения количества пользователей, которые нажали **Узнать о поступлении** на странице товара. Вы можете передать несколько товаров в запросе.
+     *
+     * @tags ProductAPI
+     * @name ProductApiGetProductInfoSubscription
+     * @summary Количество подписавшихся на товар пользователей
+     * @request POST:/v1/product/info/subscription
+     * @response `200` `ProductApiGetProductInfoSubscriptionData` Количество подписавшихся пользователей
+     * @response `default` `RpcStatus` Ошибка
+     */
+    productApiGetProductInfoSubscription = (data: V1GetProductInfoSubscriptionRequest, params: RequestParams = {}) =>
+        this.http.request<ProductApiGetProductInfoSubscriptionData, ProductApiGetProductInfoSubscriptionError>({
+            path: `/v1/product/info/subscription`,
             method: 'POST',
             body: data,
             type: ContentType.Json,
@@ -870,6 +933,217 @@ export class V1<SecurityDataType = unknown> {
             method: 'POST',
             body: data,
             type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Метод для получения списка конкурентов — продавцов с похожими товарами в других интернет-магазинах и маркетплейсах.
+     *
+     * @tags PricingStrategyAPI
+     * @name PricingCompetitors
+     * @summary Список конкурентов
+     * @request POST:/v1/pricing-strategy/competitors/list
+     * @response `200` `PricingCompetitorsData` Список конкурентов
+     * @response `default` `RpcStatus` Ошибка
+     */
+    pricingCompetitors = (data: V1GetCompetitorsRequest, params: RequestParams = {}) =>
+        this.http.request<PricingCompetitorsData, PricingCompetitorsError>({
+            path: `/v1/pricing-strategy/competitors/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags PricingStrategyAPI
+     * @name PricingList
+     * @summary Список стратегий
+     * @request POST:/v1/pricing-strategy/list
+     * @response `200` `PricingListData` Список стратегий
+     * @response `default` `RpcStatus` Ошибка
+     */
+    pricingList = (data: V1GetStrategyListRequest, params: RequestParams = {}) =>
+        this.http.request<PricingListData, PricingListError>({
+            path: `/v1/pricing-strategy/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags PricingStrategyAPI
+     * @name PricingCreate
+     * @summary Создать стратегию
+     * @request POST:/v1/pricing-strategy/create
+     * @response `200` `PricingCreateData` Стратегия создана
+     * @response `default` `RpcStatus` Ошибка
+     */
+    pricingCreate = (data: V1CreatePricingStrategyRequest, params: RequestParams = {}) =>
+        this.http.request<PricingCreateData, PricingCreateError>({
+            path: `/v1/pricing-strategy/create`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags PricingStrategyAPI
+     * @name PricingInfo
+     * @summary Информация о стратегии
+     * @request POST:/v1/pricing-strategy/info
+     * @response `200` `PricingInfoData` Информация о стратегии
+     * @response `default` `RpcStatus` Ошибка
+     */
+    pricingInfo = (data: V1StrategyRequest, params: RequestParams = {}) =>
+        this.http.request<PricingInfoData, PricingInfoError>({
+            path: `/v1/pricing-strategy/info`,
+            method: 'POST',
+            body: data,
+            ...params,
+        });
+    /**
+     * @description Можно обновить все стратегии кроме системной.
+     *
+     * @tags PricingStrategyAPI
+     * @name PricingUpdate
+     * @summary Обновить стратегию
+     * @request POST:/v1/pricing-strategy/update
+     * @response `200` `PricingUpdateData` Стратегия обновлена
+     * @response `default` `RpcStatus` Ошибка
+     */
+    pricingUpdate = (data: V1UpdatePricingStrategyRequest, params: RequestParams = {}) =>
+        this.http.request<PricingUpdateData, PricingUpdateError>({
+            path: `/v1/pricing-strategy/update`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags PricingStrategyAPI
+     * @name PricingItemsAdd
+     * @summary Добавить товары в стратегию
+     * @request POST:/v1/pricing-strategy/products/add
+     * @response `200` `PricingItemsAddData` Ошибки при добавлении товаров
+     * @response `default` `RpcStatus` Ошибка
+     */
+    pricingItemsAdd = (data: V1AddStrategyItemsRequest, params: RequestParams = {}) =>
+        this.http.request<PricingItemsAddData, PricingItemsAddError>({
+            path: `/v1/pricing-strategy/products/add`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags PricingStrategyAPI
+     * @name PricingIds
+     * @summary Список идентификаторов стратегий
+     * @request POST:/v1/pricing-strategy/strategy-ids-by-product-ids
+     * @response `200` `PricingIdsData` Список идентификаторов
+     * @response `default` `RpcStatus` Ошибка
+     */
+    pricingIds = (data: V1ItemIDsRequest, params: RequestParams = {}) =>
+        this.http.request<PricingIdsData, PricingIdsError>({
+            path: `/v1/pricing-strategy/strategy-ids-by-product-ids`,
+            method: 'POST',
+            body: data,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags PricingStrategyAPI
+     * @name PricingItemsList
+     * @summary Список товаров в стратегии
+     * @request POST:/v1/pricing-strategy/products/list
+     * @response `200` `PricingItemsListData` Список товаров
+     * @response `default` `RpcStatus` Ошибка
+     */
+    pricingItemsList = (data: V1StrategyRequest, params: RequestParams = {}) =>
+        this.http.request<PricingItemsListData, PricingItemsListError>({
+            path: `/v1/pricing-strategy/products/list`,
+            method: 'POST',
+            body: data,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags PricingStrategyAPI
+     * @name PricingItemsInfo
+     * @summary Цена товара у конкурента
+     * @request POST:/v1/pricing-strategy/product/info
+     * @response `200` `PricingItemsInfoData` Цена товара у конкурента
+     * @response `default` `RpcStatus` Ошибка
+     */
+    pricingItemsInfo = (data: V1GetStrategyItemInfoRequest, params: RequestParams = {}) =>
+        this.http.request<PricingItemsInfoData, PricingItemsInfoError>({
+            path: `/v1/pricing-strategy/product/info`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags PricingStrategyAPI
+     * @name PricingItemsDelete
+     * @summary Удалить товары из стратегии
+     * @request POST:/v1/pricing-strategy/products/delete
+     * @response `200` `PricingItemsDeleteData` Ошибки при удалении товаров
+     * @response `default` `RpcStatus` Ошибка
+     */
+    pricingItemsDelete = (data: V1ItemIDsRequest, params: RequestParams = {}) =>
+        this.http.request<PricingItemsDeleteData, PricingItemsDeleteError>({
+            path: `/v1/pricing-strategy/products/delete`,
+            method: 'POST',
+            body: data,
+            ...params,
+        });
+    /**
+     * @description Можно изменить статус любой стратегии кроме системной.
+     *
+     * @tags PricingStrategyAPI
+     * @name PricingStatus
+     * @summary Изменить статус стратегии
+     * @request POST:/v1/pricing-strategy/status
+     * @response `200` `PricingStatusData` Статус стратегии изменён
+     * @response `default` `RpcStatus` Ошибка
+     */
+    pricingStatus = (data: V1UpdateStatusStrategyRequest, params: RequestParams = {}) =>
+        this.http.request<PricingStatusData, PricingStatusError>({
+            path: `/v1/pricing-strategy/status`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Можно удалить любую стратегию кроме системной.
+     *
+     * @tags PricingStrategyAPI
+     * @name PricingDelete
+     * @summary Удалить стратегию
+     * @request POST:/v1/pricing-strategy/delete
+     * @response `200` `PricingDeleteData` Стратегия удалена
+     * @response `default` `RpcStatus` Ошибка
+     */
+    pricingDelete = (data: V1StrategyRequest, params: RequestParams = {}) =>
+        this.http.request<PricingDeleteData, PricingDeleteError>({
+            path: `/v1/pricing-strategy/delete`,
+            method: 'POST',
+            body: data,
             ...params,
         });
     /**
@@ -1256,6 +1530,60 @@ export class V1<SecurityDataType = unknown> {
     polygonApiDeletePolygon = (data: Polygonv1PolygonDeleteRequest, params: RequestParams = {}) =>
         this.http.request<PolygonApiDeletePolygonData, PolygonApiDeletePolygonError>({
             path: `/v1/polygon/delete`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Метод для получения списка заявок на поставку. Учитываются заявки с поставкой на конкретный склад и [через виртуальный распределительный центр (вРЦ)](https://seller-edu.ozon.ru/fbo/scheme-of-work/about#чем-отличаются-процессы-при-заявках-через-врц-и-напрямую-на-склад).
+     *
+     * @tags FBO
+     * @name SupplyOrderApiGetSupplyOrdersList
+     * @summary Список заявок на поставку на склад Ozon
+     * @request POST:/v1/supply-order/list
+     * @response `200` `SupplyOrderApiGetSupplyOrdersListData` Список заявок на поставку
+     * @response `default` `RpcStatus` Ошибка
+     */
+    supplyOrderApiGetSupplyOrdersList = (data: V1GetSupplyOrdersListRequest, params: RequestParams = {}) =>
+        this.http.request<SupplyOrderApiGetSupplyOrdersListData, SupplyOrderApiGetSupplyOrdersListError>({
+            path: `/v1/supply-order/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Метод для получения детальной информации по заявке на поставку. Учитываются заявки с поставкой на конкретный склад и [через виртуальный распределительный центр (вРЦ)](https://seller-edu.ozon.ru/fbo/scheme-of-work/about#чем-отличаются-процессы-при-заявках-через-врц-и-напрямую-на-склад).
+     *
+     * @tags FBO
+     * @name SupplyOrderApiGetSupplyOrder
+     * @summary Информация о заявке на поставку
+     * @request POST:/v1/supply-order/get
+     * @response `200` `SupplyOrderApiGetSupplyOrderData` Информация о заявке
+     * @response `default` `RpcStatus` Ошибка
+     */
+    supplyOrderApiGetSupplyOrder = (data: V1GetSupplyOrderRequest, params: RequestParams = {}) =>
+        this.http.request<SupplyOrderApiGetSupplyOrderData, SupplyOrderApiGetSupplyOrderError>({
+            path: `/v1/supply-order/get`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags FBO
+     * @name SupplyOrderApiGetSupplyOrderItems
+     * @summary Список товаров в заявке на поставку
+     * @request POST:/v1/supply-order/items
+     * @response `200` `SupplyOrderApiGetSupplyOrderItemsData` Список товаров
+     * @response `default` `RpcStatus` Ошибка
+     */
+    supplyOrderApiGetSupplyOrderItems = (data: V1GetSupplyOrderItemsRequest, params: RequestParams = {}) =>
+        this.http.request<SupplyOrderApiGetSupplyOrderItemsData, SupplyOrderApiGetSupplyOrderItemsError>({
+            path: `/v1/supply-order/items`,
             method: 'POST',
             body: data,
             type: ContentType.Json,
