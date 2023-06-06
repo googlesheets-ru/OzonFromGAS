@@ -314,7 +314,7 @@ namespace Ozon_ {
          * @response `500` `RpcStatus` Внутренняя ошибка сервера
          */
         productApiProductUpdateOfferId(data: Types.V1ProductUpdateOfferIdRequest) {
-            this.request<Types.ProductApiProductUpdateOfferIdData>({
+            return this.request<Types.ProductApiProductUpdateOfferIdData>({
                 endpoint: `/v1/product/update/offer-id`,
                 method: 'POST',
                 payload: data,
@@ -336,7 +336,7 @@ namespace Ozon_ {
          * @response `500` `RpcStatus` Внутренняя ошибка сервера
          */
         productApiImportProductsV2(data: Types.Productv2ImportProductsRequest) {
-            this.request<Types.ProductApiImportProductsV2Data>({
+            return this.request<Types.ProductApiImportProductsV2Data>({
                 endpoint: `/v2/product/import`,
                 method: 'POST',
                 payload: data,
@@ -358,7 +358,7 @@ namespace Ozon_ {
          * @response `500` `RpcStatus` Внутренняя ошибка сервера
          */
         productApiGetProductAttributesV3(data: Types.Productv3GetProductAttributesV3Request) {
-            this.request<Types.ProductApiGetProductAttributesV3Data>({
+            return this.request<Types.ProductApiGetProductAttributesV3Data>({
                 endpoint: `/v3/products/info/attributes`,
                 method: 'POST',
                 payload: data,
