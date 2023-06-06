@@ -342,5 +342,27 @@ namespace Ozon_ {
                 payload: data,
             });
         }
+
+        /**
+         * @description Возвращает описание характеристик товара по его идентификатору. Товар можно искать по `offer_id` или `product_id`.
+         *
+         * @tags ProductAPI
+         * @name ProductApiGetProductAttributesV3
+         * @summary Получить описание характеристик товара
+         * @request POST:/v3/products/info/attributes
+         * @response `200` `ProductApiGetProductAttributesV3Data` Описание характеристик товара
+         * @response `400` `RpcStatus` Неверный параметр
+         * @response `403` `RpcStatus` Доступ запрещён
+         * @response `404` `RpcStatus` Ответ не найден
+         * @response `409` `RpcStatus` Конфликт запроса
+         * @response `500` `RpcStatus` Внутренняя ошибка сервера
+         */
+        productApiGetProductAttributesV3(data: Types.Productv3GetProductAttributesV3Request) {
+            this.request<Types.ProductApiGetProductAttributesV3Data>({
+                endpoint: `/v3/products/info/attributes`,
+                method: 'POST',
+                payload: data,
+            });
+        }
     }
 }
