@@ -298,5 +298,26 @@ namespace Ozon_ {
                 payload: data,
             });
         };
+
+        /**
+         * @description Метод для изменения `offer_id`, привязанных к товарам. Вы можете изменить несколько `offer_id`. Рекомендуем передавать до 250 значений в массиве.
+         *
+         * @tags ProductAPI
+         * @name ProductApiProductUpdateOfferId
+         * @summary Изменить артикулы товаров из системы продавца
+         * @request POST:/v1/product/update/offer-id
+         * @response `200` `ProductApiProductUpdateOfferIdData` Информация об изменении артикулов
+         * @response `400` `RpcStatus` Неверный параметр
+         * @response `403` `RpcStatus` Доступ запрещён
+         * @response `404` `RpcStatus` Ответ не найден
+         * @response `409` `RpcStatus` Конфликт запроса
+         * @response `500` `RpcStatus` Внутренняя ошибка сервера
+         */
+        productApiProductUpdateOfferId = (data: Types.V1ProductUpdateOfferIdRequest) =>
+            this.request<Types.ProductApiProductUpdateOfferIdData>({
+                endpoint: `/v1/product/update/offer-id`,
+                method: 'POST',
+                payload: data,
+            });
     }
 }
