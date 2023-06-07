@@ -344,6 +344,28 @@ namespace Ozon_ {
         }
 
         /**
+         * @description Позволяет получить статус создания карточки товара.
+         *
+         * @tags ProductAPI
+         * @name ProductApiGetImportProductsInfo
+         * @summary Узнать статус добавления товара
+         * @request POST:/v1/product/import/info
+         * @response `200` `ProductApiGetImportProductsInfoData` Статус добавления товара
+         * @response `400` `RpcStatus` Неверный параметр
+         * @response `403` `RpcStatus` Доступ запрещён
+         * @response `404` `RpcStatus` Ответ не найден
+         * @response `409` `RpcStatus` Конфликт запроса
+         * @response `500` `RpcStatus` Внутренняя ошибка сервера
+         */
+        productApiGetImportProductsInfo(data: Types.ProductGetImportProductsInfoRequest) {
+            this.request<Types.ProductApiGetImportProductsInfoData>({
+                endpoint: `/v1/product/import/info`,
+                method: 'POST',
+                payload: data,
+            });
+        }
+
+        /**
          * @description Возвращает описание характеристик товара по его идентификатору. Товар можно искать по `offer_id` или `product_id`.
          *
          * @tags ProductAPI
