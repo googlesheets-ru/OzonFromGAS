@@ -5,5 +5,9 @@
     "lib": [
       "esnext"
     ],
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationDir": "./declarations",
+    "outDir": "./dist",
   }
 }

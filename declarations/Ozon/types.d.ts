@@ -1,11 +1,10 @@
- namespace Ozon_ {
-    export namespace Types {
-        export interface Keys {
+declare namespace Ozon_ {
+    namespace Types {
+        interface Keys {
             clientId: number;
             apiKey: string;
         }
-        export type Version = 'v1' | 'v2' | 'v3' | 'v4';
-
+        type Version = 'v1' | 'v2' | 'v3' | 'v4';
         /**Фильтр по видимости товара
          * - ALL — все товары, кроме архивных.
          * - VISIBLE — товары, которые видны покупателям.
@@ -34,7 +33,7 @@
          * - IMAGE_ABSENT — товары без изображений.
          * - MODERATION_BLOCK — товары, для которых заблокирована модерация.
          */
-        export type FilterVisibility =
+        type FilterVisibility =
             /** все товары, кроме архивных. */
             | 'ALL'
             /** товары, которые видны покупателям. */
@@ -87,8 +86,7 @@
             | 'IMAGE_ABSENT'
             /** товары, для которых заблокирована модерация. */
             | 'MODERATION_BLOCK';
-
-        export interface Productv2GetProductListResponseItem {
+        interface Productv2GetProductListResponseItem {
             product_id: number;
             offer_id: string;
             is_fbo_visible?: boolean;
@@ -96,8 +94,7 @@
             archived?: boolean;
             is_discounted?: boolean;
         }
-
-        export interface _Productv2GetProductListResponse {
+        interface _Productv2GetProductListResponse {
             /**Список товаров */
             items: Productv2GetProductListResponseItem[];
             /**Идентификатор последнего значения на странице. */
@@ -105,9 +102,8 @@
             /**Всего товаров. */
             total: number;
         }
-
         /** Информация об остатках товара. */
-        export type StocksType = {
+        type StocksType = {
             /**Количество товара, ожидаемого при поставке. */
             coming: number;
             /**Количество товара на складе. */
@@ -115,7 +111,6 @@
             /**Количество зарезервированного товара. */
             reserved: number;
         };
-
         /** Валюта ваших цен. Cовпадает с валютой, которая установлена в настройках личного кабинета.
          * Возможные значения:
          * - RUB — российский рубль,
@@ -124,10 +119,9 @@
          * - EUR — евро,
          * - USD — доллар США,
          * - CNY — юань. */
-        export type CurrencyCodeType = 'RUB' | 'BYN' | 'KZT' | 'EUR' | 'USD' | 'CNY';
-
+        type CurrencyCodeType = 'RUB' | 'BYN' | 'KZT' | 'EUR' | 'USD' | 'CNY';
         /**Настройки видимости товара. */
-        export type VisibilityDetails = {
+        type VisibilityDetails = {
             /**Если установлена цена — true. */
             has_price: boolean;
             /**Если есть остаток на складах — true. */
@@ -135,11 +129,10 @@
             /**Если активный товар — true. */
             active_product: boolean;
             /**Причина, почему товар скрыт.  */
-            reasons: {}; //TODO Уточнить описание этого типа, в документации коряво расписано
+            reasons: {};
         };
-
         /** Ошибки при загрузке товаров.*/
-        export interface ItemError {
+        interface ItemError {
             /**Код ошибки. */
             code: string;
             /**Состояние товара, в котором произошла ошибка. */
@@ -155,11 +148,12 @@
             /**Название атрибута, в котором произошла ошибка. */
             attribute_name: string;
             /**Дополнительные поля для описания ошибки. */
-            optional_description_elements: { [key: string]: any };
+            optional_description_elements: {
+                [key: string]: any;
+            };
         }
-
         /**Описание состояния товара. */
-        export interface ProductStatus {
+        interface ProductStatus {
             /**Состояние товара. */
             state: string;
             /** Состояние товара, на переходе в которое произошла ошибка.*/
@@ -185,9 +179,8 @@
             /** Время последнего изменения состояния товара. */
             state_updated_at: Date;
         }
-
         /**Информация об источниках схожих предложений. */
-        export interface ProductSource {
+        interface ProductSource {
             /**Флаг, что источник учитывается при расчете рыночного значения. */
             is_enabled: boolean;
             /**Идентификатор товара на Ozon — SKU. */
@@ -195,11 +188,10 @@
             /**Ссылка на источник. */
             source: string;
         }
-
         /** Информация о товаре [документация][1]
          *
          * [1]: https://docs.ozon.ru/api/seller/#operation/ProductAPI_GetProductInfoListV2  */
-        export interface ProductInfoItem {
+        interface ProductInfoItem {
             /**Номер задания на формирование документов. */
             id: number;
             /**Название */

@@ -1,0 +1,484 @@
+{
+    "items": [
+        {
+            "barcode": "",
+            "category_id": 17030348,
+            "name": "Минималистичный кошелек из коричневой кожи _",
+            "offer_id": "БУМАЖНИК-1-Коричневый",
+            "height": 50,
+            "depth": 180,
+            "width": 90,
+            "dimension_unit": "mm",
+            "weight": 80,
+            "weight_unit": "g",
+            "images": [
+                {
+                    "file_name": "https://cdn1.ozone.ru/s3/multimedia-o/6670241016.jpg",
+                    "default": true,
+                    "index": 0
+                },
+                {
+                    "file_name": "https://cdn1.ozone.ru/s3/multimedia-o/6634267188.jpg",
+                    "default": false,
+                    "index": 1
+                },
+                {
+                    "file_name": "https://cdn1.ozone.ru/s3/multimedia-k/6634267184.jpg",
+                    "default": false,
+                    "index": 2
+                },
+                {
+                    "file_name": "https://cdn1.ozone.ru/s3/multimedia-m/6634267186.jpg",
+                    "default": false,
+                    "index": 3
+                },
+                {
+                    "file_name": "https://cdn1.ozone.ru/s3/multimedia-n/6634267187.jpg",
+                    "default": false,
+                    "index": 4
+                }
+            ],
+            "image_group_id": "",
+            "images360": [],
+            "pdf_list": [],
+            "attributes": [
+                {
+                    "attribute_id": 85,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 126745801,
+                            "value": "Нет бренда"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 8229,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 93338,
+                            "value": "Кошелек"
+                        },
+                        {
+                            "dictionary_value_id": 93329,
+                            "value": "Бумажник"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 9163,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 22880,
+                            "value": "Мужской"
+                        },
+                        {
+                            "dictionary_value_id": 22881,
+                            "value": "Женский"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 9048,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 0,
+                            "value": "1 компактный"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 9390,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 43241,
+                            "value": "Взрослая"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 4180,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 0,
+                            "value": "Минималистичный кошелек из коричневой кожи"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 9725,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 39116,
+                            "value": "Базовая коллекция"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 4191,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 0,
+                            "value": "Если вы ищете надежный и стильный кошелек компактного размера, который легко можно носить с собой в кармане или сумке, то данный вариант из натуральной кожи идеально подойдет для вас.<br/><br/>Кошелек закрывается на удобную кнопку, которая защищает ваши кредитные карты и наличные деньги от случайных выпадений и потерь. Кошелек достаточно маленький, чтобы поместиться в руке, но в то же время достаточно вместительный, чтобы вместить до 5 кредитных карт и отделение для денег.<br/><br/>Кошелек выполнен из натуральной кожи растительного дубления, что гарантирует красивый внешний вид на протяжение всего срока службы. Компактный размер и минималистический дизайн делают его универсальным и подходящим для любой ситуации. Он предлагает идеальную комбинацию функциональности, долговечности и простоты.<br/><br/>Если вы ищете кошелек, который сочетает в себе качество и стиль, то наверняка этот кошелек будет идеальным выбором для вас. Натуральная кожа, качественная фурнитура, отделение для кредитных карт и наличных денег сделают вашу жизнь чуточку более удобной и комфортной.<ul><li>В отделение для карт помещается до 5 ка</li><li>Отделение для купюр</li><li>Компактный размер 9 на 8,7 см</li><li>Качественная итальянская кожа растительного дубления толщиной 2 мм</li></ul>⚠ Реальный цвет изделий может незначительно отличаться от того, что вы видите на экране из-за разницы в цветопередаче устройств и разной фактуры кожи."
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 22336,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 0,
+                            "value": "картхолдер мужской; картхолдер; картхолдер мужской кожаный; картхолдер мужской натуральная кожа; кошелек мужской; кошелек мужской из натуральной кожи; мужской кошелек; кошелек для карт; кошелек мужской кожаный; кошелек мужской маленький"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 9024,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 0,
+                            "value": "БУМАЖНИК-1-Коричневый"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 10096,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 61575,
+                            "value": "коричневый"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 4389,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 90295,
+                            "value": "Россия"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 4081,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 0,
+                            "value": "2023"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 4383,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 0,
+                            "value": "42"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 5299,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 0,
+                            "value": "9.7"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 5355,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 0,
+                            "value": "8"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 6573,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 0,
+                            "value": "0.6"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 5309,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 971079747,
+                            "value": "Кожа крупного рогатого скота"
+                        },
+                        {
+                            "dictionary_value_id": 971202939,
+                            "value": "Кожа"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 5313,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 62356,
+                            "value": "Без подклада"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 5311,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 61975,
+                            "value": "Никель"
+                        },
+                        {
+                            "dictionary_value_id": 62099,
+                            "value": "Сталь"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 5344,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 60843,
+                            "value": "Кнопки"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 20926,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 971219814,
+                            "value": "1 отделение для карт"
+                        },
+                        {
+                            "dictionary_value_id": 971136686,
+                            "value": "1 отделение для купюр"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 6391,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 970941242,
+                            "value": "Без рисунка"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 6562,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 82352,
+                            "value": "Да"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 9661,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 0,
+                            "value": "1"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 4386,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 85921,
+                            "value": "Картонная коробка"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 9070,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 0,
+                            "value": "false"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 22270,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 971417783,
+                            "value": "Ручная, авторская работа"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 22392,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 0,
+                            "value": "true"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 10097,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 0,
+                            "value": "Кориченвый"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 11650,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 0,
+                            "value": "1"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 9461,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 349824502,
+                            "value": "Мужской Бумажник/кошелек"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 21688,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 971218429,
+                            "value": "Искусственная/экокожа"
+                        },
+                        {
+                            "dictionary_value_id": 971218433,
+                            "value": "Натуральная кожа"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 22074,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 0,
+                            "value": "false"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 10100,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 0,
+                            "value": "false"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 10061,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 970677102,
+                            "value": "Базовая коллекция"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 11794,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 970860783,
+                            "value": "safe"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 20900,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 0,
+                            "value": "false"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 22232,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 971398070,
+                            "value": "4202321000 - Изделия, обычно носимые в кармане или в сумке дамской или мужской, с лицевой поверхностью из листов полимерных материалов"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 4392,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 0,
+                            "value": "Кориченвый"
+                        }
+                    ]
+                },
+                {
+                    "attribute_id": 10015,
+                    "complex_id": 0,
+                    "values": [
+                        {
+                            "dictionary_value_id": 0,
+                            "value": "false"
+                        }
+                    ]
+                }
+            ],
+            "complex_attributes": [],
+            "color_image": ""
+        }
+    ]
+}

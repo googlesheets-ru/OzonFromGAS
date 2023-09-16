@@ -1,15 +1,5 @@
-/* eslint-disable */
-/* tslint:disable */
-/*
- * ---------------------------------------------------------------
- * ## THIS FILE WAS GENERATED VIA SWAGGER-TYPESCRIPT-API        ##
- * ##                                                           ##
- * ## AUTHOR: acacode                                           ##
- * ## SOURCE: https://github.com/acacode/swagger-typescript-api ##
- * ---------------------------------------------------------------
- */
-namespace Ozon_ {
-    export namespace Types {
+declare namespace Ozon_ {
+    namespace Types {
         /**
          * Language
          * <br>Язык в ответе:
@@ -21,16 +11,15 @@ namespace Ozon_ {
          * По умолчанию используется русский язык.
          * @default "DEFAULT"
          */
-        export enum CategoryLanguage {
-            DEFAULT = 'DEFAULT',
-            RU = 'RU',
-            EN = 'EN',
-            TR = 'TR',
-            ZH_HANS = 'ZH_HANS',
+        enum CategoryLanguage {
+            DEFAULT = "DEFAULT",
+            RU = "RU",
+            EN = "EN",
+            TR = "TR",
+            ZH_HANS = "ZH_HANS"
         }
-
         /** GetCategoryTree */
-        export interface CategoryGetCategoryTreeRequest {
+        interface CategoryGetCategoryTreeRequest {
             /**
              * Идентификатор категории.
              * @format int64
@@ -47,8 +36,7 @@ namespace Ozon_ {
              */
             language?: CategoryLanguage;
         }
-
-        export interface GetCategoryTreeResponseItem {
+        interface GetCategoryTreeResponseItem {
             /**
              * Идентификатор категории.
              * @format int64
@@ -59,13 +47,11 @@ namespace Ozon_ {
             /** Название категории. */
             title?: string;
         }
-
-        export interface CategoryGetCategoryTreeResponse {
+        interface CategoryGetCategoryTreeResponse {
             /** Список категорий. */
             result?: GetCategoryTreeResponseItem[];
         }
-
-        export interface ProtobufAny {
+        interface ProtobufAny {
             /** Тип протокола передачи данных. */
             typeUrl?: string;
             /**
@@ -74,8 +60,7 @@ namespace Ozon_ {
              */
             value?: string;
         }
-
-        export interface RpcStatus {
+        interface RpcStatus {
             /**
              * Код ошибки.
              * @format int32
@@ -86,7 +71,6 @@ namespace Ozon_ {
             /** Описание ошибки. */
             message?: string;
         }
-
         /**
          * Фильтр по характеристикам:
          *   - `ALL` — все характеристики,
@@ -94,12 +78,11 @@ namespace Ozon_ {
          *   - `OPTIONAL` — дополнительные.
          * @default "ALL"
          */
-        export enum CategoryAttributesRequestAttributeType {
-            ALL = 'ALL',
-            REQUIRED = 'REQUIRED',
-            OPTIONAL = 'OPTIONAL',
+        enum CategoryAttributesRequestAttributeType {
+            ALL = "ALL",
+            REQUIRED = "REQUIRED",
+            OPTIONAL = "OPTIONAL"
         }
-
         /**
          * Language
          * Язык в ответе:
@@ -110,14 +93,13 @@ namespace Ozon_ {
          * По умолчанию используется русский язык.
          * @default "DEFAULT"
          */
-        export enum Categoryv3Language {
-            DEFAULT = 'DEFAULT',
-            RU = 'RU',
-            EN = 'EN',
-            TR = 'TR',
+        enum Categoryv3Language {
+            DEFAULT = "DEFAULT",
+            RU = "RU",
+            EN = "EN",
+            TR = "TR"
         }
-
-        export interface Categoryv3CategoryAttributesRequest {
+        interface Categoryv3CategoryAttributesRequest {
             /**
              * Фильтр по характеристикам:
              *   - `REQUIRED` — обязательная,
@@ -136,8 +118,7 @@ namespace Ozon_ {
              */
             language?: Categoryv3Language;
         }
-
-        export interface CategoryAttributesResponseAttribute {
+        interface CategoryAttributesResponseAttribute {
             /**
              * Признак, что значения словарного атрибута зависят от категории:
              * - `true` — у атрибута разные значения для каждой категории.
@@ -190,8 +171,7 @@ namespace Ozon_ {
             /** Тип характеристики. */
             type?: string;
         }
-
-        export interface CategoryAttributesResponseCategoryAttributes {
+        interface CategoryAttributesResponseCategoryAttributes {
             /** Массив характеристик товара. */
             attributes?: CategoryAttributesResponseAttribute[];
             /**
@@ -200,12 +180,10 @@ namespace Ozon_ {
              */
             category_id?: number;
         }
-
-        export interface Categoryv3CategoryAttributesResponse {
+        interface Categoryv3CategoryAttributesResponse {
             /** Результат запроса. */
             result?: CategoryAttributesResponseCategoryAttributes[];
         }
-
         /**
          * Language
          * <br>Язык в ответе:
@@ -215,13 +193,12 @@ namespace Ozon_ {
          * По умолчанию используется русский язык.
          * @default "DEFAULT"
          */
-        export enum Categoryv2Language {
-            DEFAULT = 'DEFAULT',
-            RU = 'RU',
-            EN = 'EN',
+        enum Categoryv2Language {
+            DEFAULT = "DEFAULT",
+            RU = "RU",
+            EN = "EN"
         }
-
-        export interface Categoryv2DictionaryValueBatchRequest {
+        interface Categoryv2DictionaryValueBatchRequest {
             /**
              * Идентификатор характеристики.
              * @format int64
@@ -252,8 +229,7 @@ namespace Ozon_ {
              */
             limit?: number;
         }
-
-        export interface Categoryv2DictionaryValueBatchResponseDictionaryValue {
+        interface Categoryv2DictionaryValueBatchResponseDictionaryValue {
             /** @format int64 */
             id?: number;
             info?: string;
@@ -261,13 +237,11 @@ namespace Ozon_ {
             /** Значение характеристики товара. */
             value?: string;
         }
-
-        export interface Categoryv2DictionaryValueBatchResponse {
+        interface Categoryv2DictionaryValueBatchResponse {
             has_next?: boolean;
             result?: Categoryv2DictionaryValueBatchResponseDictionaryValue[];
         }
-
-        export interface Productv2ImportProductsRequestDictionaryValue {
+        interface Productv2ImportProductsRequestDictionaryValue {
             /**
              * Идентификатор справочника.
              * @format int64
@@ -276,8 +250,7 @@ namespace Ozon_ {
             /** Значение из справочника. */
             value?: string;
         }
-
-        export interface Productv2ImportProductsRequestAttribute {
+        interface Productv2ImportProductsRequestAttribute {
             /**
              * Идентификатор характеристики, которая поддерживает вложенные свойства. Например, у характеристики «Процессор» есть вложенные характеристики «Производитель», «L2 Cache» и другие. У каждой из вложенных характеристик может быть несколько вариантов значений.
              * @format int64
@@ -291,21 +264,18 @@ namespace Ozon_ {
             /** Массив вложенных значений характеристики. */
             values?: Productv2ImportProductsRequestDictionaryValue[];
         }
-
-        export interface Productv2ImportProductsRequestComplexAttribute {
+        interface Productv2ImportProductsRequestComplexAttribute {
             /** Массив с характеристиками товара. Характеристики отличаются для разных категорий — их можно посмотреть в [Базе знаний продавца](https://seller-edu.ozon.ru/) или через [API](https://docs.ozon.ru/api/seller/). */
             attributes?: Productv2ImportProductsRequestAttribute[];
         }
-
         /**
          * Тип сервиса. Передайте одно из значений в верхнем регистре:
          *   - `IS_CODE_SERVICE`,
          *   - `IS_NO_CODE_SERVICE`.
          * @default "IS_CODE_SERVICE"
          */
-        export type V2ServiceType = string;
-
-        export interface ImportProductsRequestPdfList {
+        type V2ServiceType = string;
+        interface ImportProductsRequestPdfList {
             /**
              * Индекс документа в хранилище, который задаёт порядок.
              * @format int64
@@ -316,8 +286,7 @@ namespace Ozon_ {
             /** Адрес файла. */
             src_url?: string;
         }
-
-        export interface Productv2ImportProductsRequestItem {
+        interface Productv2ImportProductsRequestItem {
             /** Массив с характеристиками товара. Характеристики отличаются для разных категорий — их можно посмотреть в [Базе знаний продавца](https://seller-edu.ozon.ru/) или через [API](https://docs.ozon.ru/api/seller/). */
             attributes: Productv2ImportProductsRequestAttribute[];
             /** Штрихкод товара. */
@@ -443,35 +412,30 @@ namespace Ozon_ {
              */
             width: number;
         }
-
-        export interface Productv2ImportProductsRequest {
+        interface Productv2ImportProductsRequest {
             /** Массив данных. */
             items?: Productv2ImportProductsRequestItem[];
         }
-
         /** Результаты запроса. */
-        export interface Productv2ImportProductsResponseResult {
+        interface Productv2ImportProductsResponseResult {
             /**
              * Номер задания на загрузку товаров.
              * @format int64
              */
             task_id?: number;
         }
-
-        export interface Productv2ImportProductsResponse {
+        interface Productv2ImportProductsResponse {
             /** Результаты запроса. */
             result?: Productv2ImportProductsResponseResult;
         }
-
-        export interface ProductGetImportProductsInfoRequest {
+        interface ProductGetImportProductsInfoRequest {
             /**
              * Код задачи на импорт товаров.
              * @format int64
              */
             task_id?: number;
         }
-
-        export interface V1ItemError {
+        interface V1ItemError {
             /** Код ошибки. */
             code?: string;
             /** Техническое описание ошибки. */
@@ -494,8 +458,7 @@ namespace Ozon_ {
             /** Дополнительные поля для описания ошибки. */
             optional_description_elements?: Record<string, string>;
         }
-
-        export interface GetImportProductsInfoResponseResultItem {
+        interface GetImportProductsInfoResponseResultItem {
             /**
              * Идентификатор товара в системе продавца — артикул.
              *
@@ -518,8 +481,7 @@ namespace Ozon_ {
             /** Массив ошибок. */
             errors?: V1ItemError[];
         }
-
-        export interface ProductGetImportProductsInfoResponseResult {
+        interface ProductGetImportProductsInfoResponseResult {
             /** Информация о товарах. */
             items?: GetImportProductsInfoResponseResultItem[];
             /**
@@ -528,12 +490,10 @@ namespace Ozon_ {
              */
             total?: number;
         }
-
-        export interface ProductGetImportProductsInfoResponse {
+        interface ProductGetImportProductsInfoResponse {
             result?: ProductGetImportProductsInfoResponseResult;
         }
-
-        export interface ProductImportProductsBySKURequestItem {
+        interface ProductImportProductsBySKURequestItem {
             /** Название товара. До 500 символов. */
             name?: string;
             /**
@@ -575,13 +535,11 @@ namespace Ozon_ {
              */
             currency_code?: string;
         }
-
-        export interface ProductImportProductsBySKURequest {
+        interface ProductImportProductsBySKURequest {
             /** Информация о товарах. */
             items?: ProductImportProductsBySKURequestItem[];
         }
-
-        export interface ProductImportProductsBySKUResponseResult {
+        interface ProductImportProductsBySKUResponseResult {
             /**
              * Код задачи на импорт товаров.
              * @format int64
@@ -590,12 +548,10 @@ namespace Ozon_ {
             /** Список идентификаторов товаров. */
             unmatched_sku_list?: number[];
         }
-
-        export interface ProductImportProductsBySKUResponse {
+        interface ProductImportProductsBySKUResponse {
             result?: ProductImportProductsBySKUResponseResult;
         }
-
-        export interface Productv1ProductImportPicturesRequest {
+        interface Productv1ProductImportPicturesRequest {
             /** Маркетинговый цвет. */
             color_image?: string;
             /**
@@ -616,8 +572,7 @@ namespace Ozon_ {
              */
             product_id?: number;
         }
-
-        export interface ProductProductInfoPicturesResponsePicture {
+        interface ProductProductInfoPicturesResponsePicture {
             /** Признак, что картинка — изображение 360. */
             is_360?: boolean;
             /** Признак, что картинка — образец цвета. */
@@ -643,22 +598,18 @@ namespace Ozon_ {
             /** Адрес ссылки на изображение в общедоступном облачном хранилище. Формат изображения по ссылке — JPG или PNG. */
             url?: string;
         }
-
         /** Результат работы метода. */
-        export interface Productv1ProductInfoPicturesResponseResult {
+        interface Productv1ProductInfoPicturesResponseResult {
             pictures?: ProductProductInfoPicturesResponsePicture[];
         }
-
-        export interface Productv1ProductInfoPicturesResponse {
+        interface Productv1ProductInfoPicturesResponse {
             /** Результат работы метода. */
             result?: Productv1ProductInfoPicturesResponseResult;
         }
-
-        export interface Productv1ProductInfoPicturesRequest {
+        interface Productv1ProductInfoPicturesRequest {
             /** Список идентификаторов товаров. */
             product_id?: string[];
         }
-
         /**
          * Фильтр по видимости товара:
          *   - `ALL` — все товары, кроме архивных.
@@ -689,37 +640,36 @@ namespace Ozon_ {
          *   - `MODERATION_BLOCK` — товары, для которых заблокирована модерация.
          * @default "ALL"
          */
-        export enum Productv2GetProductListRequestFilterFilterVisibility {
-            ALL = 'ALL',
-            VISIBLE = 'VISIBLE',
-            INVISIBLE = 'INVISIBLE',
-            EMPTY_STOCK = 'EMPTY_STOCK',
-            NOT_MODERATED = 'NOT_MODERATED',
-            MODERATED = 'MODERATED',
-            DISABLED = 'DISABLED',
-            STATE_FAILED = 'STATE_FAILED',
-            READY_TO_SUPPLY = 'READY_TO_SUPPLY',
-            VALIDATION_STATE_PENDING = 'VALIDATION_STATE_PENDING',
-            VALIDATION_STATE_FAIL = 'VALIDATION_STATE_FAIL',
-            VALIDATION_STATE_SUCCESS = 'VALIDATION_STATE_SUCCESS',
-            TO_SUPPLY = 'TO_SUPPLY',
-            IN_SALE = 'IN_SALE',
-            REMOVED_FROM_SALE = 'REMOVED_FROM_SALE',
-            BANNED = 'BANNED',
-            OVERPRICED = 'OVERPRICED',
-            CRITICALLY_OVERPRICED = 'CRITICALLY_OVERPRICED',
-            EMPTY_BARCODE = 'EMPTY_BARCODE',
-            BARCODE_EXISTS = 'BARCODE_EXISTS',
-            QUARANTINE = 'QUARANTINE',
-            ARCHIVED = 'ARCHIVED',
-            OVERPRICED_WITH_STOCK = 'OVERPRICED_WITH_STOCK',
-            PARTIAL_APPROVED = 'PARTIAL_APPROVED',
-            IMAGE_ABSENT = 'IMAGE_ABSENT',
-            MODERATION_BLOCK = 'MODERATION_BLOCK',
+        enum Productv2GetProductListRequestFilterFilterVisibility {
+            ALL = "ALL",
+            VISIBLE = "VISIBLE",
+            INVISIBLE = "INVISIBLE",
+            EMPTY_STOCK = "EMPTY_STOCK",
+            NOT_MODERATED = "NOT_MODERATED",
+            MODERATED = "MODERATED",
+            DISABLED = "DISABLED",
+            STATE_FAILED = "STATE_FAILED",
+            READY_TO_SUPPLY = "READY_TO_SUPPLY",
+            VALIDATION_STATE_PENDING = "VALIDATION_STATE_PENDING",
+            VALIDATION_STATE_FAIL = "VALIDATION_STATE_FAIL",
+            VALIDATION_STATE_SUCCESS = "VALIDATION_STATE_SUCCESS",
+            TO_SUPPLY = "TO_SUPPLY",
+            IN_SALE = "IN_SALE",
+            REMOVED_FROM_SALE = "REMOVED_FROM_SALE",
+            BANNED = "BANNED",
+            OVERPRICED = "OVERPRICED",
+            CRITICALLY_OVERPRICED = "CRITICALLY_OVERPRICED",
+            EMPTY_BARCODE = "EMPTY_BARCODE",
+            BARCODE_EXISTS = "BARCODE_EXISTS",
+            QUARANTINE = "QUARANTINE",
+            ARCHIVED = "ARCHIVED",
+            OVERPRICED_WITH_STOCK = "OVERPRICED_WITH_STOCK",
+            PARTIAL_APPROVED = "PARTIAL_APPROVED",
+            IMAGE_ABSENT = "IMAGE_ABSENT",
+            MODERATION_BLOCK = "MODERATION_BLOCK"
         }
-
         /** Фильтр по товарам. */
-        export interface Productv2GetProductListRequestFilter {
+        interface Productv2GetProductListRequestFilter {
             /** Фильтр по параметру `offer_id`. Можно передавать список значений. */
             offer_id?: string[];
             /** Фильтр по параметру `product_id`. Можно передавать список значений. */
@@ -755,8 +705,7 @@ namespace Ozon_ {
              */
             visibility?: Productv2GetProductListRequestFilterFilterVisibility;
         }
-
-        export interface Productv2GetProductListRequest {
+        interface Productv2GetProductListRequest {
             /** Фильтр по товарам. */
             filter?: Productv2GetProductListRequestFilter;
             /**
@@ -771,8 +720,7 @@ namespace Ozon_ {
              */
             limit?: number;
         }
-
-        export interface Productv2GetProductListResponseItem_ {
+        interface Productv2GetProductListResponseItem_ {
             /** Идентификатор товара в системе продавца — артикул. */
             offer_id?: string;
             /**
@@ -781,9 +729,8 @@ namespace Ozon_ {
              */
             product_id?: number;
         }
-
         /** Результат. */
-        export interface Productv2GetProductListResponseResult {
+        interface Productv2GetProductListResponseResult {
             /** Список товаров. */
             items?: Ozon_.Types.Productv2GetProductListResponseItem[];
             /**
@@ -798,13 +745,11 @@ namespace Ozon_ {
              */
             total?: number;
         }
-
-        export interface Productv2GetProductListResponse {
+        interface Productv2GetProductListResponse {
             /** Результат. */
             result?: Productv2GetProductListResponseResult;
         }
-
-        export interface Productv2GetProductInfoRequest {
+        interface Productv2GetProductInfoRequest {
             /** Идентификатор товара в системе продавца — артикул. */
             offer_id?: string;
             /**
@@ -818,8 +763,7 @@ namespace Ozon_ {
              */
             sku?: number;
         }
-
-        export interface Productv2GetProductInfoResponseCommissions {
+        interface Productv2GetProductInfoResponseCommissions {
             /**
              * Стоимость доставки.
              * @format double
@@ -848,9 +792,8 @@ namespace Ozon_ {
              */
             value?: number;
         }
-
         /** Остатки уценённого товара на складе Ozon. */
-        export interface Productv2GetProductInfoDiscountedStocks {
+        interface Productv2GetProductInfoDiscountedStocks {
             /**
              * Количество товара, ожидаемого при поставке.
              * @format int32
@@ -867,9 +810,8 @@ namespace Ozon_ {
              */
             reserved?: number;
         }
-
         /** Цена товара у конкурентов на других площадках. */
-        export interface PriceIndexesIndexDataExternal {
+        interface PriceIndexesIndexDataExternal {
             /** Минимальная цена товара у конкурентов на другой площадке. */
             minimal_price?: string;
             /** Валюта цены. */
@@ -880,9 +822,8 @@ namespace Ozon_ {
              */
             price_index_value?: number;
         }
-
         /** Цена товара у конкурентов на Ozon. */
-        export interface PriceIndexesIndexDataOzon {
+        interface PriceIndexesIndexDataOzon {
             /** Минимальная цена товара у конкурентов на Ozon. */
             minimal_price?: string;
             /** Валюта цены. */
@@ -893,9 +834,8 @@ namespace Ozon_ {
              */
             price_index_value?: number;
         }
-
         /** Цена вашего товара на других площадках. */
-        export interface PriceIndexesIndexDataSelf {
+        interface PriceIndexesIndexDataSelf {
             /** Минимальная цена вашего товара на других площадках. */
             minimal_price?: string;
             /** Валюта цены. */
@@ -906,13 +846,12 @@ namespace Ozon_ {
              */
             price_index_value?: number;
         }
-
         /**
          * Ценовые индексы товара.
          *
          * Подробнее в [Базе знаний продавца](https://docs.ozon.ru/global/launch/quality-assurance/rating).
          */
-        export interface CommonPriceIndexes {
+        interface CommonPriceIndexes {
             /** Цена товара у конкурентов на других площадках. */
             external_index_data?: PriceIndexesIndexDataExternal;
             /** Цена товара у конкурентов на Ozon. */
@@ -928,8 +867,7 @@ namespace Ozon_ {
             /** Цена вашего товара на других площадках. */
             self_marketplaces_index_data?: PriceIndexesIndexDataSelf;
         }
-
-        export interface V2ItemError {
+        interface V2ItemError {
             /** Код ошибки. */
             code?: string;
             /** Состояние товара, в котором произошла ошибка. */
@@ -950,9 +888,8 @@ namespace Ozon_ {
             /** Дополнительные поля для описания ошибки. */
             optional_description_elements?: Record<string, string>;
         }
-
         /** Описание состояния товара. */
-        export interface Productv2Status {
+        interface Productv2Status {
             /** Состояние товара. */
             state?: string;
             /** Состояние товара, на переходе в которое произошла ошибка. */
@@ -981,8 +918,7 @@ namespace Ozon_ {
              */
             state_updated_at?: string;
         }
-
-        export interface Productv2GetProductInfoResponseSource {
+        interface Productv2GetProductInfoResponseSource {
             /** Признак, что источник учитывается при расчете рыночного значения. */
             is_enabled?: boolean;
             /**
@@ -993,9 +929,8 @@ namespace Ozon_ {
             /** Ссылка на источник. */
             source?: string;
         }
-
         /** Информация об остатках товара. */
-        export interface Productv2GetProductInfoResponseStock {
+        interface Productv2GetProductInfoResponseStock {
             /**
              * Ожидается поставка.
              * @format int32
@@ -1012,9 +947,8 @@ namespace Ozon_ {
              */
             reserved?: number;
         }
-
         /** Настройки видимости товара. */
-        export interface Productv2GetProductInfoResponseVisibilityDetails {
+        interface Productv2GetProductInfoResponseVisibilityDetails {
             /** Если активный товар — `true`. */
             active_product?: boolean;
             /** Если установлена цена — `true`. */
@@ -1022,9 +956,8 @@ namespace Ozon_ {
             /** Если есть остаток на складах — `true`. */
             has_stock?: boolean;
         }
-
         /** Результаты запроса. */
-        export interface Productv2GetProductInfoResponseResult {
+        interface Productv2GetProductInfoResponseResult {
             /** Штрихкод. */
             barcode?: string;
             /** Все штрихкоды товара. */
@@ -1159,18 +1092,15 @@ namespace Ozon_ {
              */
             volume_weight?: number;
         }
-
-        export interface Productv2GetProductInfoResponse {
+        interface Productv2GetProductInfoResponse {
             /** Результаты запроса. */
             result?: Productv2GetProductInfoResponseResult;
         }
-
-        export interface V1GetProductRatingBySkuRequest {
+        interface V1GetProductRatingBySkuRequest {
             /** Список SKU товаров, для которых нужно вернуть контент-рейтинг. */
             skus?: string[];
         }
-
-        export interface GetProductRatingBySkuResponseRatingCondition {
+        interface GetProductRatingBySkuResponseRatingCondition {
             /**
              * Количество баллов контент-рейтинга, которое даёт выполнение условия.
              * @format float
@@ -1183,8 +1113,7 @@ namespace Ozon_ {
             /** Идентификатор условия. */
             key?: string;
         }
-
-        export interface GetProductRatingBySkuResponseRatingImproveAttribute {
+        interface GetProductRatingBySkuResponseRatingImproveAttribute {
             /**
              * Идентификатор атрибута.
              * @format int64
@@ -1193,8 +1122,7 @@ namespace Ozon_ {
             /** Название атрибута. */
             name?: string;
         }
-
-        export interface GetProductRatingBySkuResponseRatingGroup {
+        interface GetProductRatingBySkuResponseRatingGroup {
             /** Список условий, увеличивающих контент-рейтинг товара. */
             conditions?: GetProductRatingBySkuResponseRatingCondition[];
             /** Количество атрибутов, которые нужно заполнить для получения максимального балла в этой группе характеристик. */
@@ -1216,8 +1144,7 @@ namespace Ozon_ {
              */
             weight?: number;
         }
-
-        export interface GetProductRatingBySkuResponseProductRating {
+        interface GetProductRatingBySkuResponseProductRating {
             /**
              * Идентификатор товара на Ozon.
              * @format int64
@@ -1231,13 +1158,11 @@ namespace Ozon_ {
             /** Группы характеристик, из которых складывается контент-рейтинг. */
             groups?: GetProductRatingBySkuResponseRatingGroup[];
         }
-
-        export interface V1GetProductRatingBySkuResponse {
+        interface V1GetProductRatingBySkuResponse {
             /** Контент-рейтинг товаров. */
             products?: GetProductRatingBySkuResponseProductRating[];
         }
-
-        export interface Productv2GetProductInfoListRequest {
+        interface Productv2GetProductInfoListRequest {
             /** Идентификатор товара в системе продавца — артикул. Максимальное количество товаров — 1000. */
             offer_id?: string[];
             /** Идентификатор товара. */
@@ -1245,8 +1170,7 @@ namespace Ozon_ {
             /** Идентификатор товара в системе Ozon — SKU. */
             sku?: number[];
         }
-
-        export interface Productv2GetProductInfoListResponseSource {
+        interface Productv2GetProductInfoListResponseSource {
             /** Флаг, что источник учитывается при расчете рыночного значения. */
             is_enabled?: boolean;
             /**
@@ -1257,9 +1181,8 @@ namespace Ozon_ {
             /** Ссылка на источник. */
             source?: string;
         }
-
         /** Информация об остатках товара. */
-        export interface Productv2GetProductInfoListResponseStock {
+        interface Productv2GetProductInfoListResponseStock {
             /**
              * Ожидается поставка.
              * @format int32
@@ -1276,8 +1199,7 @@ namespace Ozon_ {
              */
             reserved?: number;
         }
-
-        export interface GetProductInfoListResponseReason {
+        interface GetProductInfoListResponseReason {
             /** Описание причины. */
             description?: string;
             /**
@@ -1286,14 +1208,12 @@ namespace Ozon_ {
              */
             id?: number;
         }
-
-        export interface GetProductInfoListResponseReasons {
+        interface GetProductInfoListResponseReasons {
             /** Причины скрытия товара. */
             reasons?: GetProductInfoListResponseReason[];
         }
-
         /** Настройки видимости товара. */
-        export interface Productv2GetProductInfoListResponseVisibilityDetails {
+        interface Productv2GetProductInfoListResponseVisibilityDetails {
             /** Если активный товар — `true`. */
             active_product?: boolean;
             /** Если установлена цена — `true`. */
@@ -1303,8 +1223,7 @@ namespace Ozon_ {
             /** Причина, почему товар скрыт. */
             reasons?: Record<string, GetProductInfoListResponseReasons>;
         }
-
-        export interface Productv2GetProductInfoListResponseItem {
+        interface Productv2GetProductInfoListResponseItem {
             /** Штрихкод. */
             barcode?: string;
             /** Все штрихкоды товара. */
@@ -1419,20 +1338,17 @@ namespace Ozon_ {
             /** Если товар выставлен на продажу — `true`. */
             visible?: boolean;
         }
-
         /** Результаты запроса. */
-        export interface Productv2GetProductInfoListResponseResult {
+        interface Productv2GetProductInfoListResponseResult {
             /** Массив данных. */
             items?: Productv2GetProductInfoListResponseItem[];
         }
-
-        export interface Productv2GetProductInfoListResponse {
+        interface Productv2GetProductInfoListResponse {
             /** Результаты запроса. */
             result?: Productv2GetProductInfoListResponseResult;
         }
-
         /** Фильтр по товарам. */
-        export interface Productv3Filter {
+        interface Productv3Filter {
             /** Фильтр по параметру `offer_id`. Можно передавать список значений. */
             offer_id?: string[];
             /** Фильтр по параметру `product_id`. Можно передавать список значений. */
@@ -1468,8 +1384,7 @@ namespace Ozon_ {
              */
             visibility?: Productv2GetProductListRequestFilterFilterVisibility;
         }
-
-        export interface Productv3GetProductAttributesV3Request {
+        interface Productv3GetProductAttributesV3Request {
             /** Фильтр по товарам. */
             filter?: Productv3Filter;
             /**
@@ -1488,8 +1403,7 @@ namespace Ozon_ {
             /** Направление сортировки. */
             sort_dir?: string;
         }
-
-        export interface ProductGetProductAttributesV3ResponseDictionaryValue {
+        interface ProductGetProductAttributesV3ResponseDictionaryValue {
             /**
              * Идентификатор характеристики в словаре.
              * @format int64
@@ -1498,8 +1412,7 @@ namespace Ozon_ {
             /** Значение характеристики товара. */
             value?: string;
         }
-
-        export interface ProductGetProductAttributesV3ResponseAttribute {
+        interface ProductGetProductAttributesV3ResponseAttribute {
             /**
              * Идентификатор характеристики.
              * @format int64
@@ -1513,8 +1426,7 @@ namespace Ozon_ {
             /** Массив значений характеристик. */
             values?: ProductGetProductAttributesV3ResponseDictionaryValue[];
         }
-
-        export interface GetProductAttributesV3ResponseDictionaryValue {
+        interface GetProductAttributesV3ResponseDictionaryValue {
             /**
              * Идентификатор характеристики в словаре.
              * @format int64
@@ -1523,8 +1435,7 @@ namespace Ozon_ {
             /** Значение характеристики товара. */
             value?: string;
         }
-
-        export interface GetProductAttributesV3ResponseAttribute {
+        interface GetProductAttributesV3ResponseAttribute {
             /**
              * Идентификатор характеристики.
              * @format int64
@@ -1538,26 +1449,22 @@ namespace Ozon_ {
             /** Массив значений характеристик. */
             values?: GetProductAttributesV3ResponseDictionaryValue[];
         }
-
-        export interface ProductGetProductAttributesV3ResponseComplexAttribute {
+        interface ProductGetProductAttributesV3ResponseComplexAttribute {
             /** Массив характеристик товара. */
             attributes?: GetProductAttributesV3ResponseAttribute[];
         }
-
-        export interface GetProductAttributesResponseImage {
+        interface GetProductAttributesResponseImage {
             default?: boolean;
             file_name?: string;
             /** @format int64 */
             index?: number;
         }
-
-        export interface GetProductAttributesResponseImage360 {
+        interface GetProductAttributesResponseImage360 {
             file_name?: string;
             /** @format int64 */
             index?: number;
         }
-
-        export interface GetProductAttributesResponsePdf {
+        interface GetProductAttributesResponsePdf {
             /** Путь к PDF-файлу. */
             file_name?: string;
             /**
@@ -1568,8 +1475,7 @@ namespace Ozon_ {
             /** Название файла. */
             name?: string;
         }
-
-        export interface Productv3GetProductAttributesV3ResponseResult {
+        interface Productv3GetProductAttributesV3ResponseResult {
             /** Массив характеристик товара. */
             attributes?: ProductGetProductAttributesV3ResponseAttribute[];
             /** Штрихкод. */
@@ -1630,8 +1536,7 @@ namespace Ozon_ {
              */
             width?: number;
         }
-
-        export interface Productv3GetProductAttributesV3Response {
+        interface Productv3GetProductAttributesV3Response {
             /** Результаты запроса. */
             result?: Productv3GetProductAttributesV3ResponseResult[];
             /**
@@ -1646,8 +1551,7 @@ namespace Ozon_ {
              */
             total?: string;
         }
-
-        export interface ProductGetProductInfoDescriptionRequest {
+        interface ProductGetProductInfoDescriptionRequest {
             /** Идентификатор товара в системе продавца — артикул. */
             offer_id?: string;
             /**
@@ -1656,8 +1560,7 @@ namespace Ozon_ {
              */
             product_id?: number;
         }
-
-        export interface ProductGetProductInfoDescriptionResponseProduct {
+        interface ProductGetProductInfoDescriptionResponseProduct {
             /** Описание. */
             description?: string;
             /**
@@ -1670,14 +1573,11 @@ namespace Ozon_ {
             /** Идентификатор товара в системе продавца — артикул. */
             offer_id?: string;
         }
-
-        export interface ProductGetProductInfoDescriptionResponse {
+        interface ProductGetProductInfoDescriptionResponse {
             result?: ProductGetProductInfoDescriptionResponseProduct;
         }
-
-        export type Productv2GetProductInfoLimitV2Request = object;
-
-        export interface Productv2GetProductInfoLimitV2ResponseResult {
+        type Productv2GetProductInfoLimitV2Request = object;
+        interface Productv2GetProductInfoLimitV2ResponseResult {
             /**
              * Сколько изменений можно внести до сброса счётчика за текущие сутки.
              * @format int64
@@ -1694,15 +1594,12 @@ namespace Ozon_ {
              */
             value?: number;
         }
-
-        export interface Productv2GetProductInfoLimitV2Response {
+        interface Productv2GetProductInfoLimitV2Response {
             result?: Productv2GetProductInfoLimitV2ResponseResult;
         }
-
-        export type V1Empty = object;
-
+        type V1Empty = object;
         /** Суточные лимиты. */
-        export interface GetProductInfoLimitResponseDailyQuota {
+        interface GetProductInfoLimitResponseDailyQuota {
             /**
              * Общий суточный лимит на создание и обновление товаров.
              * @format int64
@@ -1729,9 +1626,8 @@ namespace Ozon_ {
              */
             reset_at?: string;
         }
-
         /** Лимиты на ассортимент. */
-        export interface GetProductInfoLimitResponseTotalQuota {
+        interface GetProductInfoLimitResponseTotalQuota {
             /**
              * Сколько всего товаров можно создать. Если значение `-1`, ограничений нет.
              * @format int64
@@ -1743,22 +1639,19 @@ namespace Ozon_ {
              */
             remaining_value?: number;
         }
-
         /** Результат работы метода. */
-        export interface V3GetProductInfoLimitResponseResult {
+        interface V3GetProductInfoLimitResponseResult {
             /** Суточные лимиты. */
             daily_quota?: GetProductInfoLimitResponseDailyQuota;
             /** Лимиты на ассортимент. */
             total_quota?: GetProductInfoLimitResponseTotalQuota;
         }
-
-        export interface V3GetProductInfoLimitResponse {
+        interface V3GetProductInfoLimitResponse {
             /** Результат работы метода. */
             result?: V3GetProductInfoLimitResponseResult;
         }
-
         /** Суточный лимит на создание товаров. */
-        export interface GetUploadQuotaResponseDailyCreate {
+        interface GetUploadQuotaResponseDailyCreate {
             /**
              * Сколько всего товаров можно создать в сутки.
              * @format int64
@@ -1775,9 +1668,8 @@ namespace Ozon_ {
              */
             usage?: number;
         }
-
         /** Суточный лимит на обновление товаров. */
-        export interface GetUploadQuotaResponseDailyUpdate {
+        interface GetUploadQuotaResponseDailyUpdate {
             /**
              * Сколько всего товаров можно обновить в сутки.
              * @format int64
@@ -1794,9 +1686,8 @@ namespace Ozon_ {
              */
             usage?: number;
         }
-
         /** Лимит на ассортимент. */
-        export interface GetUploadQuotaResponseTotal {
+        interface GetUploadQuotaResponseTotal {
             /**
              * Сколько всего товаров можно создать в личном кабинете.
              * @format int64
@@ -1808,8 +1699,7 @@ namespace Ozon_ {
              */
             usage?: number;
         }
-
-        export interface V4GetUploadQuotaResponse {
+        interface V4GetUploadQuotaResponse {
             /** Суточный лимит на создание товаров. */
             daily_create?: GetUploadQuotaResponseDailyCreate;
             /** Суточный лимит на обновление товаров. */
@@ -1817,8 +1707,7 @@ namespace Ozon_ {
             /** Лимит на ассортимент. */
             total?: GetUploadQuotaResponseTotal;
         }
-
-        export interface ProductUpdateOfferIdRequestUpdateOfferId {
+        interface ProductUpdateOfferIdRequestUpdateOfferId {
             /**
              * Новый артикул.
              *
@@ -1828,50 +1717,41 @@ namespace Ozon_ {
             /** Старый артикул. */
             offer_id?: string;
         }
-
-        export interface V1ProductUpdateOfferIdRequest {
+        interface V1ProductUpdateOfferIdRequest {
             /** Список пар с новыми и старыми значениями артикулов. */
             update_offer_id?: ProductUpdateOfferIdRequestUpdateOfferId[];
         }
-
-        export interface V1ProductUpdateOfferIdResponseError {
+        interface V1ProductUpdateOfferIdResponseError {
             /** Сообщение об ошибке. */
             message?: string;
             /** Артикул товара, который не получилось изменить. */
             offer_id?: string;
         }
-
-        export interface V1ProductUpdateOfferIdResponse {
+        interface V1ProductUpdateOfferIdResponse {
             /** Список ошибок. */
             errors?: V1ProductUpdateOfferIdResponseError[];
         }
-
-        export interface ProductProductArchiveRequest {
+        interface ProductProductArchiveRequest {
             /** Идентификатор товара. */
             product_id?: number[];
         }
-
-        export interface ProductBooleanResponse {
+        interface ProductBooleanResponse {
             /** Результат обработки запроса. `true`, если запрос выполнен без ошибок. */
             result?: boolean;
         }
-
-        export interface ProductProductUnarchiveRequest {
+        interface ProductProductUnarchiveRequest {
             /** Идентификатор товара. */
             product_id?: number[];
         }
-
-        export interface DeleteProductsRequestProduct {
+        interface DeleteProductsRequestProduct {
             /** Идентификатор товара в системе продавца — артикул. */
             offer_id?: string;
         }
-
-        export interface Productv2DeleteProductsRequest {
+        interface Productv2DeleteProductsRequest {
             /** Идентификатор товара. */
             products?: DeleteProductsRequestProduct[];
         }
-
-        export interface DeleteProductsResponseDeleteStatus {
+        interface DeleteProductsResponseDeleteStatus {
             /** Причина ошибки, которая возникла при обработке запроса. */
             error?: string;
             /** Если запрос выполнен без ошибок и товары удалены — `true`. */
@@ -1879,21 +1759,18 @@ namespace Ozon_ {
             /** Идентификатор товара в системе продавца — артикул. */
             offer_id?: string;
         }
-
-        export interface Productv2DeleteProductsResponse {
+        interface Productv2DeleteProductsResponse {
             /** Статус обработки запроса. */
             status?: DeleteProductsResponseDeleteStatus[];
         }
-
         /** Фильтр. Чтобы посмотреть все геоограничения, оставьте `names` пустым, а в `only_visible` передайте `true`. */
-        export interface V2GetGeoRestrictionsByFilterRequestFilter {
+        interface V2GetGeoRestrictionsByFilterRequestFilter {
             /** Список с названиями городов. */
             names?: string[];
             /** Видимость значения. Рекомендуем всегда передавать `true` в этом параметре. */
             only_visible?: boolean;
         }
-
-        export interface Productv2GetGeoRestrictionsByFilterRequest {
+        interface Productv2GetGeoRestrictionsByFilterRequest {
             /** Фильтр. Чтобы посмотреть все геоограничения, оставьте `names` пустым, а в `only_visible` передайте `true`. */
             filter?: V2GetGeoRestrictionsByFilterRequestFilter;
             /**
@@ -1909,9 +1786,8 @@ namespace Ozon_ {
              */
             limit?: number;
         }
-
         /** Список геоограничений. */
-        export interface GetGeoRestrictionsByFilterResponseGeoRestriction {
+        interface GetGeoRestrictionsByFilterResponseGeoRestriction {
             /** Идентификатор геоограничения. */
             id?: string;
             /** Видимость элемента. */
@@ -1926,12 +1802,10 @@ namespace Ozon_ {
              */
             order_number?: number;
         }
-
-        export interface Productv2GetGeoRestrictionsByFilterResponse {
+        interface Productv2GetGeoRestrictionsByFilterResponse {
             restrictions?: GetGeoRestrictionsByFilterResponseGeoRestriction[];
         }
-
-        export interface V1ProductUploadDigitalCodesRequest {
+        interface V1ProductUploadDigitalCodesRequest {
             /** Цифровые коды активации. */
             digital_codes?: string[];
             /**
@@ -1940,28 +1814,24 @@ namespace Ozon_ {
              */
             product_id?: number;
         }
-
-        export interface V1ProductUploadDigitalCodesResponseResult {
+        interface V1ProductUploadDigitalCodesResponseResult {
             /**
              * Код задачи на загрузку кодов.
              * @format int64
              */
             task_id?: number;
         }
-
-        export interface V1ProductUploadDigitalCodesResponse {
+        interface V1ProductUploadDigitalCodesResponse {
             result?: V1ProductUploadDigitalCodesResponseResult;
         }
-
-        export interface V1ProductUploadDigitalCodesRequestInfo {
+        interface V1ProductUploadDigitalCodesRequestInfo {
             /**
              * Идентификатор задачи на загрузку кодов активации, полученный в ответе метода [/v1/product/upload_digital_codes](#operation/ProductAPI_UploadDigitalCode).
              * @format int64
              */
             task_id?: number;
         }
-
-        export interface V1ProductUploadDigitalCodesResponseInfoResult {
+        interface V1ProductUploadDigitalCodesResponseInfoResult {
             /**
              * Статус загрузки:
              *   - `pending` — товар в очереди на обработку.
@@ -1970,17 +1840,14 @@ namespace Ozon_ {
              */
             status?: string;
         }
-
-        export interface V1ProductUploadDigitalCodesResponseInfo {
+        interface V1ProductUploadDigitalCodesResponseInfo {
             result?: V1ProductUploadDigitalCodesResponseInfoResult;
         }
-
-        export interface V1GetProductInfoSubscriptionRequest {
+        interface V1GetProductInfoSubscriptionRequest {
             /** Список SKU, идентификаторов товара в системе Ozon. */
             skus?: string[];
         }
-
-        export interface V1GetProductInfoSubscriptionResponseResult {
+        interface V1GetProductInfoSubscriptionResponseResult {
             /**
              * Количество подписавшихся пользователей.
              * @format int64
@@ -1992,13 +1859,11 @@ namespace Ozon_ {
              */
             sku?: number;
         }
-
-        export interface V1GetProductInfoSubscriptionResponse {
+        interface V1GetProductInfoSubscriptionResponse {
             /** Результат работы метода. */
             result?: V1GetProductInfoSubscriptionResponseResult[];
         }
-
-        export interface ProductImportProductsStocksRequestStock {
+        interface ProductImportProductsStocksRequestStock {
             /** Идентификатор товара в системе продавца — артикул. */
             offer_id?: string;
             /**
@@ -2012,13 +1877,11 @@ namespace Ozon_ {
              */
             stock?: number;
         }
-
-        export interface ProductImportProductsStocksRequest {
+        interface ProductImportProductsStocksRequest {
             /** Информация о товарах на складах. */
             stocks?: ProductImportProductsStocksRequestStock[];
         }
-
-        export interface ProductImportProductsStocksResponseError {
+        interface ProductImportProductsStocksResponseError {
             /**
              * Код ошибки:
              * - `OVER_MAX_OVH_KGT` — вес или габариты товара больше максимальных. Обновить количество не получится. [Информация в Базе знаний продавца](https://seller-edu.ozon.ru/docs/fbs/logistics-settings/upravlenie-ostatkami.html#какие-типы-ошибок-могут-возникнуть-при-обновлении-остатков).
@@ -2034,8 +1897,7 @@ namespace Ozon_ {
             /** Причина ошибки. */
             message?: string;
         }
-
-        export interface ProductImportProductsStocksResponseProcessResult {
+        interface ProductImportProductsStocksResponseProcessResult {
             /** Массив ошибок, которые возникли при обработке запроса. */
             errors?: ProductImportProductsStocksResponseError[];
             /** Идентификатор товара в системе продавца — артикул. */
@@ -2048,13 +1910,11 @@ namespace Ozon_ {
             /** Если информации о товаре успешно обновлена — `true`. */
             updated?: boolean;
         }
-
-        export interface ProductImportProductsStocksResponse {
+        interface ProductImportProductsStocksResponse {
             /** Результаты запроса. */
             result?: ProductImportProductsStocksResponseProcessResult[];
         }
-
-        export interface Productv2ProductsStocksRequestStock {
+        interface Productv2ProductsStocksRequestStock {
             /** Идентификатор товара в системе продавца — артикул. */
             offer_id?: string;
             /**
@@ -2073,13 +1933,11 @@ namespace Ozon_ {
              */
             warehouse_id?: number;
         }
-
-        export interface Productv2ProductsStocksRequest {
+        interface Productv2ProductsStocksRequest {
             /** Информация о товарах на складах. */
             stocks?: Productv2ProductsStocksRequestStock[];
         }
-
-        export interface Productv2ProductsStocksResponseError {
+        interface Productv2ProductsStocksResponseError {
             /**
              * Код ошибки:
              *   - `SKU STOCK NOT CHANGED` — количество товара на складе не изменилось, так как вы передаёте тот же остаток.
@@ -2090,8 +1948,7 @@ namespace Ozon_ {
             /** Причина ошибки. */
             message?: string;
         }
-
-        export interface Productv2ProductsStocksResponseResult {
+        interface Productv2ProductsStocksResponseResult {
             /** Массив ошибок, которые возникли при обработке запроса. */
             errors?: Productv2ProductsStocksResponseError[];
             /** Идентификатор товара в системе продавца — артикул. */
@@ -2109,13 +1966,11 @@ namespace Ozon_ {
              */
             warehouse_id?: number;
         }
-
         /** Результаты запроса. */
-        export interface Productv2ProductsStocksResponse {
+        interface Productv2ProductsStocksResponse {
             result?: Productv2ProductsStocksResponseResult[];
         }
-
-        export interface Productv3GetProductInfoStocksV3Request {
+        interface Productv3GetProductInfoStocksV3Request {
             /** Фильтр по товарам. */
             filter?: Productv3Filter;
             /**
@@ -2130,9 +1985,8 @@ namespace Ozon_ {
              */
             limit?: number;
         }
-
         /** Остатки. */
-        export interface GetProductInfoStocksV3ResponseStock {
+        interface GetProductInfoStocksV3ResponseStock {
             /**
              * Сейчас на складе.
              * @format int32
@@ -2146,8 +2000,7 @@ namespace Ozon_ {
             /** Тип склада. */
             type?: string;
         }
-
-        export interface Productv3GetProductInfoStocksV3ResponseItem {
+        interface Productv3GetProductInfoStocksV3ResponseItem {
             /** Идентификатор товара в системе продавца — артикул. */
             offer_id?: string;
             /**
@@ -2158,9 +2011,8 @@ namespace Ozon_ {
             /** Информация об остатках. */
             stocks?: GetProductInfoStocksV3ResponseStock[];
         }
-
         /** Результаты запроса. */
-        export interface Productv3GetProductInfoStocksV3ResponseResult {
+        interface Productv3GetProductInfoStocksV3ResponseResult {
             /** Информация о товарах. */
             items?: Productv3GetProductInfoStocksV3ResponseItem[];
             /**
@@ -2175,13 +2027,11 @@ namespace Ozon_ {
              */
             total?: number;
         }
-
-        export interface Productv3GetProductInfoStocksV3Response {
+        interface Productv3GetProductInfoStocksV3Response {
             /** Результаты запроса. */
             result?: Productv3GetProductInfoStocksV3ResponseResult;
         }
-
-        export interface Productsv1GetProductInfoStocksByWarehouseFbsRequest {
+        interface Productsv1GetProductInfoStocksByWarehouseFbsRequest {
             /**
              * SKU товара, который продаётся со склада продавца (схемы FBS и rFBS).
              *
@@ -2191,8 +2041,7 @@ namespace Ozon_ {
              */
             fbs_sku?: string[];
         }
-
-        export interface Productsv1GetProductInfoStocksByWarehouseFbsResponseResult {
+        interface Productsv1GetProductInfoStocksByWarehouseFbsResponseResult {
             /**
              * SKU товара, который продаётся со склада продавца (схемы FBS и rFBS).
              * @format int64
@@ -2221,13 +2070,11 @@ namespace Ozon_ {
             /** Название склада. */
             warehouse_name?: string;
         }
-
-        export interface Productsv1GetProductInfoStocksByWarehouseFbsResponse {
+        interface Productsv1GetProductInfoStocksByWarehouseFbsResponse {
             /** Результат работы метода. */
             result?: Productsv1GetProductInfoStocksByWarehouseFbsResponseResult[];
         }
-
-        export interface ProductImportProductsPricesRequestPrice {
+        interface ProductImportProductsPricesRequestPrice {
             /**
              * Атрибут для включения и выключения автоприменения акций:
              * - `ENABLED` — включить автоприменение акций;
@@ -2276,20 +2123,17 @@ namespace Ozon_ {
              */
             product_id?: number;
         }
-
-        export interface ProductImportProductsPricesRequest {
+        interface ProductImportProductsPricesRequest {
             /** Информация о ценах товаров. */
             prices?: ProductImportProductsPricesRequestPrice[];
         }
-
-        export interface ProductImportProductsPricesResponseError {
+        interface ProductImportProductsPricesResponseError {
             /** Код ошибки. */
             code?: string;
             /** Причина ошибки. */
             message?: string;
         }
-
-        export interface ProductImportProductsPricesResponseProcessResult {
+        interface ProductImportProductsPricesResponseProcessResult {
             /** Массив ошибок, которые возникли при обработке запроса. */
             errors?: ProductImportProductsPricesResponseError[];
             /** Идентификатор товара в системе продавца — артикул. */
@@ -2302,14 +2146,12 @@ namespace Ozon_ {
             /** Если информации о товаре успешно обновлена — `true`. */
             updated?: boolean;
         }
-
-        export interface ProductImportProductsPricesResponse {
+        interface ProductImportProductsPricesResponse {
             /** Результаты запроса. */
             result?: ProductImportProductsPricesResponseProcessResult[];
         }
-
         /** Фильтр по товарам. */
-        export interface Productv4Filter {
+        interface Productv4Filter {
             /** Фильтр по параметру `offer_id`. Можно передавать список значений. */
             offer_id?: string[];
             /** Фильтр по параметру `product_id`. Можно передавать до 1000 значений. */
@@ -2345,8 +2187,7 @@ namespace Ozon_ {
              */
             visibility?: Productv2GetProductListRequestFilterFilterVisibility;
         }
-
-        export interface Productv4GetProductInfoPricesV4Request {
+        interface Productv4GetProductInfoPricesV4Request {
             /** Фильтр по товарам. */
             filter?: Productv4Filter;
             /**
@@ -2361,9 +2202,8 @@ namespace Ozon_ {
              */
             limit?: number;
         }
-
         /** Информация о комиссиях. */
-        export interface ItemCommissions {
+        interface ItemCommissions {
             /**
              * Последняя миля (FBO).
              * @format double
@@ -2445,8 +2285,7 @@ namespace Ozon_ {
              */
             sales_percent?: number;
         }
-
-        export interface MarketingActionsMarketingAction {
+        interface MarketingActionsMarketingAction {
             /**
              * Дата и время начала акции продавца.
              * @format date-time
@@ -2462,8 +2301,7 @@ namespace Ozon_ {
             /** Название акции продавца. */
             title?: string;
         }
-
-        export interface ItemMarketingActions {
+        interface ItemMarketingActions {
             /** Маркетинговые акции продавца. Параметры `date_from`, `date_to`, `discount_value` и `title` указываются для каждой акции продавца. */
             actions?: MarketingActionsMarketingAction[];
             /**
@@ -2479,9 +2317,8 @@ namespace Ozon_ {
             /** Если к товару может быть применена акция за счёт Ozon — `true`. */
             ozon_actions_exist?: boolean;
         }
-
         /** Цена товара. */
-        export interface ItemPrice {
+        interface ItemPrice {
             /** Если автоприменение акций у товара включено — `true`. */
             auto_action_enabled?: boolean;
             /**
@@ -2517,8 +2354,7 @@ namespace Ozon_ {
             /** Ставка НДС для товара. */
             vat?: string;
         }
-
-        export interface ProductGetProductInfoPricesV4ResponseItem {
+        interface ProductGetProductInfoPricesV4ResponseItem {
             /** Информация о комиссиях. */
             commissions?: ItemCommissions;
             marketing_actions?: ItemMarketingActions;
@@ -2549,9 +2385,8 @@ namespace Ozon_ {
              */
             volume_weight?: number;
         }
-
         /** Результаты запроса. */
-        export interface ProductGetProductInfoPricesV4ResponseResult {
+        interface ProductGetProductInfoPricesV4ResponseResult {
             /** Список товаров. */
             items?: ProductGetProductInfoPricesV4ResponseItem[];
             /**
@@ -2566,18 +2401,15 @@ namespace Ozon_ {
              */
             total?: number;
         }
-
-        export interface Productv4GetProductInfoPricesV4Response {
+        interface Productv4GetProductInfoPricesV4Response {
             /** Результаты запроса. */
             result?: ProductGetProductInfoPricesV4ResponseResult;
         }
-
-        export interface V1GetProductInfoDiscountedRequest {
+        interface V1GetProductInfoDiscountedRequest {
             /** Список SKU уценённых товаров. */
             discounted_skus?: string[];
         }
-
-        export interface V1GetProductInfoDiscountedResponseItem {
+        interface V1GetProductInfoDiscountedResponseItem {
             /** Комментарий к причине повреждения. */
             comment_reason_damaged?: string;
             /** Состояние товара — новый или Б/У. */
@@ -2618,13 +2450,11 @@ namespace Ozon_ {
             /** Наличие у товара действующей гарантии. */
             warranty_type?: string;
         }
-
-        export interface V1GetProductInfoDiscountedResponse {
+        interface V1GetProductInfoDiscountedResponse {
             /** Информация об уценке и основном товаре. */
             items?: V1GetProductInfoDiscountedResponseItem[];
         }
-
-        export interface V1ProductUpdateDiscountRequest {
+        interface V1ProductUpdateDiscountRequest {
             /**
              * Размер скидки: от 3 до 99 процентов.
              * @format int32
@@ -2636,13 +2466,11 @@ namespace Ozon_ {
              */
             product_id?: number;
         }
-
-        export interface V1ProductUpdateDiscountResponse {
+        interface V1ProductUpdateDiscountResponse {
             /** Результат работы метода. `true`, если запрос выполнен без ошибок. */
             result?: boolean;
         }
-
-        export interface GetSellerActionsV1ResponseAction {
+        interface GetSellerActionsV1ResponseAction {
             /**
              * Идентификатор акции.
              * @format double
@@ -2700,14 +2528,12 @@ namespace Ozon_ {
              */
             discount_value?: number;
         }
-
-        export interface SellerApiGetSellerActionsV1Response {
+        interface SellerApiGetSellerActionsV1Response {
             /** Результаты запроса. */
             result?: GetSellerActionsV1ResponseAction[];
         }
-
         /** Список товаров. */
-        export interface SellerApiGetSellerProductV1Request {
+        interface SellerApiGetSellerProductV1Request {
             /**
              * Идентификатор акции.
              * @format double
@@ -2724,8 +2550,7 @@ namespace Ozon_ {
              */
             offset?: number;
         }
-
-        export interface SellerApiProduct {
+        interface SellerApiProduct {
             /**
              * Идентификатор товара.
              * @format double
@@ -2759,9 +2584,8 @@ namespace Ozon_ {
              */
             stock?: number;
         }
-
         /** Результаты запроса. */
-        export interface SellerApiGetSellerProductV1ResponseResult {
+        interface SellerApiGetSellerProductV1ResponseResult {
             /** Список товаров. */
             products?: SellerApiProduct[];
             /**
@@ -2770,13 +2594,11 @@ namespace Ozon_ {
              */
             total?: number;
         }
-
-        export interface SellerApiGetSellerProductV1Response {
+        interface SellerApiGetSellerProductV1Response {
             /** Результаты запроса. */
             result?: SellerApiGetSellerProductV1ResponseResult;
         }
-
-        export interface SellerApiProductPrice {
+        interface SellerApiProductPrice {
             /**
              * Идентификатор товара.
              * @format double
@@ -2793,8 +2615,7 @@ namespace Ozon_ {
              */
             stock?: number;
         }
-
-        export interface SellerApiActivateProductV1Request {
+        interface SellerApiActivateProductV1Request {
             /**
              * Идентификатор акции.
              * @format double
@@ -2803,8 +2624,7 @@ namespace Ozon_ {
             /** Список товаров. */
             products?: SellerApiProductPrice[];
         }
-
-        export interface SellerApiProductV1ResponseProduct {
+        interface SellerApiProductV1ResponseProduct {
             /**
              * Идентификатор товара.
              * @format double
@@ -2813,21 +2633,18 @@ namespace Ozon_ {
             /** Причина, почему товар не добавлен в акцию. */
             reason?: string;
         }
-
         /** Результаты запроса. */
-        export interface SellerApiProductV1ResponseResult {
+        interface SellerApiProductV1ResponseResult {
             /** Список идентификаторов товаров, которые добавлены в акцию. */
             product_ids?: number[];
             /** Список товаров, которые не удалось добавить в акцию. */
             rejected?: SellerApiProductV1ResponseProduct[];
         }
-
-        export interface SellerApiProductV1Response {
+        interface SellerApiProductV1Response {
             /** Результаты запроса. */
             result?: SellerApiProductV1ResponseResult;
         }
-
-        export interface SellerApiProductIDsV1Request {
+        interface SellerApiProductIDsV1Request {
             /**
              * Идентификатор акции.
              * @format double
@@ -2836,8 +2653,7 @@ namespace Ozon_ {
             /** Список идентификаторов товаров. */
             product_ids?: number[];
         }
-
-        export interface SellerApiProductV1ResponseProductDeactivate {
+        interface SellerApiProductV1ResponseProductDeactivate {
             /**
              * Идентификатор товара.
              * @format double
@@ -2846,23 +2662,19 @@ namespace Ozon_ {
             /** Причина, почему товар не удалён из акции. */
             reason?: string;
         }
-
         /** Результаты запроса. */
-        export interface SellerApiProductV1ResponseResultDeactivate {
+        interface SellerApiProductV1ResponseResultDeactivate {
             /** Список идентификаторов товаров, которые удалены из акции. */
             product_ids?: number[];
             /** Список товаров, которые не удалось удалить из акции. */
             rejected?: SellerApiProductV1ResponseProductDeactivate[];
         }
-
-        export interface SellerApiProductV1ResponseDeactivate {
+        interface SellerApiProductV1ResponseDeactivate {
             /** Результаты запроса. */
             result?: SellerApiProductV1ResponseResultDeactivate;
         }
-
-        export type V1GetHotSalesListRequest = object;
-
-        export interface GetHotSalesListResponseHotSale {
+        type V1GetHotSalesListRequest = object;
+        interface GetHotSalesListResponseHotSale {
             /** Дата окончания акции. */
             date_end?: string;
             /** Дата начала акции. */
@@ -2887,13 +2699,11 @@ namespace Ozon_ {
             /** Название акции. */
             title?: string;
         }
-
-        export interface V1GetHotSalesListResponse {
+        interface V1GetHotSalesListResponse {
             /** Результат работы метода. */
             result?: GetHotSalesListResponseHotSale[];
         }
-
-        export interface V1GetHotSalesProductsRequest {
+        interface V1GetHotSalesProductsRequest {
             /**
              * Идентификатор акции Hot Sale.
              * @format double
@@ -2910,8 +2720,7 @@ namespace Ozon_ {
              */
             offset?: number;
         }
-
-        export interface V1HotSaleProduct {
+        interface V1HotSaleProduct {
             /**
              * Цена товара по акции.
              * @format double
@@ -2942,9 +2751,8 @@ namespace Ozon_ {
              */
             stock?: number;
         }
-
         /** Результат работы метода. */
-        export interface V1GetHotSalesProductsResponseResult {
+        interface V1GetHotSalesProductsResponseResult {
             /** Список товаров. */
             products?: V1HotSaleProduct[];
             /**
@@ -2953,13 +2761,11 @@ namespace Ozon_ {
              */
             total?: number;
         }
-
-        export interface V1GetHotSalesProductsResponse {
+        interface V1GetHotSalesProductsResponse {
             /** Результат работы метода. */
             result?: V1GetHotSalesProductsResponseResult;
         }
-
-        export interface V1ActivateHotSalesProductsRequestActivateProduct {
+        interface V1ActivateHotSalesProductsRequestActivateProduct {
             /**
              * Цена товара по акции.
              * @format double
@@ -2976,8 +2782,7 @@ namespace Ozon_ {
              */
             stock?: number;
         }
-
-        export interface V1ActivateHotSalesProductsRequest {
+        interface V1ActivateHotSalesProductsRequest {
             /**
              * Идентификатор акции Hot Sale.
              * @format double
@@ -2986,9 +2791,8 @@ namespace Ozon_ {
             /** Товары, которые нужно добавить в акцию. Максимальное количество в одном запросе — 100. */
             products?: V1ActivateHotSalesProductsRequestActivateProduct[];
         }
-
         /** Товары, которые не получилось добавить в акцию. */
-        export interface V1SetActivateHotSaleProductsResultProduct {
+        interface V1SetActivateHotSaleProductsResultProduct {
             /**
              * Идентификатор товара.
              * @format double
@@ -2997,19 +2801,16 @@ namespace Ozon_ {
             /** Причина, почему товар не добавлен в акцию. */
             reason?: string;
         }
-
         /** Результат работы метода. */
-        export interface V1SetActivateHotSaleProductsResultResult {
+        interface V1SetActivateHotSaleProductsResultResult {
             /** Список товаров, которые не удалось добавить в акцию. */
             rejected?: V1SetActivateHotSaleProductsResultProduct[];
         }
-
-        export interface V1SetActivateHotSaleProductsResult {
+        interface V1SetActivateHotSaleProductsResult {
             /** Результат работы метода. */
             result?: V1SetActivateHotSaleProductsResultResult;
         }
-
-        export interface V1DeactivateHotSalesProductsRequest {
+        interface V1DeactivateHotSalesProductsRequest {
             /**
              * Идентификатор акции Hot Sale.
              * @format double
@@ -3018,9 +2819,8 @@ namespace Ozon_ {
             /** Список идентификаторов товаров. Максимальное количество в одном запросе — 100. */
             product_ids?: number[];
         }
-
         /** Товары, которые не получилось удалить из акции. */
-        export interface V1SetDeactivateHotSaleProductsResultProduct {
+        interface V1SetDeactivateHotSaleProductsResultProduct {
             /**
              * Идентификатор товара.
              * @format double
@@ -3029,18 +2829,15 @@ namespace Ozon_ {
             /** Причина, почему товар не удалён из акции. */
             reason?: string;
         }
-
         /** Результат работы метода. */
-        export interface V1SetDeactivateHotSaleProductsResultResult {
+        interface V1SetDeactivateHotSaleProductsResultResult {
             /** Список товаров, которые не удалось удалить из акции. */
             rejected?: V1SetDeactivateHotSaleProductsResultProduct[];
         }
-
-        export interface V1SetDeactivateHotSaleProductsResult {
+        interface V1SetDeactivateHotSaleProductsResult {
             /** Результат работы метода. */
             result?: V1SetDeactivateHotSaleProductsResultResult;
         }
-
         /**
          * Статус заявки на скидку:
          * - `NEW` — новая,
@@ -3054,19 +2851,18 @@ namespace Ozon_ {
          * - `PURCHASED` — купленная.
          * @default "UNKNOWN"
          */
-        export enum V1DiscountTaskStatus {
-            NEW = 'NEW',
-            SEEN = 'SEEN',
-            APPROVED = 'APPROVED',
-            PARTLY_APPROVED = 'PARTLY_APPROVED',
-            DECLINED = 'DECLINED',
-            AUTO_DECLINED = 'AUTO_DECLINED',
-            DECLINED_BY_USER = 'DECLINED_BY_USER',
-            COUPON = 'COUPON',
-            PURCHASED = 'PURCHASED',
+        enum V1DiscountTaskStatus {
+            NEW = "NEW",
+            SEEN = "SEEN",
+            APPROVED = "APPROVED",
+            PARTLY_APPROVED = "PARTLY_APPROVED",
+            DECLINED = "DECLINED",
+            AUTO_DECLINED = "AUTO_DECLINED",
+            DECLINED_BY_USER = "DECLINED_BY_USER",
+            COUPON = "COUPON",
+            PURCHASED = "PURCHASED"
         }
-
-        export interface V1GetDiscountTaskListRequest {
+        interface V1GetDiscountTaskListRequest {
             /**
              * Статус заявки на скидку:
              * - `NEW` — новая,
@@ -3091,8 +2887,7 @@ namespace Ozon_ {
              */
             limit?: number;
         }
-
-        export interface V1GetDiscountTaskListResponseTask {
+        interface V1GetDiscountTaskListResponseTask {
             /**
              * Идентификатор заявки.
              * @format uint64
@@ -3233,13 +3028,11 @@ namespace Ozon_ {
              */
             approved_price_fee_percent?: number;
         }
-
-        export interface V1GetDiscountTaskListResponse {
+        interface V1GetDiscountTaskListResponse {
             /** Список заявок. */
             result?: V1GetDiscountTaskListResponseTask[];
         }
-
-        export interface V1ApproveDiscountTasksRequestTask {
+        interface V1ApproveDiscountTasksRequestTask {
             /**
              * Идентификатор заявки.
              * @format uint64
@@ -3263,13 +3056,11 @@ namespace Ozon_ {
              */
             approved_quantity_max?: number;
         }
-
-        export interface V1ApproveDiscountTasksRequest {
+        interface V1ApproveDiscountTasksRequest {
             /** Список заявок. */
             tasks?: V1ApproveDiscountTasksRequestTask[];
         }
-
-        export interface ApproveDeclineDiscountTasksResponseFailDetail {
+        interface ApproveDeclineDiscountTasksResponseFailDetail {
             /**
              * Идентификатор заявки.
              * @format uint64
@@ -3278,9 +3069,8 @@ namespace Ozon_ {
             /** Текст ошибки. */
             error_for_user?: string;
         }
-
         /** Результат работы метода. */
-        export interface V1ApproveDeclineDiscountTasksResponseResult {
+        interface V1ApproveDeclineDiscountTasksResponseResult {
             /** Ошибки при создании заявки. */
             fail_details?: ApproveDeclineDiscountTasksResponseFailDetail[];
             /**
@@ -3294,13 +3084,11 @@ namespace Ozon_ {
              */
             fail_count?: number;
         }
-
-        export interface V1ApproveDeclineDiscountTasksResponse {
+        interface V1ApproveDeclineDiscountTasksResponse {
             /** Результат работы метода. */
             result?: V1ApproveDeclineDiscountTasksResponseResult;
         }
-
-        export interface V1DeclineDiscountTasksRequestTask {
+        interface V1DeclineDiscountTasksRequestTask {
             /**
              * Идентификатор заявки.
              * @format uint64
@@ -3309,13 +3097,11 @@ namespace Ozon_ {
             /** Комментарий продавца к заявке. */
             seller_comment?: string;
         }
-
-        export interface V1DeclineDiscountTasksRequest {
+        interface V1DeclineDiscountTasksRequest {
             /** Список заявок. */
             tasks?: V1DeclineDiscountTasksRequestTask[];
         }
-
-        export interface V1GetCompetitorsRequest {
+        interface V1GetCompetitorsRequest {
             /**
              * Страница списка, с которой нужно выгрузить конкурентов. Минимальное значение — `1`.
              * @format int64
@@ -3327,8 +3113,7 @@ namespace Ozon_ {
              */
             limit?: number;
         }
-
-        export interface GetCompetitorsResponseCompetitorInfo {
+        interface GetCompetitorsResponseCompetitorInfo {
             /** Название конкурента. */
             name?: string;
             /**
@@ -3337,8 +3122,7 @@ namespace Ozon_ {
              */
             id?: number;
         }
-
-        export interface V1GetCompetitorsResponse {
+        interface V1GetCompetitorsResponse {
             /** Список конкурентов. */
             competitor?: GetCompetitorsResponseCompetitorInfo[];
             /**
@@ -3347,8 +3131,7 @@ namespace Ozon_ {
              */
             total?: number;
         }
-
-        export interface V1GetStrategyListRequest {
+        interface V1GetStrategyListRequest {
             /**
              * Страница списка, с которой нужно выгрузить стратегии. Минимальное значение — `1`.
              * @format int64
@@ -3360,8 +3143,7 @@ namespace Ozon_ {
              */
             limit?: number;
         }
-
-        export interface GetStrategyListResponseStrategy {
+        interface GetStrategyListResponseStrategy {
             /** Идентификатор стратегии */
             id?: string;
             /** Название стратегии. */
@@ -3400,8 +3182,7 @@ namespace Ozon_ {
              */
             enabled?: boolean;
         }
-
-        export interface V1GetStrategyListResponse {
+        interface V1GetStrategyListResponse {
             /** Список стратегий. */
             strategies?: GetStrategyListResponseStrategy[];
             /**
@@ -3410,8 +3191,7 @@ namespace Ozon_ {
              */
             total?: number;
         }
-
-        export interface V1Competitor {
+        interface V1Competitor {
             /**
              * Коэффициент, на который будет умножаться минимальная цена среди конкурентов. Допустимый диапазон — от `0.5` до `1.2`.
              * @format float
@@ -3423,32 +3203,27 @@ namespace Ozon_ {
              */
             competitor_id?: number;
         }
-
-        export interface V1CreatePricingStrategyRequest {
+        interface V1CreatePricingStrategyRequest {
             /** Список конкурентов. */
             competitors?: V1Competitor[];
             /** Название стратегии. */
             strategy_name?: string;
         }
-
         /** Результат работы метода. */
-        export interface V1CreatePricingStrategyResponseResult {
+        interface V1CreatePricingStrategyResponseResult {
             /** Идентификатор стратегии. */
             strategy_id?: string;
         }
-
-        export interface V1CreatePricingStrategyResponse {
+        interface V1CreatePricingStrategyResponse {
             /** Результат работы метода. */
             result?: V1CreatePricingStrategyResponseResult;
         }
-
-        export interface V1StrategyRequest {
+        interface V1StrategyRequest {
             /** Идентификатор стратегии. */
             strategy_id?: string;
         }
-
         /** Результат работы метода. */
-        export interface V1GetStrategyResponseResult {
+        interface V1GetStrategyResponseResult {
             /** Список конкурентов. */
             competitors?: V1Competitor[];
             /**
@@ -3475,13 +3250,11 @@ namespace Ozon_ {
              */
             update_type?: string;
         }
-
-        export interface V1GetStrategyResponse {
+        interface V1GetStrategyResponse {
             /** Результат работы метода. */
             result?: V1GetStrategyResponseResult;
         }
-
-        export interface V1UpdatePricingStrategyRequest {
+        interface V1UpdatePricingStrategyRequest {
             /** Список конкурентов. */
             competitors?: V1Competitor[];
             /** Идентификатор стратегии. */
@@ -3489,15 +3262,13 @@ namespace Ozon_ {
             /** Название стратегии. */
             strategy_name?: string;
         }
-
-        export interface V1AddStrategyItemsRequest {
+        interface V1AddStrategyItemsRequest {
             /** Список идентификаторов товаров. Максимальное количество — 50. */
             product_id?: string[];
             /** Идентификатор стратегии. */
             strategy_id?: string;
         }
-
-        export interface AddStrategyItemsResponseError {
+        interface AddStrategyItemsResponseError {
             /** Код ошибки. */
             code?: string;
             /** Текст ошибки. */
@@ -3508,9 +3279,8 @@ namespace Ozon_ {
              */
             product_id?: number;
         }
-
         /** Результат работы метода. */
-        export interface V1AddStrategyItemsResponseResult {
+        interface V1AddStrategyItemsResponseResult {
             /** Товары с ошибками. */
             errors?: AddStrategyItemsResponseError[];
             /**
@@ -3519,18 +3289,15 @@ namespace Ozon_ {
              */
             failed_product_count?: number;
         }
-
-        export interface V1AddStrategyItemsResponse {
+        interface V1AddStrategyItemsResponse {
             /** Результат работы метода. */
             result?: V1AddStrategyItemsResponseResult;
         }
-
-        export interface V1ItemIDsRequest {
+        interface V1ItemIDsRequest {
             /** Список идентификаторов товаров. Максимальное количество — 50. */
             product_id?: string[];
         }
-
-        export interface GetStrategyIDsByItemIDsResponseProductInfo {
+        interface GetStrategyIDsByItemIDsResponseProductInfo {
             /**
              * Идентификатор товара.
              * @format int64
@@ -3539,39 +3306,33 @@ namespace Ozon_ {
             /** Идентификатор стратегии, в которую добавлен товар. */
             strategy_id?: string;
         }
-
         /** Результат работы метода. */
-        export interface V1GetStrategyIDsByItemIDsResponseResult {
+        interface V1GetStrategyIDsByItemIDsResponseResult {
             /** Информация о товаре. */
             products_info?: GetStrategyIDsByItemIDsResponseProductInfo[];
         }
-
-        export interface V1GetStrategyIDsByItemIDsResponse {
+        interface V1GetStrategyIDsByItemIDsResponse {
             /** Результат работы метода. */
             result?: V1GetStrategyIDsByItemIDsResponseResult;
         }
-
         /** Список товаров. */
-        export interface V1GetStrategyItemsResponseResult {
+        interface V1GetStrategyItemsResponseResult {
             /** Идентификатор товара. */
             product_id?: string[];
         }
-
-        export interface V1GetStrategyItemsResponse {
+        interface V1GetStrategyItemsResponse {
             /** Список товаров. */
             result?: V1GetStrategyItemsResponseResult;
         }
-
-        export interface V1GetStrategyItemInfoRequest {
+        interface V1GetStrategyItemInfoRequest {
             /**
              * Идентификатор товара.
              * @format int64
              */
             product_id?: number;
         }
-
         /** Результат работы метода. */
-        export interface V1GetStrategyItemInfoResponseResult {
+        interface V1GetStrategyItemInfoResponseResult {
             /** Идентификатор стратегии. */
             strategy_id?: string;
             /** `true`, если товар участвует в стратегии ценообразования. */
@@ -3591,27 +3352,23 @@ namespace Ozon_ {
             /** Ссылка на товар конкурента. */
             strategy_competitor_product_url?: string;
         }
-
-        export interface V1GetStrategyItemInfoResponse {
+        interface V1GetStrategyItemInfoResponse {
             /** Результат работы метода. */
             result?: V1GetStrategyItemInfoResponseResult;
         }
-
         /** Результат работы метода. */
-        export interface V1DeleteStrategyItemsResponseResult {
+        interface V1DeleteStrategyItemsResponseResult {
             /**
              * Количество товаров с ошибками.
              * @format int32
              */
             failed_product_count?: number;
         }
-
-        export interface V1DeleteStrategyItemsResponse {
+        interface V1DeleteStrategyItemsResponse {
             /** Результат работы метода. */
             result?: V1DeleteStrategyItemsResponseResult;
         }
-
-        export interface V1UpdateStatusStrategyRequest {
+        interface V1UpdateStatusStrategyRequest {
             /**
              * Статус стратегии:
              * - `true` — включена,
@@ -3621,8 +3378,7 @@ namespace Ozon_ {
             /** Идентификатор стратегии. */
             strategy_id?: string;
         }
-
-        export interface BrandBrandCompanyCertificationListRequest {
+        interface BrandBrandCompanyCertificationListRequest {
             /**
              * Номер страницы, возвращаемой в запросе.
              * @format int32
@@ -3634,8 +3390,7 @@ namespace Ozon_ {
              */
             page_size?: number;
         }
-
-        export interface BrandCompanyCertificationListResponseBrandCertification {
+        interface BrandCompanyCertificationListResponseBrandCertification {
             /** Название бренда. */
             brand_name?: string;
             /**
@@ -3645,9 +3400,8 @@ namespace Ozon_ {
              */
             has_certificate?: boolean;
         }
-
         /** Результат запроса. */
-        export interface BrandCompanyCertificationListResponseBrandCertificationResult {
+        interface BrandCompanyCertificationListResponseBrandCertificationResult {
             /** Информация о сертифицируемых брендах. */
             brand_certification?: BrandCompanyCertificationListResponseBrandCertification[];
             /**
@@ -3656,25 +3410,21 @@ namespace Ozon_ {
              */
             total?: number;
         }
-
-        export interface BrandBrandCompanyCertificationListResponse {
+        interface BrandBrandCompanyCertificationListResponse {
             /** Результат запроса. */
             result?: BrandCompanyCertificationListResponseBrandCertificationResult;
         }
-
-        export interface ProductProductCertificateAccordanceTypesResponseType {
+        interface ProductProductCertificateAccordanceTypesResponseType {
             /** Название документа. */
             name?: string;
             /** Значение справочника. */
             value?: string;
         }
-
-        export interface ProductProductCertificateAccordanceTypesResponse {
+        interface ProductProductCertificateAccordanceTypesResponse {
             /** Список типов и названий сертификатов. */
             result?: ProductProductCertificateAccordanceTypesResponseType[];
         }
-
-        export interface GooglerpcStatus {
+        interface GooglerpcStatus {
             /**
              * Код ошибки.
              * @format int32
@@ -3685,40 +3435,34 @@ namespace Ozon_ {
             /** Описание ошибки. */
             message?: string;
         }
-
-        export interface V2ProductCertificateAccordanceTypesResponseType {
+        interface V2ProductCertificateAccordanceTypesResponseType {
             /** Код типа соответствия требованиям. */
             code?: string;
             /** Описание типа соответствия требованиям. */
             title?: string;
         }
-
         /** Список типов соответствия требованиям. */
-        export interface V2ProductCertificateAccordanceTypesResponseResult {
+        interface V2ProductCertificateAccordanceTypesResponseResult {
             /** Основные типы соответствия требованиям. */
             base?: V2ProductCertificateAccordanceTypesResponseType[];
             /** Типов соответствия требованиям, относящиеся к опасным товарам. */
             hazard?: V2ProductCertificateAccordanceTypesResponseType[];
         }
-
-        export interface V2ProductCertificateAccordanceTypesResponse {
+        interface V2ProductCertificateAccordanceTypesResponse {
             /** Список типов соответствия требованиям. */
             result?: V2ProductCertificateAccordanceTypesResponseResult;
         }
-
-        export interface ProductProductCertificateTypesResponseType {
+        interface ProductProductCertificateTypesResponseType {
             /** Название документа. */
             name?: string;
             /** Значение справочника. */
             value?: string;
         }
-
-        export interface ProductProductCertificateTypesResponse {
+        interface ProductProductCertificateTypesResponse {
             /** Список типов и названий сертификатов. */
             result?: ProductProductCertificateTypesResponseType[];
         }
-
-        export interface ProductProductCertificationListRequest {
+        interface ProductProductCertificationListRequest {
             /**
              * Номер страницы, возвращаемой в запросе.
              * @format int32
@@ -3730,16 +3474,14 @@ namespace Ozon_ {
              */
             page_size?: number;
         }
-
-        export interface ProductCertificationListResponseCertification {
+        interface ProductCertificationListResponseCertification {
             /** Название сертифицируемой категории. */
             category_name?: string;
             /** Признак обязательной характеристики. */
             is_required?: boolean;
         }
-
         /** Результат запроса. */
-        export interface ProductCertificationListResponseCertificationResult {
+        interface ProductCertificationListResponseCertificationResult {
             /** Информация о сертифицируемых категориях. */
             certification?: ProductCertificationListResponseCertification[];
             /**
@@ -3748,13 +3490,11 @@ namespace Ozon_ {
              */
             total?: number;
         }
-
-        export interface ProductProductCertificationListResponse {
+        interface ProductProductCertificationListResponse {
             /** Результат запроса. */
             result?: ProductCertificationListResponseCertificationResult;
         }
-
-        export interface ProductProductCertificateBindRequest {
+        interface ProductProductCertificateBindRequest {
             /**
              * Идентификатор сертификата, который был присвоен при его загрузке.
              * @format int64
@@ -3763,17 +3503,15 @@ namespace Ozon_ {
             /** Массив идентификаторов товаров, к которым относится этот сертификат. */
             product_id?: number[];
         }
-
-        export interface V1ProductCertificateDeleteRequest {
+        interface V1ProductCertificateDeleteRequest {
             /**
              * Идентификатор сертификата.
              * @format int32
              */
             certificate_id: number;
         }
-
         /** Результат удаления сертификата. */
-        export interface V1ProductCertificateDeleteResponseResult {
+        interface V1ProductCertificateDeleteResponseResult {
             /**
              * Удалён ли сертификат:
              * - `true` — удалён,
@@ -3783,19 +3521,16 @@ namespace Ozon_ {
             /** Описание ошибок при удалении сертификата. */
             error_message?: string;
         }
-
-        export interface V1ProductCertificateDeleteResponse {
+        interface V1ProductCertificateDeleteResponse {
             /** Результат удаления сертификата. */
             result?: V1ProductCertificateDeleteResponseResult;
         }
-
-        export interface V1ProductCertificateInfoRequest {
+        interface V1ProductCertificateInfoRequest {
             /** Идентификатор сертификата. */
             certificate_number: string;
         }
-
         /** Информация о сертификате. */
-        export interface V1Certificate {
+        interface V1Certificate {
             /**
              * Идентификатор.
              * @format int32
@@ -3831,13 +3566,11 @@ namespace Ozon_ {
              */
             products_count?: number;
         }
-
-        export interface V1ProductCertificateInfoResponse {
+        interface V1ProductCertificateInfoResponse {
             /** Информация о сертификате. */
             result?: V1Certificate;
         }
-
-        export interface V1ProductCertificateListRequest {
+        interface V1ProductCertificateListRequest {
             /** Артикул товара, привязанного к сертификату. Передайте параметр, если нужны сертификаты, к которым привязаны определённые товары. */
             offer_id?: string;
             /** Статус сертификата. Передайте параметр, если нужны сертификаты с определённым статусом. */
@@ -3855,9 +3588,8 @@ namespace Ozon_ {
              */
             page_size: number;
         }
-
         /** Список сертификатов. */
-        export interface V1ProductCertificateListResponseResult {
+        interface V1ProductCertificateListResponseResult {
             /** Информация о сертификате. */
             certificates?: V1Certificate[];
             /**
@@ -3866,27 +3598,22 @@ namespace Ozon_ {
              */
             page_count?: number;
         }
-
-        export interface V1ProductCertificateListResponse {
+        interface V1ProductCertificateListResponse {
             /** Список сертификатов. */
             result?: V1ProductCertificateListResponseResult;
         }
-
-        export type V1ProductCertificateProductStatusListRequest = object;
-
-        export interface V1StatusCodeNamePair {
+        type V1ProductCertificateProductStatusListRequest = object;
+        interface V1StatusCodeNamePair {
             /** Код статуса товара при привязке к сертификату. */
             code?: string;
             /** Описание статуса. */
             name?: string;
         }
-
-        export interface V1ProductCertificateProductStatusListResponse {
+        interface V1ProductCertificateProductStatusListResponse {
             /** Список статусов товаров. */
             result?: V1StatusCodeNamePair[];
         }
-
-        export interface V1ProductCertificateProductsListRequest {
+        interface V1ProductCertificateProductsListRequest {
             /**
              * Идентификатор сертификата.
              * @format int32
@@ -3905,8 +3632,7 @@ namespace Ozon_ {
              */
             page_size: number;
         }
-
-        export interface ProductCertificateProductsListResponseProduct {
+        interface ProductCertificateProductsListResponseProduct {
             /**
              * Идентификатор товара.
              * @format int64
@@ -3915,9 +3641,8 @@ namespace Ozon_ {
             /** Статус обработки товара при привязке к сертификату. */
             product_status_code?: string;
         }
-
         /** Товары, привязанные к сертификату. */
-        export interface V1ProductCertificateProductsListResponseResult {
+        interface V1ProductCertificateProductsListResponseResult {
             /** Список товаров. */
             items?: ProductCertificateProductsListResponseProduct[];
             /**
@@ -3926,13 +3651,11 @@ namespace Ozon_ {
              */
             count?: number;
         }
-
-        export interface V1ProductCertificateProductsListResponse {
+        interface V1ProductCertificateProductsListResponse {
             /** Товары, привязанные к сертификату. */
             result?: V1ProductCertificateProductsListResponseResult;
         }
-
-        export interface V1ProductCertificateUnbindRequest {
+        interface V1ProductCertificateUnbindRequest {
             /**
              * Идентификатор сертификата.
              * @format int32
@@ -3941,8 +3664,7 @@ namespace Ozon_ {
             /** Список идентификаторов товара, которые нужно отвязать от сертификата. */
             product_id: string[];
         }
-
-        export interface ProductCertificateUnbindResponseItem {
+        interface ProductCertificateUnbindResponseItem {
             /** Сообщение об ошибке при отвязывании товара. */
             error?: string;
             /**
@@ -3957,42 +3679,34 @@ namespace Ozon_ {
              */
             updated?: boolean;
         }
-
-        export interface V1ProductCertificateUnbindResponse {
+        interface V1ProductCertificateUnbindResponse {
             /** Результат работы метода. */
             result?: ProductCertificateUnbindResponseItem[];
         }
-
-        export type V1ProductCertificateRejectionReasonsListRequest = object;
-
-        export interface V1StatusCodeNamePairRejection {
+        type V1ProductCertificateRejectionReasonsListRequest = object;
+        interface V1StatusCodeNamePairRejection {
             /** Код причины отклонения сертификата. */
             code?: string;
             /** Описание причины отклонения сертификата. */
             name?: string;
         }
-
-        export interface V1ProductCertificateRejectionReasonsListResponse {
+        interface V1ProductCertificateRejectionReasonsListResponse {
             /** Причины отклонения сертификата. */
             result?: V1StatusCodeNamePairRejection[];
         }
-
-        export type V1ProductCertificateStatusListRequest = object;
-
-        export interface V1StatusCodeNamePairStatuses {
+        type V1ProductCertificateStatusListRequest = object;
+        interface V1StatusCodeNamePairStatuses {
             /** Код статуса сертификата. */
             code?: string;
             /** Описание статуса. */
             name?: string;
         }
-
-        export interface V1ProductCertificateStatusListResponse {
+        interface V1ProductCertificateStatusListResponse {
             /** Список возможных статусов сертификатов. */
             result?: V1StatusCodeNamePairStatuses[];
         }
-
         /** Первая миля FBS. */
-        export interface WarehouseFirstMileType {
+        interface WarehouseFirstMileType {
             /** Идентификатор DropOff-точки. */
             dropoff_point_id?: string;
             /**
@@ -4005,8 +3719,7 @@ namespace Ozon_ {
             /** Тип первой мили — `DropOff` или `Pickup`. */
             first_mile_type?: 'DropOff' | 'Pickup';
         }
-
-        export interface WarehouseListResponseWarehouse {
+        interface WarehouseListResponseWarehouse {
             /** Признак доверительной приёмки. `true`, если доверительная приёмка включена на складе. */
             has_entrusted_acceptance?: boolean;
             /**
@@ -4067,14 +3780,12 @@ namespace Ozon_ {
             /** Рабочие дни склада. */
             working_days?: ('1' | '2' | '3' | '4' | '5' | '6' | '7')[];
         }
-
-        export interface WarehouseWarehouseListResponse {
+        interface WarehouseWarehouseListResponse {
             /** Список складов. */
             result?: WarehouseListResponseWarehouse[];
         }
-
         /** Фильтр для поиска методов доставки. */
-        export interface DeliveryMethodListRequestFilter {
+        interface DeliveryMethodListRequestFilter {
             /**
              * Идентификатор службы доставки.
              * @format int64
@@ -4094,8 +3805,7 @@ namespace Ozon_ {
              */
             warehouse_id?: number;
         }
-
-        export interface WarehouseDeliveryMethodListRequest {
+        interface WarehouseDeliveryMethodListRequest {
             /** Фильтр для поиска методов доставки. */
             filter?: DeliveryMethodListRequestFilter;
             /**
@@ -4109,8 +3819,7 @@ namespace Ozon_ {
              */
             offset?: number;
         }
-
-        export interface DeliveryMethodListResponseDeliveryMethod {
+        interface DeliveryMethodListResponseDeliveryMethod {
             /**
              * Идентификатор продавца.
              * @format int64
@@ -4159,8 +3868,7 @@ namespace Ozon_ {
              */
             warehouse_id?: number;
         }
-
-        export interface WarehouseDeliveryMethodListResponse {
+        interface WarehouseDeliveryMethodListResponse {
             /**
              * Признак, что в запросе вернулась только часть методов доставки:
              * - `true` — сделайте повторный запрос с новым параметром `offset` для получения остальных методов;
@@ -4170,21 +3878,18 @@ namespace Ozon_ {
             /** Результат запроса. */
             result?: DeliveryMethodListResponseDeliveryMethod[];
         }
-
-        export interface Polygonv1PolygonCreateRequest {
+        interface Polygonv1PolygonCreateRequest {
             /** Координаты полигона доставки в формате `[[[lat long]]]`. */
             coordinates?: string;
         }
-
-        export interface Polygonv1PolygonCreateResponse {
+        interface Polygonv1PolygonCreateResponse {
             /**
              * Идентификатор полигона.
              * @format int64
              */
             polygon_id?: number;
         }
-
-        export interface RpcStatusV1PolygonCreate {
+        interface RpcStatusV1PolygonCreate {
             /**
              * Код ошибки.
              * @format int32
@@ -4202,8 +3907,7 @@ namespace Ozon_ {
              */
             message?: string;
         }
-
-        export interface PolygonBindRequestpolygon {
+        interface PolygonBindRequestpolygon {
             /**
              * Идентификатор полигона.
              * @format int64
@@ -4215,16 +3919,14 @@ namespace Ozon_ {
              */
             time?: number;
         }
-
         /** Расположение склада. */
-        export interface PolygonBindRequestwhLocation {
+        interface PolygonBindRequestwhLocation {
             /** Географическая широта расположения склада. */
             lat?: string;
             /** Географическая долгота расположения склада. */
             lon?: string;
         }
-
-        export interface Polygonv1PolygonBindRequest {
+        interface Polygonv1PolygonBindRequest {
             /**
              * Идентификатор метода доставки.
              * @format int32
@@ -4235,10 +3937,8 @@ namespace Ozon_ {
             /** Расположение склада. */
             warehouse_location?: PolygonBindRequestwhLocation;
         }
-
-        export type Polygonv1Empty = object;
-
-        export interface RpcStatusV1PolygonBind {
+        type Polygonv1Empty = object;
+        interface RpcStatusV1PolygonBind {
             /** @format int32 */
             code?: number;
             details?: ProtobufAny[];
@@ -4253,14 +3953,12 @@ namespace Ozon_ {
              */
             message?: string;
         }
-
-        export interface Polygonv1PolygonDeleteRequest {
+        interface Polygonv1PolygonDeleteRequest {
             /** Список идентификаторов полигонов. */
             polygon_ids?: string[];
         }
-
         /** Фильтр для поиска отправлений. */
-        export interface PostingGetFboPostingListRequestFilter {
+        interface PostingGetFboPostingListRequestFilter {
             /**
              * Начало периода в формате YYYY-MM-DD.
              * @format date-time
@@ -4281,16 +3979,14 @@ namespace Ozon_ {
              */
             to?: string;
         }
-
         /** Дополнительные поля, которые нужно добавить в ответ. */
-        export interface PostingFboPostingWithParams {
+        interface PostingFboPostingWithParams {
             /** Передайте `true`, чтобы добавить в ответ данные аналитики. */
             analytics_data?: boolean;
             /** Передайте `true`, чтобы добавить в ответ финансовые данные. */
             financial_data?: boolean;
         }
-
-        export interface PostingGetFboPostingListRequest {
+        interface PostingGetFboPostingListRequest {
             /**
              * Направление сортировки:
              *   - `asc` — по возрастанию,
@@ -4316,15 +4012,13 @@ namespace Ozon_ {
             /** Дополнительные поля, которые нужно добавить в ответ. */
             with?: PostingFboPostingWithParams;
         }
-
         /** Дополнительная информация. */
-        export interface V2AdditionalDataItem {
+        interface V2AdditionalDataItem {
             key?: string;
             value?: string;
         }
-
         /** Данные аналитики. */
-        export interface FboPostingFboPostingAnalyticsData {
+        interface FboPostingFboPostingAnalyticsData {
             /** Город доставки. */
             city?: string;
             /** Способ доставки. */
@@ -4349,9 +4043,8 @@ namespace Ozon_ {
             /** Название склада отправки заказа. */
             warehouse_name?: string;
         }
-
         /** Услуги. */
-        export interface PostingFinancialDataServices {
+        interface PostingFinancialDataServices {
             /**
              * Последняя миля.
              * @format double
@@ -4408,13 +4101,12 @@ namespace Ozon_ {
              */
             marketplace_service_item_return_part_goods_customer?: number;
         }
-
         /**
          * Информация о доставке.
          *
          * Всегда возвращает `null`.
          */
-        export interface ProductPicking {
+        interface ProductPicking {
             /**
              * Стоимость доставки.
              * @format double
@@ -4428,8 +4120,7 @@ namespace Ozon_ {
             /** Крупногабаритный товар или нет. */
             tag?: string;
         }
-
-        export interface PostingFinancialDataProduct {
+        interface PostingFinancialDataProduct {
             /** Действия. */
             actions?: string[];
             /**
@@ -4502,9 +4193,8 @@ namespace Ozon_ {
              */
             total_discount_value?: number;
         }
-
         /** Финансовые данные. */
-        export interface V2PostingFinancialData {
+        interface V2PostingFinancialData {
             /** Услуги. */
             posting_services?: PostingFinancialDataServices;
             /** Код региона, откуда отправляется заказ. */
@@ -4514,8 +4204,7 @@ namespace Ozon_ {
             /** Список товаров в заказе. */
             products?: PostingFinancialDataProduct[];
         }
-
-        export interface V2PostingProduct {
+        interface V2PostingProduct {
             /** Коды активации для услуг и цифровых товаров. */
             digital_codes?: string[];
             /** Название товара. */
@@ -4547,9 +4236,8 @@ namespace Ozon_ {
              */
             sku?: number;
         }
-
         /** Результат запроса. */
-        export interface V2FboPosting {
+        interface V2FboPosting {
             additional_data?: V2AdditionalDataItem[];
             /** Данные аналитики. */
             analytics_data?: FboPostingFboPostingAnalyticsData;
@@ -4591,13 +4279,11 @@ namespace Ozon_ {
              */
             status?: string;
         }
-
-        export interface V2FboPostingListResponse {
+        interface V2FboPostingListResponse {
             /** Массив отправлений. */
             result?: V2FboPosting[];
         }
-
-        export interface PostingGetFboPostingRequest {
+        interface PostingGetFboPostingRequest {
             /** Номер отправления. */
             posting_number?: string;
             /** Если включена транслитерация адреса из кириллицы в латиницу — `true`. */
@@ -4605,13 +4291,11 @@ namespace Ozon_ {
             /** Дополнительные поля, которые нужно добавить в ответ. */
             with?: PostingFboPostingWithParams;
         }
-
-        export interface V2FboPostingResponse {
+        interface V2FboPostingResponse {
             /** Результат запроса. */
             result?: V2FboPosting;
         }
-
-        export interface V1GetSupplyOrdersListRequest {
+        interface V1GetSupplyOrdersListRequest {
             /**
              * Номер страницы, возвращаемой в запросе.
              * @format int32
@@ -4644,17 +4328,15 @@ namespace Ozon_ {
              */
             states?: string[];
         }
-
         /** Интервал поставки по местному времени. */
-        export interface V1Timeslot {
+        interface V1Timeslot {
             /** Начало интервала. */
             from?: string;
             /** Конец интервала. */
             to?: string;
         }
-
         /** Склад поставки. */
-        export interface V1Warehouse {
+        interface V1Warehouse {
             /** Адрес склада. */
             address?: string;
             /** Название склада. */
@@ -4665,8 +4347,7 @@ namespace Ozon_ {
              */
             warehouse_id?: number;
         }
-
-        export interface GetSupplyOrdersListResponseSupplyOrder {
+        interface GetSupplyOrdersListResponseSupplyOrder {
             /** Дата создания заявки на поставку. */
             created_at?: string;
             /** Интервал поставки по местному времени. */
@@ -4726,8 +4407,7 @@ namespace Ozon_ {
              */
             total_quantity?: number;
         }
-
-        export interface V1GetSupplyOrdersListResponse {
+        interface V1GetSupplyOrdersListResponse {
             /**
              * Признак, ответ содержит не все заявки по запросу:
              * - `true` — сделайте повторный запрос с новыми значениями параметров `page` и `page_size` для получения информации об остальных заявках;
@@ -4742,17 +4422,15 @@ namespace Ozon_ {
              */
             total_supply_orders_count?: number;
         }
-
-        export interface V1GetSupplyOrderRequest {
+        interface V1GetSupplyOrderRequest {
             /**
              * Идентификатор заявки на поставку.
              * @format int64
              */
             supply_order_id: number;
         }
-
         /** Ваш собственный склад, с которого вы повезёте товары на склад поставки. Только для заявок с вРЦ. */
-        export interface V1SellerWarehouse {
+        interface V1SellerWarehouse {
             /** Адрес склада. */
             address?: string;
             /** Название склада. */
@@ -4763,9 +4441,8 @@ namespace Ozon_ {
              */
             warehouse_id?: number;
         }
-
         /** Информация о водителе и автомобиле. */
-        export interface V1VehicleInfo {
+        interface V1VehicleInfo {
             /** Имя водителя. */
             driver_name?: string;
             /** Телефон водителя. */
@@ -4775,8 +4452,7 @@ namespace Ozon_ {
             /** Номер автомобиля. */
             vehicle_number?: string;
         }
-
-        export interface V1GetSupplyOrderResponse {
+        interface V1GetSupplyOrderResponse {
             /** Дата создания заявки на поставку. */
             created_at?: string;
             /** Интервал поставки по местному времени. */
@@ -4840,8 +4516,7 @@ namespace Ozon_ {
             /** Информация о водителе и автомобиле. */
             vehicle_info?: V1VehicleInfo;
         }
-
-        export interface V1GetSupplyOrderItemsRequest {
+        interface V1GetSupplyOrderItemsRequest {
             /**
              * Номер страницы, возвращаемой в запросе.
              * @format int32
@@ -4858,8 +4533,7 @@ namespace Ozon_ {
              */
             supply_order_id: number;
         }
-
-        export interface GetSupplyOrderItemsResponseItem {
+        interface GetSupplyOrderItemsResponseItem {
             /** Ссылка на изображение товара. */
             icon_path?: string;
             /** Название товара. */
@@ -4877,8 +4551,7 @@ namespace Ozon_ {
              */
             sku?: number;
         }
-
-        export interface V1GetSupplyOrderItemsResponse {
+        interface V1GetSupplyOrderItemsResponse {
             /**
              * Признак, ответ содержит не все товары из заявки:
              * - `true` — сделайте повторный запрос с новыми значениями параметров `page` и `page_size` для получения информации об остальных товаров;
@@ -4893,8 +4566,7 @@ namespace Ozon_ {
              */
             total_items_count?: number;
         }
-
-        export interface Postingv4FbsPostingProductExemplarValidateRequestProductExemplar {
+        interface Postingv4FbsPostingProductExemplarValidateRequestProductExemplar {
             /** Номер грузовой таможенной декларации (ГТД). */
             gtd?: string;
             /** Обязательная маркировка «Честный ЗНАК». */
@@ -4902,8 +4574,7 @@ namespace Ozon_ {
             /** Регистрационный номер партии товара (РНПТ). */
             rnpt?: string;
         }
-
-        export interface Postingv4FbsPostingProductExemplarValidateRequestProduct {
+        interface Postingv4FbsPostingProductExemplarValidateRequestProduct {
             /** Информация об экземплярах. */
             exemplars?: Postingv4FbsPostingProductExemplarValidateRequestProductExemplar[];
             /**
@@ -4912,15 +4583,13 @@ namespace Ozon_ {
              */
             product_id?: number;
         }
-
-        export interface Postingv4FbsPostingProductExemplarValidateRequest {
+        interface Postingv4FbsPostingProductExemplarValidateRequest {
             /** Номер отправления. */
             posting_number?: string;
             /** Список товаров. */
             products?: Postingv4FbsPostingProductExemplarValidateRequestProduct[];
         }
-
-        export interface FbsPostingProductExemplarValidateResponseFbsPostingProductExemplarValidateResultProductExemplar {
+        interface FbsPostingProductExemplarValidateResponseFbsPostingProductExemplarValidateResultProductExemplar {
             /** Ошибки валидации экземпляра. */
             errors?: string[];
             /** Номер грузовой таможенной декларации (ГТД). */
@@ -4932,8 +4601,7 @@ namespace Ozon_ {
             /** Регистрационный номер партии товара (РНПТ). */
             rnpt?: string;
         }
-
-        export interface FbsPostingProductExemplarValidateResponseFbsPostingProductExemplarValidateResultProduct {
+        interface FbsPostingProductExemplarValidateResponseFbsPostingProductExemplarValidateResultProduct {
             /** Код ошибки. */
             error?: string;
             /** Информация об экземплярах. */
@@ -4946,19 +4614,16 @@ namespace Ozon_ {
             /** Результат прохождения проверки. `true`, если коды всех экземпляров соответствуют требованиям. */
             valid?: boolean;
         }
-
         /** Результат работы метода. */
-        export interface FbsPostingProductExemplarValidateResponseFbsPostingProductExemplarValidateResult {
+        interface FbsPostingProductExemplarValidateResponseFbsPostingProductExemplarValidateResult {
             /** Список товаров. */
             products?: FbsPostingProductExemplarValidateResponseFbsPostingProductExemplarValidateResultProduct[];
         }
-
-        export interface Postingv4FbsPostingProductExemplarValidateResponse {
+        interface Postingv4FbsPostingProductExemplarValidateResponse {
             /** Результат работы метода. */
             result?: FbsPostingProductExemplarValidateResponseFbsPostingProductExemplarValidateResult;
         }
-
-        export interface Fbsv4SetProductExemplarRequestProductExemplar {
+        interface Fbsv4SetProductExemplarRequestProductExemplar {
             /** Номер грузовой таможенной декларации (ГТД). */
             gtd?: string;
             /** Признак того, что не указан номер таможенной декларации. */
@@ -4970,8 +4635,7 @@ namespace Ozon_ {
             /** Признак того, что не указан регистрационный номер партии товара (РНПТ). */
             is_rnpt_absent?: boolean;
         }
-
-        export interface Fbsv4SetProductExemplarRequestProduct {
+        interface Fbsv4SetProductExemplarRequestProduct {
             /** Информация об экземплярах. */
             exemplars?: Fbsv4SetProductExemplarRequestProductExemplar[];
             /**
@@ -4980,25 +4644,21 @@ namespace Ozon_ {
              */
             product_id?: number;
         }
-
-        export interface Fbsv4SetProductExemplarRequest {
+        interface Fbsv4SetProductExemplarRequest {
             /** Номер отправления. */
             posting_number?: string;
             /** Список товаров. */
             products?: Fbsv4SetProductExemplarRequestProduct[];
         }
-
-        export interface Fbsv4SetProductExemplarResponse {
+        interface Fbsv4SetProductExemplarResponse {
             /** Результат обработки запроса. `true`, если запрос обработан успешно. */
             result?: boolean;
         }
-
-        export interface Fbsv4GetProductExemplarStatusRequest {
+        interface Fbsv4GetProductExemplarStatusRequest {
             /** Номер отправления. */
             posting_number?: string;
         }
-
-        export interface Fbsv4GetProductExemplarStatusResponseProductExemplar {
+        interface Fbsv4GetProductExemplarStatusResponseProductExemplar {
             /** Номер грузовой таможенной декларации (ГТД). */
             gtd?: string;
             /** Статус проверки грузовой таможенной декларации. */
@@ -5027,8 +4687,7 @@ namespace Ozon_ {
             /** Признак того, что не указан регистрационный номер партии товара (РНПТ). */
             is_rnpt_absent?: boolean;
         }
-
-        export interface Fbsv4GetProductExemplarStatusResponseProduct {
+        interface Fbsv4GetProductExemplarStatusResponseProduct {
             /** Информация об экземплярах. */
             exemplars?: Fbsv4GetProductExemplarStatusResponseProductExemplar[];
             /**
@@ -5037,8 +4696,7 @@ namespace Ozon_ {
              */
             product_id?: number;
         }
-
-        export interface Fbsv4GetProductExemplarStatusResponse {
+        interface Fbsv4GetProductExemplarStatusResponse {
             /** Номер отправления. */
             posting_number?: string;
             /** Список товаров. */
@@ -5051,8 +4709,7 @@ namespace Ozon_ {
              */
             status?: string;
         }
-
-        export interface FbsPostingShipV4RequestPackageProduct {
+        interface FbsPostingShipV4RequestPackageProduct {
             /**
              * Идентификатор товара.
              * @format int64
@@ -5064,19 +4721,16 @@ namespace Ozon_ {
              */
             quantity?: number;
         }
-
-        export interface FbsPostingShipV4RequestPackage {
+        interface FbsPostingShipV4RequestPackage {
             /** Список товаров в отправлении. */
             products?: FbsPostingShipV4RequestPackageProduct[];
         }
-
         /** Дополнительная информация. */
-        export interface FbsPostingShipV4RequestWith {
+        interface FbsPostingShipV4RequestWith {
             /** Чтобы получить дополнительную информацию, передайте `true`. */
             additional_data?: boolean;
         }
-
-        export interface Fbsv4FbsPostingShipV4Request {
+        interface Fbsv4FbsPostingShipV4Request {
             /** Список упаковок. Каждая упаковка содержит список отправлений, на которые делится заказ. */
             packages?: FbsPostingShipV4RequestPackage[];
             /** Номер отправления. */
@@ -5084,8 +4738,7 @@ namespace Ozon_ {
             /** Дополнительная информация. */
             with?: FbsPostingShipV4RequestWith;
         }
-
-        export interface Fbsv4PostingProductDetailWithoutDimensions {
+        interface Fbsv4PostingProductDetailWithoutDimensions {
             /** Обязательная маркировка «Честный ЗНАК». */
             mandatory_mark?: string[];
             /** Название товара. */
@@ -5117,21 +4770,18 @@ namespace Ozon_ {
              */
             currency_code?: string;
         }
-
-        export interface FbsPostingShipV4ResponseShipAdditionalData {
+        interface FbsPostingShipV4ResponseShipAdditionalData {
             /** Номер отправления. */
             posting_number?: string;
             /** Список товаров в отправлении. */
             products?: Fbsv4PostingProductDetailWithoutDimensions[];
         }
-
-        export interface Fbsv4FbsPostingShipV4Response {
+        interface Fbsv4FbsPostingShipV4Response {
             /** Дополнительная информация об отправлениях. */
             additional_data?: FbsPostingShipV4ResponseShipAdditionalData[];
             /** Результат сборки отправлений. */
             result?: string[];
         }
-
         /**
          * Фильтр запроса.
          *
@@ -5142,7 +4792,7 @@ namespace Ozon_ {
          *
          * Чтобы использовать фильтр по дате передачи отправления в доставку, заполните поля `delivering_date_from` и `delivering_date_to`.
          */
-        export interface Postingv3GetFbsPostingUnfulfilledListRequestFilter {
+        interface Postingv3GetFbsPostingUnfulfilledListRequestFilter {
             /**
              * Фильтр по времени, до которого продавцу нужно собрать заказ. Начало периода.
              *
@@ -5190,9 +4840,8 @@ namespace Ozon_ {
             /** Идентификатор склада. */
             warehouse_id?: number[];
         }
-
         /** Дополнительные поля, которые нужно добавить в ответ. */
-        export interface Postingv3FbsPostingWithParams {
+        interface Postingv3FbsPostingWithParams {
             /** Добавить в ответ данные аналитики. */
             analytics_data?: boolean;
             /** Добавить в ответ штрихкоды отправления. */
@@ -5202,8 +4851,7 @@ namespace Ozon_ {
             /** Выполнить транслитерацию возвращаемых значений. */
             translit?: boolean;
         }
-
-        export interface Postingv3GetFbsPostingUnfulfilledListRequest {
+        interface Postingv3GetFbsPostingUnfulfilledListRequest {
             /**
              * Направление сортировки:
              *   - `asc` — по возрастанию,
@@ -5236,9 +4884,8 @@ namespace Ozon_ {
             /** Дополнительные поля, которые нужно добавить в ответ. */
             with?: Postingv3FbsPostingWithParams;
         }
-
         /** Контактные данные получателя. */
-        export interface V3AddresseeFbsLists {
+        interface V3AddresseeFbsLists {
             /** Имя покупателя. */
             name?: string;
             /**
@@ -5248,9 +4895,8 @@ namespace Ozon_ {
              */
             phone?: string;
         }
-
         /** Данные аналитики. */
-        export interface V3FbsPostingAnalyticsData {
+        interface V3FbsPostingAnalyticsData {
             /** Город доставки. */
             city?: string;
             /**
@@ -5292,17 +4938,15 @@ namespace Ozon_ {
              */
             warehouse_id?: number;
         }
-
         /** Штрихкоды отправления. */
-        export interface V3Barcodes {
+        interface V3Barcodes {
             /** Нижний штрихкод на маркировке отправления. */
             lower_barcode?: string;
             /** Верхний штрихкод на маркировке отправления. */
             upper_barcode?: string;
         }
-
         /** Информация об отмене. */
-        export interface V3Cancellation {
+        interface V3Cancellation {
             /** Если отмена влияет на рейтинг продавца — `true`. */
             affect_cancellation_rating?: boolean;
             /** Причина отмены. */
@@ -5329,9 +4973,8 @@ namespace Ozon_ {
             /** Если отмена произошла после сборки отправления — `true`. */
             cancelled_after_ship?: boolean;
         }
-
         /** Информация об адресе доставки. */
-        export interface V3Address {
+        interface V3Address {
             /** Адрес в текстовом формате. */
             address_tail?: string;
             /** Город доставки. */
@@ -5364,9 +5007,8 @@ namespace Ozon_ {
             /** Почтовый индекс получателя. */
             zip_code?: string;
         }
-
         /** Данные о покупателе. */
-        export interface V3CustomerFbsLists {
+        interface V3CustomerFbsLists {
             /** Информация об адресе доставки. */
             address?: V3Address;
             /** Email покупателя. */
@@ -5385,9 +5027,8 @@ namespace Ozon_ {
              */
             phone?: string;
         }
-
         /** Метод доставки. */
-        export interface V3DeliveryMethod {
+        interface V3DeliveryMethod {
             /**
              * Идентификатор способа доставки.
              * @format int64
@@ -5410,9 +5051,8 @@ namespace Ozon_ {
              */
             warehouse_id?: number;
         }
-
         /** Данные о стоимости товара, размере скидки, выплате и комиссии. */
-        export interface V3PostingFinancialData {
+        interface V3PostingFinancialData {
             /** Код региона, откуда отправляется заказ. */
             cluster_from?: string;
             /** Код региона, куда доставляется заказ. */
@@ -5422,8 +5062,7 @@ namespace Ozon_ {
             /** Список товаров в заказе. */
             products?: PostingFinancialDataProduct[];
         }
-
-        export interface V3FbsPostingProduct {
+        interface V3FbsPostingProduct {
             /** Обязательная маркировка товара. */
             mandatory_mark?: string[];
             /** Название товара. */
@@ -5455,9 +5094,8 @@ namespace Ozon_ {
              */
             currency_code?: string;
         }
-
         /** Cписок продуктов, для которых нужно передать страну-изготовителя, номер грузовой таможенной декларации (ГТД), регистрационный номер партии товара (РНПТ) или маркировку «Честный ЗНАК», чтобы перевести отправление в следующий статус. */
-        export interface V3FbsPostingRequirementsV3 {
+        interface V3FbsPostingRequirementsV3 {
             /**
              * Список идентификаторов товаров (SKU), для которых нужно передать номера таможенной декларации (ГТД).
              *
@@ -5477,8 +5115,7 @@ namespace Ozon_ {
             /** Список идентификаторов товаров (SKU), для которых нужно передать регистрационный номер партии товара (РНПТ). */
             products_requiring_rnpt?: string[];
         }
-
-        export interface V3FbsPosting {
+        interface V3FbsPosting {
             /** Контактные данные получателя. */
             addressee?: V3AddresseeFbsLists;
             /** Данные аналитики. */
@@ -5598,9 +5235,8 @@ namespace Ozon_ {
             /** Трек-номер отправления. */
             tracking_number?: string;
         }
-
         /** Результат запроса. */
-        export interface Postingv3GetFbsPostingUnfulfilledListResponseResult {
+        interface Postingv3GetFbsPostingUnfulfilledListResponseResult {
             /**
              * Счётчик элементов в ответе.
              * @format int64
@@ -5609,14 +5245,12 @@ namespace Ozon_ {
             /** Список отправлений и подробная информация по каждому. */
             postings?: V3FbsPosting[];
         }
-
-        export interface Postingv3GetFbsPostingUnfulfilledListResponse {
+        interface Postingv3GetFbsPostingUnfulfilledListResponse {
             /** Результат запроса. */
             result?: Postingv3GetFbsPostingUnfulfilledListResponseResult;
         }
-
         /** Фильтр. */
-        export interface Postingv3GetFbsPostingListRequestFilter {
+        interface Postingv3GetFbsPostingListRequestFilter {
             /** Идентификатор способа доставки. */
             delivery_method_id?: number[];
             /**
@@ -5664,8 +5298,7 @@ namespace Ozon_ {
             /** Идентификатор склада. */
             warehouse_id?: number[];
         }
-
-        export interface Postingv3GetFbsPostingListRequest {
+        interface Postingv3GetFbsPostingListRequest {
             /**
              * Направление сортировки:
              *   - `asc` — по возрастанию,
@@ -5689,9 +5322,8 @@ namespace Ozon_ {
             /** Дополнительные поля, которые нужно добавить в ответ. */
             with?: Postingv3FbsPostingWithParams;
         }
-
         /** Массив отправлений. */
-        export interface V3GetFbsPostingListResponseV3Result {
+        interface V3GetFbsPostingListResponseV3Result {
             /**
              * Признак, что в ответе вернули не весь массив отправлений:
              * - `true` — необходимо сделать новый запрос с другим значением `offset`, чтобы получить информацию об остальных отправлениях;
@@ -5701,14 +5333,12 @@ namespace Ozon_ {
             /** Информация об отправлении. */
             postings?: V3FbsPosting[];
         }
-
-        export interface V3GetFbsPostingListResponseV3 {
+        interface V3GetFbsPostingListResponseV3 {
             /** Массив отправлений. */
             result?: V3GetFbsPostingListResponseV3Result;
         }
-
         /** Дополнительные поля, которые нужно добавить в ответ. */
-        export interface Postingv3FbsPostingWithParamsExamplars {
+        interface Postingv3FbsPostingWithParamsExamplars {
             /** Добавить в ответ данные аналитики. */
             analytics_data?: boolean;
             /** Добавить в ответ штрихкоды отправления. */
@@ -5722,29 +5352,25 @@ namespace Ozon_ {
             /** Выполнить транслитерацию возвращаемых значений. */
             translit?: boolean;
         }
-
-        export interface Postingv3GetFbsPostingRequest {
+        interface Postingv3GetFbsPostingRequest {
             /** Идентификатор отправления. */
             posting_number?: string;
             /** Дополнительные поля, которые нужно добавить в ответ. */
             with?: Postingv3FbsPostingWithParamsExamplars;
         }
-
-        export interface V3AdditionalDataItem {
+        interface V3AdditionalDataItem {
             key?: string;
             value?: string;
         }
-
         /** Контактные данные получателя. */
-        export interface V3Addressee {
+        interface V3Addressee {
             /** Имя покупателя. */
             name?: string;
             /** Контактный телефон. */
             phone?: string;
         }
-
         /** Данные о курьере. */
-        export interface FbsPostingDetailCourier {
+        interface FbsPostingDetailCourier {
             /** Модель автомобиля. */
             car_model?: string;
             /** Номер автомобиля. */
@@ -5754,9 +5380,8 @@ namespace Ozon_ {
             /** Телефон курьера. */
             phone?: string;
         }
-
         /** Данные о покупателе. */
-        export interface V3Customer {
+        interface V3Customer {
             /** Информация об адресе доставки. */
             address?: V3Address;
             /** Email покупателя. */
@@ -5771,8 +5396,7 @@ namespace Ozon_ {
             /** Контактный телефон. */
             phone?: string;
         }
-
-        export interface V3FbsPostingProductExemplarInfoV3 {
+        interface V3FbsPostingProductExemplarInfoV3 {
             /** Обязательная маркировка «Честный ЗНАК». */
             mandatory_mark?: string;
             /** Номер грузовой таможенной декларации (ГТД). */
@@ -5784,9 +5408,8 @@ namespace Ozon_ {
             /** Признак того, что не указан регистрационный номер партии товара (РНПТ). */
             is_rnpt_absent?: boolean;
         }
-
         /** Список товаров и экземпляров. */
-        export interface V3FbsPostingExemplarProductV3 {
+        interface V3FbsPostingExemplarProductV3 {
             /** Информация по экземплярам. */
             exemplars?: V3FbsPostingProductExemplarInfoV3[];
             /**
@@ -5795,18 +5418,16 @@ namespace Ozon_ {
              */
             sku?: number;
         }
-
         /**
          * Информация по продуктам и их экзмеплярам.
          *
          * Ответ содержит поле `product_exemplars`, если в запросе передан признак `with.product_exemplars = true`.
          */
-        export interface V3FbsPostingProductExemplarsV3 {
+        interface V3FbsPostingProductExemplarsV3 {
             products?: V3FbsPostingExemplarProductV3[];
         }
-
         /** Размеры товара. */
-        export interface V3Dimensions {
+        interface V3Dimensions {
             /** Высота упаковки. */
             height?: string;
             /** Длина товара. */
@@ -5816,9 +5437,8 @@ namespace Ozon_ {
             /** Ширина упаковки. */
             width?: string;
         }
-
         /** Размеры товара. */
-        export interface V3PostingProductDetail {
+        interface V3PostingProductDetail {
             /** Размеры товара. */
             dimensions?: V3Dimensions;
             /** Обязательная маркировка товара. */
@@ -5852,15 +5472,13 @@ namespace Ozon_ {
              */
             sku?: number;
         }
-
         /** Связанные отправления. */
-        export interface V3FbsPostingDetailRelatedPostings {
+        interface V3FbsPostingDetailRelatedPostings {
             /** Список номеров связанных отправлений. */
             related_posting_numbers?: string[];
         }
-
         /** Информация об отправлении. */
-        export interface V3FbsPostingDetail {
+        interface V3FbsPostingDetail {
             additional_data?: V3AdditionalDataItem[];
             /** Контактные данные получателя. */
             addressee?: V3Addressee;
@@ -5995,19 +5613,16 @@ namespace Ozon_ {
             /** Трек-номер отправления. */
             tracking_number?: string;
         }
-
-        export interface V3GetFbsPostingResponseV3 {
+        interface V3GetFbsPostingResponseV3 {
             /** Информация об отправлении. */
             result?: V3FbsPostingDetail;
         }
-
-        export interface PostingGetFbsPostingByBarcodeRequest {
+        interface PostingGetFbsPostingByBarcodeRequest {
             /** Штрихкод отправления. */
             barcode?: string;
         }
-
         /** Аналитические данные. */
-        export interface FbsPostingFbsPostingAnalyticsData {
+        interface FbsPostingFbsPostingAnalyticsData {
             /** Город доставки. */
             city?: string;
             /** Способ доставки. */
@@ -6025,16 +5640,14 @@ namespace Ozon_ {
             /** Регион доставки. */
             region?: string;
         }
-
         /** Штрихкоды отправления. */
-        export interface FbsPostingBarcodes {
+        interface FbsPostingBarcodes {
             /** Нижний штрихкод на маркировке отправления. */
             lower_barcode?: string;
             /** Верхний штрихкод на маркировке отправления. */
             upper_barcode?: string;
         }
-
-        export interface V2FbsPostingProduct {
+        interface V2FbsPostingProduct {
             /** Обязательная маркировка товара. */
             mandatory_mark?: string[];
             /** Название товара. */
@@ -6054,9 +5667,8 @@ namespace Ozon_ {
              */
             sku?: number;
         }
-
         /** Результаты запроса. */
-        export interface V2FbsPosting {
+        interface V2FbsPosting {
             /** Аналитические данные. */
             analytics_data?: FbsPostingFbsPostingAnalyticsData;
             /** Штрихкоды отправления. */
@@ -6097,31 +5709,26 @@ namespace Ozon_ {
             /** Статус отправления. */
             status?: string;
         }
-
         /** Информация об отправлении. */
-        export interface V2FbsPostingResponse {
+        interface V2FbsPostingResponse {
             /** Результаты запроса. */
             result?: V2FbsPosting;
         }
-
-        export interface V2FbsPostingProductCountryListRequest {
+        interface V2FbsPostingProductCountryListRequest {
             /** Фильтрация по строке. */
             name_search?: string;
         }
-
-        export interface V2FbsPostingProductCountryListResponseResult {
+        interface V2FbsPostingProductCountryListResponseResult {
             /** Название страны на русском языке. */
             name?: string;
             /** ISO код страны. */
             country_iso_code?: string;
         }
-
-        export interface V2FbsPostingProductCountryListResponse {
+        interface V2FbsPostingProductCountryListResponse {
             /** Список стран-изготовителей и ISO коды. */
             result?: V2FbsPostingProductCountryListResponseResult[];
         }
-
-        export interface V2FbsPostingProductCountrySetRequest {
+        interface V2FbsPostingProductCountrySetRequest {
             /** Номер отправления. */
             posting_number?: string;
             /**
@@ -6136,8 +5743,7 @@ namespace Ozon_ {
              */
             country_iso_code?: string;
         }
-
-        export interface V2FbsPostingProductCountrySetResponse {
+        interface V2FbsPostingProductCountrySetResponse {
             /**
              * Идентификатор продукта.
              * @format int64
@@ -6146,8 +5752,7 @@ namespace Ozon_ {
             /** Признак того, что необходимо передать номер грузовой таможенной декларации (ГТД) для продукта и отправления. */
             is_gtd_needed?: boolean;
         }
-
-        export interface Postingv3PostingMultiBoxQtySetV3Request {
+        interface Postingv3PostingMultiBoxQtySetV3Request {
             /** Идентификатор многокоробочного отправления. */
             posting_number?: string;
             /**
@@ -6156,9 +5761,8 @@ namespace Ozon_ {
              */
             multi_box_qty?: number;
         }
-
         /** Результат передачи количества коробок. */
-        export interface Postingv3PostingMultiBoxQtySetV3ResponseResult {
+        interface Postingv3PostingMultiBoxQtySetV3ResponseResult {
             /**
              * Возможные значения:
              * - `true` — значение передано успешно.
@@ -6166,18 +5770,15 @@ namespace Ozon_ {
              */
             result?: boolean;
         }
-
-        export interface Postingv3PostingMultiBoxQtySetV3Response {
+        interface Postingv3PostingMultiBoxQtySetV3Response {
             /** Результат передачи количества коробок. */
             result?: Postingv3PostingMultiBoxQtySetV3ResponseResult;
         }
-
-        export interface V1GetRestrictionsRequest {
+        interface V1GetRestrictionsRequest {
             /** Номер отправления, для которого нужно определить ограничения. */
             posting_number: string;
         }
-
-        export interface V1Restriction {
+        interface V1Restriction {
             /** Номер отправления. */
             posting_number?: string;
             /**
@@ -6216,12 +5817,10 @@ namespace Ozon_ {
              */
             min_posting_price?: number;
         }
-
-        export interface V1GetRestrictionsResponse {
+        interface V1GetRestrictionsResponse {
             result?: V1Restriction;
         }
-
-        export interface V3ExemplarInfo {
+        interface V3ExemplarInfo {
             /** Обязательная маркировка «Честный ЗНАК». */
             mandatory_mark?: string;
             /** Номер грузовой таможенной декларации (ГТД). */
@@ -6237,8 +5836,7 @@ namespace Ozon_ {
             /** Регистрационный номер партии товара (РНПТ). */
             rnpt?: string;
         }
-
-        export interface V3FbsPackageProduct {
+        interface V3FbsPackageProduct {
             /** Список с данными об экземплярах товара. */
             exemplar_info?: V3ExemplarInfo[];
             /**
@@ -6252,19 +5850,16 @@ namespace Ozon_ {
              */
             quantity?: number;
         }
-
-        export interface FbsPostingShipRequestPackage {
+        interface FbsPostingShipRequestPackage {
             /** Список товаров в отправлении. */
             products?: V3FbsPackageProduct[];
         }
-
         /** Параметр для выдачи дополнительных полей в ответе. */
-        export interface FbsPostingShipRequestWith {
+        interface FbsPostingShipRequestWith {
             /** Выдать дополнительные поля в ответе. Передайте `true`, чтобы получить дополнительную информацию об отправлении. */
             additional_data?: boolean;
         }
-
-        export interface V3FbsPostingShipRequest {
+        interface V3FbsPostingShipRequest {
             /** Список упаковок. Каждая упаковка содержит список отправлений, на которые делится заказ. */
             packages?: FbsPostingShipRequestPackage[];
             /** Номер отправления. */
@@ -6272,8 +5867,7 @@ namespace Ozon_ {
             /** Параметр для выдачи дополнительных полей в ответе. */
             with?: FbsPostingShipRequestWith;
         }
-
-        export interface Fbsv3PostingProductDetailWithoutDimensions {
+        interface Fbsv3PostingProductDetailWithoutDimensions {
             /** Обязательная маркировка «Честный ЗНАК». */
             mandatory_mark?: string[];
             /** Название товара. */
@@ -6305,29 +5899,25 @@ namespace Ozon_ {
              */
             currency_code?: string;
         }
-
-        export interface FbsPostingShipV3ResponseShipAdditionalData {
+        interface FbsPostingShipV3ResponseShipAdditionalData {
             /** Номер отправления. */
             posting_number?: string;
             /** Список товаров в отправлении. */
             products?: Fbsv3PostingProductDetailWithoutDimensions[];
         }
-
-        export interface V3FbsPostingShipResponse {
+        interface V3FbsPostingShipResponse {
             /** Дополнительная информация об отправлениях. */
             additional_data?: FbsPostingShipV3ResponseShipAdditionalData[];
             /** Номера отправлений, которые получились после сборки. */
             result?: string[];
         }
-
-        export interface V3FbsPostingShipByPackageRequest {
+        interface V3FbsPostingShipByPackageRequest {
             /** Номер отправления. */
             posting_number?: string;
             /** Список продуктов в пакете. */
             products?: V3FbsPackageProduct[];
         }
-
-        export interface PostingPostingFBSActCreateRequest {
+        interface PostingPostingFBSActCreateRequest {
             /**
              * Количество грузовых мест.
              *
@@ -6359,31 +5949,27 @@ namespace Ozon_ {
              */
             departure_date?: string;
         }
-
         /** Результат работы метода. */
-        export interface PostingFBSActCreateResponseAct {
+        interface PostingFBSActCreateResponseAct {
             /**
              * Номер задания на формирование документов.
              * @format int64
              */
             id?: number;
         }
-
-        export interface PostingPostingFBSActCreateResponse {
+        interface PostingPostingFBSActCreateResponse {
             /** Результат работы метода. */
             result?: PostingFBSActCreateResponseAct;
         }
-
-        export interface PostingPostingFBSActCheckStatusRequest {
+        interface PostingPostingFBSActCheckStatusRequest {
             /**
              * Номер задания на формирование документов (также идентификатор перевозки) из метода [POST /v2/posting/fbs/act/create](#operation/PostingAPI_PostingFBSActCreate).
              * @format int64
              */
             id?: number;
         }
-
         /** Результат работы метода. */
-        export interface PostingFBSActCheckStatusResponseStatus {
+        interface PostingFBSActCheckStatusResponseStatus {
             /**
              * Тип акта приёма передачи и транспортной накладной.
              *
@@ -6422,13 +6008,11 @@ namespace Ozon_ {
              */
             partial_num?: number;
         }
-
-        export interface PostingPostingFBSActCheckStatusResponse {
+        interface PostingPostingFBSActCheckStatusResponse {
             /** Результат работы метода. */
             result?: PostingFBSActCheckStatusResponseStatus;
         }
-
-        export interface Postingv1GetCarriageAvailableListRequest {
+        interface Postingv1GetCarriageAvailableListRequest {
             /**
              * Фильтр по методу доставки.
              * @format int64
@@ -6440,8 +6024,7 @@ namespace Ozon_ {
              */
             departure_date?: string;
         }
-
-        export interface ResultError {
+        interface ResultError {
             /** Код ошибки. */
             code?: string;
             /**
@@ -6451,8 +6034,7 @@ namespace Ozon_ {
              */
             status?: string;
         }
-
-        export interface GetCarriageAvailableListResponseResult {
+        interface GetCarriageAvailableListResponseResult {
             /**
              * Идентификатор перевозки (также номер задания на формирование документов).
              * @format int64
@@ -6509,21 +6091,18 @@ namespace Ozon_ {
             /** Часовой пояс, в котором находится склад. */
             warehouse_timezone?: string;
         }
-
-        export interface Postingv1GetCarriageAvailableListResponse {
+        interface Postingv1GetCarriageAvailableListResponse {
             /** Результат работы метода. */
             result?: GetCarriageAvailableListResponseResult[];
         }
-
-        export interface PostingPostingFBSGetActRequest {
+        interface PostingPostingFBSGetActRequest {
             /**
              * Номер задания на формирование документов (также идентификатор перевозки) из метода [POST /v2/posting/fbs/act/create](#operation/PostingAPI_PostingFBSActCreate).
              * @format int64
              */
             id?: number;
         }
-
-        export interface PostingPostingFBSGetActResponse {
+        interface PostingPostingFBSGetActResponse {
             /**
              * Содержимое.
              * @format byte
@@ -6534,16 +6113,14 @@ namespace Ozon_ {
             /** Тип. */
             type?: string;
         }
-
-        export interface V2PostingFBSDigitalActCheckStatusRequest {
+        interface V2PostingFBSDigitalActCheckStatusRequest {
             /**
              * Номер задания на формирование документов (также идентификатор перевозки) из метода [POST /v2/posting/fbs/act/create](#operation/PostingAPI_PostingFBSActCreate).
              * @format int64
              */
             id?: number;
         }
-
-        export interface V2PostingFBSDigitalActCheckStatusResponse {
+        interface V2PostingFBSDigitalActCheckStatusResponse {
             /**
              * Номер задания на формирование документов.
              * @format int64
@@ -6560,8 +6137,7 @@ namespace Ozon_ {
              */
             status?: string;
         }
-
-        export interface V2PostingFBSGetDigitalActRequest {
+        interface V2PostingFBSGetDigitalActRequest {
             /**
              * Номер задания на формирование документов (также идентификатор перевозки) из метода [POST /v2/posting/fbs/act/create](#operation/PostingAPI_PostingFBSActCreate).
              * @format int64
@@ -6576,8 +6152,7 @@ namespace Ozon_ {
              */
             doc_type?: any;
         }
-
-        export interface V2PostingFBSGetDigitalActResponse {
+        interface V2PostingFBSGetDigitalActResponse {
             /**
              * Содержание файла в бинарном формате.
              * @format byte
@@ -6588,49 +6163,42 @@ namespace Ozon_ {
             /** Тип файла. */
             type?: string;
         }
-
-        export interface PostingPostingFBSPackageLabelRequest {
+        interface PostingPostingFBSPackageLabelRequest {
             /** Идентификатор отправления. */
             posting_number?: string[];
         }
-
-        export interface PostingPostingFBSPackageLabelResponse {
+        interface PostingPostingFBSPackageLabelResponse {
             /**
              * Содержимое заказа.
              * @format byte
              */
             content?: string;
         }
-
-        export interface V1CreateLabelBatchRequest {
+        interface V1CreateLabelBatchRequest {
             /** Номера отправлений, для которых нужны этикетки. */
             posting_number?: string[];
         }
-
         /** Результат работы метода. */
-        export interface V1CreateLabelBatchResponseResult {
+        interface V1CreateLabelBatchResponseResult {
             /**
              * Идентификатор задания на формирование этикеток.
              * @format int64
              */
             task_id?: number;
         }
-
-        export interface V1CreateLabelBatchResponse {
+        interface V1CreateLabelBatchResponse {
             /** Результат работы метода. */
             result?: V1CreateLabelBatchResponseResult;
         }
-
-        export interface V1GetLabelBatchRequest {
+        interface V1GetLabelBatchRequest {
             /**
              * Номер задания на формирование этикеток из ответа метода [/v1/posting/fbs/package-label/create](#operation/PostingAPI_CreateLabelBatch).
              * @format int64
              */
             task_id: number;
         }
-
         /** Результат работы метода. */
-        export interface V1GetLabelBatchResponseResult {
+        interface V1GetLabelBatchResponseResult {
             /** Код ошибки. */
             error?: string;
             /** Ссылка на файл с этикетками. */
@@ -6644,21 +6212,18 @@ namespace Ozon_ {
              */
             status?: string;
         }
-
-        export interface V1GetLabelBatchResponse {
+        interface V1GetLabelBatchResponse {
             /** Результат работы метода. */
             result?: V1GetLabelBatchResponseResult;
         }
-
-        export interface PostingPostingFBSActGetContainerLabelsRequest {
+        interface PostingPostingFBSActGetContainerLabelsRequest {
             /**
              * Номер задания на формирование документов (также идентификатор перевозки) из метода [POST /v2/posting/fbs/act/create](#operation/PostingAPI_PostingFBSActCreate).
              * @format int64
              */
             id?: number;
         }
-
-        export interface PostingPostingFBSActGetContainerLabelsResponse {
+        interface PostingPostingFBSActGetContainerLabelsResponse {
             /**
              * Содержимое.
              * @format byte
@@ -6669,23 +6234,19 @@ namespace Ozon_ {
             /** Тип. */
             type?: string;
         }
-
-        export interface PostingMovePostingRequest {
+        interface PostingMovePostingRequest {
             /** Идентификатор отправления. */
             posting_number?: string[];
         }
-
-        export interface PostingBooleanResponse {
+        interface PostingBooleanResponse {
             /** Результат обработки запроса. `true`, если запрос выполнился без ошибок. */
             result?: boolean;
         }
-
-        export interface PostingCancelReasonRequest {
+        interface PostingCancelReasonRequest {
             /** Номера отправлений. */
             related_posting_numbers?: string[];
         }
-
-        export interface RelatedPostingCancelReasons {
+        interface RelatedPostingCancelReasons {
             /**
              * Идентификатор причины отмены:
              * - `352` — товар закончился на складе продавца.
@@ -6707,20 +6268,17 @@ namespace Ozon_ {
              */
             type_id?: string;
         }
-
-        export interface RelatedPostingCancelReason {
+        interface RelatedPostingCancelReason {
             /** Номер отправления. */
             posting_number?: string;
             /** Информация о причинах отмены. */
             reasons?: RelatedPostingCancelReasons[];
         }
-
-        export interface PostingCancelReasonResponse {
+        interface PostingCancelReasonResponse {
             /** Результат запроса. */
             result?: RelatedPostingCancelReason[];
         }
-
-        export interface PostingCancelReason {
+        interface PostingCancelReason {
             /**
              * Идентификатор причины отмены:
              *
@@ -6745,13 +6303,11 @@ namespace Ozon_ {
              */
             type_id?: string;
         }
-
-        export interface PostingCancelReasonListResponse {
+        interface PostingCancelReasonListResponse {
             /** Результат работы метода. */
             result?: PostingCancelReason[];
         }
-
-        export interface PostingCancelFbsPostingRequest {
+        interface PostingCancelFbsPostingRequest {
             /**
              * Идентификатор причины отмены отправления.
              * @format int64
@@ -6762,8 +6318,7 @@ namespace Ozon_ {
             /** Идентификатор отправления. */
             posting_number?: string;
         }
-
-        export interface PostingProductChangeRequestItem {
+        interface PostingProductChangeRequestItem {
             /**
              * Идентификатор товара в системе Ozon — SKU.
              * @format int64
@@ -6772,20 +6327,17 @@ namespace Ozon_ {
             /** Вес единиц товара в отправлении. */
             weightReal?: number[];
         }
-
-        export interface PostingPostingProductChangeRequest {
+        interface PostingPostingProductChangeRequest {
             /** Информация о товарах. */
             items?: PostingProductChangeRequestItem[];
             /** Идентификатор отправления. */
             posting_number?: string;
         }
-
-        export interface PostingPostingProductChangeResponse {
+        interface PostingPostingProductChangeResponse {
             /** Идентификатор отправления. */
             result?: string;
         }
-
-        export interface PostingProductCancelRequestItem {
+        interface PostingProductCancelRequestItem {
             /**
              * Количество товара в отправлении.
              * @format int32
@@ -6797,8 +6349,7 @@ namespace Ozon_ {
              */
             sku?: number;
         }
-
-        export interface PostingPostingProductCancelRequest {
+        interface PostingPostingProductCancelRequest {
             /**
              * Идентификатор причины отмены отправления товара.
              * @format int64
@@ -6811,14 +6362,12 @@ namespace Ozon_ {
             /** Идентификатор отправления. */
             posting_number?: string;
         }
-
-        export interface PostingPostingProductCancelResponse {
+        interface PostingPostingProductCancelResponse {
             /** Номер отправления. */
             result?: string;
         }
-
         /** Параметры фильтра. */
-        export interface V2PostingFBSActListFilter {
+        interface V2PostingFBSActListFilter {
             /** Начальная дата создания отгрузок. */
             date_from?: string;
             /** Конечная дата создания отгрузок. */
@@ -6853,8 +6402,7 @@ namespace Ozon_ {
              */
             status?: string[];
         }
-
-        export interface V2PostingFBSActListRequest {
+        interface V2PostingFBSActListRequest {
             /** Параметры фильтра. */
             filter?: V2PostingFBSActListFilter;
             /**
@@ -6863,9 +6411,8 @@ namespace Ozon_ {
              */
             limit: number;
         }
-
         /** Информация про акты перевозки. */
-        export interface V2PostingFBSActListRelatedDocs {
+        interface V2PostingFBSActListRelatedDocs {
             /** Информация про акт приёма-передачи. */
             act_of_acceptance?: {
                 /**
@@ -6919,8 +6466,7 @@ namespace Ozon_ {
                 document_status?: string;
             };
         }
-
-        export interface V2PostingFBSActListResult {
+        interface V2PostingFBSActListResult {
             /**
              * Идентификатор отгрузки.
              * @format int64
@@ -6976,13 +6522,11 @@ namespace Ozon_ {
             /** Информация про акты перевозки. */
             related_docs?: V2PostingFBSActListRelatedDocs;
         }
-
-        export interface V2PostingFBSActListResponse {
+        interface V2PostingFBSActListResponse {
             /** Результат запроса. */
             result?: V2PostingFBSActListResult[];
         }
-
-        export interface V2PostingFBSDigitalActDocumentSignRequest {
+        interface V2PostingFBSDigitalActDocumentSignRequest {
             /**
              * Идентификатор отгрузки.
              * @format int64
@@ -6995,21 +6539,18 @@ namespace Ozon_ {
              */
             doc_type?: string;
         }
-
-        export interface V2PostingFBSDigitalActDocumentSignResponse {
+        interface V2PostingFBSDigitalActDocumentSignResponse {
             /** Результат обработки. */
             result?: string;
         }
-
-        export interface V2PostingFBSActGetPostingsRequest {
+        interface V2PostingFBSActGetPostingsRequest {
             /**
              * Идентификатор акта.
              * @format int64
              */
             id?: number;
         }
-
-        export interface V2PostingFBSActGetProducts {
+        interface V2PostingFBSActGetProducts {
             /** Название товара. */
             name?: string;
             /** Идентификатор товара в системе продавца — артикул. */
@@ -7027,8 +6568,7 @@ namespace Ozon_ {
              */
             sku?: number;
         }
-
-        export interface V2PostingFBSActGetPostingsResult {
+        interface V2PostingFBSActGetPostingsResult {
             /**
              * Идентификатор акта.
              * @format int64
@@ -7058,18 +6598,15 @@ namespace Ozon_ {
             /** Список товаров в отправлении. */
             products?: V2PostingFBSActGetProducts[];
         }
-
-        export interface V2PostingFBSActGetPostingsResponse {
+        interface V2PostingFBSActGetPostingsResponse {
             /** Информация об отправлениях. */
             result?: V2PostingFBSActGetPostingsResult[];
         }
-
-        export interface PostingFbsPostingDeliveringRequest {
+        interface PostingFbsPostingDeliveringRequest {
             /** Идентификатор отправления. */
             posting_number?: string[];
         }
-
-        export interface FbsPostingMoveStatusResponseMoveStatus {
+        interface FbsPostingMoveStatusResponseMoveStatus {
             /** Ошибка при обработке запроса. */
             error?: string;
             /** Номер отправления. */
@@ -7077,59 +6614,49 @@ namespace Ozon_ {
             /** Если запрос выполнен без ошибок — `true`. */
             result?: boolean;
         }
-
-        export interface PostingFbsPostingMoveStatusResponse {
+        interface PostingFbsPostingMoveStatusResponse {
             /** Результат работы метода. */
             result?: FbsPostingMoveStatusResponseMoveStatus[];
         }
-
-        export interface FbsPostingTrackingNumberSetRequestTrackingNumber {
+        interface FbsPostingTrackingNumberSetRequestTrackingNumber {
             /** Идентификатор отправления. */
             posting_number?: string;
             /** Трек-номер отправления. */
             tracking_number?: string;
         }
-
-        export interface PostingFbsPostingTrackingNumberSetRequest {
+        interface PostingFbsPostingTrackingNumberSetRequest {
             /** Массив с парами идентификатор отправления — трек-номер. */
             tracking_numbers?: FbsPostingTrackingNumberSetRequestTrackingNumber[];
         }
-
-        export interface PostingFbsPostingLastMileRequest {
+        interface PostingFbsPostingLastMileRequest {
             /** Идентификатор отправления. */
             posting_number?: string[];
         }
-
-        export interface PostingFbsPostingDeliveredRequest {
+        interface PostingFbsPostingDeliveredRequest {
             /** Идентификатор отправления. */
             posting_number?: string[];
         }
-
-        export interface PostingFbsPostingSentbysellerRequest {
+        interface PostingFbsPostingSentbysellerRequest {
             /** Список идентификаторов отправлений. */
             posting_number?: string[];
         }
-
-        export interface PostingFbsPostingSentbysellerResponseItem {
+        interface PostingFbsPostingSentbysellerResponseItem {
             /** Ошибка. */
             error?: string;
             /** Идентификатор отправления. */
             posting_number?: string;
             result?: boolean;
         }
-
-        export interface PostingFbsPostingSentbysellerResponse {
+        interface PostingFbsPostingSentbysellerResponse {
             /** Результат работы метода. */
             result?: PostingFbsPostingSentbysellerResponseItem[];
         }
-
-        export interface V1PostingFbsTimeslotChangeRestrictionsRequest {
+        interface V1PostingFbsTimeslotChangeRestrictionsRequest {
             /** Номер отправления. */
             posting_number?: string;
         }
-
         /** Период дат, доступных для переноса. */
-        export interface V1PostingFbsTimeslotChangeRestrictionsDeliveryInterval {
+        interface V1PostingFbsTimeslotChangeRestrictionsDeliveryInterval {
             /**
              * Дата начала периода.
              *
@@ -7145,8 +6672,7 @@ namespace Ozon_ {
              */
             end?: string;
         }
-
-        export interface V1PostingFbsTimeslotChangeRestrictionsResponse {
+        interface V1PostingFbsTimeslotChangeRestrictionsResponse {
             /** Период дат, доступных для переноса. */
             delivery_interval?: V1PostingFbsTimeslotChangeRestrictionsDeliveryInterval;
             /**
@@ -7155,9 +6681,8 @@ namespace Ozon_ {
              */
             remaining_changes_count?: number;
         }
-
         /** Новый период для даты доставки. */
-        export interface V1PostingFbsTimeslotSetNewTimeslot {
+        interface V1PostingFbsTimeslotSetNewTimeslot {
             /**
              * Дата начала периода.
              *
@@ -7173,21 +6698,18 @@ namespace Ozon_ {
              */
             to?: string;
         }
-
-        export interface V1PostingFbsTimeslotSetRequest {
+        interface V1PostingFbsTimeslotSetRequest {
             /** Новый период для даты доставки. */
             new_timeslot?: V1PostingFbsTimeslotSetNewTimeslot;
             /** Номер отправления. */
             posting_number?: string;
         }
-
-        export interface V1PostingFbsTimeslotSetResponse {
+        interface V1PostingFbsTimeslotSetResponse {
             /** `true`, если дата изменена. */
             result?: boolean;
         }
-
         /** Фильтр по периоду создания деклараций. */
-        export interface GetEtgbRequestDate {
+        interface GetEtgbRequestDate {
             /**
              * Дата начала.
              * @format date-time
@@ -7199,14 +6721,12 @@ namespace Ozon_ {
              */
             to?: string;
         }
-
-        export interface V1GetEtgbRequest {
+        interface V1GetEtgbRequest {
             /** Фильтр по периоду создания деклараций. */
             date?: GetEtgbRequestDate;
         }
-
         /** Информация о декларации. */
-        export interface GetEtgbResponseResultEtgb {
+        interface GetEtgbResponseResultEtgb {
             /** Номер. */
             number?: string;
             /** Дата создания. */
@@ -7218,21 +6738,18 @@ namespace Ozon_ {
              */
             url?: string;
         }
-
-        export interface GetEtgbResponseResult {
+        interface GetEtgbResponseResult {
             /** Номер отправления. */
             posting_number?: string;
             /** Информация о декларации. */
             etgb?: GetEtgbResponseResultEtgb;
         }
-
-        export interface V1GetEtgbResponse {
+        interface V1GetEtgbResponse {
             /** Результат запроса. */
             result?: GetEtgbResponseResult[];
         }
-
         /** Фильтр. */
-        export interface ReturnsGetReturnsCompanyFboRequestFilter {
+        interface ReturnsGetReturnsCompanyFboRequestFilter {
             /** Идентификатор отправления. */
             posting_number?: string;
             /**
@@ -7242,8 +6759,7 @@ namespace Ozon_ {
              */
             status?: string[];
         }
-
-        export interface ReturnsGetReturnsCompanyFboRequest {
+        interface ReturnsGetReturnsCompanyFboRequest {
             /** Фильтр. */
             filter?: ReturnsGetReturnsCompanyFboRequestFilter;
             /**
@@ -7259,9 +6775,8 @@ namespace Ozon_ {
              */
             offset?: number;
         }
-
         /** Информация о возврате. */
-        export interface GetReturnsCompanyFboResponseGetReturnsCompanyItemFbo {
+        interface GetReturnsCompanyFboResponseGetReturnsCompanyItemFbo {
             /**
              * Время приёма возврата от покупателя.
              * @format date-time
@@ -7300,8 +6815,7 @@ namespace Ozon_ {
             /** Статус возврата. */
             status_name?: string;
         }
-
-        export interface ReturnsGetReturnsCompanyFboResponse {
+        interface ReturnsGetReturnsCompanyFboResponse {
             /**
              * Счётчик элементов в ответе.
              * @format int64
@@ -7310,15 +6824,13 @@ namespace Ozon_ {
             /** Информация о возвратах. */
             returns?: GetReturnsCompanyFboResponseGetReturnsCompanyItemFbo[];
         }
-
         /** Фильтр. */
-        export interface V3ReturnsCompanyFilterFbo {
+        interface V3ReturnsCompanyFilterFbo {
             /** Номер отправления. */
             posting_number?: string;
             status?: string[];
         }
-
-        export interface V3GetReturnsCompanyFboV3Request {
+        interface V3GetReturnsCompanyFboV3Request {
             /** Фильтр. */
             filter?: V3ReturnsCompanyFilterFbo;
             /**
@@ -7334,8 +6846,7 @@ namespace Ozon_ {
              */
             limit?: number;
         }
-
-        export interface CommonReturnsCompanyItemFbo {
+        interface CommonReturnsCompanyItemFbo {
             /**
              * Время приёма возврата от поĸупателя.
              * @format date-time
@@ -7374,8 +6885,7 @@ namespace Ozon_ {
             /** Статус возврата. */
             status_name?: string;
         }
-
-        export interface V3GetReturnsCompanyFboV3Response {
+        interface V3GetReturnsCompanyFboV3Response {
             /**
              * Идентификатор последнего значения на странице.
              * @format int64
@@ -7384,8 +6894,7 @@ namespace Ozon_ {
             /** Информация о возвратах. */
             returns?: CommonReturnsCompanyItemFbo[];
         }
-
-        export interface FilterTimeRange {
+        interface FilterTimeRange {
             /**
              * Начало периода.
              *
@@ -7403,9 +6912,8 @@ namespace Ozon_ {
              */
             time_to?: string;
         }
-
         /** Фильтр. */
-        export interface ReturnsGetReturnsCompanyFBSRequestFilter {
+        interface ReturnsGetReturnsCompanyFBSRequestFilter {
             /** Время приёма возврата от поĸупателя. */
             accepted_from_customer_moment?: FilterTimeRange[];
             /** Последний день бесплатного хранения. */
@@ -7434,8 +6942,7 @@ namespace Ozon_ {
              */
             status?: string;
         }
-
-        export interface ReturnsGetReturnsCompanyFBSRequest {
+        interface ReturnsGetReturnsCompanyFBSRequest {
             /** Фильтр. */
             filter?: ReturnsGetReturnsCompanyFBSRequestFilter;
             /**
@@ -7451,8 +6958,7 @@ namespace Ozon_ {
              */
             offset?: number;
         }
-
-        export interface ResultGetReturnsCompanyFBSItem {
+        interface ResultGetReturnsCompanyFBSItem {
             /** Время приёма возврата от покупателя. */
             accepted_from_customer_moment?: string;
             /**
@@ -7543,9 +7049,8 @@ namespace Ozon_ {
             /** Статус возврата. */
             status?: string;
         }
-
         /** Результат работы метода. */
-        export interface GetReturnsCompanyFBSResponseResult {
+        interface GetReturnsCompanyFBSResponseResult {
             /**
              * Счётчик элементов в ответе.
              * @format int64
@@ -7554,14 +7059,12 @@ namespace Ozon_ {
             /** Информация о возврате. */
             returns?: ResultGetReturnsCompanyFBSItem[];
         }
-
-        export interface ReturnsGetReturnsCompanyFBSResponse {
+        interface ReturnsGetReturnsCompanyFBSResponse {
             /** Результат работы метода. */
             result?: GetReturnsCompanyFBSResponseResult;
         }
-
         /** Время приёма возврата от поĸупателя. */
-        export interface CommonTimeRangeCustomerMoment {
+        interface CommonTimeRangeCustomerMoment {
             /**
              * Начало периода.
              *
@@ -7579,9 +7082,8 @@ namespace Ozon_ {
              */
             time_to?: string;
         }
-
         /** Последний день бесплатного хранения. */
-        export interface CommonTimeRangeLastDay {
+        interface CommonTimeRangeLastDay {
             /**
              * Дата и время начала последнего дня хранения.
              *
@@ -7599,9 +7101,8 @@ namespace Ozon_ {
              */
             time_to?: string;
         }
-
         /** Фильтр. */
-        export interface V3ReturnsCompanyFilterFbs {
+        interface V3ReturnsCompanyFilterFbs {
             /** Время приёма возврата от поĸупателя. */
             accepted_from_customer_moment?: CommonTimeRangeCustomerMoment;
             /** Последний день бесплатного хранения. */
@@ -7627,8 +7128,7 @@ namespace Ozon_ {
              */
             status?: string;
         }
-
-        export interface V3GetReturnsCompanyFbsV3Request {
+        interface V3GetReturnsCompanyFbsV3Request {
             /** Фильтр. */
             filter?: V3ReturnsCompanyFilterFbs;
             /**
@@ -7644,8 +7144,7 @@ namespace Ozon_ {
              */
             last_id?: number;
         }
-
-        export interface CommonReturnsCompanyItemFbs {
+        interface CommonReturnsCompanyItemFbs {
             /** Время приёма возврата от покупателя. */
             accepted_from_customer_moment?: string;
             /**
@@ -7742,8 +7241,7 @@ namespace Ozon_ {
             /** Статус возврата. */
             status?: string;
         }
-
-        export interface V3GetReturnsCompanyFbsV3Response {
+        interface V3GetReturnsCompanyFbsV3Response {
             /**
              * Идентификатор возврата, который был загружен в предыдущий раз. В ответе будут возвраты, идентификаторы которых больше значения в `last_id`.
              * @format int64
@@ -7752,17 +7250,15 @@ namespace Ozon_ {
             /** Информация о возвратах. */
             returns?: CommonReturnsCompanyItemFbs[];
         }
-
-        export interface V1GetConditionalCancellationRequest {
+        interface V1GetConditionalCancellationRequest {
             /**
              * Идентификатор заявки на отмену.
              * @format int64
              */
             cancellation_id: number;
         }
-
         /** Причина отмены. */
-        export interface ConditionalCancellationCancellationReason {
+        interface ConditionalCancellationCancellationReason {
             /**
              * Идентификатор причины отмены.
              * @format int64
@@ -7771,9 +7267,8 @@ namespace Ozon_ {
             /** Название причины отмены. */
             name?: string;
         }
-
         /** Статус заявки на отмену. */
-        export interface ConditionalCancellationState {
+        interface ConditionalCancellationState {
             /**
              * Идентификатор статуса.
              * @format int64
@@ -7789,9 +7284,8 @@ namespace Ozon_ {
              */
             state?: 'ON_APPROVAL' | 'APPROVED' | 'REJECTED';
         }
-
         /** Результат запроса. */
-        export interface V1ConditionalCancellation {
+        interface V1ConditionalCancellation {
             /**
              * Идентификатор заявки на отмену.
              * @format int64
@@ -7839,14 +7333,12 @@ namespace Ozon_ {
              */
             auto_approve_date?: string;
         }
-
-        export interface V1GetConditionalCancellationResponse {
+        interface V1GetConditionalCancellationResponse {
             /** Результат запроса. */
             result?: V1ConditionalCancellation;
         }
-
         /** Фильтры. */
-        export interface GetConditionalCancellationListRequestFilters {
+        interface GetConditionalCancellationListRequestFilters {
             /**
              * Фильтр по инициатору отмены:
              * - `OZON` — Ozon,
@@ -7873,14 +7365,12 @@ namespace Ozon_ {
              */
             state?: 'ALL' | 'ON_APPROVAL' | 'APPROVED' | 'REJECTED';
         }
-
         /** Дополнительная информация. */
-        export interface GetConditionalCancellationListRequestWith {
+        interface GetConditionalCancellationListRequestWith {
             /** Признак, что в ответе нужно вывести счётчик заявок в разных статусах. */
             counters?: boolean;
         }
-
-        export interface V1GetConditionalCancellationListRequest {
+        interface V1GetConditionalCancellationListRequest {
             /** Фильтры. */
             filters?: GetConditionalCancellationListRequestFilters;
             /**
@@ -7896,9 +7386,8 @@ namespace Ozon_ {
             /** Дополнительная информация. */
             with?: GetConditionalCancellationListRequestWith;
         }
-
         /** Cчётчик заявок в разных статусах. */
-        export interface GetConditionalCancellationListResponseCounters {
+        interface GetConditionalCancellationListResponseCounters {
             /**
              * Количество заявок на рассмотрении.
              * @format int64
@@ -7915,8 +7404,7 @@ namespace Ozon_ {
              */
             rejected?: number;
         }
-
-        export interface V1GetConditionalCancellationListResponse {
+        interface V1GetConditionalCancellationListResponse {
             /** Список заявок на отмену. */
             result?: V1ConditionalCancellation[];
             /**
@@ -7927,8 +7415,7 @@ namespace Ozon_ {
             /** Cчётчик заявок в разных статусах. */
             counters?: GetConditionalCancellationListResponseCounters;
         }
-
-        export interface V1ConditionalCancellationMoveRequest {
+        interface V1ConditionalCancellationMoveRequest {
             /**
              * Идентификатор заявки на отмену.
              * @format int64
@@ -7937,17 +7424,15 @@ namespace Ozon_ {
             /** Комментарий. */
             comment?: string;
         }
-
         /** Дополнительные поля, которые нужно добавить в ответ. */
-        export interface ChatListRequestWith {
+        interface ChatListRequestWith {
             /** Атрибут выдачи параметра `first_unread_message_id` в ответе. Если `true`, в ответе вы получите идентификатор первого непрочитанного сообщения в чате. */
             first_unread_message_id?: boolean;
             /** Атрибут выдачи параметра `unread_count` в ответе. Если `true`, в ответе вы получите количество непрочитанных сообщений в чате. */
             unread_count?: boolean;
         }
-
         /** ChatList */
-        export interface ChatChatListRequest {
+        interface ChatChatListRequest {
             /** Массив с идентификаторами чатов, для которых нужно вывести информацию. */
             chat_id_list?: string[];
             /**
@@ -7963,9 +7448,8 @@ namespace Ozon_ {
             /** Дополнительные поля, которые нужно добавить в ответ. */
             with?: ChatListRequestWith;
         }
-
         /** Информация об участнике чата. */
-        export interface ChatExternalUser {
+        interface ChatExternalUser {
             /** Идентификатор участника чата. */
             id?: string;
             /**
@@ -7977,9 +7461,8 @@ namespace Ozon_ {
              */
             type?: string;
         }
-
         /** Chat models */
-        export interface ChatChat {
+        interface ChatChat {
             /**
              * Идентификатор первого непрочитанного сообщения в чате.
              * @format uint64
@@ -8000,8 +7483,7 @@ namespace Ozon_ {
             /** Cписок участников чата. */
             users?: ChatExternalUser[];
         }
-
-        export interface ChatChatListResponse {
+        interface ChatChatListResponse {
             result?: ChatChat[];
             /**
              * Общее количество непрочитанных сообщений.
@@ -8009,22 +7491,19 @@ namespace Ozon_ {
              */
             total_unread_count?: number;
         }
-
         /** ChatSendMessage */
-        export interface ChatChatSendMessageRequest {
+        interface ChatChatSendMessageRequest {
             /** Идентификатор чата. */
             chat_id?: string;
             /** Текст сообщения в формате plain text. */
             text?: string;
         }
-
-        export interface ChatChatSendMessageResponse {
+        interface ChatChatSendMessageResponse {
             /** Результат обработки запроса. */
             result?: string;
         }
-
         /** ChatSendFile */
-        export interface ChatChatSendFileRequest {
+        interface ChatChatSendFileRequest {
             /** Файл в виде строки base64. */
             base64_content?: string;
             /** Идентификатор чата. */
@@ -8032,14 +7511,12 @@ namespace Ozon_ {
             /** Название файла с расширением. */
             name?: string;
         }
-
-        export interface ChatChatSendFileResponse {
+        interface ChatChatSendFileResponse {
             /** Результат обработки запроса. */
             result?: string;
         }
-
         /** ChatHistory */
-        export interface ChatChatHistoryRequest {
+        interface ChatChatHistoryRequest {
             /** Идентификатор чата. */
             chat_id?: string;
             /**
@@ -8053,17 +7530,15 @@ namespace Ozon_ {
              */
             limit?: number;
         }
-
         /** Информация о товаре. */
-        export interface ContextItem {
+        interface ContextItem {
             /**
              * Идентификатор товара в системе Ozon — SKU.
              * @format int64
              */
             sku?: number;
         }
-
-        export interface OrderPosting {
+        interface OrderPosting {
             /**
              * Схема доставки:
              *   - `FBO`,
@@ -8077,25 +7552,22 @@ namespace Ozon_ {
             /** Список идентификаторов товаров в отправлении. */
             sku_list?: number[];
         }
-
         /** Информация о заказе. */
-        export interface ContextOrder {
+        interface ContextOrder {
             /** Номер заказа. */
             order_number?: string;
             /** Информация об отправлении. */
             postings?: OrderPosting[];
         }
-
         /** Заказ или отдельный товар, о котором пользователь написал в чат. */
-        export interface MessageContext {
+        interface MessageContext {
             /** Информация о товаре. */
             item?: ContextItem;
             /** Информация о заказе. */
             order?: ContextOrder;
         }
-
         /** Информация о файле в чате. Отображается только для сообщений с параметром `type = file`. */
-        export interface ChatFile {
+        interface ChatFile {
             /** Тип файла. */
             mime?: string;
             /** Название файла. */
@@ -8108,8 +7580,7 @@ namespace Ozon_ {
             /** URL файла. */
             url?: string;
         }
-
-        export interface ChatMessage {
+        interface ChatMessage {
             /** Заказ или отдельный товар, о котором пользователь написал в чат. */
             context?: MessageContext;
             /**
@@ -8135,15 +7606,13 @@ namespace Ozon_ {
             /** Информация об участнике чата. */
             user?: ChatExternalUser;
         }
-
         /** Результат. */
-        export interface ChatChatHistoryResponse {
+        interface ChatChatHistoryResponse {
             /** Результат работы метода. */
             result?: ChatMessage[];
         }
-
         /** ChatUpdates */
-        export interface ChatChatUpdatesRequest {
+        interface ChatChatUpdatesRequest {
             /** Идентификатор чата. */
             chat_id?: string;
             /**
@@ -8157,31 +7626,26 @@ namespace Ozon_ {
              */
             limit?: number;
         }
-
-        export interface ChatChatUpdatesResponse {
+        interface ChatChatUpdatesResponse {
             /** Результат работы метода. */
             result?: ChatMessage[];
         }
-
         /** ChatStart */
-        export interface ChatChatStartRequest {
+        interface ChatChatStartRequest {
             /** Идентификатор отправления. */
             posting_number?: string;
         }
-
         /** Результат работы метода. */
-        export interface ChatStartResponseResult {
+        interface ChatStartResponseResult {
             /** Идентификатор чата. */
             chat_id?: string;
         }
-
-        export interface ChatChatStartResponse {
+        interface ChatChatStartResponse {
             /** Результат работы метода. */
             result?: ChatStartResponseResult;
         }
-
         /** Фильтр по чатам. */
-        export interface ChatListRequestFilter {
+        interface ChatListRequestFilter {
             /**
              * Фильтр по статусу чата:
              * - `All` — все чаты.
@@ -8194,8 +7658,7 @@ namespace Ozon_ {
             /** Фильтр по чатам с непрочитанными сообщениями. */
             unread_only?: boolean;
         }
-
-        export interface ChatList {
+        interface ChatList {
             /** Фильтр по чатам. */
             filter?: ChatListRequestFilter;
             /**
@@ -8209,9 +7672,8 @@ namespace Ozon_ {
              */
             offset?: number;
         }
-
         /** Данные чата. */
-        export interface ChatInfo {
+        interface ChatInfo {
             /** Идентификатор чата. */
             chat_id?: string;
             /**
@@ -8248,8 +7710,7 @@ namespace Ozon_ {
              */
             unread_count?: number;
         }
-
-        export interface V2ChatListResponse {
+        interface V2ChatListResponse {
             /** Данные чатов. */
             chats?: ChatInfo[];
             /**
@@ -8263,8 +7724,7 @@ namespace Ozon_ {
              */
             total_unread_count?: number;
         }
-
-        export interface ChatHistory {
+        interface ChatHistory {
             /** Идентификатор чата. */
             chat_id: string;
             /**
@@ -8286,9 +7746,8 @@ namespace Ozon_ {
              */
             limit?: number;
         }
-
         /** Информация об участнике чата. */
-        export interface V2User {
+        interface V2User {
             /** Идентификатор участника чата. */
             id?: string;
             /**
@@ -8301,8 +7760,7 @@ namespace Ozon_ {
              */
             type?: string;
         }
-
-        export interface V2ChatMessage {
+        interface V2ChatMessage {
             /**
              * Дата создания сообщения.
              * @format date-time
@@ -8320,15 +7778,13 @@ namespace Ozon_ {
             /** Информация об участнике чата. */
             user?: V2User;
         }
-
-        export interface V2ChatHistoryResponse {
+        interface V2ChatHistoryResponse {
             /** Признак, что в ответе вернули не все сообщения. */
             has_next?: boolean;
             /** Массив сообщений, отсортированный в соответсвии с параметром `direction` из тела запроса. */
             messages?: V2ChatMessage[];
         }
-
-        export interface ChatRead {
+        interface ChatRead {
             /** Идентификатор чата. */
             chat_id: string;
             /**
@@ -8337,64 +7793,54 @@ namespace Ozon_ {
              */
             from_message_id: number;
         }
-
-        export interface V2ChatReadResponse {
+        interface V2ChatReadResponse {
             /**
              * Количество непрочитанных сообщений в чате.
              * @format int64
              */
             unread_count?: number;
         }
-
-        export interface V1InvoiceCreateOrUpdateRequest {
+        interface V1InvoiceCreateOrUpdateRequest {
             /** Номер отправления. */
             posting_number?: string;
             /** Ссылка на счёт-проформу. */
             url?: string;
         }
-
-        export interface V1InvoiceCreateOrUpdateResponse {
+        interface V1InvoiceCreateOrUpdateResponse {
             /** Результат работы метода. */
             result?: boolean;
         }
-
-        export interface V1InvoiceGetRequest {
+        interface V1InvoiceGetRequest {
             /** Номер отправления. */
             posting_number?: string;
         }
-
         /** Результат работы метода. */
-        export interface InvoiceGetResponseResult {
+        interface InvoiceGetResponseResult {
             /** Ссылка на счёт-проформу. */
             file_url?: string;
         }
-
-        export interface V1InvoiceGetResponse {
+        interface V1InvoiceGetResponse {
             /** Результат работы метода. */
             result?: InvoiceGetResponseResult;
         }
-
-        export interface V1InvoiceDeleteRequest {
+        interface V1InvoiceDeleteRequest {
             /** Номер отправления. */
             posting_number?: string;
         }
-
-        export interface V1InvoiceDeleteResponse {
+        interface V1InvoiceDeleteResponse {
             /** Результат работы метода. */
             result?: boolean;
         }
-
         /** ReportInfo */
-        export interface ReportReportInfoRequest {
+        interface ReportReportInfoRequest {
             /** Уникальный идентификатор отчёта. */
             code?: string;
         }
-
         /**
          * Common
          * Информация об отчёте.
          */
-        export interface ReportReport {
+        interface ReportReport {
             /** Уникальный идентификатор отчёта. */
             code?: string;
             /**
@@ -8427,12 +7873,10 @@ namespace Ozon_ {
              */
             status?: string;
         }
-
-        export interface ReportReportInfoResponse {
+        interface ReportReportInfoResponse {
             /** Информация об отчёте. */
             result?: ReportReport;
         }
-
         /**
          * Тип отчёта:
          *   - `ALL` — все отчёты,
@@ -8446,10 +7890,9 @@ namespace Ozon_ {
          *   - `SELLER_FINANCE` — отчёт о финансах.
          * @default "ALL"
          */
-        export type ReportListRequestReportType = string;
-
+        type ReportListRequestReportType = string;
         /** ReportList */
-        export interface ReportReportListRequest {
+        interface ReportReportListRequest {
             /**
              * Номер страницы.
              * @format int32
@@ -8476,9 +7919,8 @@ namespace Ozon_ {
              */
             report_type?: ReportListRequestReportType;
         }
-
         /** Результаты запроса. */
-        export interface ReportListResponseResult {
+        interface ReportListResponseResult {
             /** Массив со всеми сгенерированными отчётами. */
             reports?: ReportReport[];
             /**
@@ -8487,12 +7929,10 @@ namespace Ozon_ {
              */
             total?: number;
         }
-
-        export interface ReportReportListResponse {
+        interface ReportReportListResponse {
             /** Результаты запроса. */
             result?: ReportListResponseResult;
         }
-
         /**
          * Language
          * Язык ответа:
@@ -8500,8 +7940,7 @@ namespace Ozon_ {
          *   - `EN` — английский.
          * @default "DEFAULT"
          */
-        export type ReportLanguage = string;
-
+        type ReportLanguage = string;
         /**
          * Фильтр по видимости товара:
          *   - `ALL` — все товары, кроме архивных.
@@ -8527,10 +7966,9 @@ namespace Ozon_ {
          *   - `QUARANTINE` — товары на карантине после изменения цены более чем на 50%.
          * @default "ALL"
          */
-        export type ReportCreateCompanyProductsReportRequestVisibility = string;
-
+        type ReportCreateCompanyProductsReportRequestVisibility = string;
         /** CreateCompanyProductsReport */
-        export interface ReportCreateCompanyProductsReportRequest {
+        interface ReportCreateCompanyProductsReportRequest {
             /**
              * Язык ответа:
              *   - `RU` — русский,
@@ -8569,18 +8007,15 @@ namespace Ozon_ {
              */
             visibility?: ReportCreateCompanyProductsReportRequestVisibility;
         }
-
         /** Результаты запроса. */
-        export interface CreateReportResponseCode {
+        interface CreateReportResponseCode {
             /** Уникальный идентификатор отчёта. */
             code?: string;
         }
-
-        export interface ReportCreateReportResponse {
+        interface ReportCreateReportResponse {
             /** Результаты запроса. */
             result?: CreateReportResponseCode;
         }
-
         /**
          * Фильтр по типу транзакции:
          *   - `ALL` — все,
@@ -8591,10 +8026,9 @@ namespace Ozon_ {
          *   - `OTHER` — другие.
          * @default "ALL"
          */
-        export type CreateCompanyTransactionsReportRequestTransactionType = string;
-
+        type CreateCompanyTransactionsReportRequestTransactionType = string;
         /** CreateCompanyTransactionsReport */
-        export interface ReportCreateCompanyTransactionsReportRequest {
+        interface ReportCreateCompanyTransactionsReportRequest {
             /** Дата, с которой рассчитывается отчёт по транзакциям. Формат UTC: ГГГГ-ММ-ДД. */
             date_from?: string;
             /** Дата, по которую рассчитывается отчёт по транзакциям. Формат UTC: ГГГГ-ММ-ДД. */
@@ -8618,7 +8052,6 @@ namespace Ozon_ {
              */
             transaction_type?: CreateCompanyTransactionsReportRequestTransactionType;
         }
-
         /**
          * Фильтр по видимости товара:
          *   - `ALL` — все товары, кроме архивных.
@@ -8644,9 +8077,8 @@ namespace Ozon_ {
          *   - `QUARANTINE` — товары на карантине после изменения цены более чем на 50%.
          * @default "ALL"
          */
-        export type ReportCreateCompanyProductsPricesReportRequestVisibility = string;
-
-        export interface ReportCreateCompanyProductsPricesReportRequest {
+        type ReportCreateCompanyProductsPricesReportRequestVisibility = string;
+        interface ReportCreateCompanyProductsPricesReportRequest {
             /**
              * Язык ответа:
              *   - `RU` — русский,
@@ -8685,8 +8117,7 @@ namespace Ozon_ {
              */
             visibility?: ReportCreateCompanyProductsPricesReportRequestVisibility;
         }
-
-        export interface ReportCreateCompanyStockReportRequest {
+        interface ReportCreateCompanyStockReportRequest {
             /**
              * Язык ответа:
              *   - `RU` — русский,
@@ -8694,8 +8125,7 @@ namespace Ozon_ {
              */
             language?: ReportLanguage;
         }
-
-        export interface ReportCreateProductsMovementReportRequest {
+        interface ReportCreateProductsMovementReportRequest {
             /** Дата, с которой будут данные в отчёте. */
             date_from?: string;
             /** Дата, по которую будут данные в отчёте. */
@@ -8707,9 +8137,8 @@ namespace Ozon_ {
              */
             language?: ReportLanguage;
         }
-
         /** Фильтр. */
-        export interface ReportCreateCompanyReturnsReportRequestFilter {
+        interface ReportCreateCompanyReturnsReportRequestFilter {
             /** Схема доставĸи заĸаза: `fbs` — доставка со своего склада. */
             delivery_schema?: string;
             /**
@@ -8720,8 +8149,7 @@ namespace Ozon_ {
             /** Статус заĸаза. */
             status?: string;
         }
-
-        export interface ReportCreateCompanyReturnsReportRequest {
+        interface ReportCreateCompanyReturnsReportRequest {
             /** Фильтр. */
             filter?: ReportCreateCompanyReturnsReportRequestFilter;
             /**
@@ -8731,9 +8159,8 @@ namespace Ozon_ {
              */
             language?: ReportLanguage;
         }
-
         /** Фильтр. */
-        export interface ReportCreateCompanyPostingsReportRequestFilter {
+        interface ReportCreateCompanyPostingsReportRequestFilter {
             /** Идентификатор причины отмены. */
             cancel_reason_id?: number[];
             /**
@@ -8763,8 +8190,7 @@ namespace Ozon_ {
             /** Название товара. */
             title?: string;
         }
-
-        export interface ReportCreateCompanyPostingsReportRequest {
+        interface ReportCreateCompanyPostingsReportRequest {
             /** Фильтр. */
             filter?: ReportCreateCompanyPostingsReportRequestFilter;
             /**
@@ -8774,8 +8200,7 @@ namespace Ozon_ {
              */
             language?: ReportLanguage;
         }
-
-        export interface ReportCreateCompanyFinanceReportRequest {
+        interface ReportCreateCompanyFinanceReportRequest {
             /** Дата, с ĸоторой рассчитывается отчёт по финансам. Формат: YYYY-MM-DD. */
             date_from?: string;
             /** Дата, по ĸоторую рассчитывается отчёт по финансам. Формат: YYYY-MM-DD. */
@@ -8787,9 +8212,8 @@ namespace Ozon_ {
              */
             language?: ReportLanguage;
         }
-
         /** Период формирования отчёта. */
-        export interface Financev3Period {
+        interface Financev3Period {
             /**
              * Дата, с ĸоторой рассчитывается отчёт.
              * @format date-time
@@ -8801,8 +8225,7 @@ namespace Ozon_ {
              */
             to: string;
         }
-
-        export interface V3FinanceCashFlowStatementListRequest {
+        interface V3FinanceCashFlowStatementListRequest {
             /** Период формирования отчёта. */
             date: Financev3Period;
             /**
@@ -8818,9 +8241,8 @@ namespace Ozon_ {
              */
             page_size: number;
         }
-
         /** Период. */
-        export interface V3FinanceCashFlowStatementListResponsePeriod {
+        interface V3FinanceCashFlowStatementListResponsePeriod {
             /**
              * Начало периода.
              * @format date-time
@@ -8837,8 +8259,7 @@ namespace Ozon_ {
              */
             id?: number;
         }
-
-        export interface FinanceCashFlowStatementListResponseCashFlow {
+        interface FinanceCashFlowStatementListResponseCashFlow {
             /** Период. */
             period?: V3FinanceCashFlowStatementListResponsePeriod;
             /**
@@ -8869,9 +8290,8 @@ namespace Ozon_ {
             /** Код валюты, в которой рассчитываются комиссии. */
             currency_code?: string;
         }
-
         /** Детализация. */
-        export interface FinanceCashFlowStatementListResponseDeliveryService {
+        interface FinanceCashFlowStatementListResponseDeliveryService {
             /**
              * Название операции. Возможные значения:
              *  - `MarketplaceServiceItemDirectFlowLogisticSum` — логистика,
@@ -8885,9 +8305,8 @@ namespace Ozon_ {
              */
             price?: number;
         }
-
         /** Плата за обработку и доставку. */
-        export interface DetailsServices {
+        interface DetailsServices {
             /**
              * Общая сумма.
              * @format double
@@ -8896,9 +8315,8 @@ namespace Ozon_ {
             /** Детализация. */
             items?: FinanceCashFlowStatementListResponseDeliveryService;
         }
-
         /** Заказы. */
-        export interface DetailsDeliveryDetails {
+        interface DetailsDeliveryDetails {
             /**
              * Общая сумма.
              * @format double
@@ -8912,9 +8330,8 @@ namespace Ozon_ {
             /** Плата за обработку и доставку. */
             delivery_services?: DetailsServices;
         }
-
         /** Выплачено за период. */
-        export interface DetailsPayment {
+        interface DetailsPayment {
             /** Валюта. */
             currency_code?: string;
             /**
@@ -8923,9 +8340,8 @@ namespace Ozon_ {
              */
             payment?: number;
         }
-
         /** Детализация. */
-        export interface FinanceCashFlowStatementListResponseReturnService {
+        interface FinanceCashFlowStatementListResponseReturnService {
             /**
              * Название операции. Возможные значения:
              *  - `MarketplaceServiceItemReturnAfterDelivToCustomer` — обработка возвратов,
@@ -8940,9 +8356,8 @@ namespace Ozon_ {
              */
             price?: number;
         }
-
         /** Плата за возвраты и отмены. */
-        export interface DetailsReturns {
+        interface DetailsReturns {
             /**
              * Общая сумма.
              * @format double
@@ -8951,9 +8366,8 @@ namespace Ozon_ {
             /** Детализация. */
             items?: FinanceCashFlowStatementListResponseReturnService;
         }
-
         /** Возвраты и отмены. */
-        export interface DetailsReturnDetails {
+        interface DetailsReturnDetails {
             /**
              * Общая сумма.
              * @format double
@@ -8967,9 +8381,8 @@ namespace Ozon_ {
             /** Плата за возвраты и отмены. */
             return_services?: DetailsReturns;
         }
-
         /** Перечисления по схеме rFBS. */
-        export interface DetailsRfbsDetails {
+        interface DetailsRfbsDetails {
             /**
              * Общая сумма.
              * @format double
@@ -9001,9 +8414,8 @@ namespace Ozon_ {
              */
             partial_compensation_return?: number;
         }
-
         /** Детализация. */
-        export interface FinanceCashFlowStatementListResponseService {
+        interface FinanceCashFlowStatementListResponseService {
             /**
              * Название операции. Возможные значения:
              *  - `MarketplaceServiceItemOtherMarketAndTechService` — иные маркетинговые и технические услуги,
@@ -9028,9 +8440,8 @@ namespace Ozon_ {
              */
             price?: number;
         }
-
         /** Услуги. */
-        export interface DetailsService {
+        interface DetailsService {
             /**
              * Общая сумма.
              * @format double
@@ -9039,9 +8450,8 @@ namespace Ozon_ {
             /** Детализация. */
             items?: FinanceCashFlowStatementListResponseService;
         }
-
         /** Детализация. */
-        export interface FinanceCashFlowStatementListResponseDetailsOthers {
+        interface FinanceCashFlowStatementListResponseDetailsOthers {
             /**
              * Название операции. Возможные значения:
              *  - `MarketplaceRedistributionOfAcquiringOperation` — оплата эквайринга,
@@ -9058,9 +8468,8 @@ namespace Ozon_ {
              */
             price?: number;
         }
-
         /** Компенсация и прочие начисления. */
-        export interface DetailsOthers {
+        interface DetailsOthers {
             /**
              * Общая сумма.
              * @format double
@@ -9069,9 +8478,8 @@ namespace Ozon_ {
             /** Детализация. */
             items?: FinanceCashFlowStatementListResponseDetailsOthers;
         }
-
         /** Детализированная информация. */
-        export interface FinanceCashFlowStatementListResponseDetails {
+        interface FinanceCashFlowStatementListResponseDetails {
             /**
              * Баланс на начало периода.
              * @format double
@@ -9107,9 +8515,8 @@ namespace Ozon_ {
              */
             end_balance_amount?: number;
         }
-
         /** Результат работы метода. */
-        export interface V3FinanceCashFlowStatementListResponseResult {
+        interface V3FinanceCashFlowStatementListResponseResult {
             /** Список отчётов. */
             cash_flows?: FinanceCashFlowStatementListResponseCashFlow[];
             /** Детализированная информация. */
@@ -9120,26 +8527,21 @@ namespace Ozon_ {
              */
             page_count?: number;
         }
-
-        export interface V3FinanceCashFlowStatementListResponse {
+        interface V3FinanceCashFlowStatementListResponse {
             /** Результат работы метода. */
             result?: V3FinanceCashFlowStatementListResponseResult;
         }
-
-        export type ReportCreateDiscountedRequest = object;
-
-        export interface ReportCreateDiscountedResponse {
+        type ReportCreateDiscountedRequest = object;
+        interface ReportCreateDiscountedResponse {
             /** Уникальный идентификатор отчёта. */
             code?: string;
         }
-
-        export interface ReportDiscountedInfoRequest {
+        interface ReportDiscountedInfoRequest {
             /** Уникальный идентификатор отчёта. */
             code?: string;
         }
-
         /** Информация об отчёте. */
-        export interface ReportDiscountedInfoResponseReport {
+        interface ReportDiscountedInfoResponseReport {
             /**
              * Дата создания отчёта.
              * @format date-time
@@ -9158,22 +8560,17 @@ namespace Ozon_ {
             /** Код ошибки при создании отчёта. */
             error?: string;
         }
-
-        export interface ReportDiscountedInfoResponse {
+        interface ReportDiscountedInfoResponse {
             /** Информация об отчёте. */
             report?: ReportDiscountedInfoResponseReport;
         }
-
-        export type ReportDiscountedListRequest = object;
-
-        export interface ReportDiscountedListResponse {
+        type ReportDiscountedListRequest = object;
+        interface ReportDiscountedListResponse {
             /** Список отчётов и данные по ним. */
             reports?: ReportDiscountedInfoResponseReport[];
         }
-
         /** @default "unknownDimension" */
-        export type SellerServiceanalyticsDimension = string;
-
+        type SellerServiceanalyticsDimension = string;
         /**
          * <br>
          *
@@ -9185,9 +8582,8 @@ namespace Ozon_ {
          *   - `LTE` — меньше или равно.
          * @default "EQ"
          */
-        export type FilterOp = string;
-
-        export interface AnalyticsFilter {
+        type FilterOp = string;
+        interface AnalyticsFilter {
             /** Параметр сортировки. Можно передать любой атрибут из параметров `dimension` и `metric`, кроме атрибута `brand`. */
             key?: string;
             /**
@@ -9204,19 +8600,16 @@ namespace Ozon_ {
             /** Значение для сравнения. */
             value?: string;
         }
-
         /** @default "unknown_metric" */
-        export type AnalyticsMetric = string;
-
+        type AnalyticsMetric = string;
         /**
          * Вид сортировки:
          *   - `ASC` — по возрастанию,
          *   - `DESC` — по убыванию.
          * @default "ASC"
          */
-        export type SortingOrder = string;
-
-        export interface AnalyticsSorting {
+        type SortingOrder = string;
+        interface AnalyticsSorting {
             /** Метрика, по которой будет отсортирован результат запроса. */
             key?: string;
             /**
@@ -9226,8 +8619,7 @@ namespace Ozon_ {
              */
             order?: SortingOrder;
         }
-
-        export interface AnalyticsAnalyticsGetDataRequest {
+        interface AnalyticsAnalyticsGetDataRequest {
             /** Дата, с которой будут данные в отчёте. */
             date_from?: string;
             /** Дата, по которую будут данные в отчёте. */
@@ -9297,37 +8689,32 @@ namespace Ozon_ {
             /** Настройки сортировки отчёта. */
             sort?: AnalyticsSorting[];
         }
-
-        export interface AnalyticsDataRowDimension {
+        interface AnalyticsDataRowDimension {
             /** Идентификатор. */
             id?: string;
             /** Наименование. */
             name?: string;
         }
-
-        export interface AnalyticsDataRow {
+        interface AnalyticsDataRow {
             /** Группировка данных в отчёте. */
             dimensions?: AnalyticsDataRowDimension[];
             /** Список значений метрики. */
             metrics?: number[];
         }
-
         /** Результаты запроса. */
-        export interface AnalyticsGetDataResponseResult {
+        interface AnalyticsGetDataResponseResult {
             /** Массив данных. */
             data?: AnalyticsDataRow[];
             /** Итоговые и средние значения метрик. */
             totals?: number[];
         }
-
-        export interface AnalyticsAnalyticsGetDataResponse {
+        interface AnalyticsAnalyticsGetDataResponse {
             /** Результаты запроса. */
             result?: AnalyticsGetDataResponseResult;
             /** Время создания отчёта. */
             timestamp?: string;
         }
-
-        export interface AnalyticsAnalyticsGetStockOnWarehousesRequest {
+        interface AnalyticsAnalyticsGetStockOnWarehousesRequest {
             /**
              * Количество ответов на странице. По умолчанию — 100.
              * @format int64
@@ -9339,9 +8726,8 @@ namespace Ozon_ {
              */
             offset?: number;
         }
-
         /** Информация об остатках товаров. */
-        export interface AnalyticsGetStockOnWarehousesResponseTotalStock {
+        interface AnalyticsGetStockOnWarehousesResponseTotalStock {
             /**
              * Количество товаров, которое перемещается между фулфилмент-центрами.
              * @format int64
@@ -9368,8 +8754,7 @@ namespace Ozon_ {
              */
             shipped?: number;
         }
-
-        export interface AnalyticsGetStockOnWarehousesResponseTotalItem {
+        interface AnalyticsGetStockOnWarehousesResponseTotalItem {
             /** Штрихкод. */
             barcode?: string;
             /** Категория. */
@@ -9413,9 +8798,8 @@ namespace Ozon_ {
              */
             width?: number;
         }
-
         /** Информация о товарах на складе. */
-        export interface AnalyticsGetStockOnWarehousesResponseItemStock {
+        interface AnalyticsGetStockOnWarehousesResponseItemStock {
             /**
              * Количество доступных для продажи товаров.
              * @format int64
@@ -9432,8 +8816,7 @@ namespace Ozon_ {
              */
             not_for_sale?: number;
         }
-
-        export interface AnalyticsGetStockOnWarehousesResponseItem {
+        interface AnalyticsGetStockOnWarehousesResponseItem {
             /** Штрихкод. */
             barcode?: string;
             /** Категория. */
@@ -9477,8 +8860,7 @@ namespace Ozon_ {
              */
             width?: number;
         }
-
-        export interface AnalyticsGetStockOnWarehousesResponseWHItem {
+        interface AnalyticsGetStockOnWarehousesResponseWHItem {
             /** Идентификатор склада. */
             id?: string;
             /** Информация о товарах на складе. */
@@ -9486,8 +8868,7 @@ namespace Ozon_ {
             /** Название склада. */
             name?: string;
         }
-
-        export interface AnalyticsAnalyticsGetStockOnWarehousesResponse {
+        interface AnalyticsAnalyticsGetStockOnWarehousesResponse {
             /** Время создания отчёта. */
             timestamp?: string;
             /** Данные по остаткам на всех складах. */
@@ -9495,8 +8876,7 @@ namespace Ozon_ {
             /** Данные остатков по определённым складам. */
             wh_items?: AnalyticsGetStockOnWarehousesResponseWHItem[];
         }
-
-        export interface V1AnalyticsItemTurnoverDataV3Request {
+        interface V1AnalyticsItemTurnoverDataV3Request {
             /**
              * Дата. 1-е или 15-е число месяца в формате: 2021-05-01.
              *   - 1-е число месяца вводится для получения отчёта за первую половину месяца.
@@ -9504,8 +8884,7 @@ namespace Ozon_ {
              */
             date_from?: string;
         }
-
-        export interface AnalyticsItemTurnoverDataV3ResponseItemTurnover {
+        interface AnalyticsItemTurnoverDataV3ResponseItemTurnover {
             /**
              * Среднесуточные продажи за определённый период. Указывается в штуках.
              * @format double
@@ -9589,8 +8968,7 @@ namespace Ozon_ {
              */
             width?: number;
         }
-
-        export interface AnalyticsItemTurnoverDataV3ResponseCategory {
+        interface AnalyticsItemTurnoverDataV3ResponseCategory {
             /**
              * Среднесуточные продажи за определённый период. Измеряется в литрах.
              * @format double
@@ -9636,8 +9014,7 @@ namespace Ozon_ {
             /** Данные по товарам категории. */
             turnover_items?: AnalyticsItemTurnoverDataV3ResponseItemTurnover[];
         }
-
-        export interface V1AnalyticsItemTurnoverDataV3Response {
+        interface V1AnalyticsItemTurnoverDataV3Response {
             /** Данные по категориям. */
             categories?: AnalyticsItemTurnoverDataV3ResponseCategory[];
             /**
@@ -9650,7 +9027,6 @@ namespace Ozon_ {
             /** Период отчёта. */
             period?: string;
         }
-
         /**
          * Фильтр по типу склада:
          *   - `EXPRESS_DARK_STORE` — склады Ozon с доставкой Fresh.
@@ -9658,13 +9034,12 @@ namespace Ozon_ {
          *   - `ALL` — все склады Ozon.
          * @default "ALL"
          */
-        export enum AnalyticsGetStockOnWarehousesRequestWarehouseType {
-            ALL = 'ALL',
-            EXPRESS_DARK_STORE = 'EXPRESS_DARK_STORE',
-            NOT_EXPRESS_DARK_STORE = 'NOT_EXPRESS_DARK_STORE',
+        enum AnalyticsGetStockOnWarehousesRequestWarehouseType {
+            ALL = "ALL",
+            EXPRESS_DARK_STORE = "EXPRESS_DARK_STORE",
+            NOT_EXPRESS_DARK_STORE = "NOT_EXPRESS_DARK_STORE"
         }
-
-        export interface AnalyticsStockOnWarehouseRequest {
+        interface AnalyticsStockOnWarehouseRequest {
             /**
              * Количество ответов на странице. По умолчанию — 100.
              * @format int64
@@ -9683,8 +9058,7 @@ namespace Ozon_ {
              */
             warehouse_type?: AnalyticsGetStockOnWarehousesRequestWarehouseType;
         }
-
-        export interface AnalyticsStockOnWarehouseResultRows {
+        interface AnalyticsStockOnWarehouseResultRows {
             /**
              * Идентификатор товара в системе Ozon — SKU.
              * @format int64
@@ -9712,24 +9086,20 @@ namespace Ozon_ {
             /** Название склада, где находится товар. */
             warehouse_name?: string;
         }
-
         /** Результат запроса. */
-        export interface AnalyticsStockOnWarehouseResponseResult {
+        interface AnalyticsStockOnWarehouseResponseResult {
             /** Информация о товарах и остатках. */
             rows?: AnalyticsStockOnWarehouseResultRows[];
         }
-
-        export interface AnalyticsStockOnWarehouseResponse {
+        interface AnalyticsStockOnWarehouseResponse {
             /** Результат запроса. */
             result?: AnalyticsStockOnWarehouseResponseResult;
         }
-
-        export interface FinanceGetRealizationReportRequest {
+        interface FinanceGetRealizationReportRequest {
             /** Отчётный период в формате `YYYY-MM`. */
             date?: string;
         }
-
-        export interface FinanceRealizationReportHeader {
+        interface FinanceRealizationReportHeader {
             /** Номер отчёта о реализации. */
             num?: string;
             /** Дата формирования отчёта. */
@@ -9767,8 +9137,7 @@ namespace Ozon_ {
             /** Конец периода в отчёте. */
             stop_date?: string;
         }
-
-        export interface FinanceRealizationReportRows {
+        interface FinanceRealizationReportRows {
             /**
              * Номер строки в отчёте.
              * @format int32
@@ -9872,21 +9241,18 @@ namespace Ozon_ {
              */
             return_qty?: number;
         }
-
-        export interface FinanceRealizationReportResult {
+        interface FinanceRealizationReportResult {
             /** Титульный лист отчёта. */
             header?: FinanceRealizationReportHeader[];
             /** Таблица отчёта. */
             rows?: FinanceRealizationReportRows[];
         }
-
-        export interface FinanceGetRealizationReportResponse {
+        interface FinanceGetRealizationReportResponse {
             /** Результат запроса. */
             result?: FinanceRealizationReportResult[];
         }
-
         /** Фильтр по дате. */
-        export interface FilterPeriod {
+        interface FilterPeriod {
             /**
              * Начало периода.
              *
@@ -9904,9 +9270,8 @@ namespace Ozon_ {
              */
             to?: string;
         }
-
         /** Фильтр. */
-        export interface FinanceTransactionListV3RequestFilter {
+        interface FinanceTransactionListV3RequestFilter {
             /** Фильтр по дате. */
             date?: FilterPeriod;
             /**
@@ -9958,8 +9323,7 @@ namespace Ozon_ {
              */
             transaction_type?: string;
         }
-
-        export interface Financev3FinanceTransactionListV3Request {
+        interface Financev3FinanceTransactionListV3Request {
             /** Фильтр. */
             filter?: FinanceTransactionListV3RequestFilter;
             /**
@@ -9973,8 +9337,7 @@ namespace Ozon_ {
              */
             page_size?: number;
         }
-
-        export interface OperationItem {
+        interface OperationItem {
             /** Название товара. */
             name?: string;
             /**
@@ -9983,9 +9346,8 @@ namespace Ozon_ {
              */
             sku?: number;
         }
-
         /** Информация об отправлении. */
-        export interface OperationPosting {
+        interface OperationPosting {
             /**
              * Схема доставки:
              *   - `FBO` — доставка со склада Ozon,
@@ -10004,8 +9366,7 @@ namespace Ozon_ {
              */
             warehouse_id?: number;
         }
-
-        export interface OperationService {
+        interface OperationService {
             /**
              * Название услуги:
              *   - `MarketplaceNotDeliveredCostItem` — возврат невостребованного товара от покупателя на склад.
@@ -10048,8 +9409,7 @@ namespace Ozon_ {
              */
             price?: number;
         }
-
-        export interface FinanceTransactionListV3ResponseOperation {
+        interface FinanceTransactionListV3ResponseOperation {
             /**
              * Стоимость товаров с учётом скидок продавца.
              * @format double
@@ -10104,9 +9464,8 @@ namespace Ozon_ {
              */
             type?: string;
         }
-
         /** Результаты запроса. */
-        export interface Financev3FinanceTransactionListV3ResponseResult {
+        interface Financev3FinanceTransactionListV3ResponseResult {
             /** Информация об операциях. */
             operations?: FinanceTransactionListV3ResponseOperation[];
             /**
@@ -10120,14 +9479,12 @@ namespace Ozon_ {
              */
             row_count?: number;
         }
-
-        export interface Financev3FinanceTransactionListV3Response {
+        interface Financev3FinanceTransactionListV3Response {
             /** Результаты запроса. */
             result?: Financev3FinanceTransactionListV3ResponseResult;
         }
-
         /** Фильтр по дате. */
-        export interface FinanceTransactionTotalsV3RequestDate {
+        interface FinanceTransactionTotalsV3RequestDate {
             /**
              * Начало периода.
              *
@@ -10145,8 +9502,7 @@ namespace Ozon_ {
              */
             to?: string;
         }
-
-        export interface Financev3FinanceTransactionTotalsV3Request {
+        interface Financev3FinanceTransactionTotalsV3Request {
             /** Фильтр по дате. */
             date?: FinanceTransactionTotalsV3RequestDate;
             /** Номер отправления. */
@@ -10163,9 +9519,8 @@ namespace Ozon_ {
              */
             transaction_type?: string;
         }
-
         /** Результаты запроса. */
-        export interface Financev3FinanceTransactionTotalsV3ResponseResult {
+        interface Financev3FinanceTransactionTotalsV3ResponseResult {
             /**
              * Общая стоимость товаров и возвратов в заданный период.
              * @format double
@@ -10215,14 +9570,12 @@ namespace Ozon_ {
              */
             services_amount?: number;
         }
-
-        export interface Financev3FinanceTransactionTotalsV3Response {
+        interface Financev3FinanceTransactionTotalsV3Response {
             /** Результаты запроса. */
             result?: Financev3FinanceTransactionTotalsV3ResponseResult;
         }
-
         /** Изменение рейтинга: отношение предыдущего значения к текущему. */
-        export interface RatingItemChange {
+        interface RatingItemChange {
             /**
              * Как изменилось значение рейтинга:
              * - `DIRECTION_UNKNOWN` — не определено.
@@ -10240,8 +9593,7 @@ namespace Ozon_ {
              */
             meaning?: string;
         }
-
-        export interface V1RatingItem {
+        interface V1RatingItem {
             /** Изменение рейтинга: отношение предыдущего значения к текущему. */
             change?: RatingItemChange;
             /**
@@ -10286,15 +9638,13 @@ namespace Ozon_ {
              */
             value_type?: string;
         }
-
-        export interface RatingSummaryV1ResponseGroup {
+        interface RatingSummaryV1ResponseGroup {
             /** Название группы рейтингов. */
             group_name?: string;
             /** Список рейтингов. */
             items?: V1RatingItem[];
         }
-
-        export interface V1RatingSummaryV1Response {
+        interface V1RatingSummaryV1Response {
             /** Список с группами рейтингов. */
             groups?: RatingSummaryV1ResponseGroup[];
             /** Признак, что баланс штрафных баллов превышен. */
@@ -10302,8 +9652,7 @@ namespace Ozon_ {
             /** Признак участия в Premium-программе. */
             premium?: boolean;
         }
-
-        export interface V1RatingHistoryV1Request {
+        interface V1RatingHistoryV1Request {
             /**
              * Начало периода.
              * @format date-time
@@ -10339,8 +9688,7 @@ namespace Ozon_ {
             /** Признак, что в ответе нужно вернуть информацию о штрафных баллах в Premium-программе. */
             with_premium_scores?: boolean;
         }
-
-        export interface PremiumScoresScore {
+        interface PremiumScoresScore {
             /**
              * Дата, когда были начислены штрафные баллы.
              * @format date-time
@@ -10357,16 +9705,14 @@ namespace Ozon_ {
              */
             value?: number;
         }
-
-        export interface V1PremiumScores {
+        interface V1PremiumScores {
             /** Название рейтинга. */
             rating?: string;
             /** Информация о штрафных баллах. */
             scores?: PremiumScoresScore[];
         }
-
         /** Статус рейтинга. */
-        export interface V1RatingStatus {
+        interface V1RatingStatus {
             /** Признак, превышено ли пороговое значение рейтинга для блокировки. */
             danger?: boolean;
             /** Признак, достигнуто ли пороговое значение для участия в Premium-программе. */
@@ -10374,8 +9720,7 @@ namespace Ozon_ {
             /** Признак наличия предупреждения о возможном превышении порогового значения для блокировки. */
             warning?: boolean;
         }
-
-        export interface RatingValue {
+        interface RatingValue {
             /**
              * Дата начала подсчёта рейтинга.
              * @format date-time
@@ -10394,8 +9739,7 @@ namespace Ozon_ {
              */
             value?: number;
         }
-
-        export interface V1Rating {
+        interface V1Rating {
             /**
              * Пороговое значение рейтинга, после которого продажи будут заблокированы.
              * @format double
@@ -10416,263 +9760,137 @@ namespace Ozon_ {
              */
             warning_threshold?: number;
         }
-
-        export interface V1RatingHistoryV1Response {
+        interface V1RatingHistoryV1Response {
             /** Информация о штрафных баллах в Premium-программе. */
             premium_scores?: V1PremiumScores[];
             /** Информация о рейтингах продавца. */
             ratings?: V1Rating[];
         }
-
-        export type CategoryApiGetCategoryTreeData = CategoryGetCategoryTreeResponse;
-
-        export type CategoryApiGetCategoryTreeError = RpcStatus;
-
-        export type CategoryApiGetCategoryAttributesV3Data = Categoryv3CategoryAttributesResponse;
-
-        export type CategoryApiGetCategoryAttributesV3Error = RpcStatus;
-
-        export type CategoryApiDictionaryValueBatchData = Categoryv2DictionaryValueBatchResponse;
-
-        export type CategoryApiDictionaryValueBatchError = RpcStatus;
-
-        export type ProductApiImportProductsV2Data = Productv2ImportProductsResponse;
-
-        export type ProductApiImportProductsV2Error = RpcStatus;
-
-        export type ProductApiGetImportProductsInfoData = ProductGetImportProductsInfoResponse;
-
-        export type ProductApiGetImportProductsInfoError = RpcStatus;
-
-        export type ProductApiImportProductsBySkuData = ProductImportProductsBySKUResponse;
-
-        export type ProductApiImportProductsBySkuError = RpcStatus;
-
-        export type ProductApiProductImportPicturesData = Productv1ProductInfoPicturesResponse;
-
-        export type ProductApiProductImportPicturesError = RpcStatus;
-
-        export type ProductApiProductInfoPicturesData = Productv1ProductInfoPicturesResponse;
-
-        export type ProductApiProductInfoPicturesError = RpcStatus;
-
-        export type ProductApiGetProductListData = Productv2GetProductListResponse;
-
-        export type ProductApiGetProductListError = RpcStatus;
-
-        export type ProductApiGetProductInfoV2Data = Productv2GetProductInfoResponse;
-
-        export type ProductApiGetProductInfoV2Error = RpcStatus;
-
-        export type ProductApiGetProductRatingBySkuData = V1GetProductRatingBySkuResponse;
-
-        export type ProductApiGetProductRatingBySkuError = RpcStatus;
-
-        export type ProductApiGetProductInfoListV2Data = Productv2GetProductInfoListResponse;
-
-        export type ProductApiGetProductInfoListV2Error = RpcStatus;
-
-        export type ProductApiGetProductAttributesV3Data = Productv3GetProductAttributesV3Response;
-
-        export type ProductApiGetProductAttributesV3Error = RpcStatus;
-
-        export type ProductApiGetProductInfoDescriptionData = ProductGetProductInfoDescriptionResponse;
-
-        export type ProductApiGetProductInfoDescriptionError = RpcStatus;
-
-        export type ProductApiGetProductInfoLimitV2Data = Productv2GetProductInfoLimitV2Response;
-
-        export type ProductApiGetProductInfoLimitV2Error = RpcStatus;
-
-        export type ProductApiGetProductInfoLimitData = V3GetProductInfoLimitResponse;
-
-        export type ProductApiGetProductInfoLimitError = RpcStatus;
-
-        export type ProductApiGetUploadQuotaData = V4GetUploadQuotaResponse;
-
-        export type ProductApiGetUploadQuotaError = RpcStatus;
-
-        export type ProductApiProductUpdateOfferIdData = V1ProductUpdateOfferIdResponse;
-
-        export type ProductApiProductUpdateOfferIdError = RpcStatus;
-
-        export type ProductApiProductArchiveData = ProductBooleanResponse;
-
-        export type ProductApiProductArchiveError = RpcStatus;
-
-        export type ProductApiProductUnarchiveData = ProductBooleanResponse;
-
-        export type ProductApiProductUnarchiveError = RpcStatus;
-
-        export type ProductApiDeleteProductsData = Productv2DeleteProductsResponse;
-
-        export type ProductApiDeleteProductsError = RpcStatus;
-
-        export type ProductApiGetGeoRestrictionsV1Data = Productv2GetGeoRestrictionsByFilterResponse;
-
-        export type ProductApiGetGeoRestrictionsV1Error = RpcStatus;
-
-        export type ProductApiUploadDigitalCodeData = V1ProductUploadDigitalCodesResponse;
-
-        export type ProductApiUploadDigitalCodeError = RpcStatus;
-
-        export type ProductApiUploadDigitalCodeInfoData = V1ProductUploadDigitalCodesResponseInfo;
-
-        export type ProductApiUploadDigitalCodeInfoError = RpcStatus;
-
-        export type ProductApiGetProductInfoSubscriptionData = V1GetProductInfoSubscriptionResponse;
-
-        export type ProductApiGetProductInfoSubscriptionError = RpcStatus;
-
-        export type ProductApiImportProductsStocksData = ProductImportProductsStocksResponse;
-
-        export type ProductApiImportProductsStocksError = RpcStatus;
-
-        export type ProductApiProductsStocksV2Data = Productv2ProductsStocksResponse;
-
-        export type ProductApiProductsStocksV2Error = RpcStatus;
-
-        export type ProductApiGetProductInfoStocksV3Data = Productv3GetProductInfoStocksV3Response;
-
-        export type ProductApiGetProductInfoStocksV3Error = RpcStatus;
-
-        export type ProductApiProductStocksByWarehouseFbsData = Productsv1GetProductInfoStocksByWarehouseFbsResponse;
-
-        export type ProductApiProductStocksByWarehouseFbsError = RpcStatus;
-
-        export type ProductApiImportProductsPricesData = ProductImportProductsPricesResponse;
-
-        export type ProductApiImportProductsPricesError = RpcStatus;
-
-        export type ProductApiGetProductInfoPricesV4Data = Productv4GetProductInfoPricesV4Response;
-
-        export type ProductApiGetProductInfoPricesV4Error = RpcStatus;
-
-        export type ProductApiGetProductInfoDiscountedData = V1GetProductInfoDiscountedResponse;
-
-        export type ProductApiGetProductInfoDiscountedError = RpcStatus;
-
-        export type ProductApiProductUpdateDiscountData = V1ProductUpdateDiscountResponse;
-
-        export type ProductApiProductUpdateDiscountError = RpcStatus;
-
-        export type PromosData = SellerApiGetSellerActionsV1Response;
-
-        export type PromosError = RpcStatus;
-
-        export type PromosCandidatesData = SellerApiGetSellerProductV1Response;
-
-        export type PromosCandidatesError = RpcStatus;
-
-        export type PromosProductsData = SellerApiGetSellerProductV1Response;
-
-        export type PromosProductsError = RpcStatus;
-
-        export type PromosProductsActivateData = SellerApiProductV1Response;
-
-        export type PromosProductsActivateError = RpcStatus;
-
-        export type PromosProductsDeactivateData = SellerApiProductV1ResponseDeactivate;
-
-        export type PromosProductsDeactivateError = RpcStatus;
-
-        export type ActionsApiGetHotSalesListData = V1GetHotSalesListResponse;
-
-        export type ActionsApiGetHotSalesListError = RpcStatus;
-
-        export type ActionsApiGetHotSalesProductsData = V1GetHotSalesProductsResponse;
-
-        export type ActionsApiGetHotSalesProductsError = RpcStatus;
-
-        export type ActionsApiActivateHotSalesProductsData = V1SetActivateHotSaleProductsResult;
-
-        export type ActionsApiActivateHotSalesProductsError = RpcStatus;
-
-        export type ActionsApiDeactivateHotSalesProductsData = V1SetDeactivateHotSaleProductsResult;
-
-        export type ActionsApiDeactivateHotSalesProductsError = RpcStatus;
-
-        export type PromosTaskListData = V1GetDiscountTaskListResponse;
-
-        export type PromosTaskListError = RpcStatus;
-
-        export type PromosTaskApproveData = V1ApproveDeclineDiscountTasksResponse;
-
-        export type PromosTaskApproveError = RpcStatus;
-
-        export type PromosTaskDeclineData = V1ApproveDeclineDiscountTasksResponse;
-
-        export type PromosTaskDeclineError = RpcStatus;
-
-        export type PricingCompetitorsData = V1GetCompetitorsResponse;
-
-        export type PricingCompetitorsError = RpcStatus;
-
-        export type PricingListData = V1GetStrategyListResponse;
-
-        export type PricingListError = RpcStatus;
-
-        export type PricingCreateData = V1CreatePricingStrategyResponse;
-
-        export type PricingCreateError = RpcStatus;
-
-        export type PricingInfoData = V1GetStrategyResponse;
-
-        export type PricingInfoError = RpcStatus;
-
-        export type PricingUpdateData = V1Empty;
-
-        export type PricingUpdateError = RpcStatus;
-
-        export type PricingItemsAddData = V1AddStrategyItemsResponse;
-
-        export type PricingItemsAddError = RpcStatus;
-
-        export type PricingIdsData = V1GetStrategyIDsByItemIDsResponse;
-
-        export type PricingIdsError = RpcStatus;
-
-        export type PricingItemsListData = V1GetStrategyItemsResponse;
-
-        export type PricingItemsListError = RpcStatus;
-
-        export type PricingItemsInfoData = V1GetStrategyItemInfoResponse;
-
-        export type PricingItemsInfoError = RpcStatus;
-
-        export type PricingItemsDeleteData = V1DeleteStrategyItemsResponse;
-
-        export type PricingItemsDeleteError = RpcStatus;
-
-        export type PricingStatusData = V1Empty;
-
-        export type PricingStatusError = RpcStatus;
-
-        export type PricingDeleteData = V1Empty;
-
-        export type PricingDeleteError = RpcStatus;
-
-        export type BrandApiBrandCompanyCertificationListData = BrandBrandCompanyCertificationListResponse;
-
-        export type BrandApiBrandCompanyCertificationListError = RpcStatus;
-
-        export type ProductApiProductCertificateAccordanceTypesData = ProductProductCertificateAccordanceTypesResponse;
-
-        export type ProductApiProductCertificateAccordanceTypesError = RpcStatus;
-
-        export type CertificateAccordanceTypesData = V2ProductCertificateAccordanceTypesResponse;
-
-        export type CertificateAccordanceTypesError = GooglerpcStatus;
-
-        export type ProductApiProductCertificateTypesData = ProductProductCertificateTypesResponse;
-
-        export type ProductApiProductCertificateTypesError = RpcStatus;
-
-        export type ProductApiProductCertificationListData = ProductProductCertificationListResponse;
-
-        export type ProductApiProductCertificationListError = RpcStatus;
-
-        export interface ProductApiProductCertificateCreatePayload {
+        type CategoryApiGetCategoryTreeData = CategoryGetCategoryTreeResponse;
+        type CategoryApiGetCategoryTreeError = RpcStatus;
+        type CategoryApiGetCategoryAttributesV3Data = Categoryv3CategoryAttributesResponse;
+        type CategoryApiGetCategoryAttributesV3Error = RpcStatus;
+        type CategoryApiDictionaryValueBatchData = Categoryv2DictionaryValueBatchResponse;
+        type CategoryApiDictionaryValueBatchError = RpcStatus;
+        type ProductApiImportProductsV2Data = Productv2ImportProductsResponse;
+        type ProductApiImportProductsV2Error = RpcStatus;
+        type ProductApiGetImportProductsInfoData = ProductGetImportProductsInfoResponse;
+        type ProductApiGetImportProductsInfoError = RpcStatus;
+        type ProductApiImportProductsBySkuData = ProductImportProductsBySKUResponse;
+        type ProductApiImportProductsBySkuError = RpcStatus;
+        type ProductApiProductImportPicturesData = Productv1ProductInfoPicturesResponse;
+        type ProductApiProductImportPicturesError = RpcStatus;
+        type ProductApiProductInfoPicturesData = Productv1ProductInfoPicturesResponse;
+        type ProductApiProductInfoPicturesError = RpcStatus;
+        type ProductApiGetProductListData = Productv2GetProductListResponse;
+        type ProductApiGetProductListError = RpcStatus;
+        type ProductApiGetProductInfoV2Data = Productv2GetProductInfoResponse;
+        type ProductApiGetProductInfoV2Error = RpcStatus;
+        type ProductApiGetProductRatingBySkuData = V1GetProductRatingBySkuResponse;
+        type ProductApiGetProductRatingBySkuError = RpcStatus;
+        type ProductApiGetProductInfoListV2Data = Productv2GetProductInfoListResponse;
+        type ProductApiGetProductInfoListV2Error = RpcStatus;
+        type ProductApiGetProductAttributesV3Data = Productv3GetProductAttributesV3Response;
+        type ProductApiGetProductAttributesV3Error = RpcStatus;
+        type ProductApiGetProductInfoDescriptionData = ProductGetProductInfoDescriptionResponse;
+        type ProductApiGetProductInfoDescriptionError = RpcStatus;
+        type ProductApiGetProductInfoLimitV2Data = Productv2GetProductInfoLimitV2Response;
+        type ProductApiGetProductInfoLimitV2Error = RpcStatus;
+        type ProductApiGetProductInfoLimitData = V3GetProductInfoLimitResponse;
+        type ProductApiGetProductInfoLimitError = RpcStatus;
+        type ProductApiGetUploadQuotaData = V4GetUploadQuotaResponse;
+        type ProductApiGetUploadQuotaError = RpcStatus;
+        type ProductApiProductUpdateOfferIdData = V1ProductUpdateOfferIdResponse;
+        type ProductApiProductUpdateOfferIdError = RpcStatus;
+        type ProductApiProductArchiveData = ProductBooleanResponse;
+        type ProductApiProductArchiveError = RpcStatus;
+        type ProductApiProductUnarchiveData = ProductBooleanResponse;
+        type ProductApiProductUnarchiveError = RpcStatus;
+        type ProductApiDeleteProductsData = Productv2DeleteProductsResponse;
+        type ProductApiDeleteProductsError = RpcStatus;
+        type ProductApiGetGeoRestrictionsV1Data = Productv2GetGeoRestrictionsByFilterResponse;
+        type ProductApiGetGeoRestrictionsV1Error = RpcStatus;
+        type ProductApiUploadDigitalCodeData = V1ProductUploadDigitalCodesResponse;
+        type ProductApiUploadDigitalCodeError = RpcStatus;
+        type ProductApiUploadDigitalCodeInfoData = V1ProductUploadDigitalCodesResponseInfo;
+        type ProductApiUploadDigitalCodeInfoError = RpcStatus;
+        type ProductApiGetProductInfoSubscriptionData = V1GetProductInfoSubscriptionResponse;
+        type ProductApiGetProductInfoSubscriptionError = RpcStatus;
+        type ProductApiImportProductsStocksData = ProductImportProductsStocksResponse;
+        type ProductApiImportProductsStocksError = RpcStatus;
+        type ProductApiProductsStocksV2Data = Productv2ProductsStocksResponse;
+        type ProductApiProductsStocksV2Error = RpcStatus;
+        type ProductApiGetProductInfoStocksV3Data = Productv3GetProductInfoStocksV3Response;
+        type ProductApiGetProductInfoStocksV3Error = RpcStatus;
+        type ProductApiProductStocksByWarehouseFbsData = Productsv1GetProductInfoStocksByWarehouseFbsResponse;
+        type ProductApiProductStocksByWarehouseFbsError = RpcStatus;
+        type ProductApiImportProductsPricesData = ProductImportProductsPricesResponse;
+        type ProductApiImportProductsPricesError = RpcStatus;
+        type ProductApiGetProductInfoPricesV4Data = Productv4GetProductInfoPricesV4Response;
+        type ProductApiGetProductInfoPricesV4Error = RpcStatus;
+        type ProductApiGetProductInfoDiscountedData = V1GetProductInfoDiscountedResponse;
+        type ProductApiGetProductInfoDiscountedError = RpcStatus;
+        type ProductApiProductUpdateDiscountData = V1ProductUpdateDiscountResponse;
+        type ProductApiProductUpdateDiscountError = RpcStatus;
+        type PromosData = SellerApiGetSellerActionsV1Response;
+        type PromosError = RpcStatus;
+        type PromosCandidatesData = SellerApiGetSellerProductV1Response;
+        type PromosCandidatesError = RpcStatus;
+        type PromosProductsData = SellerApiGetSellerProductV1Response;
+        type PromosProductsError = RpcStatus;
+        type PromosProductsActivateData = SellerApiProductV1Response;
+        type PromosProductsActivateError = RpcStatus;
+        type PromosProductsDeactivateData = SellerApiProductV1ResponseDeactivate;
+        type PromosProductsDeactivateError = RpcStatus;
+        type ActionsApiGetHotSalesListData = V1GetHotSalesListResponse;
+        type ActionsApiGetHotSalesListError = RpcStatus;
+        type ActionsApiGetHotSalesProductsData = V1GetHotSalesProductsResponse;
+        type ActionsApiGetHotSalesProductsError = RpcStatus;
+        type ActionsApiActivateHotSalesProductsData = V1SetActivateHotSaleProductsResult;
+        type ActionsApiActivateHotSalesProductsError = RpcStatus;
+        type ActionsApiDeactivateHotSalesProductsData = V1SetDeactivateHotSaleProductsResult;
+        type ActionsApiDeactivateHotSalesProductsError = RpcStatus;
+        type PromosTaskListData = V1GetDiscountTaskListResponse;
+        type PromosTaskListError = RpcStatus;
+        type PromosTaskApproveData = V1ApproveDeclineDiscountTasksResponse;
+        type PromosTaskApproveError = RpcStatus;
+        type PromosTaskDeclineData = V1ApproveDeclineDiscountTasksResponse;
+        type PromosTaskDeclineError = RpcStatus;
+        type PricingCompetitorsData = V1GetCompetitorsResponse;
+        type PricingCompetitorsError = RpcStatus;
+        type PricingListData = V1GetStrategyListResponse;
+        type PricingListError = RpcStatus;
+        type PricingCreateData = V1CreatePricingStrategyResponse;
+        type PricingCreateError = RpcStatus;
+        type PricingInfoData = V1GetStrategyResponse;
+        type PricingInfoError = RpcStatus;
+        type PricingUpdateData = V1Empty;
+        type PricingUpdateError = RpcStatus;
+        type PricingItemsAddData = V1AddStrategyItemsResponse;
+        type PricingItemsAddError = RpcStatus;
+        type PricingIdsData = V1GetStrategyIDsByItemIDsResponse;
+        type PricingIdsError = RpcStatus;
+        type PricingItemsListData = V1GetStrategyItemsResponse;
+        type PricingItemsListError = RpcStatus;
+        type PricingItemsInfoData = V1GetStrategyItemInfoResponse;
+        type PricingItemsInfoError = RpcStatus;
+        type PricingItemsDeleteData = V1DeleteStrategyItemsResponse;
+        type PricingItemsDeleteError = RpcStatus;
+        type PricingStatusData = V1Empty;
+        type PricingStatusError = RpcStatus;
+        type PricingDeleteData = V1Empty;
+        type PricingDeleteError = RpcStatus;
+        type BrandApiBrandCompanyCertificationListData = BrandBrandCompanyCertificationListResponse;
+        type BrandApiBrandCompanyCertificationListError = RpcStatus;
+        type ProductApiProductCertificateAccordanceTypesData = ProductProductCertificateAccordanceTypesResponse;
+        type ProductApiProductCertificateAccordanceTypesError = RpcStatus;
+        type CertificateAccordanceTypesData = V2ProductCertificateAccordanceTypesResponse;
+        type CertificateAccordanceTypesError = GooglerpcStatus;
+        type ProductApiProductCertificateTypesData = ProductProductCertificateTypesResponse;
+        type ProductApiProductCertificateTypesError = RpcStatus;
+        type ProductApiProductCertificationListData = ProductProductCertificationListResponse;
+        type ProductApiProductCertificationListError = RpcStatus;
+        interface ProductApiProductCertificateCreatePayload {
             /** Массив сертификатов для товара. Допустимые расширения jpg, jpeg, png, pdf. */
             files: any[];
             /** Название сертификата. Максимум 100 символов. */
@@ -10680,12 +9898,7 @@ namespace Ozon_ {
             /** Номер сертификата. Максимум 100 символов. */
             number: string;
             /** Тип сертификата. Чтобы получить доступные типы, используйте метод [GET /v1/product/certificate/types](#operation/ProductAPI_ProductCertificateTypes). */
-            type_code:
-                | 'certificate_of_conformity'
-                | 'declaration'
-                | 'certificate_of_registration'
-                | 'registration_certificate'
-                | 'refused_letter';
+            type_code: 'certificate_of_conformity' | 'declaration' | 'certificate_of_registration' | 'registration_certificate' | 'refused_letter';
             /** Тип соответствия требованиям. Чтобы получить доступные типы, используйте метод [GET /v1/product/certificate/accordance-types](#operation/ProductAPI_ProductCertificateAccordanceTypes). */
             accordance_type_code?: 'technical_regulations_rf' | 'technical_regulations_cu' | 'gost';
             /**
@@ -10702,427 +9915,216 @@ namespace Ozon_ {
              */
             expire_date?: string;
         }
-
         /** @example {"id":50058} */
-        export type ProductApiProductCertificateCreateData = number;
-
-        export type ProductApiProductCertificateCreateError = RpcStatus;
-
-        export type ProductApiProductCertificateBindData = ProductBooleanResponse;
-
-        export type ProductApiProductCertificateBindError = RpcStatus;
-
-        export type CertificateDeleteData = V1ProductCertificateDeleteResponse;
-
-        export type CertificateDeleteError = RpcStatus;
-
-        export type CertificateInfoData = V1ProductCertificateInfoResponse;
-
-        export type CertificateInfoError = RpcStatus;
-
-        export type CertificateListData = V1ProductCertificateListResponse;
-
-        export type CertificateListError = RpcStatus;
-
-        export type ProductStatusListData = V1ProductCertificateProductStatusListResponse;
-
-        export type ProductStatusListError = RpcStatus;
-
-        export type CertificateProductsListData = V1ProductCertificateProductsListResponse;
-
-        export type CertificateProductsListError = RpcStatus;
-
-        export type CertificateUnbindData = V1ProductCertificateUnbindResponse;
-
-        export type CertificateUnbindError = RpcStatus;
-
-        export type RejectionReasonsListData = V1ProductCertificateRejectionReasonsListResponse;
-
-        export type RejectionReasonsListError = RpcStatus;
-
-        export type CertificateStatusListData = V1ProductCertificateStatusListResponse;
-
-        export type CertificateStatusListError = RpcStatus;
-
-        export type WarehouseApiWarehouseListData = WarehouseWarehouseListResponse;
-
-        export type WarehouseApiWarehouseListError = RpcStatus;
-
-        export type WarehouseApiDeliveryMethodListData = WarehouseDeliveryMethodListResponse;
-
-        export type WarehouseApiDeliveryMethodListError = RpcStatus;
-
-        export type PolygonApiCreatePolygonData = Polygonv1PolygonCreateResponse;
-
-        export type PolygonApiCreatePolygonError = RpcStatusV1PolygonCreate | RpcStatus;
-
-        export type PolygonApiBindPolygonData = Polygonv1Empty;
-
-        export type PolygonApiBindPolygonError = RpcStatusV1PolygonBind | RpcStatus;
-
-        export type PolygonApiDeletePolygonData = Polygonv1Empty;
-
-        export type PolygonApiDeletePolygonError = RpcStatus;
-
-        export type PostingApiGetFboPostingListData = V2FboPostingListResponse;
-
-        export type PostingApiGetFboPostingListError = RpcStatus;
-
-        export type PostingApiGetFboPostingData = V2FboPostingResponse;
-
-        export type PostingApiGetFboPostingError = RpcStatus;
-
-        export type SupplyOrderApiGetSupplyOrdersListData = V1GetSupplyOrdersListResponse;
-
-        export type SupplyOrderApiGetSupplyOrdersListError = RpcStatus;
-
-        export type SupplyOrderApiGetSupplyOrderData = V1GetSupplyOrderResponse;
-
-        export type SupplyOrderApiGetSupplyOrderError = RpcStatus;
-
-        export type SupplyOrderApiGetSupplyOrderItemsData = V1GetSupplyOrderItemsResponse;
-
-        export type SupplyOrderApiGetSupplyOrderItemsError = RpcStatus;
-
-        export type PostingApiFbsPostingProductExemplarValidateData =
-            Postingv4FbsPostingProductExemplarValidateResponse;
-
-        export type PostingApiFbsPostingProductExemplarValidateError = RpcStatus;
-
-        export type PostingApiSetProductExemplarData = Fbsv4SetProductExemplarResponse;
-
-        export type PostingApiSetProductExemplarError = RpcStatus;
-
-        export type PostingApiGetProductExemplarStatusData = Fbsv4GetProductExemplarStatusResponse;
-
-        export type PostingApiGetProductExemplarStatusError = RpcStatus;
-
-        export type PostingApiShipFbsPostingV4Data = Fbsv4FbsPostingShipV4Response;
-
-        export type PostingApiShipFbsPostingV4Error = RpcStatus;
-
-        export type PostingApiGetFbsPostingUnfulfilledListData = Postingv3GetFbsPostingUnfulfilledListResponse;
-
-        export type PostingApiGetFbsPostingUnfulfilledListError = RpcStatus;
-
-        export type PostingApiGetFbsPostingListV3Data = V3GetFbsPostingListResponseV3;
-
-        export type PostingApiGetFbsPostingListV3Error = RpcStatus;
-
-        export type PostingApiGetFbsPostingV3Data = V3GetFbsPostingResponseV3;
-
-        export type PostingApiGetFbsPostingV3Error = RpcStatus;
-
-        export type PostingApiGetFbsPostingByBarcodeData = V2FbsPostingResponse;
-
-        export type PostingApiGetFbsPostingByBarcodeError = RpcStatus;
-
-        export type PostingApiListCountryProductFbsPostingV2Data = V2FbsPostingProductCountryListResponse;
-
-        export type PostingApiListCountryProductFbsPostingV2Error = GooglerpcStatus;
-
-        export type PostingApiSetCountryProductFbsPostingV2Data = V2FbsPostingProductCountrySetResponse;
-
-        export type PostingApiSetCountryProductFbsPostingV2Error = GooglerpcStatus;
-
-        export type PostingApiPostingMultiBoxQtySetV3Data = Postingv3PostingMultiBoxQtySetV3Response;
-
-        export type PostingApiPostingMultiBoxQtySetV3Error = RpcStatus;
-
-        export type PostingApiGetRestrictionsData = V1GetRestrictionsResponse;
-
-        export type PostingApiGetRestrictionsError = RpcStatus;
-
-        export type PostingApiShipFbsPostingV3Data = V3FbsPostingShipResponse;
-
-        export type PostingApiShipFbsPostingV3Error = RpcStatus;
-
-        export type PostingApiPackageShipFbsPostingV3Data = V3FbsPostingShipResponse;
-
-        export type PostingApiPackageShipFbsPostingV3Error = RpcStatus;
-
-        export type PostingApiPostingFbsActCreateData = PostingPostingFBSActCreateResponse;
-
-        export type PostingApiPostingFbsActCreateError = RpcStatus;
-
-        export type PostingApiPostingFbsActCheckStatusData = PostingPostingFBSActCheckStatusResponse;
-
-        export type PostingApiPostingFbsActCheckStatusError = RpcStatus;
-
-        export type PostingApiGetCarriageAvailableListData = Postingv1GetCarriageAvailableListResponse;
-
-        export type PostingApiGetCarriageAvailableListError = RpcStatus;
-
-        export type PostingApiPostingFbsGetActData = PostingPostingFBSGetActResponse;
-
-        export type PostingApiPostingFbsGetActError = RpcStatus;
-
-        export type PostingApiPostingFbsDigitalActCheckStatusData = V2PostingFBSDigitalActCheckStatusResponse;
-
-        export type PostingApiPostingFbsDigitalActCheckStatusError = RpcStatus;
-
-        export type PostingApiPostingFbsGetDigitalActData = V2PostingFBSGetDigitalActResponse;
-
-        export type PostingApiPostingFbsGetDigitalActError = RpcStatus;
-
-        export type PostingApiPostingFbsPackageLabelData = PostingPostingFBSPackageLabelResponse;
-
-        export type PostingApiPostingFbsPackageLabelError = RpcStatus;
-
-        export type PostingApiCreateLabelBatchData = V1CreateLabelBatchResponse;
-
-        export type PostingApiCreateLabelBatchError = RpcStatus;
-
-        export type PostingApiGetLabelBatchData = V1GetLabelBatchResponse;
-
-        export type PostingApiGetLabelBatchError = RpcStatus;
-
-        export type PostingApiPostingFbsActGetContainerLabelsData = PostingPostingFBSActGetContainerLabelsResponse;
-
-        export type PostingApiPostingFbsActGetContainerLabelsError = RpcStatus;
-
-        export type PostingApiMoveFbsPostingToArbitrationData = PostingBooleanResponse;
-
-        export type PostingApiMoveFbsPostingToArbitrationError = RpcStatus;
-
-        export type PostingApiMoveFbsPostingToAwaitingDeliveryData = PostingBooleanResponse;
-
-        export type PostingApiMoveFbsPostingToAwaitingDeliveryError = RpcStatus;
-
-        export type PostingApiGetPostingFbsCancelReasonV1Data = PostingCancelReasonResponse;
-
-        export type PostingApiGetPostingFbsCancelReasonV1Error = RpcStatus;
-
-        export type PostingApiGetPostingFbsCancelReasonListData = PostingCancelReasonListResponse;
-
-        export type PostingApiGetPostingFbsCancelReasonListError = RpcStatus;
-
-        export type PostingApiCancelFbsPostingData = PostingBooleanResponse;
-
-        export type PostingApiCancelFbsPostingError = RpcStatus;
-
-        export type PostingApiChangeFbsPostingProductData = PostingPostingProductChangeResponse;
-
-        export type PostingApiChangeFbsPostingProductError = RpcStatus;
-
-        export type PostingApiCancelFbsPostingProductData = PostingPostingProductCancelResponse;
-
-        export type PostingApiCancelFbsPostingProductError = RpcStatus;
-
-        export type PostingApiFbsActListData = V2PostingFBSActListResponse;
-
-        export type PostingApiFbsActListError = RpcStatus;
-
-        export type PostingApiDigitalActDocumentSignData = V2PostingFBSDigitalActDocumentSignResponse;
-
-        export type PostingApiDigitalActDocumentSignError = RpcStatus;
-
-        export type PostingApiActPostingListData = V2PostingFBSActGetPostingsResponse;
-
-        export type PostingApiActPostingListError = RpcStatus;
-
-        export type PostingApiFbsPostingDeliveringData = PostingFbsPostingMoveStatusResponse;
-
-        export type PostingApiFbsPostingDeliveringError = RpcStatus;
-
-        export type PostingApiFbsPostingTrackingNumberSetData = PostingFbsPostingMoveStatusResponse;
-
-        export type PostingApiFbsPostingTrackingNumberSetError = RpcStatus;
-
-        export type PostingApiFbsPostingLastMileData = PostingFbsPostingMoveStatusResponse;
-
-        export type PostingApiFbsPostingLastMileError = RpcStatus;
-
-        export type PostingApiFbsPostingDeliveredData = PostingFbsPostingMoveStatusResponse;
-
-        export type PostingApiFbsPostingDeliveredError = RpcStatus;
-
-        export type PostingApiFbsPostingSentbysellerData = PostingFbsPostingSentbysellerResponse;
-
-        export type PostingApiFbsPostingSentbysellerError = RpcStatus;
-
-        export type PostingApiPostingTimeslotChangeRestrictionsData = V1PostingFbsTimeslotChangeRestrictionsResponse;
-
-        export type PostingApiPostingTimeslotChangeRestrictionsError = RpcStatus;
-
-        export type PostingApiSetPostingTimeslotData = V1PostingFbsTimeslotSetResponse;
-
-        export type PostingApiSetPostingTimeslotError = RpcStatus;
-
-        export type PostingApiGetEtgbData = V1GetEtgbResponse;
-
-        export type PostingApiGetEtgbError = RpcStatus;
-
-        export type ReturnsApiGetReturnsCompanyFboV2Data = ReturnsGetReturnsCompanyFboResponse;
-
-        export type ReturnsApiGetReturnsCompanyFboV2Error = RpcStatus;
-
-        export type ReturnsApiGetReturnsCompanyFboData = V3GetReturnsCompanyFboV3Response;
-
-        export type ReturnsApiGetReturnsCompanyFboError = RpcStatus;
-
-        export type ReturnsApiGetReturnsCompanyFbsData = ReturnsGetReturnsCompanyFBSResponse;
-
-        export type ReturnsApiGetReturnsCompanyFbsError = RpcStatus;
-
-        export type ReturnsApiGetReturnsCompanyFbSv3Data = V3GetReturnsCompanyFbsV3Response;
-
-        export type ReturnsApiGetReturnsCompanyFbSv3Error = RpcStatus;
-
-        export type CancellationApiGetConditionalCancellationData = V1GetConditionalCancellationResponse;
-
-        export type CancellationApiGetConditionalCancellationError = RpcStatus;
-
-        export type CancellationApiGetConditionalCancellationListData = V1GetConditionalCancellationListResponse;
-
-        export type CancellationApiGetConditionalCancellationListError = RpcStatus;
-
-        export type CancellationApiConditionalCancellationApproveData = V1Empty;
-
-        export type CancellationApiConditionalCancellationApproveError = RpcStatus;
-
-        export type CancellationApiConditionalCancellationRejectData = V1Empty;
-
-        export type CancellationApiConditionalCancellationRejectError = RpcStatus;
-
-        export type ChatApiChatListData = ChatChatListResponse;
-
-        export type ChatApiChatListError = RpcStatus;
-
-        export type ChatApiChatSendMessageData = ChatChatSendMessageResponse;
-
-        export type ChatApiChatSendMessageError = RpcStatus;
-
-        export type ChatApiChatSendFileData = ChatChatSendFileResponse;
-
-        export type ChatApiChatSendFileError = RpcStatus;
-
-        export type ChatApiChatHistoryData = ChatChatHistoryResponse;
-
-        export type ChatApiChatHistoryError = RpcStatus;
-
-        export type ChatApiChatUpdatesData = ChatChatUpdatesResponse;
-
-        export type ChatApiChatUpdatesError = RpcStatus;
-
-        export type ChatApiChatStartData = ChatChatStartResponse;
-
-        export type ChatApiChatStartError = RpcStatus;
-
-        export type ChatApiChatListV2Data = V2ChatListResponse;
-
-        export type ChatApiChatListV2Error = RpcStatus;
-
-        export type ChatApiChatHistoryV2Data = V2ChatHistoryResponse;
-
-        export type ChatApiChatHistoryV2Error = RpcStatus;
-
-        export type ChatApiChatReadV2Data = V2ChatReadResponse;
-
-        export type ChatApiChatReadV2Error = RpcStatus;
-
-        export type InvoiceCreateData = V1InvoiceCreateOrUpdateResponse;
-
-        export type InvoiceCreateError = RpcStatus;
-
-        export type InvoiceGetData = V1InvoiceGetResponse;
-
-        export type InvoiceGetError = RpcStatus;
-
-        export type InvoiceDeleteData = V1InvoiceDeleteResponse;
-
-        export type InvoiceDeleteError = RpcStatus;
-
-        export type ReportApiReportInfoData = ReportReportInfoResponse;
-
-        export type ReportApiReportInfoError = RpcStatus;
-
-        export type ReportApiReportListData = ReportReportListResponse;
-
-        export type ReportApiReportListError = RpcStatus;
-
-        export type ReportApiCreateCompanyProductsReportData = ReportCreateReportResponse;
-
-        export type ReportApiCreateCompanyProductsReportError = RpcStatus;
-
-        export type ReportApiCreateCompanyTransactionsReportData = ReportCreateReportResponse;
-
-        export type ReportApiCreateCompanyTransactionsReportError = RpcStatus;
-
-        export type ReportApiCreateCompanyProductsPricesReportData = ReportCreateReportResponse;
-
-        export type ReportApiCreateCompanyProductsPricesReportError = RpcStatus;
-
-        export type ReportApiCreateCompanyStockReportData = ReportCreateReportResponse;
-
-        export type ReportApiCreateCompanyStockReportError = RpcStatus;
-
-        export type ReportApiCreateProductsMovementReportData = ReportCreateReportResponse;
-
-        export type ReportApiCreateProductsMovementReportError = RpcStatus;
-
-        export type ReportApiCreateCompanyReturnsReportData = ReportCreateReportResponse;
-
-        export type ReportApiCreateCompanyReturnsReportError = RpcStatus;
-
-        export type ReportApiCreateCompanyPostingsReportData = ReportCreateReportResponse;
-
-        export type ReportApiCreateCompanyPostingsReportError = RpcStatus;
-
-        export type ReportApiCreateCompanyFinanceReportData = ReportCreateReportResponse;
-
-        export type ReportApiCreateCompanyFinanceReportError = RpcStatus;
-
-        export type FinanceApiFinanceCashFlowStatementListData = V3FinanceCashFlowStatementListResponse;
-
-        export type FinanceApiFinanceCashFlowStatementListError = RpcStatus;
-
-        export type ReportApiCreateDiscountedReportData = ReportCreateDiscountedResponse;
-
-        export type ReportApiCreateDiscountedReportError = RpcStatus;
-
-        export type ReportApiDiscountedReportInfoData = ReportDiscountedInfoResponse;
-
-        export type ReportApiDiscountedReportInfoError = RpcStatus;
-
-        export type ReportApiDiscountedReportListData = ReportDiscountedListResponse;
-
-        export type ReportApiDiscountedReportListError = RpcStatus;
-
-        export type AnalyticsApiAnalyticsGetDataData = AnalyticsAnalyticsGetDataResponse;
-
-        export type AnalyticsApiAnalyticsGetDataError = RpcStatus;
-
-        export type AnalyticsApiAnalyticsGetStockOnWarehousesData = AnalyticsAnalyticsGetStockOnWarehousesResponse;
-
-        export type AnalyticsApiAnalyticsGetStockOnWarehousesError = RpcStatus;
-
-        export type AnalyticsApiAnalyticsItemTurnoverDataV3Data = V1AnalyticsItemTurnoverDataV3Response;
-
-        export type AnalyticsApiAnalyticsItemTurnoverDataV3Error = RpcStatus;
-
-        export type AnalyticsApiAnalyticsGetStockOnWarehousesV2Data = AnalyticsStockOnWarehouseResponse;
-
-        export type AnalyticsApiAnalyticsGetStockOnWarehousesV2Error = RpcStatus;
-
-        export type FinanceApiGetRealizationReportData = FinanceGetRealizationReportResponse;
-
-        export type FinanceApiGetRealizationReportError = RpcStatus;
-
-        export type FinanceApiFinanceTransactionListV3Data = Financev3FinanceTransactionListV3Response;
-
-        export type FinanceApiFinanceTransactionListV3Error = RpcStatus;
-
-        export type FinanceApiFinanceTransactionTotalV3Data = Financev3FinanceTransactionTotalsV3Response;
-
-        export type FinanceApiFinanceTransactionTotalV3Error = RpcStatus;
-
-        export type RatingApiRatingSummaryV1Data = V1RatingSummaryV1Response;
-
-        export type RatingApiRatingSummaryV1Error = RpcStatus;
-
-        export type RatingApiRatingHistoryV1Data = V1RatingHistoryV1Response;
-
-        export type RatingApiRatingHistoryV1Error = RpcStatus;
+        type ProductApiProductCertificateCreateData = number;
+        type ProductApiProductCertificateCreateError = RpcStatus;
+        type ProductApiProductCertificateBindData = ProductBooleanResponse;
+        type ProductApiProductCertificateBindError = RpcStatus;
+        type CertificateDeleteData = V1ProductCertificateDeleteResponse;
+        type CertificateDeleteError = RpcStatus;
+        type CertificateInfoData = V1ProductCertificateInfoResponse;
+        type CertificateInfoError = RpcStatus;
+        type CertificateListData = V1ProductCertificateListResponse;
+        type CertificateListError = RpcStatus;
+        type ProductStatusListData = V1ProductCertificateProductStatusListResponse;
+        type ProductStatusListError = RpcStatus;
+        type CertificateProductsListData = V1ProductCertificateProductsListResponse;
+        type CertificateProductsListError = RpcStatus;
+        type CertificateUnbindData = V1ProductCertificateUnbindResponse;
+        type CertificateUnbindError = RpcStatus;
+        type RejectionReasonsListData = V1ProductCertificateRejectionReasonsListResponse;
+        type RejectionReasonsListError = RpcStatus;
+        type CertificateStatusListData = V1ProductCertificateStatusListResponse;
+        type CertificateStatusListError = RpcStatus;
+        type WarehouseApiWarehouseListData = WarehouseWarehouseListResponse;
+        type WarehouseApiWarehouseListError = RpcStatus;
+        type WarehouseApiDeliveryMethodListData = WarehouseDeliveryMethodListResponse;
+        type WarehouseApiDeliveryMethodListError = RpcStatus;
+        type PolygonApiCreatePolygonData = Polygonv1PolygonCreateResponse;
+        type PolygonApiCreatePolygonError = RpcStatusV1PolygonCreate | RpcStatus;
+        type PolygonApiBindPolygonData = Polygonv1Empty;
+        type PolygonApiBindPolygonError = RpcStatusV1PolygonBind | RpcStatus;
+        type PolygonApiDeletePolygonData = Polygonv1Empty;
+        type PolygonApiDeletePolygonError = RpcStatus;
+        type PostingApiGetFboPostingListData = V2FboPostingListResponse;
+        type PostingApiGetFboPostingListError = RpcStatus;
+        type PostingApiGetFboPostingData = V2FboPostingResponse;
+        type PostingApiGetFboPostingError = RpcStatus;
+        type SupplyOrderApiGetSupplyOrdersListData = V1GetSupplyOrdersListResponse;
+        type SupplyOrderApiGetSupplyOrdersListError = RpcStatus;
+        type SupplyOrderApiGetSupplyOrderData = V1GetSupplyOrderResponse;
+        type SupplyOrderApiGetSupplyOrderError = RpcStatus;
+        type SupplyOrderApiGetSupplyOrderItemsData = V1GetSupplyOrderItemsResponse;
+        type SupplyOrderApiGetSupplyOrderItemsError = RpcStatus;
+        type PostingApiFbsPostingProductExemplarValidateData = Postingv4FbsPostingProductExemplarValidateResponse;
+        type PostingApiFbsPostingProductExemplarValidateError = RpcStatus;
+        type PostingApiSetProductExemplarData = Fbsv4SetProductExemplarResponse;
+        type PostingApiSetProductExemplarError = RpcStatus;
+        type PostingApiGetProductExemplarStatusData = Fbsv4GetProductExemplarStatusResponse;
+        type PostingApiGetProductExemplarStatusError = RpcStatus;
+        type PostingApiShipFbsPostingV4Data = Fbsv4FbsPostingShipV4Response;
+        type PostingApiShipFbsPostingV4Error = RpcStatus;
+        type PostingApiGetFbsPostingUnfulfilledListData = Postingv3GetFbsPostingUnfulfilledListResponse;
+        type PostingApiGetFbsPostingUnfulfilledListError = RpcStatus;
+        type PostingApiGetFbsPostingListV3Data = V3GetFbsPostingListResponseV3;
+        type PostingApiGetFbsPostingListV3Error = RpcStatus;
+        type PostingApiGetFbsPostingV3Data = V3GetFbsPostingResponseV3;
+        type PostingApiGetFbsPostingV3Error = RpcStatus;
+        type PostingApiGetFbsPostingByBarcodeData = V2FbsPostingResponse;
+        type PostingApiGetFbsPostingByBarcodeError = RpcStatus;
+        type PostingApiListCountryProductFbsPostingV2Data = V2FbsPostingProductCountryListResponse;
+        type PostingApiListCountryProductFbsPostingV2Error = GooglerpcStatus;
+        type PostingApiSetCountryProductFbsPostingV2Data = V2FbsPostingProductCountrySetResponse;
+        type PostingApiSetCountryProductFbsPostingV2Error = GooglerpcStatus;
+        type PostingApiPostingMultiBoxQtySetV3Data = Postingv3PostingMultiBoxQtySetV3Response;
+        type PostingApiPostingMultiBoxQtySetV3Error = RpcStatus;
+        type PostingApiGetRestrictionsData = V1GetRestrictionsResponse;
+        type PostingApiGetRestrictionsError = RpcStatus;
+        type PostingApiShipFbsPostingV3Data = V3FbsPostingShipResponse;
+        type PostingApiShipFbsPostingV3Error = RpcStatus;
+        type PostingApiPackageShipFbsPostingV3Data = V3FbsPostingShipResponse;
+        type PostingApiPackageShipFbsPostingV3Error = RpcStatus;
+        type PostingApiPostingFbsActCreateData = PostingPostingFBSActCreateResponse;
+        type PostingApiPostingFbsActCreateError = RpcStatus;
+        type PostingApiPostingFbsActCheckStatusData = PostingPostingFBSActCheckStatusResponse;
+        type PostingApiPostingFbsActCheckStatusError = RpcStatus;
+        type PostingApiGetCarriageAvailableListData = Postingv1GetCarriageAvailableListResponse;
+        type PostingApiGetCarriageAvailableListError = RpcStatus;
+        type PostingApiPostingFbsGetActData = PostingPostingFBSGetActResponse;
+        type PostingApiPostingFbsGetActError = RpcStatus;
+        type PostingApiPostingFbsDigitalActCheckStatusData = V2PostingFBSDigitalActCheckStatusResponse;
+        type PostingApiPostingFbsDigitalActCheckStatusError = RpcStatus;
+        type PostingApiPostingFbsGetDigitalActData = V2PostingFBSGetDigitalActResponse;
+        type PostingApiPostingFbsGetDigitalActError = RpcStatus;
+        type PostingApiPostingFbsPackageLabelData = PostingPostingFBSPackageLabelResponse;
+        type PostingApiPostingFbsPackageLabelError = RpcStatus;
+        type PostingApiCreateLabelBatchData = V1CreateLabelBatchResponse;
+        type PostingApiCreateLabelBatchError = RpcStatus;
+        type PostingApiGetLabelBatchData = V1GetLabelBatchResponse;
+        type PostingApiGetLabelBatchError = RpcStatus;
+        type PostingApiPostingFbsActGetContainerLabelsData = PostingPostingFBSActGetContainerLabelsResponse;
+        type PostingApiPostingFbsActGetContainerLabelsError = RpcStatus;
+        type PostingApiMoveFbsPostingToArbitrationData = PostingBooleanResponse;
+        type PostingApiMoveFbsPostingToArbitrationError = RpcStatus;
+        type PostingApiMoveFbsPostingToAwaitingDeliveryData = PostingBooleanResponse;
+        type PostingApiMoveFbsPostingToAwaitingDeliveryError = RpcStatus;
+        type PostingApiGetPostingFbsCancelReasonV1Data = PostingCancelReasonResponse;
+        type PostingApiGetPostingFbsCancelReasonV1Error = RpcStatus;
+        type PostingApiGetPostingFbsCancelReasonListData = PostingCancelReasonListResponse;
+        type PostingApiGetPostingFbsCancelReasonListError = RpcStatus;
+        type PostingApiCancelFbsPostingData = PostingBooleanResponse;
+        type PostingApiCancelFbsPostingError = RpcStatus;
+        type PostingApiChangeFbsPostingProductData = PostingPostingProductChangeResponse;
+        type PostingApiChangeFbsPostingProductError = RpcStatus;
+        type PostingApiCancelFbsPostingProductData = PostingPostingProductCancelResponse;
+        type PostingApiCancelFbsPostingProductError = RpcStatus;
+        type PostingApiFbsActListData = V2PostingFBSActListResponse;
+        type PostingApiFbsActListError = RpcStatus;
+        type PostingApiDigitalActDocumentSignData = V2PostingFBSDigitalActDocumentSignResponse;
+        type PostingApiDigitalActDocumentSignError = RpcStatus;
+        type PostingApiActPostingListData = V2PostingFBSActGetPostingsResponse;
+        type PostingApiActPostingListError = RpcStatus;
+        type PostingApiFbsPostingDeliveringData = PostingFbsPostingMoveStatusResponse;
+        type PostingApiFbsPostingDeliveringError = RpcStatus;
+        type PostingApiFbsPostingTrackingNumberSetData = PostingFbsPostingMoveStatusResponse;
+        type PostingApiFbsPostingTrackingNumberSetError = RpcStatus;
+        type PostingApiFbsPostingLastMileData = PostingFbsPostingMoveStatusResponse;
+        type PostingApiFbsPostingLastMileError = RpcStatus;
+        type PostingApiFbsPostingDeliveredData = PostingFbsPostingMoveStatusResponse;
+        type PostingApiFbsPostingDeliveredError = RpcStatus;
+        type PostingApiFbsPostingSentbysellerData = PostingFbsPostingSentbysellerResponse;
+        type PostingApiFbsPostingSentbysellerError = RpcStatus;
+        type PostingApiPostingTimeslotChangeRestrictionsData = V1PostingFbsTimeslotChangeRestrictionsResponse;
+        type PostingApiPostingTimeslotChangeRestrictionsError = RpcStatus;
+        type PostingApiSetPostingTimeslotData = V1PostingFbsTimeslotSetResponse;
+        type PostingApiSetPostingTimeslotError = RpcStatus;
+        type PostingApiGetEtgbData = V1GetEtgbResponse;
+        type PostingApiGetEtgbError = RpcStatus;
+        type ReturnsApiGetReturnsCompanyFboV2Data = ReturnsGetReturnsCompanyFboResponse;
+        type ReturnsApiGetReturnsCompanyFboV2Error = RpcStatus;
+        type ReturnsApiGetReturnsCompanyFboData = V3GetReturnsCompanyFboV3Response;
+        type ReturnsApiGetReturnsCompanyFboError = RpcStatus;
+        type ReturnsApiGetReturnsCompanyFbsData = ReturnsGetReturnsCompanyFBSResponse;
+        type ReturnsApiGetReturnsCompanyFbsError = RpcStatus;
+        type ReturnsApiGetReturnsCompanyFbSv3Data = V3GetReturnsCompanyFbsV3Response;
+        type ReturnsApiGetReturnsCompanyFbSv3Error = RpcStatus;
+        type CancellationApiGetConditionalCancellationData = V1GetConditionalCancellationResponse;
+        type CancellationApiGetConditionalCancellationError = RpcStatus;
+        type CancellationApiGetConditionalCancellationListData = V1GetConditionalCancellationListResponse;
+        type CancellationApiGetConditionalCancellationListError = RpcStatus;
+        type CancellationApiConditionalCancellationApproveData = V1Empty;
+        type CancellationApiConditionalCancellationApproveError = RpcStatus;
+        type CancellationApiConditionalCancellationRejectData = V1Empty;
+        type CancellationApiConditionalCancellationRejectError = RpcStatus;
+        type ChatApiChatListData = ChatChatListResponse;
+        type ChatApiChatListError = RpcStatus;
+        type ChatApiChatSendMessageData = ChatChatSendMessageResponse;
+        type ChatApiChatSendMessageError = RpcStatus;
+        type ChatApiChatSendFileData = ChatChatSendFileResponse;
+        type ChatApiChatSendFileError = RpcStatus;
+        type ChatApiChatHistoryData = ChatChatHistoryResponse;
+        type ChatApiChatHistoryError = RpcStatus;
+        type ChatApiChatUpdatesData = ChatChatUpdatesResponse;
+        type ChatApiChatUpdatesError = RpcStatus;
+        type ChatApiChatStartData = ChatChatStartResponse;
+        type ChatApiChatStartError = RpcStatus;
+        type ChatApiChatListV2Data = V2ChatListResponse;
+        type ChatApiChatListV2Error = RpcStatus;
+        type ChatApiChatHistoryV2Data = V2ChatHistoryResponse;
+        type ChatApiChatHistoryV2Error = RpcStatus;
+        type ChatApiChatReadV2Data = V2ChatReadResponse;
+        type ChatApiChatReadV2Error = RpcStatus;
+        type InvoiceCreateData = V1InvoiceCreateOrUpdateResponse;
+        type InvoiceCreateError = RpcStatus;
+        type InvoiceGetData = V1InvoiceGetResponse;
+        type InvoiceGetError = RpcStatus;
+        type InvoiceDeleteData = V1InvoiceDeleteResponse;
+        type InvoiceDeleteError = RpcStatus;
+        type ReportApiReportInfoData = ReportReportInfoResponse;
+        type ReportApiReportInfoError = RpcStatus;
+        type ReportApiReportListData = ReportReportListResponse;
+        type ReportApiReportListError = RpcStatus;
+        type ReportApiCreateCompanyProductsReportData = ReportCreateReportResponse;
+        type ReportApiCreateCompanyProductsReportError = RpcStatus;
+        type ReportApiCreateCompanyTransactionsReportData = ReportCreateReportResponse;
+        type ReportApiCreateCompanyTransactionsReportError = RpcStatus;
+        type ReportApiCreateCompanyProductsPricesReportData = ReportCreateReportResponse;
+        type ReportApiCreateCompanyProductsPricesReportError = RpcStatus;
+        type ReportApiCreateCompanyStockReportData = ReportCreateReportResponse;
+        type ReportApiCreateCompanyStockReportError = RpcStatus;
+        type ReportApiCreateProductsMovementReportData = ReportCreateReportResponse;
+        type ReportApiCreateProductsMovementReportError = RpcStatus;
+        type ReportApiCreateCompanyReturnsReportData = ReportCreateReportResponse;
+        type ReportApiCreateCompanyReturnsReportError = RpcStatus;
+        type ReportApiCreateCompanyPostingsReportData = ReportCreateReportResponse;
+        type ReportApiCreateCompanyPostingsReportError = RpcStatus;
+        type ReportApiCreateCompanyFinanceReportData = ReportCreateReportResponse;
+        type ReportApiCreateCompanyFinanceReportError = RpcStatus;
+        type FinanceApiFinanceCashFlowStatementListData = V3FinanceCashFlowStatementListResponse;
+        type FinanceApiFinanceCashFlowStatementListError = RpcStatus;
+        type ReportApiCreateDiscountedReportData = ReportCreateDiscountedResponse;
+        type ReportApiCreateDiscountedReportError = RpcStatus;
+        type ReportApiDiscountedReportInfoData = ReportDiscountedInfoResponse;
+        type ReportApiDiscountedReportInfoError = RpcStatus;
+        type ReportApiDiscountedReportListData = ReportDiscountedListResponse;
+        type ReportApiDiscountedReportListError = RpcStatus;
+        type AnalyticsApiAnalyticsGetDataData = AnalyticsAnalyticsGetDataResponse;
+        type AnalyticsApiAnalyticsGetDataError = RpcStatus;
+        type AnalyticsApiAnalyticsGetStockOnWarehousesData = AnalyticsAnalyticsGetStockOnWarehousesResponse;
+        type AnalyticsApiAnalyticsGetStockOnWarehousesError = RpcStatus;
+        type AnalyticsApiAnalyticsItemTurnoverDataV3Data = V1AnalyticsItemTurnoverDataV3Response;
+        type AnalyticsApiAnalyticsItemTurnoverDataV3Error = RpcStatus;
+        type AnalyticsApiAnalyticsGetStockOnWarehousesV2Data = AnalyticsStockOnWarehouseResponse;
+        type AnalyticsApiAnalyticsGetStockOnWarehousesV2Error = RpcStatus;
+        type FinanceApiGetRealizationReportData = FinanceGetRealizationReportResponse;
+        type FinanceApiGetRealizationReportError = RpcStatus;
+        type FinanceApiFinanceTransactionListV3Data = Financev3FinanceTransactionListV3Response;
+        type FinanceApiFinanceTransactionListV3Error = RpcStatus;
+        type FinanceApiFinanceTransactionTotalV3Data = Financev3FinanceTransactionTotalsV3Response;
+        type FinanceApiFinanceTransactionTotalV3Error = RpcStatus;
+        type RatingApiRatingSummaryV1Data = V1RatingSummaryV1Response;
+        type RatingApiRatingSummaryV1Error = RpcStatus;
+        type RatingApiRatingHistoryV1Data = V1RatingHistoryV1Response;
+        type RatingApiRatingHistoryV1Error = RpcStatus;
     }
 }
