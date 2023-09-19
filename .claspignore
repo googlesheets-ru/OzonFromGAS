@@ -9,3 +9,4 @@ docs
 src
 ozon_api/**
 ./ozon_api/**
+declarations/**

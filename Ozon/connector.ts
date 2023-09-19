@@ -433,6 +433,29 @@ namespace Ozon_ {
         }
 
         /**
+         * No description
+         *
+         * @tags Prices&StocksAPI
+         * @name ProductApiProductStocksByWarehouseFbs
+         * @summary Информация об остатках на складах продавца (FBS и rFBS)
+         * @request POST:/v1/product/info/stocks-by-warehouse/fbs
+         * @response `200` `ProductApiProductStocksByWarehouseFbsData` Количество товаров на складах FBS и rFBS
+         * @response `400` `RpcStatus` Неверный параметр
+         * @response `403` `RpcStatus` Доступ запрещён
+         * @response `404` `RpcStatus` Ответ не найден
+         * @response `409` `RpcStatus` Конфликт запроса
+         * @response `500` `RpcStatus` Внутренняя ошибка сервера
+         */
+        stocksByWarehouseFbs(data: Types.Productsv1GetProductInfoStocksByWarehouseFbsRequest) {
+            const response = this.request<Types.ProductApiProductStocksByWarehouseFbsData>({
+                endpoint: `/v1/product/info/stocks-by-warehouse/fbs`,
+                method: 'POST',
+                payload: data,
+            });
+            return response;
+        }
+
+        /**
          * @description Позволяет изменить информацию о количестве товара в наличии. За один запрос можно изменить наличие для 100 товаров. В минуту можно отправить до 80 запросов. <aside class="warning">Обновлять остатки товара на одном складе можно только 1 раз в 2 минуты, иначе в ответе будет ошибка <code>TOO_MANY_REQUESTS</code>.</aside> Задать наличие товара возможно только после того, как его статус сменится на `processed`. Остатки крупногабаритных товаров можно обновлять только на предназначенных для них складах.
          *
          * @tags Prices&StocksAPI
