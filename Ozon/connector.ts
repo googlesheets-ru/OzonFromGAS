@@ -248,7 +248,7 @@ namespace Ozon_ {
                 payload: data,
             });
             return response;
-        };
+        }
 
         /**
          * @description Позволяет [изменить цену одного или нескольких товаров][1].
@@ -275,7 +275,7 @@ namespace Ozon_ {
                 payload: data,
             });
             return response;
-        };
+        }
 
         /**
          * @description Отчёт по остаткам и товарам в перемещении по складам Ozon.
@@ -298,7 +298,7 @@ namespace Ozon_ {
                 payload: data,
             });
             return response;
-        };
+        }
 
         /**
          * @description Метод для изменения `offer_id`, привязанных к товарам. Вы можете изменить несколько `offer_id`. Рекомендуем передавать до 250 значений в массиве.
@@ -389,27 +389,26 @@ namespace Ozon_ {
         }
 
         /**
-     * @description Позволяет изменить информацию о количестве товара в наличии. Метод используется только для FBS и rFBS складов. За один запрос можно изменить наличие для 100 товаров. В минуту можно отправить до 80 запросов. Задать наличие товара возможно только после того, как его статус сменится на `processed`.
-     *
-     * @tags Prices&StocksAPI
-     * @name ProductApiImportProductsStocks
-     * @summary Обновить остатки
-     * @request POST:/v1/product/import/stocks
-     * @response `200` `ProductApiImportProductsStocksData` Информация об остатках обновлена
-     * @response `400` `RpcStatus` Неверный параметр
-     * @response `403` `RpcStatus` Доступ запрещён
-     * @response `404` `RpcStatus` Ответ не найден
-     * @response `409` `RpcStatus` Конфликт запроса
-     * @response `500` `RpcStatus` Внутренняя ошибка сервера
-     */
+         * @description Позволяет изменить информацию о количестве товара в наличии. Метод используется только для FBS и rFBS складов. За один запрос можно изменить наличие для 100 товаров. В минуту можно отправить до 80 запросов. Задать наличие товара возможно только после того, как его статус сменится на `processed`.
+         *
+         * @tags Prices&StocksAPI
+         * @name ProductApiImportProductsStocks
+         * @summary Обновить остатки
+         * @request POST:/v1/product/import/stocks
+         * @response `200` `ProductApiImportProductsStocksData` Информация об остатках обновлена
+         * @response `400` `RpcStatus` Неверный параметр
+         * @response `403` `RpcStatus` Доступ запрещён
+         * @response `404` `RpcStatus` Ответ не найден
+         * @response `409` `RpcStatus` Конфликт запроса
+         * @response `500` `RpcStatus` Внутренняя ошибка сервера
+         */
         productApiImportProductsStocks(data: Types.ProductImportProductsStocksRequest) {
             return this.request<Types.ProductApiImportProductsStocksData>({
                 endpoint: `/v1/product/import/stocks`,
                 method: 'POST',
-                payload: data
+                payload: data,
             });
         }
-
 
         /**
          * @description В запросе не нужно указывать параметры. Ваша компания будет определена по `Client-ID`.
@@ -434,19 +433,19 @@ namespace Ozon_ {
         }
 
         /**
- * @description Позволяет изменить информацию о количестве товара в наличии. За один запрос можно изменить наличие для 100 товаров. В минуту можно отправить до 80 запросов. <aside class="warning">Обновлять остатки товара на одном складе можно только 1 раз в 2 минуты, иначе в ответе будет ошибка <code>TOO_MANY_REQUESTS</code>.</aside> Задать наличие товара возможно только после того, как его статус сменится на `processed`. Остатки крупногабаритных товаров можно обновлять только на предназначенных для них складах.
- *
- * @tags Prices&StocksAPI
- * @name ProductApiProductsStocksV2
- * @summary Обновить количество товаров на складах
- * @request POST:/v2/products/stocks
- * @response `200` `ProductApiProductsStocksV2Data` Количество товаров обновлено
- * @response `400` `RpcStatus` Неверный параметр
- * @response `403` `RpcStatus` Доступ запрещён
- * @response `404` `RpcStatus` Ответ не найден
- * @response `409` `RpcStatus` Конфликт запроса
- * @response `500` `RpcStatus` Внутренняя ошибка сервера
- */
+         * @description Позволяет изменить информацию о количестве товара в наличии. За один запрос можно изменить наличие для 100 товаров. В минуту можно отправить до 80 запросов. <aside class="warning">Обновлять остатки товара на одном складе можно только 1 раз в 2 минуты, иначе в ответе будет ошибка <code>TOO_MANY_REQUESTS</code>.</aside> Задать наличие товара возможно только после того, как его статус сменится на `processed`. Остатки крупногабаритных товаров можно обновлять только на предназначенных для них складах.
+         *
+         * @tags Prices&StocksAPI
+         * @name ProductApiProductsStocksV2
+         * @summary Обновить количество товаров на складах
+         * @request POST:/v2/products/stocks
+         * @response `200` `ProductApiProductsStocksV2Data` Количество товаров обновлено
+         * @response `400` `RpcStatus` Неверный параметр
+         * @response `403` `RpcStatus` Доступ запрещён
+         * @response `404` `RpcStatus` Ответ не найден
+         * @response `409` `RpcStatus` Конфликт запроса
+         * @response `500` `RpcStatus` Внутренняя ошибка сервера
+         */
         productApiProductsStocksV2(data: Types.Productv2ProductsStocksRequest) {
             const response = this.request<Types.ProductApiProductsStocksV2Data>({
                 endpoint: `/v2/products/stocks`,
