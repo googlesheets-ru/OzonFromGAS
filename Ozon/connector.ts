@@ -1,4 +1,4 @@
-declare namespace Ozon_ {
+namespace Ozon_ {
     export namespace Types {
         export interface ClientRequestInit {
             endpoint: `/${Ozon_.Types.Version}/${string}/${string}`;
@@ -241,7 +241,7 @@ declare namespace Ozon_ {
          *
          * [Метод]: https://docs.ozon.ru/api/seller/#operation/ProductAPI_GetProductInfoPricesV4
          */
-        productApiGetProductInfoPricesV4 = (data: Types.Productv4GetProductInfoPricesV4Request) => {
+        productApiGetProductInfoPricesV4(data: Types.Productv4GetProductInfoPricesV4Request) {
             const response = this.request<Types.ProductApiGetProductInfoPricesV4Data>({
                 endpoint: `/v4/product/info/prices`,
                 method: 'POST',
@@ -268,7 +268,7 @@ declare namespace Ozon_ {
          *
          * [1]: https://api-seller.ozon.ru/v1/product/import/prices
          */
-        productApiImportProductsPrices = (data: Types.ProductImportProductsPricesRequest) => {
+        productApiImportProductsPrices(data: Types.ProductImportProductsPricesRequest) {
             const response = this.request<Types.ProductApiImportProductsPricesData>({
                 endpoint: `/v1/product/import/prices`,
                 method: 'POST',
@@ -291,12 +291,13 @@ declare namespace Ozon_ {
          * @response `409` `RpcStatus` Конфликт запроса
          * @response `500` `RpcStatus` Внутренняя ошибка сервера
          */
-        analyticsApiAnalyticsGetStockOnWarehousesV2 = (data: Types.AnalyticsStockOnWarehouseRequest) => {
-            this.request<Types.AnalyticsApiAnalyticsGetStockOnWarehousesV2Data>({
+        analyticsApiAnalyticsGetStockOnWarehousesV2(data: Types.AnalyticsStockOnWarehouseRequest) {
+            const response = this.request<Types.AnalyticsApiAnalyticsGetStockOnWarehousesV2Data>({
                 endpoint: `/v2/analytics/stock_on_warehouses`,
                 method: 'POST',
                 payload: data,
             });
+            return response;
         };
 
         /**
@@ -385,6 +386,74 @@ declare namespace Ozon_ {
                 method: 'POST',
                 payload: data,
             });
+        }
+
+        /**
+     * @description Позволяет изменить информацию о количестве товара в наличии. Метод используется только для FBS и rFBS складов. За один запрос можно изменить наличие для 100 товаров. В минуту можно отправить до 80 запросов. Задать наличие товара возможно только после того, как его статус сменится на `processed`.
+     *
+     * @tags Prices&StocksAPI
+     * @name ProductApiImportProductsStocks
+     * @summary Обновить остатки
+     * @request POST:/v1/product/import/stocks
+     * @response `200` `ProductApiImportProductsStocksData` Информация об остатках обновлена
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+        productApiImportProductsStocks(data: Types.ProductImportProductsStocksRequest) {
+            return this.request<Types.ProductApiImportProductsStocksData>({
+                endpoint: `/v1/product/import/stocks`,
+                method: 'POST',
+                payload: data
+            });
+        }
+
+
+        /**
+         * @description В запросе не нужно указывать параметры. Ваша компания будет определена по `Client-ID`.
+         *
+         * @tags WarehouseAPI
+         * @name WarehouseApiWarehouseList
+         * @summary Список складов
+         * @request POST:/v1/warehouse/list
+         * @response `200` `WarehouseApiWarehouseListData` Список складов
+         * @response `400` `RpcStatus` Неверный параметр
+         * @response `403` `RpcStatus` Доступ запрещён
+         * @response `404` `RpcStatus` Ответ не найден
+         * @response `409` `RpcStatus` Конфликт запроса
+         * @response `500` `RpcStatus` Внутренняя ошибка сервера
+         */
+        warehouseApiWarehouseList() {
+            const response = this.request<Types.WarehouseApiWarehouseListData>({
+                endpoint: `/v1/warehouse/list`,
+                method: 'POST',
+            });
+            return response;
+        }
+
+        /**
+ * @description Позволяет изменить информацию о количестве товара в наличии. За один запрос можно изменить наличие для 100 товаров. В минуту можно отправить до 80 запросов. <aside class="warning">Обновлять остатки товара на одном складе можно только 1 раз в 2 минуты, иначе в ответе будет ошибка <code>TOO_MANY_REQUESTS</code>.</aside> Задать наличие товара возможно только после того, как его статус сменится на `processed`. Остатки крупногабаритных товаров можно обновлять только на предназначенных для них складах.
+ *
+ * @tags Prices&StocksAPI
+ * @name ProductApiProductsStocksV2
+ * @summary Обновить количество товаров на складах
+ * @request POST:/v2/products/stocks
+ * @response `200` `ProductApiProductsStocksV2Data` Количество товаров обновлено
+ * @response `400` `RpcStatus` Неверный параметр
+ * @response `403` `RpcStatus` Доступ запрещён
+ * @response `404` `RpcStatus` Ответ не найден
+ * @response `409` `RpcStatus` Конфликт запроса
+ * @response `500` `RpcStatus` Внутренняя ошибка сервера
+ */
+        productApiProductsStocksV2(data: Types.Productv2ProductsStocksRequest) {
+            const response = this.request<Types.ProductApiProductsStocksV2Data>({
+                endpoint: `/v2/products/stocks`,
+                method: 'POST',
+                payload: data,
+            });
+            return response;
         }
     }
 }
