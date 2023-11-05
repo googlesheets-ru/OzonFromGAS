@@ -26,9 +26,9 @@
 
  
 ## Авторы  
-- [@Дмитрий](https://t.me/GoogleSheets_ru)  
+- [@Дмитрий](https://t.me/mityayka1)  
 - [@Александр](https://t.me/oshliaer)
- 
+## [Чат](https://t.me/+901fuQqcge01MjIy), в котором можно получить поддержку, и [канал](https://t.me/+ITZGIhC4MUljZGEy) про Гугл Таблицы и не только
 ## Примеры использования  
 [![load-products-result.gif](https://i.postimg.cc/Yq3gzZqJ/load-products-result.gif)](https://postimg.cc/8j7j1yvH)
 1.Получение списка идентификатор товара
