@@ -61,6 +61,6 @@
 
  
 ## Поддержка  
-Ответы на вопросы и помощь в нашем [чате телеграм](https://t.me/google_sheets_pro)  
- 
+Ответы на вопросы и помощь в нашем [чате телеграм](https://t.me/+901fuQqcge01MjIy)  
+[канал](https://t.me/+ITZGIhC4MUljZGEy) про Гугл Таблицы, скрипты и не только. 
 [![flexbe-logo-2.png](https://i.postimg.cc/HkY2LBc9/flexbe-logo-2.png)](https://postimg.cc/YhPgnNxv)
