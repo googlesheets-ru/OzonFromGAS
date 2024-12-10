@@ -477,5 +477,51 @@ namespace Ozon_ {
             });
             return response;
         }
+
+        /**
+         * @description Возвращает подробную информацию по всем начислениям. Максимальный период, за который можно получить информацию в одном запросе — 1 месяц. Если в запросе не указывать `posting_number`, то в ответе будут все отправления за указанный период или отправления определённого типа.
+         *
+         * @tags FinanceAPI
+         * @name FinanceApiFinanceTransactionListV3
+         * @summary Список транзакций (версия 3)
+         * @request POST:/v3/finance/transaction/list
+         * @response `200` `FinanceApiFinanceTransactionListV3Data` Список транзакций
+         * @response `400` `RpcStatus` Неверный параметр
+         * @response `403` `RpcStatus` Доступ запрещён
+         * @response `404` `RpcStatus` Ответ не найден
+         * @response `409` `RpcStatus` Конфликт запроса
+         * @response `500` `RpcStatus` Внутренняя ошибка сервера
+         */
+        financeApiFinanceTransactionListV3(data: Types.Financev3FinanceTransactionListV3Request) {
+            const response = this.request<Types.FinanceApiFinanceTransactionListV3Data>({
+                endpoint: `/v3/finance/transaction/list`,
+                method: 'POST',
+                payload: data,
+            });
+            return response;
+        }
+
+        /**
+         * @description Возвращает итоговые суммы по транзакциям за указанный период.
+         *
+         * @tags FinanceAPI
+         * @name FinanceApiFinanceTransactionTotalV3
+         * @summary Суммы транзакций
+         * @request POST:/v3/finance/transaction/totals
+         * @response `200` `FinanceApiFinanceTransactionTotalV3Data` Суммы транзакций
+         * @response `400` `RpcStatus` Неверный параметр
+         * @response `403` `RpcStatus` Доступ запрещён
+         * @response `404` `RpcStatus` Ответ не найден
+         * @response `409` `RpcStatus` Конфликт запроса
+         * @response `500` `RpcStatus` Внутренняя ошибка сервера
+         */
+        financeApiFinanceTransactionTotalV3(data: Types.Financev3FinanceTransactionTotalsV3Request) {
+            const response = this.request<Types.FinanceApiFinanceTransactionTotalV3Data>({
+                endpoint: `/v3/finance/transaction/totals`,
+                method: 'POST',
+                payload: data,
+            });
+            return response;
+        }
     }
 }
