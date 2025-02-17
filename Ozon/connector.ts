@@ -225,6 +225,22 @@ namespace Ozon_ {
         }
 
         /**
+         * Метод для получения информации о товарах по их идентификаторам.
+         * В теле запроса должен быть массив однотипных идентификаторов, в ответе будет массив items.
+         * В одном запросе вы можете передать не больше 1000 товаров
+         * по параметрам `offer_id`, `product_id` и `sku` в сумме.
+         * @see https://api-seller.ozon.ru/v3/product/info/list
+         */
+        productApiGetProductInfoListV3(data: Types.Productv3GetProductInfoListRequest) {
+            const response = this.request<Types.ProductApiGetProductInfoListV3Data>({
+                endpoint: `/v3/product/info/list`,
+                method: 'POST',
+                payload: data,
+            });
+            return response;
+        }
+
+        /**
          * @description [Метод] для получения информации о ценах товара
          * в запросе вы можете передать максимум 1000 товаров.
          * @tags Prices&StocksAPI

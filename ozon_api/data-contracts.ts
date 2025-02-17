@@ -1304,6 +1304,539 @@ namespace Ozon_ {
             reasons?: Record<string, GetProductInfoListResponseReasons>;
         }
 
+        /**
+         * Информация о комиссиях, связанных с товаром.
+         */
+        interface Commission {
+            /**
+             * Стоимость доставки.
+             */
+            delivery_amount: number;
+
+            /**
+             * Процент комиссии.
+             */
+            percent: number;
+
+            /**
+             * Стоимость возврата.
+             */
+            return_amount: number;
+
+            /**
+             * Схема продажи.
+             */
+            sale_schema: string;
+
+            /**
+             * Сумма комиссии.
+             */
+            value: number;
+        }
+
+        /**
+ * Ошибка, возникшая при создании или валидации товара.
+ */
+        interface Error {
+            /**
+             * Идентификатор характеристики, связанной с ошибкой.
+             */
+            attribute_id: number;
+
+            /**
+             * Код ошибки.
+             */
+            code: string;
+
+            /**
+             * Поле, в котором найдена ошибка.
+             */
+            field: string;
+
+            /**
+             * Уровень ошибки.
+             */
+            level: ErrorLevel;
+
+            /**
+             * Статус товара, в котором произошла ошибка.
+             */
+            state: string;
+
+            /**
+             * Описание ошибок.
+             */
+            texts: ErrorTexts;
+
+            /**
+             * Название атрибута, в котором произошла ошибка.
+             */
+            attribute_name: string;
+
+            /**
+             * Описание ошибки.
+             */
+            description: string;
+
+            /**
+             * Код ошибки в системе Ozon.
+             */
+            hint_code: string;
+
+            /**
+             * Текст ошибки.
+             */
+            message: string;
+
+            /**
+             * Параметры, связанные с ошибкой.
+             */
+            params: ErrorParam[];
+
+            /**
+             * Краткое описание ошибки.
+             */
+            short_description: string;
+        }
+
+        /**
+         * Уровень ошибки.
+         */
+        type ErrorLevel =
+            | "ERROR_LEVEL_UNSPECIFIED" // Уровень ошибки не определён
+            | "ERROR_LEVEL_ERROR"       // Некритичная ошибка
+            | "ERROR_LEVEL_WARNING"     // Критичная ошибка, но товар можно продавать
+            | "ERROR_LEVEL_INTERNAL";   // Критичная ошибка, товар нельзя продавать
+
+        /**
+ * Описание ошибок.
+ */
+        interface ErrorTexts {
+            /**
+             * Название атрибута, в котором произошла ошибка.
+             */
+            attribute_name: string;
+
+            /**
+             * Описание ошибки.
+             */
+            description: string;
+
+            /**
+             * Код ошибки в системе Ozon.
+             */
+            hint_code: string;
+
+            /**
+             * Текст ошибки.
+             */
+            message: string;
+        }
+
+        /**
+ * Параметр, связанный с ошибкой.
+ */
+        interface ErrorParam {
+            /**
+             * Название параметра.
+             */
+            name: string;
+
+            /**
+             * Значение параметра.
+             */
+            value: string;
+        }
+        /**
+         * Информация о модели товара.
+         */
+        interface ModelInfo {
+            /**
+             * Количество товаров в ответе.
+             */
+            count: number;
+
+            /**
+             * Идентификатор модели товара.
+             */
+            model_id: number;
+
+            /**
+             * Название модели.
+             */
+            name: string;
+        }
+
+        /**
+         * Ценовые индексы товара.
+         */
+        interface PriceIndexes {
+            /**
+             * Индекс цвета, указывающий на выгодность цены.
+             */
+            color_index: ColorIndex;
+
+            /**
+             * Данные о цене товара у конкурентов на других площадках.
+             */
+            external_index_data: IndexData;
+
+            /**
+             * Данные о цене товара у конкурентов на Ozon.
+             */
+            ozon_index_data: IndexData;
+
+            /**
+             * Данные о цене вашего товара на других площадках.
+             */
+            self_marketplaces_index_data: IndexData;
+        }
+
+        /**
+         * Индекс цвета, указывающий на выгодность цены.
+         */
+        type ColorIndex =
+            | "COLOR_INDEX_UNSPECIFIED"   // Индекс не определён
+            | "COLOR_INDEX_WITHOUT_INDEX" // Индекс отсутствует
+            | "COLOR_INDEX_GREEN"         // Выгодный индекс
+            | "COLOR_INDEX_YELLOW"        // Умеренный индекс
+            | "COLOR_INDEX_RED";          // Невыгодный индекс
+
+        /**
+         * Данные о цене товара.
+         */
+        interface IndexData {
+            /**
+             * Минимальная цена товара.
+             */
+            minimal_price: string;
+
+            /**
+             * Валюта цены.
+             */
+            minimal_price_currency: string;
+
+            /**
+             * Значение индекса цены.
+             */
+            price_index_value: number;
+        }
+
+        /**
+         * Информация об источнике создания товара.
+         */
+        interface Source {
+            /**
+             * Дата и время создания товара в формате ISO 8601.
+             */
+            created_at: string;
+
+            /**
+             * Список квантов с товарами.
+             */
+            quant_code: string;
+
+            /**
+             * Тип упаковки товара.
+             */
+            shipment_type: ShipmentType;
+        }
+
+        /**
+         * Тип упаковки товара.
+         */
+        type ShipmentType =
+            | "SHIPMENT_TYPE_UNSPECIFIED" // Тип упаковки не указан
+            | "SHIPMENT_TYPE_GENERAL"     // Обычный товар
+            | "SHIPMENT_TYPE_BOX"         // Коробка
+            | "SHIPMENT_TYPE_PALLET";     // Палета
+
+        /**
+         * Информация о статусах товара.
+         */
+        interface Statuses {
+            /**
+             * Признак, что товар создан корректно.
+             */
+            is_created: boolean;
+
+            /**
+             * Статус модерации товара.
+             */
+            moderate_status: string;
+
+            /**
+             * Статус товара.
+             */
+            status: string;
+
+            /**
+             * Описание статуса товара.
+             */
+            status_description: string;
+
+            /**
+             * Статус товара, в котором возникла ошибка.
+             */
+            status_failed: string;
+
+            /**
+             * Название статуса товара.
+             */
+            status_name: string;
+
+            /**
+             * Описание статуса товара.
+             */
+            status_tooltip: string;
+
+            /**
+             * Дата и время последнего изменения статуса в формате ISO 8601.
+             */
+            status_updated_at: string;
+
+            /**
+             * Статус валидации товара.
+             */
+            validation_status: string;
+        }
+
+        /**
+         * Информация об остатках товара на складах.
+         */
+        interface Stocks {
+            /**
+             * Признак наличия остатков на складах.
+             */
+            has_stock: boolean;
+
+            /**
+             * Массив остатков товара.
+             */
+            stocks: Stock[];
+        }
+
+        /**
+         * Остаток товара на складе.
+         */
+        interface Stock {
+            /**
+             * Количество товара на складе.
+             */
+            present: number;
+
+            /**
+             * Количество зарезервированного товара.
+             */
+            reserved: number;
+
+            /**
+             * Идентификатор товара в системе Ozon (SKU).
+             */
+            sku: number;
+
+            /**
+             * Схема продажи.
+             */
+            source: string;
+        }
+
+        /**
+         * Настройки видимости товара.
+         */
+        interface VisibilityDetails {
+            /**
+             * Признак, что для товара установлена цена.
+             */
+            has_price: boolean;
+
+            /**
+             * Признак, что у товара есть остатки на складах.
+             */
+            has_stock: boolean;
+        }
+
+        /**
+        * Основной интерфейс, описывающий товар.
+        */
+        export interface Productv3GetProductInfoListResponseItem {
+            /**
+             * Штрихкоды товара.
+             */
+            barcodes: string[];
+
+            /**
+             * Изображения, представляющие цвет товара.
+             */
+            color_image: string[];
+
+            /**
+             * Информация о комиссиях, связанных с товаром.
+             */
+            commissions: Commission[];
+
+            /**
+             * Дата и время создания товара в формате ISO 8601.
+             */
+            created_at: string;
+
+            /**
+             * Код валюты, в которой указаны цены товара (например, "RUB").
+             */
+            currency_code: string;
+
+            /**
+             * Идентификатор категории товара.
+             */
+            description_category_id: number;
+
+            /**
+             * Количество уценённого товара на складе Ozon.
+             */
+            discounted_fbo_stocks: number;
+
+            /**
+             * Ошибки, возникшие при создании или валидации товара.
+             */
+            errors: Error[];
+
+            /**
+             * Признак наличия уценённого товара на складе Ozon.
+             */
+            has_discounted_fbo_item: boolean;
+
+            /**
+             * Уникальный идентификатор товара.
+             */
+            id: number;
+
+            /**
+             * Массив ссылок на изображения товара.
+             */
+            images: string[];
+
+            /**
+             * Массив ссылок на изображения товара в формате 360 градусов.
+             */
+            images360: string[];
+
+            /**
+             * Признак, что товар архивирован вручную.
+             */
+            is_archived: boolean;
+
+            /**
+             * Признак, что товар архивирован автоматически.
+             */
+            is_autoarchived: boolean;
+
+            /**
+             * Признак, что товар является уценённым.
+             */
+            is_discounted: boolean;
+
+            /**
+             * Признак, что товар является крупногабаритным.
+             */
+            is_kgt: boolean;
+
+            /**
+             * Признак, что для товара возможна предоплата.
+             */
+            is_prepayment_allowed: boolean;
+
+            /**
+             * Признак, что товар является "супер-товаром".
+             */
+            is_super: boolean;
+
+            /**
+             * Цена товара с учётом всех акций. Отображается на витрине Ozon.
+             */
+            marketing_price: string;
+
+            /**
+             * Минимальная цена товара после применения акций.
+             */
+            min_price: string;
+
+            /**
+             * Информация о модели товара.
+             */
+            model_info: ModelInfo;
+
+            /**
+             * Идентификатор товара в системе продавца (артикул).
+             */
+            offer_id: string;
+
+            /**
+             * Цена товара до учёта скидок. Отображается зачёркнутой на карточке товара.
+             */
+            old_price: string;
+
+            /**
+             * Цена товара с учётом скидок. Отображается на карточке товара.
+             */
+            price: string;
+
+            /**
+             * Ценовые индексы товара.
+             */
+            price_indexes: PriceIndexes;
+
+            /**
+             * Массив ссылок на главное изображение товара.
+             */
+            primary_image: string[];
+
+            /**
+             * Информация об источниках создания товара.
+             */
+            sources: Source[];
+
+            /**
+             * Идентификатор товара на Ozon (SKU).
+             */
+            sku: number;
+
+            /**
+             * Информация о статусах товара.
+             */
+            statuses: Statuses;
+
+            /**
+             * Информация об остатках товара на складах.
+             */
+            stocks: Stocks;
+
+            /**
+             * Идентификатор типа товара.
+             */
+            type_id: number;
+
+            /**
+             * Дата и время последнего обновления товара в формате ISO 8601.
+             */
+            updated_at: string;
+
+            /**
+             * Ставка НДС для товара.
+             */
+            vat: string;
+
+            /**
+             * Настройки видимости товара.
+             */
+            visibility_details: VisibilityDetails;
+
+            /**
+             * Объёмный вес товара.
+             */
+            volume_weight: number;
+        }
+
+
         export interface Productv2GetProductInfoListResponseItem {
             /** Штрихкод. */
             barcode?: string;
@@ -1426,9 +1959,20 @@ namespace Ozon_ {
             items?: Productv2GetProductInfoListResponseItem[];
         }
 
+        /** Результаты запроса. */
+        export interface Productv3GetProductInfoListResponseResult {
+            /** Массив данных. */
+            items?: Productv3GetProductInfoListResponseItem[];
+        }
+
         export interface Productv2GetProductInfoListResponse {
             /** Результаты запроса. */
             result?: Productv2GetProductInfoListResponseResult;
+        }
+
+        export interface Productv3GetProductInfoListResponse {
+            /** Результаты запроса. */
+            result?: Productv3GetProductInfoListResponseResult;
         }
 
         /** Фильтр по товарам. */
@@ -10470,6 +11014,10 @@ namespace Ozon_ {
 
         export type ProductApiGetProductInfoListV2Data = Productv2GetProductInfoListResponse;
 
+        export type Productv3GetProductInfoListRequest = Productv2GetProductInfoListRequest;
+
+        export type ProductApiGetProductInfoListV3Data = Productv3GetProductInfoListResponse;
+
         export type ProductApiGetProductInfoListV2Error = RpcStatus;
 
         export type ProductApiGetProductAttributesV3Data = Productv3GetProductAttributesV3Response;
@@ -10681,11 +11229,11 @@ namespace Ozon_ {
             number: string;
             /** Тип сертификата. Чтобы получить доступные типы, используйте метод [GET /v1/product/certificate/types](#operation/ProductAPI_ProductCertificateTypes). */
             type_code:
-                | 'certificate_of_conformity'
-                | 'declaration'
-                | 'certificate_of_registration'
-                | 'registration_certificate'
-                | 'refused_letter';
+            | 'certificate_of_conformity'
+            | 'declaration'
+            | 'certificate_of_registration'
+            | 'registration_certificate'
+            | 'refused_letter';
             /** Тип соответствия требованиям. Чтобы получить доступные типы, используйте метод [GET /v1/product/certificate/accordance-types](#operation/ProductAPI_ProductCertificateAccordanceTypes). */
             accordance_type_code?: 'technical_regulations_rf' | 'technical_regulations_cu' | 'gost';
             /**
