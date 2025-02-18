@@ -161,7 +161,7 @@ namespace Ozon_ {
          * @tags ProductAPI
          * @name ProductApiGetProductList
          * @summary Список товаров
-         * @request POST:/v2/product/list
+         * @request POST:/v3/product/list
          * @response `200` `ProductApiGetProductListData` Список товаров
          * @response `400` `RpcStatus` Неверный параметр
          * @response `403` `RpcStatus` Доступ запрещён
