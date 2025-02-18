@@ -783,6 +783,22 @@ namespace Ozon_ {
         }
 
         /** Результат. */
+        export interface Productv3GetProductListResponseResult {
+            /** Список товаров. */
+            items?: Ozon_.Types.Productv3GetProductListResponseItem[];
+            /**
+             * Идентификатор последнего значения на странице.
+             *
+             * Чтобы получить следующие значения, передайте полученное значение в следующем запросе в параметре `last_id`.
+             */
+            last_id?: string;
+            /**
+             * Всего товаров.
+             * @format int32
+             */
+            total?: number;
+        }
+        /** Результат. */
         export interface Productv2GetProductListResponseResult {
             /** Список товаров. */
             items?: Ozon_.Types.Productv2GetProductListResponseItem[];
@@ -802,6 +818,11 @@ namespace Ozon_ {
         export interface Productv2GetProductListResponse {
             /** Результат. */
             result?: Productv2GetProductListResponseResult;
+        }
+
+        export interface Productv3GetProductListResponse {
+            /** Результат. */
+            result?: Productv3GetProductListResponseResult;
         }
 
         export interface Productv3GetProductInfoRequest {
@@ -11000,7 +11021,7 @@ namespace Ozon_ {
 
         export type ProductApiProductInfoPicturesError = RpcStatus;
 
-        export type ProductApiGetProductListData = Productv2GetProductListResponse;
+        export type ProductApiGetProductListData = Productv3GetProductListResponse;
 
         export type ProductApiGetProductListError = RpcStatus;
 

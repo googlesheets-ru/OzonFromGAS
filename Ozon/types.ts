@@ -1,4 +1,4 @@
- namespace Ozon_ {
+namespace Ozon_ {
     export namespace Types {
         export interface Keys {
             clientId: number;
@@ -87,6 +87,27 @@
             | 'IMAGE_ABSENT'
             /** товары, для которых заблокирована модерация. */
             | 'MODERATION_BLOCK';
+
+        export interface Productv3GetProductListResponseItem {
+            /** SKU */
+            product_id: number;
+            /** Артикул */
+            offer_id: string;
+            /** Есть остатки на складах FBO. */
+            has_fbo_stocks?: boolean;
+            /** Есть остатки на складах FBO. */
+            has_fbs_stocks?: boolean;
+            /** Товар в архиве */
+            archived?: boolean;
+            /** Уценённый товар. */
+            is_discounted?: boolean;
+            quants: {
+                /** Идентификатор эконом-товара. */
+                quant_code: string;
+                /** Размер кванта. */
+                quant_size: number;
+            }
+        }
 
         export interface Productv2GetProductListResponseItem {
             product_id: number;
