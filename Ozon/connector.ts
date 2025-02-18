@@ -171,7 +171,7 @@ namespace Ozon_ {
          */
         productApiGetProductList(data: Types.GetProductListRequestInit) {
             const response = this.request<Types.ProductApiGetProductListData>({
-                endpoint: `/v2/product/list`,
+                endpoint: `/v3/product/list`,
                 method: 'POST',
                 payload: data,
             });
@@ -184,17 +184,17 @@ namespace Ozon_ {
          * @tags ProductAPI
          * @name ProductApiGetProductInfoV2
          * @summary Информация о товарах
-         * @request POST:/v2/product/info
-         * @response `200` `ProductApiGetProductInfoV2Data` Информация о товарах
+         * @request POST:/v3/product/info
+         * @response `200` `ProductApiGetProductInfoV3Data` Информация о товарах
          * @response `400` `RpcStatus` Неверный параметр
          * @response `403` `RpcStatus` Доступ запрещён
          * @response `404` `RpcStatus` Ответ не найден
          * @response `409` `RpcStatus` Конфликт запроса
          * @response `500` `RpcStatus` Внутренняя ошибка сервера
          */
-        productApiGetProductInfoV2(data: Types.Productv2GetProductInfoRequest) {
-            const response = this.request<Types.ProductApiGetProductInfoV2Data>({
-                endpoint: `/v2/product/info`,
+        productApiGetProductInfoV3(data: Types.Productv3GetProductInfoRequest) {
+            const response = this.request<Types.ProductApiGetProductInfoV3Data>({
+                endpoint: `/v3/product/info`,
                 method: 'POST',
                 payload: data,
             });

@@ -804,7 +804,7 @@ namespace Ozon_ {
             result?: Productv2GetProductListResponseResult;
         }
 
-        export interface Productv2GetProductInfoRequest {
+        export interface Productv3GetProductInfoRequest {
             /** Идентификатор товара в системе продавца — артикул. */
             offer_id?: string;
             /**
@@ -11004,7 +11004,7 @@ namespace Ozon_ {
 
         export type ProductApiGetProductListError = RpcStatus;
 
-        export type ProductApiGetProductInfoV2Data = Productv2GetProductInfoResponse;
+        export type ProductApiGetProductInfoV3Data = Productv2GetProductInfoResponse;
 
         export type ProductApiGetProductInfoV2Error = RpcStatus;
 
