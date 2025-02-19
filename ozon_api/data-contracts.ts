@@ -2578,9 +2578,36 @@ namespace Ozon_ {
             stock?: number;
         }
 
+        export interface ProductImportProductsStocksV2RequestStock {
+            /** Идентификатор товара в системе продавца — артикул. */
+            offer_id?: string;
+            /**
+             * Идентификатор товара.
+             * @format int64
+             */
+            product_id?: number;
+            /**
+             * Количество товара в наличии.
+             * @format int64
+             */
+            stock: number;
+            /**
+             * Используйте параметр, если у обычного и эконом-товара совпадает артикул — offer_id = quant_id. Чтобы обновить количество:
+             * обычного товара — передайте значение 1;
+             * эконом-товара — передайте размер его кванта.
+             * Если у обычного и эконом-товара разные артикулы, не передавайте параметр.
+             */
+            quant_size?: number;
+            warehouse_id: number
+        }
+
         export interface ProductImportProductsStocksRequest {
             /** Информация о товарах на складах. */
             stocks?: ProductImportProductsStocksRequestStock[];
+        }
+        export interface ProductImportProductsStocksV2Request {
+            /** Информация о товарах на складах. */
+            stocks?: ProductImportProductsStocksV2RequestStock[];
         }
 
         export interface ProductImportProductsStocksResponseError {
@@ -2673,6 +2700,12 @@ namespace Ozon_ {
              * @format int64
              */
             warehouse_id?: number;
+            /**
+             * Показывает, количество товара какого типа вы обновляете:
+             * 1 — если обновляете остатки обычного товара;
+             * размер кванта — если обновляете остатки эконом-товара.
+             */
+            quant_size?: number
         }
 
         /** Результаты запроса. */

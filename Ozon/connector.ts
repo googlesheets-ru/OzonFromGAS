@@ -182,7 +182,7 @@ namespace Ozon_ {
          * Получение информации о товаре по его идентификатору
          *
          * @tags ProductAPI
-         * @name ProductApiGetProductInfoV2
+         * @name ProductApiGetProductInfoV3
          * @summary Информация о товарах
          * @request POST:/v3/product/info
          * @response `200` `ProductApiGetProductInfoV3Data` Информация о товарах
@@ -203,7 +203,7 @@ namespace Ozon_ {
 
         /**
          * @description Метод для получения массива товаров по их идентификаторам. В теле запроса должен быть массив однотипных идентификаторов, в ответе будет массив `items`. Для каждого товара внутри массива `items` поля совпадают с полями из метода [/v2/product/info](#operation/ProductAPI_GetProductInfoV2).
-         *
+         * @deprecated Метод удален из API, используйте метод ProductApiGetProductInfoListV3 (`/v3/product/info/list`) 
          * @tags ProductAPI
          * @name ProductApiGetProductInfoListV2
          * @summary Получить список товаров по идентификаторам
@@ -406,7 +406,7 @@ namespace Ozon_ {
 
         /**
          * @description Позволяет изменить информацию о количестве товара в наличии. Метод используется только для FBS и rFBS складов. За один запрос можно изменить наличие для 100 товаров. В минуту можно отправить до 80 запросов. Задать наличие товара возможно только после того, как его статус сменится на `processed`.
-         *
+         * @deprecated метод будет отключён. Переключитесь на /v2/products/stocks
          * @tags Prices&StocksAPI
          * @name ProductApiImportProductsStocks
          * @summary Обновить остатки
@@ -421,6 +421,28 @@ namespace Ozon_ {
         productApiImportProductsStocks(data: Types.ProductImportProductsStocksRequest) {
             return this.request<Types.ProductApiImportProductsStocksData>({
                 endpoint: `/v1/product/import/stocks`,
+                method: 'POST',
+                payload: data,
+            });
+        }
+
+        /**
+         * @description Позволяет изменить информацию о количестве товара в наличии. Метод используется только для FBS и rFBS складов. За один запрос можно изменить наличие для 100 товаров. В минуту можно отправить до 80 запросов. Задать наличие товара возможно только после того, как его статус сменится на `price_sent`.
+         * 
+         * @tags Prices&StocksAPI
+         * @name ProductApiImportProductsStocksV2
+         * @summary Обновить остатки
+         * @request POST:/v2/products/stocks
+         * @response `200` `ProductApiImportProductsStocksData` Информация об остатках обновлена
+         * @response `400` `RpcStatus` Неверный параметр
+         * @response `403` `RpcStatus` Доступ запрещён
+         * @response `404` `RpcStatus` Ответ не найден
+         * @response `409` `RpcStatus` Конфликт запроса
+         * @response `500` `RpcStatus` Внутренняя ошибка сервера
+         */
+        productApiImportProductsStocksV2(data: Types.ProductImportProductsStocksV2Request) {
+            return this.request<Types.ProductApiImportProductsStocksData>({
+                endpoint: `/v2/products/stocks`,
                 method: 'POST',
                 payload: data,
             });
