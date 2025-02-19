@@ -243,6 +243,7 @@ namespace Ozon_ {
         /**
          * @description [Метод] для получения информации о ценах товара
          * в запросе вы можете передать максимум 1000 товаров.
+         * @deprecated Метод отключён Озон 17.02.2025
          * @tags Prices&StocksAPI
          * @name ProductApiGetProductInfoPricesV4
          * @summary Получить информацию о цене товара
@@ -260,6 +261,32 @@ namespace Ozon_ {
         productApiGetProductInfoPricesV4(data: Types.Productv4GetProductInfoPricesV4Request) {
             const response = this.request<Types.ProductApiGetProductInfoPricesV4Data>({
                 endpoint: `/v4/product/info/prices`,
+                method: 'POST',
+                payload: data,
+            });
+            return response;
+        }
+
+        /**
+         * @description [Метод] для получения информации о ценах товара
+         * в запросе вы можете передать максимум 1000 товаров.
+         * @tags Prices&StocksAPI
+         * @name ProductApiGetProductInfoPrices
+         * @summary Получить информацию о цене товара
+         * @request POST:/v5/product/info/prices
+         * @response `200` `ProductApiGetProductInfoPricesV4Data` Информация о цене товара
+         * @response `400` `RpcStatus` Неверный параметр
+         * @response `403` `RpcStatus` Доступ запрещён
+         * @response `404` `RpcStatus` Ответ не найден
+         * @response `409` `RpcStatus` Конфликт запроса
+         * @response `500` `RpcStatus` Внутренняя ошибка сервера
+         *
+         *
+         * [Метод]: https://docs.ozon.ru/api/seller/#operation/ProductAPI_GetProductInfoPrices
+         */
+        productApiGetProductInfoPrices(data: Types.GetProductInfoPricesRequest) {
+            const response = this.request<Types.ProductInfoPricesResponseResult>({
+                endpoint: `/v5/product/info/prices`,
                 method: 'POST',
                 payload: data,
             });

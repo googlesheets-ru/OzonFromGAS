@@ -2960,6 +2960,22 @@ namespace Ozon_ {
             limit?: number;
         }
 
+        export interface GetProductInfoPricesRequest {
+            /** Фильтр по товарам. */
+            filter?: Productv4Filter;
+            /**
+             * Идентификатор последнего значения на странице. Оставьте это поле пустым при выполнении первого запроса.
+             *
+             * Чтобы получить следующие значения, укажите `cursor` из ответа предыдущего запроса.
+             */
+            cursor?: string;
+            /**
+             * Количество значений на странице. Минимум — 1, максимум — 1000.
+             * @format int32
+             */
+            limit?: number;
+        }
+
         /** Информация о комиссиях. */
         export interface ItemCommissions {
             /**
@@ -3116,7 +3132,7 @@ namespace Ozon_ {
             vat?: string;
         }
 
-        export interface ProductGetProductInfoPricesV4ResponseItem {
+        export interface ProductGetProductInfoPricesResponseItem {
             /** Информация о комиссиях. */
             commissions?: ItemCommissions;
             marketing_actions?: ItemMarketingActions;
@@ -3151,13 +3167,30 @@ namespace Ozon_ {
         /** Результаты запроса. */
         export interface ProductGetProductInfoPricesV4ResponseResult {
             /** Список товаров. */
-            items?: ProductGetProductInfoPricesV4ResponseItem[];
+            items?: ProductGetProductInfoPricesResponseItem[];
             /**
              * Идентификатор последнего значения на странице.
              *
              * Чтобы получить следующие значения, передайте полученное значение в следующем запросе в параметре `last_id`.
              */
             last_id?: string;
+            /**
+             * Количество товаров в списке.
+             * @format int32
+             */
+            total?: number;
+        }
+
+        /** Результаты запроса. */
+        export interface ProductInfoPricesResponseResult {
+            /** Список товаров. */
+            items?: ProductGetProductInfoPricesResponseItem[];
+            /**
+             * Идентификатор последнего значения на странице.
+             *
+             * Чтобы получить следующие значения, передайте полученное значение в следующем запросе в параметре `cursor`.
+             */
+            cursor?: string;
             /**
              * Количество товаров в списке.
              * @format int32

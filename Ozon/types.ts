@@ -4,7 +4,7 @@ namespace Ozon_ {
             clientId: number;
             apiKey: string;
         }
-        export type Version = 'v1' | 'v2' | 'v3' | 'v4';
+        export type Version = 'v1' | 'v2' | 'v3' | 'v4' | 'v5';
 
         /**Фильтр по видимости товара
          * - ALL — все товары, кроме архивных.
