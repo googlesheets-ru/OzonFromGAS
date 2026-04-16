@@ -476,44 +476,41 @@ namespace Ozon_ {
         }
 
         /**
-         * @description В запросе не нужно указывать параметры. Ваша компания будет определена по `Client-ID`.
+         * @description Метод возвращает список складов FBS и rFBS.
          *
          * @tags WarehouseAPI
-         * @name WarehouseApiWarehouseList
+         * @name WarehouseListV2
          * @summary Список складов
-         * @request POST:/v1/warehouse/list
-         * @response `200` `WarehouseApiWarehouseListData` Список складов
-         * @response `400` `RpcStatus` Неверный параметр
-         * @response `403` `RpcStatus` Доступ запрещён
-         * @response `404` `RpcStatus` Ответ не найден
-         * @response `409` `RpcStatus` Конфликт запроса
-         * @response `500` `RpcStatus` Внутренняя ошибка сервера
+         * @request POST:/v2/warehouse/list
+         * @response `200` `WarehouseListV2Data` Список складов
+         * @response `default` `RpcStatus` Ошибка
          */
-        warehouseApiWarehouseList() {
-            const response = this.request<Types.WarehouseApiWarehouseListData>({
-                endpoint: `/v1/warehouse/list`,
+        warehouseApiWarehouseList(data: Types.V2WarehouseListRequest) {
+            const response = this.request<Types.WarehouseListV2Data>({
+                endpoint: `/v2/warehouse/list`,
                 method: 'POST',
+                payload: data,
             });
             return response;
         }
 
         /**
-         * No description
+         * @description Передайте в запросе offer_id или sku. Если укажете оба, будет использован только sku.
          *
          * @tags Prices&StocksAPI
-         * @name ProductApiProductStocksByWarehouseFbs
-         * @summary Информация об остатках на складах продавца (FBS и rFBS)
-         * @request POST:/v1/product/info/stocks-by-warehouse/fbs
-         * @response `200` `ProductApiProductStocksByWarehouseFbsData` Количество товаров на складах FBS и rFBS
+         * @name ProductApiGetProductInfoStocksByWarehouseFbsV2
+         * @summary Информация об остатках на складах продавца
+         * @request POST:/v2/product/info/stocks-by-warehouse/fbs
+         * @response `200` `ProductApiGetProductInfoStocksByWarehouseFbsV2Data` Количество товаров на складах
          * @response `400` `RpcStatus` Неверный параметр
          * @response `403` `RpcStatus` Доступ запрещён
          * @response `404` `RpcStatus` Ответ не найден
          * @response `409` `RpcStatus` Конфликт запроса
          * @response `500` `RpcStatus` Внутренняя ошибка сервера
          */
-        stocksByWarehouseFbs(data: Types.Productsv1GetProductInfoStocksByWarehouseFbsRequest) {
-            const response = this.request<Types.ProductApiProductStocksByWarehouseFbsData>({
-                endpoint: `/v1/product/info/stocks-by-warehouse/fbs`,
+        stocksByWarehouseFbs(data: Types.V2GetProductInfoStocksByWarehouseFbsRequest) {
+            const response = this.request<Types.ProductApiGetProductInfoStocksByWarehouseFbsV2Data>({
+                endpoint: `/v2/product/info/stocks-by-warehouse/fbs`,
                 method: 'POST',
                 payload: data,
             });
@@ -587,6 +584,94 @@ namespace Ozon_ {
                 payload: data,
             });
             return response;
+        }
+
+        /**
+         * @description Список методов доставки realFBS-склада.
+         *
+         * @tags WarehouseAPI
+         * @name WarehouseApiDeliveryMethodListV2
+         * @summary Список методов доставки realFBS-склада
+         * @request POST:/v2/delivery-method/list
+         * @response `200` `WarehouseApiDeliveryMethodListV2Data` Список методов склада
+         * @response `400` `RpcStatus` Неверный параметр
+         * @response `403` `RpcStatus` Доступ запрещён
+         * @response `404` `RpcStatus` Ответ не найден
+         * @response `409` `RpcStatus` Конфликт запроса
+         * @response `500` `RpcStatus` Внутренняя ошибка сервера
+         */
+        warehouseApiDeliveryMethodListV2(data: Types.V2DeliveryMethodListRequest) {
+            return this.request<Types.WarehouseApiDeliveryMethodListV2Data>({
+                endpoint: `/v2/delivery-method/list`,
+                method: 'POST',
+                payload: data,
+            });
+        }
+
+        /**
+         * @description Список методов доставки и отгрузок. Метод не возвращает информацию по методам доставки, у которых нет отправлений.
+         *
+         * @tags DeliveryFBS
+         * @name CarriageApiCarriageDeliveryListV2
+         * @summary Список методов доставки и отгрузок
+         * @request POST:/v2/carriage/delivery/list
+         * @response `200` `CarriageApiCarriageDeliveryListV2Data` Список методов и отгрузок
+         * @response `400` `RpcStatus` Неверный параметр
+         * @response `403` `RpcStatus` Доступ запрещён
+         * @response `404` `RpcStatus` Ответ не найден
+         * @response `409` `RpcStatus` Конфликт запроса
+         * @response `500` `RpcStatus` Внутренняя ошибка сервера
+         */
+        carriageApiCarriageDeliveryListV2(data: Types.V2CarriageDeliveryListRequest) {
+            return this.request<Types.CarriageApiCarriageDeliveryListV2Data>({
+                endpoint: `/v2/carriage/delivery/list`,
+                method: 'POST',
+                payload: data,
+            });
+        }
+
+        /**
+         * @description Возвращает статус формирования штрихкода для отгрузки и документов.
+         *
+         * @tags DeliveryFBS
+         * @name PostingApiPostingFbsActCheckStatus
+         * @summary Статус отгрузки и документов
+         * @request POST:/v2/posting/fbs/act/check-status
+         * @response `200` `PostingApiPostingFbsActCheckStatusData` Статус отгрузки и документов
+         * @response `400` `RpcStatus` Неверный параметр
+         * @response `403` `RpcStatus` Доступ запрещён
+         * @response `404` `RpcStatus` Ответ не найден
+         * @response `409` `RpcStatus` Конфликт запроса
+         * @response `500` `RpcStatus` Внутренняя ошибка сервера
+         */
+        postingApiPostingFbsActCheckStatus(data: Types.PostingFBSActCheckStatusRequest) {
+            return this.request<Types.PostingApiPostingFbsActCheckStatusData>({
+                endpoint: `/v2/posting/fbs/act/check-status`,
+                method: 'POST',
+                payload: data,
+            });
+        }
+
+        /**
+         * @description Получить PDF c документами: лист отгрузки, транспортную накладную или акт.
+         *
+         * @tags DeliveryFBS
+         * @name PostingApiPostingFbsGetAct
+         * @summary Получить PDF c документами
+         * @request POST:/v2/posting/fbs/act/get-pdf
+         * @response `200` `PostingApiPostingFbsGetActData` Документы
+         * @response `400` `RpcStatus` Неверный параметр
+         * @response `403` `RpcStatus` Доступ запрещён
+         * @response `404` `RpcStatus` Ответ не найден
+         * @response `409` `RpcStatus` Конфликт запроса
+         * @response `500` `RpcStatus` Внутренняя ошибка сервера
+         */
+        postingApiPostingFbsGetAct(data: Types.PostingFBSGetActRequest) {
+            return this.request<Types.PostingApiPostingFbsGetActData>({
+                endpoint: `/v2/posting/fbs/act/get-pdf`,
+                method: 'POST',
+                payload: data,
+            });
         }
     }
 }

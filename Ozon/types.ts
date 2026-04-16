@@ -294,5 +294,167 @@ namespace Ozon_ {
             /**Описание состояния товара. */
             status: ProductStatus;
         }
+
+        // --- v2/product/info/stocks-by-warehouse/fbs ---
+
+        export interface V2GetProductInfoStocksByWarehouseFbsRequest {
+            /** Указатель для выборки следующих данных. */
+            cursor?: string;
+            /** Количество значений в ответе. Максимум 1000. */
+            limit: number;
+            /** Идентификаторы товаров в системе продавца -- артикул. Максимум 1000. */
+            offer_id?: string[];
+            /** Идентификаторы товаров в системе Ozon -- SKU. Максимум 1000. */
+            sku?: string[];
+        }
+
+        export interface V2GetProductInfoStocksByWarehouseFbsResponseProduct {
+            /** Количество доступных для продажи товаров. */
+            free_stock?: number;
+            /** Идентификатор товара в системе продавца -- артикул. */
+            offer_id?: string;
+            /** Общее количество товара на складе. */
+            present?: number;
+            /** Идентификатор товара. */
+            product_id?: number;
+            /** Количество зарезервированных товаров на складе. */
+            reserved?: number;
+            /** Идентификатор товара в системе Ozon -- SKU. */
+            sku?: number;
+            /** Идентификатор склада. */
+            warehouse_id?: number;
+            /** Название склада. */
+            warehouse_name?: string;
+        }
+
+        export interface ProductApiGetProductInfoStocksByWarehouseFbsV2Data {
+            /** Указатель для выборки следующих данных. */
+            cursor?: string;
+            /** true, если в ответе вернули не все товары. */
+            has_next?: boolean;
+            /** Остатки товаров. */
+            products?: V2GetProductInfoStocksByWarehouseFbsResponseProduct[];
+        }
+
+        // --- v2/warehouse/list ---
+
+        export interface V2WarehouseListRequest {
+            /** Количество значений в ответе. Максимум 200. */
+            limit: number;
+            /** Указатель для выборки следующих данных. */
+            cursor?: string;
+            /** Идентификаторы складов. Максимум 200. */
+            warehouse_ids?: string[];
+        }
+
+        export interface WarehouseListV2Data {
+            /** Указатель для выборки следующих данных. */
+            cursor?: string;
+            /** Список складов. */
+            warehouses?: { [key: string]: any }[];
+            /** true, если в ответе вернулись не все значения. */
+            has_next?: boolean;
+        }
+
+        // --- v2/delivery-method/list ---
+
+        export interface DeliveryMethodListV2RequestFilter {
+            /** Идентификаторы методов доставки. */
+            delivery_method_ids?: string[];
+            /** Идентификаторы служб доставки. */
+            provider_ids?: string[];
+            /** Статус метода доставки. */
+            status?: string[];
+            /** Идентификаторы складов. */
+            warehouse_ids?: string[];
+        }
+
+        export interface V2DeliveryMethodListRequest {
+            /** Указатель для выборки следующих данных. */
+            cursor?: string;
+            /** Фильтр для поиска методов доставки. */
+            filter?: DeliveryMethodListV2RequestFilter;
+            /** Количество значений в ответе. Минимум 1, максимум 100. */
+            limit: number;
+            /** Направление сортировки: ASC или DESC. */
+            sort_dir?: string;
+        }
+
+        export interface WarehouseApiDeliveryMethodListV2Data {
+            /** Указатель для выборки следующих данных. */
+            cursor?: string;
+            /** true, если в ответе вернули не все методы доставки. */
+            has_next?: boolean;
+            /** Методы доставки. */
+            delivery_methods?: { [key: string]: any }[];
+        }
+
+        // --- v2/carriage/delivery/list ---
+
+        export interface CarriageDeliveryListV2RequestFilter {
+            /** Идентификатор метода доставки. */
+            delivery_method_id?: number;
+            /** Дата отгрузки (YYYY-MM-DD). По умолчанию -- текущая дата. */
+            departure_date?: string;
+        }
+
+        export interface V2CarriageDeliveryListRequest {
+            /** Указатель для выборки следующих данных. */
+            cursor?: string;
+            /** Фильтр для поиска методов доставки и отгрузок. */
+            filter?: CarriageDeliveryListV2RequestFilter;
+            /** Количество значений на странице. Максимум 1000. */
+            limit: number;
+        }
+
+        export interface CarriageApiCarriageDeliveryListV2Data {
+            /** Указатель для выборки следующих данных. */
+            cursor?: string;
+            /** true, если в ответе вернулись не все методы доставки. */
+            has_next?: boolean;
+            /** Список методов доставки. */
+            methods?: { [key: string]: any }[];
+        }
+
+        // --- v2/posting/fbs/act/check-status ---
+
+        export interface PostingFBSActCheckStatusRequest {
+            /** Номер задания на формирование документов (идентификатор перевозки). */
+            id: number;
+        }
+
+        export interface PostingFBSActCheckStatusResponseStatus {
+            /** Тип документов. */
+            act_type?: string;
+            /** Номера отправлений, добавленных в перевозку. */
+            added_to_act?: string[];
+            /** Номера отправлений, не попавших в перевозку. */
+            removed_from_act?: string[];
+            /** Статус: in_process, ready, error, cancelled. */
+            status?: string;
+            /** Признак частичной перевозки. */
+            is_partial?: boolean;
+        }
+
+        export interface PostingApiPostingFbsActCheckStatusData {
+            /** Результат работы метода. */
+            result?: PostingFBSActCheckStatusResponseStatus;
+        }
+
+        // --- v2/posting/fbs/act/get-pdf ---
+
+        export interface PostingFBSGetActRequest {
+            /** Номер задания на формирование документов (идентификатор перевозки). */
+            id: number;
+        }
+
+        export interface PostingApiPostingFbsGetActData {
+            /** Содержание файла в бинарном виде. */
+            file_content?: string;
+            /** Название файла. */
+            file_name?: string;
+            /** Тип файла. */
+            content_type?: string;
+        }
     }
 }
