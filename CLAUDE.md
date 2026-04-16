@@ -12,8 +12,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 - `npm run updateApi` -- перегенерация типов из Ozon Swagger (`ozon_api/` директория)
 - `npx tsc` -- компиляция TypeScript, генерация деклараций в `declarations/`
-- `clasp push` -- деплой в Google Apps Script
-- `clasp pull` -- скачать текущий код из GAS
+- `npm run push` -- деплой в Google Apps Script (clasp с локальным `.clasprc.json`)
+- `npm run pull` -- скачать текущий код из GAS
 
 ## Архитектура
 
