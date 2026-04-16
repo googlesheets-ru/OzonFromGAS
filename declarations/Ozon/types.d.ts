@@ -4,7 +4,7 @@ declare namespace Ozon_ {
             clientId: number;
             apiKey: string;
         }
-        type Version = 'v1' | 'v2' | 'v3' | 'v4';
+        type Version = 'v1' | 'v2' | 'v3' | 'v4' | 'v5';
         /**Фильтр по видимости товара
          * - ALL — все товары, кроме архивных.
          * - VISIBLE — товары, которые видны покупателям.
@@ -33,59 +33,79 @@ declare namespace Ozon_ {
          * - IMAGE_ABSENT — товары без изображений.
          * - MODERATION_BLOCK — товары, для которых заблокирована модерация.
          */
-        type FilterVisibility =
-            /** все товары, кроме архивных. */
-            | 'ALL'
-            /** товары, которые видны покупателям. */
-            | 'VISIBLE'
-            /** товары, которые не видны покупателям. */
-            | 'INVISIBLE'
-            /** товары, у которых не указано наличие. */
-            | 'EMPTY_STOCK'
-            /** товары, которые не прошли модерацию. */
-            | 'NOT_MODERATED'
-            /** товары, которые прошли модерацию. */
-            | 'MODERATED'
-            /** товары, которые видны покупателям, но недоступны к покупке. */
-            | 'DISABLED'
-            /** товары, создание которых завершилось ошибкой. */
-            | 'STATE_FAILED'
-            /** товары, готовые к поставке. */
-            | 'READY_TO_SUPPLY'
-            /** товары, которые проходят проверку валидатором на премодерации. */
-            | 'VALIDATION_STATE_PENDING'
-            /** товары, которые не прошли проверку валидатором на премодерации. */
-            | 'VALIDATION_STATE_FAIL'
-            /** товары, которые прошли проверку валидатором на премодерации. */
-            | 'VALIDATION_STATE_SUCCESS'
-            /** товары, готовые к продаже. */
-            | 'TO_SUPPLY'
-            /** товары в продаже. */
-            | 'IN_SALE'
-            /** товары, скрытые от покупателей. */
-            | 'REMOVED_FROM_SALE'
-            /** заблокированные товары. */
-            | 'BANNED'
-            /** товары с завышенной ценой. */
-            | 'OVERPRICED'
-            /** товары со слишком завышенной ценой. */
-            | 'CRITICALLY_OVERPRICED'
-            /** товары без штрихкода. */
-            | 'EMPTY_BARCODE'
-            /** товары со штрихкодом. */
-            | 'BARCODE_EXISTS'
-            /** товары на карантине после изменения цены более чем на 50 %. */
-            | 'QUARANTINE'
-            /** товары в архиве. */
-            | 'ARCHIVED'
-            /** товары в продаже со стоимостью выше, чем у конкурентов. */
-            | 'OVERPRICED_WITH_STOCK'
-            /** товары в продаже с пустым или неполным описанием. */
-            | 'PARTIAL_APPROVED'
-            /** товары без изображений. */
-            | 'IMAGE_ABSENT'
-            /** товары, для которых заблокирована модерация. */
-            | 'MODERATION_BLOCK';
+        type FilterVisibility = 
+        /** все товары, кроме архивных. */
+        'ALL'
+        /** товары, которые видны покупателям. */
+         | 'VISIBLE'
+        /** товары, которые не видны покупателям. */
+         | 'INVISIBLE'
+        /** товары, у которых не указано наличие. */
+         | 'EMPTY_STOCK'
+        /** товары, которые не прошли модерацию. */
+         | 'NOT_MODERATED'
+        /** товары, которые прошли модерацию. */
+         | 'MODERATED'
+        /** товары, которые видны покупателям, но недоступны к покупке. */
+         | 'DISABLED'
+        /** товары, создание которых завершилось ошибкой. */
+         | 'STATE_FAILED'
+        /** товары, готовые к поставке. */
+         | 'READY_TO_SUPPLY'
+        /** товары, которые проходят проверку валидатором на премодерации. */
+         | 'VALIDATION_STATE_PENDING'
+        /** товары, которые не прошли проверку валидатором на премодерации. */
+         | 'VALIDATION_STATE_FAIL'
+        /** товары, которые прошли проверку валидатором на премодерации. */
+         | 'VALIDATION_STATE_SUCCESS'
+        /** товары, готовые к продаже. */
+         | 'TO_SUPPLY'
+        /** товары в продаже. */
+         | 'IN_SALE'
+        /** товары, скрытые от покупателей. */
+         | 'REMOVED_FROM_SALE'
+        /** заблокированные товары. */
+         | 'BANNED'
+        /** товары с завышенной ценой. */
+         | 'OVERPRICED'
+        /** товары со слишком завышенной ценой. */
+         | 'CRITICALLY_OVERPRICED'
+        /** товары без штрихкода. */
+         | 'EMPTY_BARCODE'
+        /** товары со штрихкодом. */
+         | 'BARCODE_EXISTS'
+        /** товары на карантине после изменения цены более чем на 50 %. */
+         | 'QUARANTINE'
+        /** товары в архиве. */
+         | 'ARCHIVED'
+        /** товары в продаже со стоимостью выше, чем у конкурентов. */
+         | 'OVERPRICED_WITH_STOCK'
+        /** товары в продаже с пустым или неполным описанием. */
+         | 'PARTIAL_APPROVED'
+        /** товары без изображений. */
+         | 'IMAGE_ABSENT'
+        /** товары, для которых заблокирована модерация. */
+         | 'MODERATION_BLOCK';
+        interface Productv3GetProductListResponseItem {
+            /** SKU */
+            product_id: number;
+            /** Артикул */
+            offer_id: string;
+            /** Есть остатки на складах FBO. */
+            has_fbo_stocks?: boolean;
+            /** Есть остатки на складах FBO. */
+            has_fbs_stocks?: boolean;
+            /** Товар в архиве */
+            archived?: boolean;
+            /** Уценённый товар. */
+            is_discounted?: boolean;
+            quants: {
+                /** Идентификатор эконом-товара. */
+                quant_code: string;
+                /** Размер кванта. */
+                quant_size: number;
+            };
+        }
         interface Productv2GetProductListResponseItem {
             product_id: number;
             offer_id: string;
@@ -264,6 +284,146 @@ declare namespace Ozon_ {
             color_image: string;
             /**Описание состояния товара. */
             status: ProductStatus;
+        }
+        interface V2GetProductInfoStocksByWarehouseFbsRequest {
+            /** Указатель для выборки следующих данных. */
+            cursor?: string;
+            /** Количество значений в ответе. Максимум 1000. */
+            limit: number;
+            /** Идентификаторы товаров в системе продавца -- артикул. Максимум 1000. */
+            offer_id?: string[];
+            /** Идентификаторы товаров в системе Ozon -- SKU. Максимум 1000. */
+            sku?: string[];
+        }
+        interface V2GetProductInfoStocksByWarehouseFbsResponseProduct {
+            /** Количество доступных для продажи товаров. */
+            free_stock?: number;
+            /** Идентификатор товара в системе продавца -- артикул. */
+            offer_id?: string;
+            /** Общее количество товара на складе. */
+            present?: number;
+            /** Идентификатор товара. */
+            product_id?: number;
+            /** Количество зарезервированных товаров на складе. */
+            reserved?: number;
+            /** Идентификатор товара в системе Ozon -- SKU. */
+            sku?: number;
+            /** Идентификатор склада. */
+            warehouse_id?: number;
+            /** Название склада. */
+            warehouse_name?: string;
+        }
+        interface ProductApiGetProductInfoStocksByWarehouseFbsV2Data {
+            /** Указатель для выборки следующих данных. */
+            cursor?: string;
+            /** true, если в ответе вернули не все товары. */
+            has_next?: boolean;
+            /** Остатки товаров. */
+            products?: V2GetProductInfoStocksByWarehouseFbsResponseProduct[];
+        }
+        interface V2WarehouseListRequest {
+            /** Количество значений в ответе. Максимум 200. */
+            limit: number;
+            /** Указатель для выборки следующих данных. */
+            cursor?: string;
+            /** Идентификаторы складов. Максимум 200. */
+            warehouse_ids?: string[];
+        }
+        interface WarehouseListV2Data {
+            /** Указатель для выборки следующих данных. */
+            cursor?: string;
+            /** Список складов. */
+            warehouses?: {
+                [key: string]: any;
+            }[];
+            /** true, если в ответе вернулись не все значения. */
+            has_next?: boolean;
+        }
+        interface DeliveryMethodListV2RequestFilter {
+            /** Идентификаторы методов доставки. */
+            delivery_method_ids?: string[];
+            /** Идентификаторы служб доставки. */
+            provider_ids?: string[];
+            /** Статус метода доставки. */
+            status?: string[];
+            /** Идентификаторы складов. */
+            warehouse_ids?: string[];
+        }
+        interface V2DeliveryMethodListRequest {
+            /** Указатель для выборки следующих данных. */
+            cursor?: string;
+            /** Фильтр для поиска методов доставки. */
+            filter?: DeliveryMethodListV2RequestFilter;
+            /** Количество значений в ответе. Минимум 1, максимум 100. */
+            limit: number;
+            /** Направление сортировки: ASC или DESC. */
+            sort_dir?: string;
+        }
+        interface WarehouseApiDeliveryMethodListV2Data {
+            /** Указатель для выборки следующих данных. */
+            cursor?: string;
+            /** true, если в ответе вернули не все методы доставки. */
+            has_next?: boolean;
+            /** Методы доставки. */
+            delivery_methods?: {
+                [key: string]: any;
+            }[];
+        }
+        interface CarriageDeliveryListV2RequestFilter {
+            /** Идентификатор метода доставки. */
+            delivery_method_id?: number;
+            /** Дата отгрузки (YYYY-MM-DD). По умолчанию -- текущая дата. */
+            departure_date?: string;
+        }
+        interface V2CarriageDeliveryListRequest {
+            /** Указатель для выборки следующих данных. */
+            cursor?: string;
+            /** Фильтр для поиска методов доставки и отгрузок. */
+            filter?: CarriageDeliveryListV2RequestFilter;
+            /** Количество значений на странице. Максимум 1000. */
+            limit: number;
+        }
+        interface CarriageApiCarriageDeliveryListV2Data {
+            /** Указатель для выборки следующих данных. */
+            cursor?: string;
+            /** true, если в ответе вернулись не все методы доставки. */
+            has_next?: boolean;
+            /** Список методов доставки. */
+            methods?: {
+                [key: string]: any;
+            }[];
+        }
+        interface PostingFBSActCheckStatusRequest {
+            /** Номер задания на формирование документов (идентификатор перевозки). */
+            id: number;
+        }
+        interface PostingFBSActCheckStatusResponseStatus {
+            /** Тип документов. */
+            act_type?: string;
+            /** Номера отправлений, добавленных в перевозку. */
+            added_to_act?: string[];
+            /** Номера отправлений, не попавших в перевозку. */
+            removed_from_act?: string[];
+            /** Статус: in_process, ready, error, cancelled. */
+            status?: string;
+            /** Признак частичной перевозки. */
+            is_partial?: boolean;
+        }
+        interface PostingApiPostingFbsActCheckStatusData {
+            /** Результат работы метода. */
+            result?: PostingFBSActCheckStatusResponseStatus;
+        }
+        interface PostingFBSGetActRequest {
+            /** Номер задания на формирование документов (идентификатор перевозки). */
+            id: number;
+        }
+        interface PostingApiPostingFbsGetActData {
+            /** Содержание файла в бинарном виде. */
+            file_content?: string;
+            /** Название файла. */
+            file_name?: string;
+            /** Тип файла. */
+            content_type?: string;
         }
     }
 }

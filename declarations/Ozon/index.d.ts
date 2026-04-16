@@ -6,4 +6,4 @@
  * @param {string} keys.apiKey - Api-Key
  * @returns {api client}
  */
-declare function client({ clientId, apiKey }: Ozon_.Types.Keys): any;
+declare function client({ clientId, apiKey }: Ozon_.Types.Keys): Ozon_.Api;
