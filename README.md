@@ -24,7 +24,7 @@
 
 Библиотека покрывает методы Ozon Seller API, включая:
 - `/v3/product/list` -- получение списка товаров
-- `/v2/products/stocks` -- получение информации о остатках
+- `/v2/products/stocks` -- получение информации об остатках
 - `/v5/product/info/prices` -- получение информации о ценах
 - Полный список поддерживаемых методов смотрите в [исходном коде](./Ozon/connector.ts) или в [документации Ozon Seller API](https://docs.ozon.ru/api/seller/)
 
