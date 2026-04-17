@@ -10,33 +10,93 @@
  */
 
 import {
-    ActionsApiActivateHotSalesProductsData,
-    ActionsApiActivateHotSalesProductsError,
-    ActionsApiDeactivateHotSalesProductsData,
-    ActionsApiDeactivateHotSalesProductsError,
-    ActionsApiGetHotSalesListData,
-    ActionsApiGetHotSalesListError,
-    ActionsApiGetHotSalesProductsData,
-    ActionsApiGetHotSalesProductsError,
+    AccessApiRolesByTokenData,
+    AccessApiRolesByTokenError,
+    AddBarcodeData,
+    AddBarcodeError,
     AnalyticsAnalyticsGetDataRequest,
-    AnalyticsAnalyticsGetStockOnWarehousesRequest,
     AnalyticsApiAnalyticsGetDataData,
     AnalyticsApiAnalyticsGetDataError,
-    AnalyticsApiAnalyticsGetStockOnWarehousesData,
-    AnalyticsApiAnalyticsGetStockOnWarehousesError,
-    AnalyticsApiAnalyticsItemTurnoverDataV3Data,
-    AnalyticsApiAnalyticsItemTurnoverDataV3Error,
+    AnalyticsApiAnalyticsProductQueriesData,
+    AnalyticsApiAnalyticsProductQueriesDetailsData,
+    AnalyticsApiAnalyticsProductQueriesDetailsError,
+    AnalyticsApiAnalyticsProductQueriesError,
+    AnalyticsApiAnalyticsStocksData,
+    AnalyticsApiAnalyticsStocksError,
+    AnalyticsApiAverageDeliveryTimeData,
+    AnalyticsApiAverageDeliveryTimeDetailsData,
+    AnalyticsApiAverageDeliveryTimeDetailsError,
+    AnalyticsApiAverageDeliveryTimeError,
+    AnalyticsApiManageStocksData,
+    AnalyticsApiManageStocksError,
+    AnalyticsApiStocksTurnoverData,
+    AnalyticsApiStocksTurnoverError,
+    ArchiveWarehouseFbsData,
+    ArchiveWarehouseFbsError,
+    ArrivalpassArrivalPassCreateRequest,
+    ArrivalpassArrivalPassDeleteRequest,
+    ArrivalpassArrivalPassListRequest,
+    ArrivalpassArrivalPassUpdateRequest,
+    AssemblyCarriagePostingListData,
+    AssemblyCarriagePostingListError,
+    AssemblyCarriageProductListData,
+    AssemblyCarriageProductListError,
+    AssemblyFbsPostingListData,
+    AssemblyFbsPostingListError,
+    AssemblyFbsProductListData,
+    AssemblyFbsProductListError,
+    AverageDeliveryTimeSummaryData,
+    AverageDeliveryTimeSummaryError,
     BrandApiBrandCompanyCertificationListData,
     BrandApiBrandCompanyCertificationListError,
     BrandBrandCompanyCertificationListRequest,
-    CancellationApiConditionalCancellationApproveData,
-    CancellationApiConditionalCancellationApproveError,
-    CancellationApiConditionalCancellationRejectData,
-    CancellationApiConditionalCancellationRejectError,
-    CancellationApiGetConditionalCancellationData,
-    CancellationApiGetConditionalCancellationError,
-    CancellationApiGetConditionalCancellationListData,
-    CancellationApiGetConditionalCancellationListError,
+    CancelReasonApiCancelReasonListByPostingData,
+    CancelReasonApiCancelReasonListByPostingError,
+    CancelReasonListByOrderData,
+    CancelReasonListByOrderError,
+    CancelReasonListData,
+    CancelReasonListError,
+    CargoesApiCargoesCreateData,
+    CargoesApiCargoesCreateError,
+    CargoesApiCargoesCreateInfoData,
+    CargoesApiCargoesCreateInfoError,
+    CargoesApiCargoesDeleteData,
+    CargoesApiCargoesDeleteError,
+    CargoesApiCargoesDeleteStatusData,
+    CargoesApiCargoesDeleteStatusError,
+    CargoesApiCargoesLabelCreateData,
+    CargoesApiCargoesLabelCreateError,
+    CargoesApiCargoesLabelFileData,
+    CargoesApiCargoesLabelFileError,
+    CargoesApiCargoesLabelGetData,
+    CargoesApiCargoesLabelGetError,
+    CargoesApiCargoesRulesGetData,
+    CargoesApiCargoesRulesGetError,
+    CargoesGetData,
+    CargoesGetError,
+    CarriageActDiscrepancyPdfData,
+    CarriageActDiscrepancyPdfError,
+    CarriageApiCarriageApproveData,
+    CarriageApiCarriageApproveError,
+    CarriageApiCarriageCancelData,
+    CarriageApiCarriageCancelError,
+    CarriageApiCarriageCreateData,
+    CarriageApiCarriageCreateError,
+    CarriageApiCarriageDeliveryListData,
+    CarriageApiCarriageDeliveryListError,
+    CarriageApiSetPostingsData,
+    CarriageApiSetPostingsError,
+    CarriageCarriageGetRequest,
+    CarriageEttnStatusData,
+    CarriageEttnStatusError,
+    CarriageGetData,
+    CarriageGetError,
+    CarriagePassCreateData,
+    CarriagePassCreateError,
+    CarriagePassDeleteData,
+    CarriagePassDeleteError,
+    CarriagePassUpdateData,
+    CarriagePassUpdateError,
     CertificateDeleteData,
     CertificateDeleteError,
     CertificateInfoData,
@@ -49,61 +109,239 @@ import {
     CertificateStatusListError,
     CertificateUnbindData,
     CertificateUnbindError,
-    ChatApiChatHistoryData,
-    ChatApiChatHistoryError,
-    ChatApiChatListData,
-    ChatApiChatListError,
     ChatApiChatSendFileData,
     ChatApiChatSendFileError,
     ChatApiChatSendMessageData,
     ChatApiChatSendMessageError,
     ChatApiChatStartData,
     ChatApiChatStartError,
-    ChatApiChatUpdatesData,
-    ChatApiChatUpdatesError,
-    ChatChatHistoryRequest,
-    ChatChatListRequest,
     ChatChatSendFileRequest,
     ChatChatSendMessageRequest,
     ChatChatStartRequest,
-    ChatChatUpdatesRequest,
+    CheckNotificationData,
+    CheckNotificationError,
+    CommonEmpty,
+    CreateCompanyMarkedProductsSalesReportData,
+    CreateCompanyMarkedProductsSalesReportError,
+    CreatePlacementByProductsReportData,
+    CreatePlacementByProductsReportError,
+    CreatePlacementBySuppliesReportData,
+    CreatePlacementBySuppliesReportError,
+    DeleteNotificationData,
+    DeleteNotificationError,
+    DeliveryApiDeliveryPointListData,
+    DeliveryCheckData,
+    DeliveryCheckError,
+    DeliveryMapData,
+    DeliveryMapError,
+    DeliveryPointInfoData,
+    DeliveryPointInfoError,
+    DescriptionCategoryApiGetAttributesData,
+    DescriptionCategoryApiGetAttributesError,
+    DescriptionCategoryApiGetAttributeValuesData,
+    DescriptionCategoryApiGetAttributeValuesError,
+    DescriptionCategoryApiGetTreeData,
+    DescriptionCategoryApiGetTreeError,
+    DescriptionCategoryApiSearchAttributeValuesData,
+    DescriptionCategoryApiSearchAttributeValuesError,
+    DigitalProductApiStocksImportData,
+    DigitalProductApiStocksImportError,
+    DraftCrossdockCreateData,
+    DraftCrossdockCreateError,
+    DraftDirectCreateData,
+    DraftDirectCreateError,
+    DraftMultiClusterCreateData,
+    DraftMultiClusterCreateError,
+    EnableNotificationData,
+    EnableNotificationError,
+    FbpApiFbpArchiveGetData,
+    FbpApiFbpArchiveGetError,
+    FbpApiFbpArchiveListData,
+    FbpApiFbpArchiveListError,
+    FbpApiFbpAvailableTimeslotListData,
+    FbpApiFbpAvailableTimeslotListError,
+    FbpApiFbpCheckActStateData,
+    FbpApiFbpCheckActStateError,
+    FbpApiFbpCheckConsignmentNoteStateData,
+    FbpApiFbpCheckConsignmentNoteStateError,
+    FbpApiFbpCreateActData,
+    FbpApiFbpCreateActError,
+    FbpApiFbpCreateConsignmentNoteData,
+    FbpApiFbpCreateConsignmentNoteError,
+    FbpApiFbpCreateLabelData,
+    FbpApiFbpCreateLabelError,
+    FbpApiFbpDraftDirectTplDlvCreateData,
+    FbpApiFbpDraftDirectTplDlvCreateError,
+    FbpApiFbpDraftDirectTplDlvEditData,
+    FbpApiFbpDraftDirectTplDlvEditError,
+    FbpApiFbpDraftGetData,
+    FbpApiFbpDraftGetError,
+    FbpApiFbpDraftListData,
+    FbpApiFbpDraftListError,
+    FbpApiFbpDraftPickupCreateData,
+    FbpApiFbpDraftPickupCreateError,
+    FbpApiFbpDraftPickUpDeleteData,
+    FbpApiFbpDraftPickUpDeleteError,
+    FbpApiFbpDraftPickupDlvEditData,
+    FbpApiFbpDraftPickupDlvEditError,
+    FbpApiFbpDraftPickUpProductValidateData,
+    FbpApiFbpDraftPickUpProductValidateError,
+    FbpApiFbpEditTimeslotData,
+    FbpApiFbpEditTimeslotError,
+    FbpApiFbpGetLabelData,
+    FbpApiFbpGetLabelError,
+    FbpApiFbpOrderDirectCancelData,
+    FbpApiFbpOrderDirectCancelError,
+    FbpApiFbpOrderDirectSellerDlvEditData,
+    FbpApiFbpOrderDirectSellerDlvEditError,
+    FbpApiFbpOrderDropOffCancelData,
+    FbpApiFbpOrderDropOffCancelError,
+    FbpApiFbpOrderDropOffDlvEditData,
+    FbpApiFbpOrderDropOffDlvEditError,
+    FbpApiFbpOrderDropOffTimetableData,
+    FbpApiFbpOrderDropOffTimetableError,
+    FbpApiFbpOrderGetData,
+    FbpApiFbpOrderGetError,
+    FbpApiFbpOrderListData,
+    FbpApiFbpOrderListError,
+    FbpApiFbpOrderPickUpCancelData,
+    FbpApiFbpOrderPickUpCancelError,
+    FbpApiFbpOrderPickUpDlvEditData,
+    FbpApiFbpOrderPickUpDlvEditError,
+    FbpDraftDirectCreateData,
+    FbpDraftDirectCreateError,
+    FbpDraftDirectDeleteData,
+    FbpDraftDirectDeleteError,
+    FbpDraftDirectGetTimeslotData,
+    FbpDraftDirectGetTimeslotError,
+    FbpDraftDirectProductValidateData,
+    FbpDraftDirectProductValidateError,
+    FbpDraftDirectRegistrateData,
+    FbpDraftDirectRegistrateError,
+    FbpDraftDirectSellerDlvCreateData,
+    FbpDraftDirectSellerDlvCreateError,
+    FbpDraftDirectSellerDlvEditData,
+    FbpDraftDirectSellerDlvEditError,
+    FbpDraftDirectTimeslotEditData,
+    FbpDraftDirectTimeslotEditError,
+    FbpDraftDropOffCreateData,
+    FbpDraftDropOffCreateError,
+    FbpDraftDropOffDeleteData,
+    FbpDraftDropOffDeleteError,
+    FbpDraftDropOffDlvEditData,
+    FbpDraftDropOffDlvEditError,
+    FbpDraftDropOffPointListData,
+    FbpDraftDropOffPointListError,
+    FbpDraftDropOffPointTimetableData,
+    FbpDraftDropOffPointTimetableError,
+    FbpDraftDropOffProductValidateData,
+    FbpDraftDropOffProductValidateError,
+    FbpDraftDropOffProvinceListData,
+    FbpDraftDropOffProvinceListError,
+    FbpDraftDropOffRegistrateData,
+    FbpDraftDropOffRegistrateError,
+    FbpDraftPickUpRegistrateData,
+    FbpDraftPickUpRegistrateError,
+    FbpWarehouseListData,
+    FbpWarehouseListError,
+    FbsSplitData,
+    FbsSplitError,
     FinanceApiFinanceCashFlowStatementListData,
     FinanceApiFinanceCashFlowStatementListError,
-    FinanceApiGetRealizationReportData,
-    FinanceApiGetRealizationReportError,
-    FinanceGetRealizationReportRequest,
-    InvoiceCreateData,
-    InvoiceCreateError,
+    FinanceApiGetRealizationByDayReportV1Data,
+    FinanceApiGetRealizationByDayReportV1Error,
+    FinanceApiGetRealizationReportV1Data,
+    FinanceApiGetRealizationReportV1Error,
+    GenerateBarcodeData,
+    GenerateBarcodeError,
+    GetDeliveryMethodReturnSettingsV1Data,
+    GetDeliveryMethodReturnSettingsV1Error,
+    GetFinanceBalanceV1Data,
+    GetFinanceBalanceV1Error,
+    GetFinanceProductsBuyoutData,
+    GetFinanceProductsBuyoutError,
+    GetNotificationPushTypeListData,
+    GetNotificationPushTypeListError,
+    GetReceiptData,
+    GetReceiptError,
+    GetSupplierReturnsSummaryReportData,
+    GetSupplierReturnsSummaryReportError,
+    GetSupplyReturnsSummaryReportData,
+    GetSupplyReturnsSummaryReportError,
+    GetWarehouseFbsOperationStatusData,
+    GetWarehouseFbsOperationStatusError,
     InvoiceDeleteData,
     InvoiceDeleteError,
-    InvoiceGetData,
-    InvoiceGetError,
+    InvoiceUploadData,
+    InvoiceUploadError,
+    ListPostingCodesData,
+    ListPostingCodesError,
+    NotificationListData,
+    NotificationListError,
+    NotificationV1CheckNotificationRequest,
+    NotificationV1DeleteNotificationRequest,
+    NotificationV1EnableNotificationRequest,
+    NotificationV1SetNotificationRequest,
+    NotificationV1UpdateNotificationRequest,
+    OrderApiOrderCancelCheckData,
+    OrderApiOrderCancelCheckError,
+    OrderApiOrderCancelData,
+    OrderApiOrderCancelError,
+    OrderApiOrderCancelStatusData,
+    OrderApiOrderCancelStatusError,
+    PassListData,
+    PassListError,
     PolygonApiBindPolygonData,
     PolygonApiBindPolygonError,
     PolygonApiCreatePolygonData,
     PolygonApiCreatePolygonError,
-    PolygonApiDeletePolygonData,
-    PolygonApiDeletePolygonError,
+    PolygonDeleteData,
+    PolygonDeleteError,
+    PolygonListData,
+    PolygonListError,
+    PolygonTimeCoordinatesUpdateData,
+    PolygonTimeCoordinatesUpdateError,
+    PolygonTimeSetData,
+    PolygonTimeSetError,
     Polygonv1PolygonBindRequest,
     Polygonv1PolygonCreateRequest,
-    Polygonv1PolygonDeleteRequest,
     PostingApiCreateLabelBatchData,
     PostingApiCreateLabelBatchError,
+    PostingApiFbsPostingProductExemplarUpdateData,
+    PostingApiFbsPostingProductExemplarUpdateError,
     PostingApiGetCarriageAvailableListData,
     PostingApiGetCarriageAvailableListError,
     PostingApiGetEtgbData,
     PostingApiGetEtgbError,
     PostingApiGetLabelBatchData,
     PostingApiGetLabelBatchError,
+    PostingApiGetPostingFboCancelReasonListData,
+    PostingApiGetPostingFboCancelReasonListError,
     PostingApiGetPostingFbsCancelReasonV1Data,
     PostingApiGetPostingFbsCancelReasonV1Error,
     PostingApiGetRestrictionsData,
     PostingApiGetRestrictionsError,
+    PostingApiPostingCancelData,
+    PostingApiPostingCancelError,
+    PostingApiPostingCancelStatusData,
+    PostingApiPostingCancelStatusError,
+    PostingApiPostingFbsPickupCodeVerifyData,
+    PostingApiPostingFbsPickupCodeVerifyError,
+    PostingApiPostingMarksData,
+    PostingApiPostingMarksError,
     PostingApiPostingTimeslotChangeRestrictionsData,
     PostingApiPostingTimeslotChangeRestrictionsError,
+    PostingApiSetPostingCutoffData,
+    PostingApiSetPostingCutoffError,
     PostingApiSetPostingTimeslotData,
     PostingApiSetPostingTimeslotError,
+    PostingApiUnpaidLegalProductListData,
+    PostingApiUnpaidLegalProductListError,
     PostingCancelReasonRequest,
+    PostingFbsProductTraceableAttributeData,
+    PostingFbsProductTraceableAttributeError,
+    PostingFbsTraceableSplitData,
+    PostingFbsTraceableSplitError,
     Postingv1GetCarriageAvailableListRequest,
     PricingCompetitorsData,
     PricingCompetitorsError,
@@ -129,8 +367,10 @@ import {
     PricingStatusError,
     PricingUpdateData,
     PricingUpdateError,
-    ProductApiGetGeoRestrictionsV1Data,
-    ProductApiGetGeoRestrictionsV1Error,
+    ProductApiActionTimerStatusData,
+    ProductApiActionTimerStatusError,
+    ProductApiActionTimerUpdateData,
+    ProductApiActionTimerUpdateError,
     ProductApiGetImportProductsInfoData,
     ProductApiGetImportProductsInfoError,
     ProductApiGetProductInfoDescriptionData,
@@ -139,14 +379,16 @@ import {
     ProductApiGetProductInfoDiscountedError,
     ProductApiGetProductInfoSubscriptionData,
     ProductApiGetProductInfoSubscriptionError,
+    ProductApiGetProductPlacementZoneInfoData,
+    ProductApiGetProductPlacementZoneInfoError,
     ProductApiGetProductRatingBySkuData,
     ProductApiGetProductRatingBySkuError,
+    ProductApiGetProductStairwayDiscountByQuantityData,
+    ProductApiGetProductStairwayDiscountByQuantityError,
     ProductApiImportProductsBySkuData,
     ProductApiImportProductsBySkuError,
     ProductApiImportProductsPricesData,
     ProductApiImportProductsPricesError,
-    ProductApiImportProductsStocksData,
-    ProductApiImportProductsStocksError,
     ProductApiProductArchiveData,
     ProductApiProductArchiveError,
     ProductApiProductCertificateAccordanceTypesData,
@@ -158,29 +400,34 @@ import {
     ProductApiProductCertificateCreatePayload,
     ProductApiProductCertificateTypesData,
     ProductApiProductCertificateTypesError,
-    ProductApiProductCertificationListData,
-    ProductApiProductCertificationListError,
+    ProductApiProductGetRelatedSkuData,
+    ProductApiProductGetRelatedSkuError,
     ProductApiProductImportPicturesData,
     ProductApiProductImportPicturesError,
-    ProductApiProductInfoPicturesData,
-    ProductApiProductInfoPicturesError,
+    ProductApiProductInfoWrongVolumeData,
+    ProductApiProductInfoWrongVolumeError,
     ProductApiProductStocksByWarehouseFbsData,
     ProductApiProductStocksByWarehouseFbsError,
     ProductApiProductUnarchiveData,
     ProductApiProductUnarchiveError,
+    ProductApiProductUpdateAttributesData,
+    ProductApiProductUpdateAttributesError,
     ProductApiProductUpdateDiscountData,
     ProductApiProductUpdateDiscountError,
     ProductApiProductUpdateOfferIdData,
     ProductApiProductUpdateOfferIdError,
-    ProductApiUploadDigitalCodeData,
-    ProductApiUploadDigitalCodeError,
-    ProductApiUploadDigitalCodeInfoData,
-    ProductApiUploadDigitalCodeInfoError,
+    ProductApiSetProductStairwayDiscountByQuantityData,
+    ProductApiSetProductStairwayDiscountByQuantityError,
+    ProductApiV1ProductCertificationListData,
+    ProductApiV1ProductCertificationListError,
     ProductGetImportProductsInfoRequest,
     ProductGetProductInfoDescriptionRequest,
     ProductImportProductsBySKURequest,
     ProductImportProductsPricesRequest,
-    ProductImportProductsStocksRequest,
+    ProductInfoWarehouseStocksData,
+    ProductInfoWarehouseStocksError,
+    ProductPricesDetailsData,
+    ProductPricesDetailsError,
     ProductProductArchiveRequest,
     ProductProductCertificateBindRequest,
     ProductProductCertificationListRequest,
@@ -189,8 +436,11 @@ import {
     ProductStatusListError,
     Productsv1GetProductInfoStocksByWarehouseFbsRequest,
     Productv1ProductImportPicturesRequest,
-    Productv1ProductInfoPicturesRequest,
-    Productv2GetGeoRestrictionsByFilterRequest,
+    ProductV1ProductVisibilitySetRequest,
+    ProductV1QuantInfoRequest,
+    ProductV1QuantListRequest,
+    ProductVisibilitySetData,
+    ProductVisibilitySetError,
     PromosCandidatesData,
     PromosCandidatesError,
     PromosData,
@@ -207,93 +457,380 @@ import {
     PromosTaskDeclineError,
     PromosTaskListData,
     PromosTaskListError,
+    QuantGetInfoData,
+    QuantGetInfoError,
+    QuantProductListData,
+    QuantProductListError,
+    QuestionAnswerCreateData,
+    QuestionAnswerCreateError,
+    QuestionAnswerDeleteData,
+    QuestionAnswerDeleteError,
+    QuestionAnswerListData,
+    QuestionAnswerListError,
+    QuestionChangeStatusData,
+    QuestionChangeStatusError,
+    QuestionCountData,
+    QuestionCountError,
+    QuestionInfoData,
+    QuestionInfoError,
+    QuestionListData,
+    QuestionListError,
+    QuestionTopSkuData,
+    QuestionTopSkuError,
+    RatingApiGetFbsRatingIndexInfoV1Data,
+    RatingApiGetFbsRatingIndexInfoV1Error,
+    RatingApiListFbsRatingIndexPostingsV1Data,
+    RatingApiListFbsRatingIndexPostingsV1Error,
     RatingApiRatingHistoryV1Data,
     RatingApiRatingHistoryV1Error,
     RatingApiRatingSummaryV1Data,
     RatingApiRatingSummaryV1Error,
+    ReceiptsSellerListData,
+    ReceiptsSellerListError,
     RejectionReasonsListData,
     RejectionReasonsListError,
-    ReportApiCreateCompanyFinanceReportData,
-    ReportApiCreateCompanyFinanceReportError,
     ReportApiCreateCompanyPostingsReportData,
     ReportApiCreateCompanyPostingsReportError,
-    ReportApiCreateCompanyProductsPricesReportData,
-    ReportApiCreateCompanyProductsPricesReportError,
     ReportApiCreateCompanyProductsReportData,
     ReportApiCreateCompanyProductsReportError,
-    ReportApiCreateCompanyReturnsReportData,
-    ReportApiCreateCompanyReturnsReportError,
-    ReportApiCreateCompanyStockReportData,
-    ReportApiCreateCompanyStockReportError,
-    ReportApiCreateCompanyTransactionsReportData,
-    ReportApiCreateCompanyTransactionsReportError,
     ReportApiCreateDiscountedReportData,
     ReportApiCreateDiscountedReportError,
-    ReportApiCreateProductsMovementReportData,
-    ReportApiCreateProductsMovementReportError,
-    ReportApiDiscountedReportInfoData,
-    ReportApiDiscountedReportInfoError,
-    ReportApiDiscountedReportListData,
-    ReportApiDiscountedReportListError,
+    ReportApiCreateDocumentB2BSalesJsonReportData,
+    ReportApiCreateDocumentB2BSalesJsonReportError,
+    ReportApiCreateDocumentB2BSalesReportData,
+    ReportApiCreateDocumentB2BSalesReportError,
+    ReportApiCreateMutualSettlementReportData,
+    ReportApiCreateMutualSettlementReportError,
+    ReportApiCreateStockByWarehouseReportData,
+    ReportApiCreateStockByWarehouseReportError,
+    ReportApiGetCompensationReportData,
+    ReportApiGetCompensationReportError,
+    ReportApiGetDecompensationReportData,
+    ReportApiGetDecompensationReportError,
     ReportApiReportInfoData,
     ReportApiReportInfoError,
     ReportApiReportListData,
     ReportApiReportListError,
-    ReportCreateCompanyFinanceReportRequest,
     ReportCreateCompanyPostingsReportRequest,
-    ReportCreateCompanyProductsPricesReportRequest,
     ReportCreateCompanyProductsReportRequest,
-    ReportCreateCompanyReturnsReportRequest,
-    ReportCreateCompanyStockReportRequest,
-    ReportCreateCompanyTransactionsReportRequest,
     ReportCreateDiscountedRequest,
-    ReportCreateProductsMovementReportRequest,
-    ReportDiscountedInfoRequest,
-    ReportDiscountedListRequest,
     ReportReportInfoRequest,
     ReportReportListRequest,
+    ReturnApiGiveoutBarcodeResetData,
+    ReturnApiGiveoutBarcodeResetError,
+    ReturnApiGiveoutGetBarcodeData,
+    ReturnApiGiveoutGetBarcodeError,
+    ReturnApiGiveoutGetPdfData,
+    ReturnApiGiveoutGetPdfError,
+    ReturnApiGiveoutGetPngData,
+    ReturnApiGiveoutGetPngError,
+    ReturnApiGiveoutInfoData,
+    ReturnApiGiveoutInfoError,
+    ReturnApiGiveoutIsEnabledData,
+    ReturnApiGiveoutIsEnabledError,
+    ReturnApiGiveoutListData,
+    ReturnApiGiveoutListError,
+    ReturnPassCreateData,
+    ReturnPassCreateError,
+    ReturnPassDeleteData,
+    ReturnPassDeleteError,
+    ReturnPassUpdateData,
+    ReturnPassUpdateError,
+    ReturnsApiReturnsRfbsActionSetData,
+    ReturnsApiReturnsRfbsActionSetError,
+    ReturnsCompanyFbsInfoData,
+    ReturnsCompanyFbsInfoError,
+    ReturnsListData,
+    ReturnsListError,
+    ReviewApiCommentCreateData,
+    ReviewApiCommentCreateError,
+    ReviewApiCommentDeleteData,
+    ReviewApiCommentDeleteError,
+    ReviewApiCommentListData,
+    ReviewApiCommentListError,
+    ReviewApiReviewChangeStatusData,
+    ReviewApiReviewChangeStatusError,
+    ReviewApiReviewCountData,
+    ReviewApiReviewCountError,
+    ReviewApiReviewInfoData,
+    ReviewApiReviewInfoError,
+    ReviewApiReviewListData,
+    ReviewApiReviewListError,
+    SearchQueriesApiSearchQueriesTextData,
+    SearchQueriesApiSearchQueriesTextError,
+    SearchQueriesApiSearchQueriesTopData,
+    SearchQueriesApiSearchQueriesTopError,
+    SellerActionsArchiveData,
+    SellerActionsArchiveError,
+    SellerActionsChangeActivityData,
+    SellerActionsChangeActivityError,
+    SellerActionsCreateDiscountData,
+    SellerActionsCreateDiscountError,
+    SellerActionsCreateDiscountWithConditionData,
+    SellerActionsCreateDiscountWithConditionError,
+    SellerActionsCreateInstallmentData,
+    SellerActionsCreateInstallmentError,
+    SellerActionsCreateMultiLevelDiscountData,
+    SellerActionsCreateMultiLevelDiscountError,
+    SellerActionsCreateVoucherData,
+    SellerActionsCreateVoucherError,
+    SellerActionsListData,
+    SellerActionsListError,
+    SellerActionsProductsAddData,
+    SellerActionsProductsAddError,
+    SellerActionsProductsCandidatesData,
+    SellerActionsProductsCandidatesError,
+    SellerActionsProductsDeleteData,
+    SellerActionsProductsDeleteError,
+    SellerActionsProductsListData,
+    SellerActionsProductsListError,
+    SellerActionsUpdateDiscountData,
+    SellerActionsUpdateDiscountError,
+    SellerActionsUpdateDiscountWithConditionData,
+    SellerActionsUpdateDiscountWithConditionError,
+    SellerActionsUpdateInstallmentData,
+    SellerActionsUpdateInstallmentError,
+    SellerActionsUpdateMultiLevelDiscountData,
+    SellerActionsUpdateMultiLevelDiscountError,
+    SellerActionsUpdateVoucherData,
+    SellerActionsUpdateVoucherError,
+    SellerActionsVoucherGetData,
+    SellerActionsVoucherGetError,
     SellerApiActivateProductV1Request,
     SellerApiGetSellerProductV1Request,
     SellerApiProductIDsV1Request,
-    SupplyOrderApiGetSupplyOrderData,
-    SupplyOrderApiGetSupplyOrderError,
-    SupplyOrderApiGetSupplyOrderItemsData,
-    SupplyOrderApiGetSupplyOrderItemsError,
-    SupplyOrderApiGetSupplyOrdersListData,
-    SupplyOrderApiGetSupplyOrdersListError,
-    V1ActivateHotSalesProductsRequest,
+    SellerApiSellerInfoData,
+    SellerApiSellerInfoError,
+    SellerApiSellerOzonLogisticsInfoData,
+    SellerApiSellerOzonLogisticsInfoError,
+    SellerSellerAPIArrivalPassCreateRequest,
+    SellerSellerAPIArrivalPassDeleteRequest,
+    SellerSellerAPIArrivalPassUpdateRequest,
+    SetNotificationData,
+    SetNotificationError,
+    SupplierApiSupplierAvailableWarehousesData,
+    SupplierApiSupplierAvailableWarehousesError,
+    SupplyDraftApiDraftClusterListData,
+    SupplyDraftApiDraftClusterListError,
+    SupplyDraftApiDraftCreateData,
+    SupplyDraftApiDraftCreateError,
+    SupplyDraftApiDraftCreateInfoData,
+    SupplyDraftApiDraftCreateInfoError,
+    SupplyDraftApiDraftGetWarehouseFboListData,
+    SupplyDraftApiDraftGetWarehouseFboListError,
+    SupplyDraftApiDraftSupplyCreateData,
+    SupplyDraftApiDraftSupplyCreateError,
+    SupplyDraftApiDraftSupplyCreateStatusData,
+    SupplyDraftApiDraftSupplyCreateStatusError,
+    SupplyDraftApiDraftTimeslotInfoData,
+    SupplyDraftApiDraftTimeslotInfoError,
+    SupplyOrderApiGetSupplyOrderTimeslotsData,
+    SupplyOrderApiGetSupplyOrderTimeslotsError,
+    SupplyOrderApiGetSupplyOrderTimeslotStatusData,
+    SupplyOrderApiGetSupplyOrderTimeslotStatusError,
+    SupplyOrderApiSupplyOrderCancelData,
+    SupplyOrderApiSupplyOrderCancelError,
+    SupplyOrderApiSupplyOrderCancelStatusData,
+    SupplyOrderApiSupplyOrderCancelStatusError,
+    SupplyOrderApiSupplyOrderContentUpdateData,
+    SupplyOrderApiSupplyOrderContentUpdateError,
+    SupplyOrderApiSupplyOrderContentUpdateStatusData,
+    SupplyOrderApiSupplyOrderContentUpdateStatusError,
+    SupplyOrderApiSupplyOrderDetailsData,
+    SupplyOrderApiSupplyOrderDetailsError,
+    SupplyOrderApiSupplyOrderPassCreateData,
+    SupplyOrderApiSupplyOrderPassCreateError,
+    SupplyOrderApiSupplyOrderPassStatusData,
+    SupplyOrderApiSupplyOrderPassStatusError,
+    SupplyOrderApiSupplyOrderStatusCounterData,
+    SupplyOrderApiSupplyOrderStatusCounterError,
+    SupplyOrderApiUpdateSupplyOrderTimeslotData,
+    SupplyOrderApiUpdateSupplyOrderTimeslotError,
+    SupplyOrderBundleData,
+    SupplyOrderBundleError,
+    SupplyOrderContentUpdateValidationData,
+    SupplyOrderContentUpdateValidationError,
+    UnarchiveWarehouseFbsData,
+    UnarchiveWarehouseFbsError,
+    UpdateNotificationData,
+    UpdateNotificationError,
+    UpdateWarehouseFbsData,
+    UpdateWarehouseFbsError,
+    UpdateWarehouseFbsFirstMileData,
+    UpdateWarehouseFbsFirstMileError,
+    UploadPostingCodesData,
+    UploadPostingCodesError,
+    UploadReceiptData,
+    UploadReceiptError,
+    UtilizationHistoryData,
+    UtilizationHistoryError,
+    UtilizationInfoData,
+    UtilizationInfoError,
+    UtilizationUpdateData,
+    UtilizationUpdateError,
+    V1AddBarcodeRequest,
     V1AddStrategyItemsRequest,
-    V1AnalyticsItemTurnoverDataV3Request,
+    V1AnalyticsManageStocksRequest,
+    V1AnalyticsProductQueriesDetailsRequest,
+    V1AnalyticsProductQueriesRequest,
+    V1AnalyticsStocksRequest,
+    V1AnalyticsTurnoverStocksRequest,
     V1ApproveDiscountTasksRequest,
-    V1ConditionalCancellationMoveRequest,
+    V1ArchiveWarehouseFBSRequest,
+    V1AssemblyCarriagePostingListRequest,
+    V1AssemblyCarriageProductListRequest,
+    V1AssemblyFbsPostingListRequest,
+    V1AssemblyFbsProductListRequest,
+    V1AverageDeliveryTimeDetailsRequest,
+    V1AverageDeliveryTimeRequest,
+    V1CancelReasonListByOrderRequest,
+    V1CancelReasonListByPostingRequest,
+    V1CargoesCreateInfoRequest,
+    V1CargoesCreateRequest,
+    V1CargoesDeleteRequest,
+    V1CargoesDeleteStatusRequest,
+    V1CargoesGetRequest,
+    V1CargoesLabelCreateRequest,
+    V1CargoesLabelGetRequest,
+    V1CargoesRulesGetRequest,
+    V1CarriageActDiscrepancyPDFRequest,
+    V1CarriageApproveRequest,
+    V1CarriageCancelRequest,
+    V1CarriageCreateRequest,
+    V1CarriageDeliveryListRequest,
+    V1CarriageEttnStatusRequest,
+    V1CommentCreateRequest,
+    V1CommentDeleteRequest,
+    V1CommentListRequest,
+    V1CreateDocumentB2BSalesJSONReportRequest,
+    V1CreateDocumentB2BSalesReportRequest,
     V1CreateLabelBatchRequest,
+    V1CreateMutualSettlementReportRequest,
+    V1CreatePlacementByProductsReportRequest,
+    V1CreatePlacementBySuppliesReportRequest,
     V1CreatePricingStrategyRequest,
-    V1DeactivateHotSalesProductsRequest,
+    V1CreateStockByWarehouseReportRequest,
+    V1CreateWarehouseFBSRequest,
     V1DeclineDiscountTasksRequest,
+    V1DeliveryCheckRequest,
+    V1DeliveryMapRequest,
+    V1DeliveryPointInfoRequest,
+    V1DeliveryPointListRequest,
+    V1DraftClusterListRequest,
+    V1DraftCreateInfoRequest,
+    V1DraftCreateRequest,
+    V1DraftCrossdockCreateRequest,
+    V1DraftDirectCreateRequest,
+    V1DraftGetWarehouseFboListRequest,
+    V1DraftMultiClusterCreateRequest,
+    V1DraftSupplyCreateRequest,
+    V1DraftSupplyCreateStatusRequest,
+    V1DraftTimeslotInfoRequest,
     V1Empty,
+    V1FbpArchiveGetRequest,
+    V1FbpArchiveListRequest,
+    V1FbpAvailableTimeslotListRequest,
+    V1FbpCheckActStateRequest,
+    V1FbpCheckConsignmentNoteStateRequest,
+    V1FbpCreateActRequest,
+    V1FbpCreateConsignmentNoteRequest,
+    V1FbpCreateLabelRequest,
+    V1FbpDraftDirectCreateRequest,
+    V1FbpDraftDirectDeleteRequest,
+    V1FbpDraftDirectGetTimeslotRequest,
+    V1FbpDraftDirectProductValidateRequest,
+    V1FbpDraftDirectRegistrateRequest,
+    V1FbpDraftDirectSellerDlvCreateRequest,
+    V1FbpDraftDirectSellerDlvEditRequest,
+    V1FbpDraftDirectTimeslotEditRequest,
+    V1FbpDraftDirectTplDlvCreateRequest,
+    V1FbpDraftDirectTplDlvEditRequest,
+    V1FbpDraftDropOffCreateRequest,
+    V1FbpDraftDropOffDeleteRequest,
+    V1FbpDraftDropOffDlvEditRequest,
+    V1FbpDraftDropOffPointListRequest,
+    V1FbpDraftDropOffPointTimetableRequest,
+    V1FbpDraftDropOffProductValidateRequest,
+    V1FbpDraftDropOffProvinceListRequest,
+    V1FbpDraftDropOffRegistrateRequest,
+    V1FbpDraftGetRequest,
+    V1FbpDraftListRequest,
+    V1FbpDraftPickupCreateRequest,
+    V1FbpDraftPickUpDeleteRequest,
+    V1FbpDraftPickupDlvEditRequest,
+    V1FbpDraftPickUpProductValidateRequest,
+    V1FbpDraftPickUpRegistrateRequest,
+    V1FbpEditTimeslotRequest,
+    V1FbpGetLabelRequest,
+    V1FbpOrderDirectCancelRequest,
+    V1FbpOrderDirectSellerDlvEditRequest,
+    V1FbpOrderDropOffCancelRequest,
+    V1FbpOrderDropOffDlvEditRequest,
+    V1FbpOrderDropOffTimetableRequest,
+    V1FbpOrderGetRequest,
+    V1FbpOrderListRequest,
+    V1FbpOrderPickUpCancelRequest,
+    V1FbpOrderPickUpDlvEditRequest,
+    V1FbsPostingProductExemplarUpdateRequest,
+    V1GenerateBarcodeRequest,
+    V1GetAttributesRequest,
+    V1GetAttributeValuesRequest,
+    V1GetCompensationReportRequest,
     V1GetCompetitorsRequest,
-    V1GetConditionalCancellationListRequest,
-    V1GetConditionalCancellationRequest,
+    V1GetDecompensationReportRequest,
+    V1GetDeliveryMethodReturnSettingsV1Request,
     V1GetDiscountTaskListRequest,
     V1GetEtgbRequest,
-    V1GetHotSalesListRequest,
-    V1GetHotSalesProductsRequest,
+    V1GetFinanceBalanceV1Request,
+    V1GetFinanceProductsBuyoutRequest,
     V1GetLabelBatchRequest,
     V1GetProductInfoDiscountedRequest,
     V1GetProductInfoSubscriptionRequest,
+    V1GetProductPlacementZoneInfoRequest,
     V1GetProductRatingBySkuRequest,
+    V1GetProductStairwayDiscountByQuantityRequest,
+    V1GetRealizationReportByDayRequest,
+    V1GetRealizationReportPostingRequest,
+    V1GetReceiptRequest,
     V1GetRestrictionsRequest,
+    V1GetReturnsListRequest,
     V1GetStrategyItemInfoRequest,
     V1GetStrategyListRequest,
-    V1GetSupplyOrderItemsRequest,
-    V1GetSupplyOrderRequest,
-    V1GetSupplyOrdersListRequest,
-    V1InvoiceCreateOrUpdateRequest,
+    V1GetSupplierReturnsSummaryReportRequest,
+    V1GetSupplyOrderBundleRequest,
+    V1GetSupplyOrderTimeslotsRequest,
+    V1GetSupplyOrderTimeslotStatusRequest,
+    V1GetSupplyReturnsSummaryReportRequest,
+    V1GetTreeRequest,
+    V1GetWarehouseFBSOperationStatusRequest,
+    V1GiveoutInfoRequest,
+    V1GiveoutListRequest,
     V1InvoiceDeleteRequest,
-    V1InvoiceGetRequest,
+    V1InvoiceFileUploadRequest,
     V1ItemIDsRequest,
+    V1ListDropOffPointsForCreateFBSWarehouseRequest,
+    V1ListDropOffPointsForUpdateFBSWarehouseRequest,
+    V1ListFBSRatingIndexPostingsV1Request,
+    V1ListPostingCodesRequest,
+    V1OrderCancelCheckRequest,
+    V1OrderCancelRequest,
+    V1OrderCancelStatusRequest,
+    V1PolygonDeleteRequest,
+    V1PolygonListRequest,
+    V1PolygonTimeCoordinatesUpdateRequest,
+    V1PolygonTimeSetRequest,
+    V1PostingCancelRequest,
+    V1PostingCancelStatusRequest,
+    V1PostingFBSPickupCodeVerifyRequest,
+    V1PostingFbsProductTraceableAttributeRequest,
+    V1PostingFbsSplitRequest,
     V1PostingFbsTimeslotChangeRestrictionsRequest,
     V1PostingFbsTimeslotSetRequest,
+    V1PostingFbsTraceableSplitRequest,
+    V1PostingMarksRequest,
+    V1PostingUnpaidLegalProductListRequest,
+    V1ProductActionTimerStatusRequest,
+    V1ProductActionTimerUpdateRequest,
     V1ProductCertificateDeleteRequest,
     V1ProductCertificateInfoRequest,
     V1ProductCertificateListRequest,
@@ -302,20 +839,150 @@ import {
     V1ProductCertificateRejectionReasonsListRequest,
     V1ProductCertificateStatusListRequest,
     V1ProductCertificateUnbindRequest,
+    V1ProductGetRelatedSKURequest,
+    V1ProductInfoWarehouseStocksRequest,
+    V1ProductInfoWrongVolumeRequest,
+    V1ProductPricesDetailsRequest,
+    V1ProductUpdateAttributesRequest,
     V1ProductUpdateDiscountRequest,
     V1ProductUpdateOfferIdRequest,
-    V1ProductUploadDigitalCodesRequest,
-    V1ProductUploadDigitalCodesRequestInfo,
+    V1QuestionAnswerCreateRequest,
+    V1QuestionAnswerDeleteRequest,
+    V1QuestionAnswerListRequest,
+    V1QuestionChangeStatusRequest,
+    V1QuestionInfoRequest,
+    V1QuestionListRequest,
+    V1QuestionTopSkuRequest,
     V1RatingHistoryV1Request,
+    V1ReceiptsSellerListRequest,
+    V1ReportMarkedProductsSalesCreateRequest,
+    V1ReturnsCompanyFbsInfoRequest,
+    V1ReturnsRfbsActionSetRequest,
+    V1ReturnsSettingsUtilizationUpdateRequest,
+    V1ReviewChangeStatusRequest,
+    V1ReviewInfoRequest,
+    V1ReviewListRequest,
+    V1SearchAttributeValuesRequest,
+    V1SearchQueriesTextRequest,
+    V1SearchQueriesTopRequest,
+    V1SellerActionsArchiveRequest,
+    V1SellerActionsChangeActivityRequest,
+    V1SellerActionsCreateDiscountRequest,
+    V1SellerActionsCreateDiscountWithConditionRequest,
+    V1SellerActionsCreateInstallmentRequest,
+    V1SellerActionsCreateMultiLevelDiscountRequest,
+    V1SellerActionsCreateVoucherRequest,
+    V1SellerActionsListRequest,
+    V1SellerActionsProductsAddRequest,
+    V1SellerActionsProductsCandidatesRequest,
+    V1SellerActionsProductsDeleteRequest,
+    V1SellerActionsProductsListRequest,
+    V1SellerActionsUpdateDiscountRequest,
+    V1SellerActionsUpdateDiscountWithConditionRequest,
+    V1SellerActionsUpdateInstallmentRequest,
+    V1SellerActionsUpdateMultiLevelDiscountRequest,
+    V1SellerActionsUpdateVoucherRequest,
+    V1SellerActionsVoucherGetRequest,
+    V1SetPostingCutoffRequest,
+    V1SetPostingsRequest,
+    V1SetProductStairwayDiscountByQuantityRequest,
+    V1StocksImportRequest,
     V1StrategyRequest,
+    V1SupplyOrderCancelRequest,
+    V1SupplyOrderCancelStatusRequest,
+    V1SupplyOrderContentUpdateRequest,
+    V1SupplyOrderContentUpdateStatusRequest,
+    V1SupplyOrderContentUpdateValidationRequest,
+    V1SupplyOrderDetailsRequest,
+    V1SupplyOrderPassCreateRequest,
+    V1SupplyOrderPassStatusRequest,
+    V1UnarchiveWarehouseFBSRequest,
     V1UpdatePricingStrategyRequest,
     V1UpdateStatusStrategyRequest,
+    V1UpdateSupplyOrderTimeslotRequest,
+    V1UpdateWarehouseFBSFirstMileRequest,
+    V1UpdateWarehouseFBSRequest,
+    V1UploadPostingCodesRequest,
+    V1UploadReceiptRequest,
+    V1WarehouseERFBSAggregatorCreateRequest,
+    V1WarehouseERFBSAggregatorDeliveryMethodUpdateRequest,
+    V1WarehouseERFBSNonIntegratedCreateRequest,
+    V1WarehouseERFBSNonIntegratedDeliveryMethodUpdateRequest,
+    V1WarehouseERFBSUpdateRequest,
+    V1WarehouseFbsCreateDropOffTimeslotListRequest,
+    V1WarehouseFbsCreatePickUpTimeslotListRequest,
+    V1WarehouseFBSCreateReturnPointListRequest,
+    V1WarehouseFbsPickUpCourierCancelRequest,
+    V1WarehouseFbsPickUpCourierCreateRequest,
+    V1WarehouseFbsPickUpHistoryListRequest,
+    V1WarehouseFbsReturnMileCheckRequest,
+    V1WarehouseFBSReturnMileInfoRequest,
+    V1WarehouseFbsUpdateDropOffTimeslotListRequest,
+    V1WarehouseFbsUpdatePickUpTimeslotListRequest,
+    V1WarehouseFBSUpdateReturnPointListRequest,
+    V1WarehouseInvalidProductsGetRequest,
+    V1WarehouseListRequest,
+    V1WarehouseOZONListRequest,
     V3FinanceCashFlowStatementListRequest,
+    WarehouseApiCreateWarehouseFbsData,
+    WarehouseApiCreateWarehouseFbsError,
     WarehouseApiDeliveryMethodListData,
     WarehouseApiDeliveryMethodListError,
+    WarehouseApiListDropOffPointsForCreateFbsWarehouseData,
+    WarehouseApiListDropOffPointsForCreateFbsWarehouseError,
+    WarehouseApiListDropOffPointsForUpdateFbsWarehouseData,
+    WarehouseApiListDropOffPointsForUpdateFbsWarehouseError,
     WarehouseApiWarehouseListData,
     WarehouseApiWarehouseListError,
     WarehouseDeliveryMethodListRequest,
+    WarehouseErfbsAggregatorCreateData,
+    WarehouseErfbsAggregatorCreateError,
+    WarehouseErfbsAggregatorDeliveryMethodUpdateData,
+    WarehouseErfbsAggregatorDeliveryMethodUpdateError,
+    WarehouseErfbsNonIntegratedCreateData,
+    WarehouseErfbsNonIntegratedCreateError,
+    WarehouseErfbsNonIntegratedDeliveryMethodUpdateData,
+    WarehouseErfbsNonIntegratedDeliveryMethodUpdateError,
+    WarehouseErfbsUpdateData,
+    WarehouseErfbsUpdateError,
+    WarehouseFboSellerListData,
+    WarehouseFboSellerListError,
+    WarehouseFbsCreateDropOffTimeslotListData,
+    WarehouseFbsCreateDropOffTimeslotListError,
+    WarehouseFbsCreatePickUpTimeslotListData,
+    WarehouseFbsCreatePickUpTimeslotListError,
+    WarehouseFbsCreateReturnPointListData,
+    WarehouseFbsCreateReturnPointListError,
+    WarehouseFbsPickUpCourierCancelData,
+    WarehouseFbsPickUpCourierCancelError,
+    WarehouseFbsPickUpCourierCreateData,
+    WarehouseFbsPickUpCourierCreateError,
+    WarehouseFbsPickUpHistoryListData,
+    WarehouseFbsPickUpHistoryListError,
+    WarehouseFbsPickUpPlanningListData,
+    WarehouseFbsPickUpPlanningListError,
+    WarehouseFbsReturnMileCheckData,
+    WarehouseFbsReturnMileCheckError,
+    WarehouseFbsReturnMileInfoData,
+    WarehouseFbsReturnMileInfoError,
+    WarehouseFbsUpdateDropOffTimeslotListData,
+    WarehouseFbsUpdateDropOffTimeslotListError,
+    WarehouseFbsUpdatePickUpTimeslotListData,
+    WarehouseFbsUpdatePickUpTimeslotListError,
+    WarehouseFbsUpdateReturnPointListData,
+    WarehouseFbsUpdateReturnPointListError,
+    WarehouseInvalidProductsGetData,
+    WarehouseInvalidProductsGetError,
+    WarehouseOzonListData,
+    WarehouseOzonListError,
+    WarehouseRfbsPauseData,
+    WarehouseRfbsPauseError,
+    WarehouseRfbsUnpauseData,
+    WarehouseRfbsUnpauseError,
+    WarehouseV1WarehouseRfbsPauseRequest,
+    WarehouseV1WarehouseRfbsUnpauseRequest,
+    WarehouseWithInvalidProductsData,
+    WarehouseWithInvalidProductsError,
 } from './data-contracts';
 import { ContentType, HttpClient, RequestParams } from './http-client';
 
@@ -327,13 +994,136 @@ export class V1<SecurityDataType = unknown> {
     }
 
     /**
-     * @description Позволяет получить статус создания карточки товара.
+     * @description Метод для получения информации и ролях и методах, привязанных к API-ключу.
+     *
+     * @tags APIkey
+     * @name AccessApiRolesByToken
+     * @summary Получить список ролей и методов по API-ключу
+     * @request POST:/v1/roles
+     * @response `200` `AccessApiRolesByTokenData` Список ролей и методов
+     * @response `default` `RpcStatus` Ошибка
+     */
+    accessApiRolesByToken = (params: RequestParams = {}) =>
+        this.http.request<AccessApiRolesByTokenData, AccessApiRolesByTokenError>({
+            path: `/v1/roles`,
+            method: 'POST',
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags SellerInfo
+     * @name SellerApiSellerInfo
+     * @summary Информация о кабинете продавца
+     * @request POST:/v1/seller/info
+     * @response `200` `SellerApiSellerInfoData` Информация о кабинете продавца
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    sellerApiSellerInfo = (params: RequestParams = {}) =>
+        this.http.request<SellerApiSellerInfoData, SellerApiSellerInfoError>({
+            path: `/v1/seller/info`,
+            method: 'POST',
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags SellerInfo
+     * @name SellerApiSellerOzonLogisticsInfo
+     * @summary Информация о подключении Ozon Доставки
+     * @request POST:/v1/seller/ozon-logistics/info
+     * @response `200` `SellerApiSellerOzonLogisticsInfoData` Информация о подключении Ozon Доставки
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    sellerApiSellerOzonLogisticsInfo = (params: RequestParams = {}) =>
+        this.http.request<SellerApiSellerOzonLogisticsInfoData, SellerApiSellerOzonLogisticsInfoError>({
+            path: `/v1/seller/ozon-logistics/info`,
+            method: 'POST',
+            ...params,
+        });
+    /**
+     * @description Возвращает категории и типы для товаров в виде дерева. Создание товаров доступно только в категориях последнего уровня, сравните именно их с категориями на своей площадке. Категории не создаются по запросу пользователя. <aside class="warning"> Внимательно выбирайте категорию для товара: для разных категорий применяется разный размер комиссии. </aside>
+     *
+     * @tags CategoryAPI
+     * @name DescriptionCategoryApiGetTree
+     * @summary Дерево категорий и типов товаров
+     * @request POST:/v1/description-category/tree
+     * @response `200` `DescriptionCategoryApiGetTreeData` Дерево категорий
+     * @response `default` `RpcStatus` Ошибка
+     */
+    descriptionCategoryApiGetTree = (data: V1GetTreeRequest, params: RequestParams = {}) =>
+        this.http.request<DescriptionCategoryApiGetTreeData, DescriptionCategoryApiGetTreeError>({
+            path: `/v1/description-category/tree`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Получение характеристик для указанных категории и типа товара. Если у `dictionary_id` значение `0`, у атрибута нет вложенных справочников. Если значение другое, то справочники есть. Запросите их методом [/v1/description-category/attribute/values](#operation/DescriptionCategoryAPI_GetAttributeValues).
+     *
+     * @tags CategoryAPI
+     * @name DescriptionCategoryApiGetAttributes
+     * @summary Список характеристик категории
+     * @request POST:/v1/description-category/attribute
+     * @response `200` `DescriptionCategoryApiGetAttributesData` Характеристики категории
+     * @response `default` `RpcStatus` Ошибка
+     */
+    descriptionCategoryApiGetAttributes = (data: V1GetAttributesRequest, params: RequestParams = {}) =>
+        this.http.request<DescriptionCategoryApiGetAttributesData, DescriptionCategoryApiGetAttributesError>({
+            path: `/v1/description-category/attribute`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Возвращает справочник значений характеристики. Узнать, есть ли вложенный справочник, можно через метод [/v1/description-category/attribute](#operation/DescriptionCategoryAPI_GetAttributes).
+     *
+     * @tags CategoryAPI
+     * @name DescriptionCategoryApiGetAttributeValues
+     * @summary Справочник значений характеристики
+     * @request POST:/v1/description-category/attribute/values
+     * @response `200` `DescriptionCategoryApiGetAttributeValuesData` Справочник характеристик
+     * @response `default` `RpcStatus` Ошибка
+     */
+    descriptionCategoryApiGetAttributeValues = (data: V1GetAttributeValuesRequest, params: RequestParams = {}) =>
+        this.http.request<DescriptionCategoryApiGetAttributeValuesData, DescriptionCategoryApiGetAttributeValuesError>({
+            path: `/v1/description-category/attribute/values`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Возвращает справочные значения характеристики по заданному значению `value` в запросе. Узнать, есть ли вложенный справочник, можно через метод [/v1/description-category/attribute](#operation/DescriptionCategoryAPI_GetAttributes).
+     *
+     * @tags CategoryAPI
+     * @name DescriptionCategoryApiSearchAttributeValues
+     * @summary Поиск по справочным значениям характеристики
+     * @request POST:/v1/description-category/attribute/values/search
+     * @response `200` `DescriptionCategoryApiSearchAttributeValuesData` Справочные значения характеристики.
+     * @response `default` `RpcStatus` Ошибка.
+     */
+    descriptionCategoryApiSearchAttributeValues = (data: V1SearchAttributeValuesRequest, params: RequestParams = {}) =>
+        this.http.request<
+            DescriptionCategoryApiSearchAttributeValuesData,
+            DescriptionCategoryApiSearchAttributeValuesError
+        >({
+            path: `/v1/description-category/attribute/values/search`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Позволяет получить статус создания или обновления карточки товара.
      *
      * @tags ProductAPI
      * @name ProductApiGetImportProductsInfo
-     * @summary Узнать статус добавления товара
+     * @summary Узнать статус добавления или обновления товара
      * @request POST:/v1/product/import/info
-     * @response `200` `ProductApiGetImportProductsInfoData` Статус добавления товара
+     * @response `200` `ProductApiGetImportProductsInfoData` Статус добавления или обновления товара
      * @response `400` `RpcStatus` Неверный параметр
      * @response `403` `RpcStatus` Доступ запрещён
      * @response `404` `RpcStatus` Ответ не найден
@@ -349,17 +1139,18 @@ export class V1<SecurityDataType = unknown> {
             ...params,
         });
     /**
-     * @description Создаёт товар по указанному Ozon ID. Количество товаров не ограничено. Обновить товар по Ozon ID нельзя.
+     * @description Метод создаёт [копию карточки товара](https://seller-edu.ozon.ru/work-with-goods/zagruzka-tovarov/creating-goods/cherez-kopirovanie) с указанным SKU. Метод копирует только карточку товара другого продавца, скопировать свой товар не получится. Создать копию не получится, если продавец запретил копирование своих карточек. Обновить товар по SKU нельзя. У метода есть лимит на количество операций c товарами в минуту. Если вы превысите лимит, вернётся ошибка `429` с описанием в поле `message` и заголовками: - `Item-Retry-After` — время в минутах до обновления лимита. Для суточного лимита — время до 03:00 по московскому времени. - `Item-Rate-Limit-Remaining` — остаток операций до следующего сброса лимита.
      *
      * @tags ProductAPI
      * @name ProductApiImportProductsBySku
-     * @summary Создать товар по Ozon ID
+     * @summary Создать товар по SKU
      * @request POST:/v1/product/import-by-sku
      * @response `200` `ProductApiImportProductsBySkuData` Товар создан
      * @response `400` `RpcStatus` Неверный параметр
      * @response `403` `RpcStatus` Доступ запрещён
      * @response `404` `RpcStatus` Ответ не найден
      * @response `409` `RpcStatus` Конфликт запроса
+     * @response `429` `RpcStatus` Слишком много запросов
      * @response `500` `RpcStatus` Внутренняя ошибка сервера
      */
     productApiImportProductsBySku = (data: ProductImportProductsBySKURequest, params: RequestParams = {}) =>
@@ -371,7 +1162,30 @@ export class V1<SecurityDataType = unknown> {
             ...params,
         });
     /**
-     * @description Метод для загрузки или обновления изображений товара. При каждом вызове метода передавайте все изображения, которые должны быть на карточке товара. Например, если вы вызвали метод и загрузили 10 изображений, а затем вызвали метод второй раз и загрузили ещё одно, то все 10 предыдущих сотрутся. Для загрузки передайте адрес ссылки на изображение в общедоступном облачном хранилище. Формат изображения по ссылке — JPG или PNG. Изображения в массиве `images` располагайте в соответствии с желаемым порядком на сайте. Главным будет первое изображение в массиве. Для каждого товара вы можете загрузить до 15 изображений. Для загрузки изображений 360 используйте поле `images360`, для загрузки маркетингового цвета — `color_image`. Если вы хотите изменить состав или порядок изображений, получите информацию с помощью методов [/v2/product/info](#operation/ProductAPI_GetProductInfoV2) или [/v2/product/info/list](#operation/ProductAPI_GetProductInfoListV2) — в них отображается текущий порядок и состав изображений. Скопируйте данные полей `images`, `images360`, `color_image`, измените и дополните состав или порядок в соответствии с необходимостью.
+     * @description Метод позволяет добавлять характеристики и изменять их значения. Удалить уже заполненные характеристики не получится. Для полного обновления характеристик используйте <a href="#operation/ProductAPI_ImportProductsV3">/v3/product/import</a>. У метода есть лимит на количество операций c товарами в минуту. Если вы превысите лимит, вернётся ошибка `429` с описанием в поле `message` и заголовками: - `Item-Retry-After` — время в минутах до обновления лимита. Для суточного лимита — время до 03:00 по московскому времени. - `Item-Rate-Limit-Remaining` — остаток операций до следующего сброса лимита.
+     *
+     * @tags ProductAPI
+     * @name ProductApiProductUpdateAttributes
+     * @summary Обновить характеристики товара
+     * @request POST:/v1/product/attributes/update
+     * @response `200` `ProductApiProductUpdateAttributesData` Создано задание на обновление товаров
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `429` `RpcStatus` Слишком много запросов
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    productApiProductUpdateAttributes = (data: V1ProductUpdateAttributesRequest, params: RequestParams = {}) =>
+        this.http.request<ProductApiProductUpdateAttributesData, ProductApiProductUpdateAttributesError>({
+            path: `/v1/product/attributes/update`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Метод для загрузки или обновления изображений товара. При каждом вызове метода передавайте все изображения, которые должны быть на карточке товара. Например, если вы вызвали метод и загрузили 10 изображений, а затем вызвали метод второй раз и загрузили ещё одно, то все 10 предыдущих сотрутся. Для загрузки передайте адрес ссылки на изображение в общедоступном облачном хранилище. Формат изображения по ссылке — JPG или PNG. Изображения в массиве `images` располагайте в соответствии с желаемым порядком на сайте. Главным будет первое изображение в массиве. Для каждого товара вы можете загрузить до 30 изображений. Для загрузки изображений 360 используйте поле `images360`, для загрузки маркетингового цвета — `color_image`. Если вы хотите изменить состав или порядок изображений, получите информацию с помощью метода [/v3/product/info/list](#operation/ProductAPI_GetProductInfoList) — в нём отображается текущий порядок и состав изображений. Скопируйте данные полей `images`, `images360`, `color_image`, измените и дополните состав или порядок в соответствии с необходимостью. У метода есть лимит на количество операций c товарами в минуту. Если вы превысите лимит, вернётся ошибка `429` с описанием в поле `message` и заголовками: - `Item-Retry-After` — время в минутах до обновления лимита. Для суточного лимита — время до 03:00 по московскому времени. - `Item-Rate-Limit-Remaining` — остаток операций до следующего сброса лимита.
      *
      * @tags ProductAPI
      * @name ProductApiProductImportPictures
@@ -382,33 +1196,12 @@ export class V1<SecurityDataType = unknown> {
      * @response `403` `RpcStatus` Доступ запрещён
      * @response `404` `RpcStatus` Ответ не найден
      * @response `409` `RpcStatus` Конфликт запроса
+     * @response `429` `RpcStatus` Слишком много запросов
      * @response `500` `RpcStatus` Внутренняя ошибка сервера
      */
     productApiProductImportPictures = (data: Productv1ProductImportPicturesRequest, params: RequestParams = {}) =>
         this.http.request<ProductApiProductImportPicturesData, ProductApiProductImportPicturesError>({
             path: `/v1/product/pictures/import`,
-            method: 'POST',
-            body: data,
-            type: ContentType.Json,
-            ...params,
-        });
-    /**
-     * No description
-     *
-     * @tags ProductAPI
-     * @name ProductApiProductInfoPictures
-     * @summary Проверить статус загрузки изображений товара
-     * @request POST:/v1/product/pictures/info
-     * @response `200` `ProductApiProductInfoPicturesData` Статус загрузки изображений товара
-     * @response `400` `RpcStatus` Неверный параметр
-     * @response `403` `RpcStatus` Доступ запрещён
-     * @response `404` `RpcStatus` Ответ не найден
-     * @response `409` `RpcStatus` Конфликт запроса
-     * @response `500` `RpcStatus` Внутренняя ошибка сервера
-     */
-    productApiProductInfoPictures = (data: Productv1ProductInfoPicturesRequest, params: RequestParams = {}) =>
-        this.http.request<ProductApiProductInfoPicturesData, ProductApiProductInfoPicturesError>({
-            path: `/v1/product/pictures/info`,
             method: 'POST',
             body: data,
             type: ContentType.Json,
@@ -459,7 +1252,7 @@ export class V1<SecurityDataType = unknown> {
             ...params,
         });
     /**
-     * @description Метод для изменения `offer_id`, привязанных к товарам. Вы можете изменить несколько `offer_id`. Рекомендуем передавать до 250 значений в массиве.
+     * @description Метод для изменения `offer_id`, привязанных к товарам. Вы можете изменить несколько `offer_id`. У метода есть лимит на количество операций c товарами в минуту. Если вы превысите лимит, вернётся ошибка `429` с описанием в поле `message` и заголовками: - `Item-Retry-After` — время в минутах до обновления лимита. Для суточного лимита — время до 03:00 по московскому времени. - `Item-Rate-Limit-Remaining` — остаток операций до следующего сброса лимита.
      *
      * @tags ProductAPI
      * @name ProductApiProductUpdateOfferId
@@ -470,6 +1263,7 @@ export class V1<SecurityDataType = unknown> {
      * @response `403` `RpcStatus` Доступ запрещён
      * @response `404` `RpcStatus` Ответ не найден
      * @response `409` `RpcStatus` Конфликт запроса
+     * @response `429` `RpcStatus` Слишком много запросов
      * @response `500` `RpcStatus` Внутренняя ошибка сервера
      */
     productApiProductUpdateOfferId = (data: V1ProductUpdateOfferIdRequest, params: RequestParams = {}) =>
@@ -525,72 +1319,6 @@ export class V1<SecurityDataType = unknown> {
             ...params,
         });
     /**
-     * No description
-     *
-     * @tags ProductAPI
-     * @name ProductApiGetGeoRestrictionsV1
-     * @summary Получить список геоограничений для услуг
-     * @request POST:/v1/products/geo-restrictions-catalog-by-filter
-     * @response `200` `ProductApiGetGeoRestrictionsV1Data` Список геоограничений
-     * @response `400` `RpcStatus` Неверный параметр
-     * @response `403` `RpcStatus` Доступ запрещён
-     * @response `404` `RpcStatus` Ответ не найден
-     * @response `409` `RpcStatus` Конфликт запроса
-     * @response `500` `RpcStatus` Внутренняя ошибка сервера
-     */
-    productApiGetGeoRestrictionsV1 = (data: Productv2GetGeoRestrictionsByFilterRequest, params: RequestParams = {}) =>
-        this.http.request<ProductApiGetGeoRestrictionsV1Data, ProductApiGetGeoRestrictionsV1Error>({
-            path: `/v1/products/geo-restrictions-catalog-by-filter`,
-            method: 'POST',
-            body: data,
-            type: ContentType.Json,
-            ...params,
-        });
-    /**
-     * @description Загрузите коды активации, если вы загружаете цифровые товары или услуги. Код активации привязывается к карточке цифрового товара.
-     *
-     * @tags ProductAPI
-     * @name ProductApiUploadDigitalCode
-     * @summary Загрузить коды активации для услуг и цифровых товаров
-     * @request POST:/v1/product/upload_digital_codes
-     * @response `200` `ProductApiUploadDigitalCodeData` Идентификатор задачи на загрузку кодов
-     * @response `400` `RpcStatus` Неверный параметр
-     * @response `403` `RpcStatus` Доступ запрещён
-     * @response `404` `RpcStatus` Ответ не найден
-     * @response `409` `RpcStatus` Конфликт запроса
-     * @response `500` `RpcStatus` Внутренняя ошибка сервера
-     */
-    productApiUploadDigitalCode = (data: V1ProductUploadDigitalCodesRequest, params: RequestParams = {}) =>
-        this.http.request<ProductApiUploadDigitalCodeData, ProductApiUploadDigitalCodeError>({
-            path: `/v1/product/upload_digital_codes`,
-            method: 'POST',
-            body: data,
-            type: ContentType.Json,
-            ...params,
-        });
-    /**
-     * @description Метод для получения статуса загрузки кодов активации для услуг и цифровых товаров.
-     *
-     * @tags ProductAPI
-     * @name ProductApiUploadDigitalCodeInfo
-     * @summary Статус загрузки кодов активации
-     * @request POST:/v1/product/upload_digital_codes/info
-     * @response `200` `ProductApiUploadDigitalCodeInfoData` Статус задачи на загрузку кодов
-     * @response `400` `RpcStatus` Неверный параметр
-     * @response `403` `RpcStatus` Доступ запрещён
-     * @response `404` `RpcStatus` Ответ не найден
-     * @response `409` `RpcStatus` Конфликт запроса
-     * @response `500` `RpcStatus` Внутренняя ошибка сервера
-     */
-    productApiUploadDigitalCodeInfo = (data: V1ProductUploadDigitalCodesRequestInfo, params: RequestParams = {}) =>
-        this.http.request<ProductApiUploadDigitalCodeInfoData, ProductApiUploadDigitalCodeInfoError>({
-            path: `/v1/product/upload_digital_codes/info`,
-            method: 'POST',
-            body: data,
-            type: ContentType.Json,
-            ...params,
-        });
-    /**
      * @description Метод для получения количества пользователей, которые нажали **Узнать о поступлении** на странице товара. Вы можете передать несколько товаров в запросе.
      *
      * @tags ProductAPI
@@ -609,22 +1337,40 @@ export class V1<SecurityDataType = unknown> {
             ...params,
         });
     /**
-     * @description Позволяет изменить информацию о количестве товара в наличии. Метод используется только для FBS и rFBS складов. За один запрос можно изменить наличие для 100 товаров. В минуту можно отправить до 80 запросов. Задать наличие товара возможно только после того, как его статус сменится на `processed`.
+     * @description Метод для получения единого SKU по старым идентификаторам SKU FBS и SKU FBO. В ответе будут все SKU, связанные с переданными. Метод может обработать любые SKU, даже скрытые или удалённые. Передавайте до 200 SKU в одном запросе.
      *
-     * @tags Prices&StocksAPI
-     * @name ProductApiImportProductsStocks
-     * @summary Обновить остатки
-     * @request POST:/v1/product/import/stocks
-     * @response `200` `ProductApiImportProductsStocksData` Информация об остатках обновлена
+     * @tags ProductAPI
+     * @name ProductApiProductGetRelatedSku
+     * @summary Получить связанные SKU
+     * @request POST:/v1/product/related-sku/get
+     * @response `200` `ProductApiProductGetRelatedSkuData` Информация об SKU
+     * @response `default` `RpcStatus` Ошибка
+     */
+    productApiProductGetRelatedSku = (data: V1ProductGetRelatedSKURequest, params: RequestParams = {}) =>
+        this.http.request<ProductApiProductGetRelatedSkuData, ProductApiProductGetRelatedSkuError>({
+            path: `/v1/product/related-sku/get`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Возвращает список товаров с некорректными объёмно-весовыми характеристиками (ОВХ). Если вы указали размеры правильно, обратитесь в поддержку Ozon.
+     *
+     * @tags ProductAPI
+     * @name ProductApiProductInfoWrongVolume
+     * @summary Список товаров с некорректными ОВХ
+     * @request POST:/v1/product/info/wrong-volume
+     * @response `200` `ProductApiProductInfoWrongVolumeData` Информация о товарах с некорректными ОВХ
      * @response `400` `RpcStatus` Неверный параметр
      * @response `403` `RpcStatus` Доступ запрещён
      * @response `404` `RpcStatus` Ответ не найден
      * @response `409` `RpcStatus` Конфликт запроса
      * @response `500` `RpcStatus` Внутренняя ошибка сервера
      */
-    productApiImportProductsStocks = (data: ProductImportProductsStocksRequest, params: RequestParams = {}) =>
-        this.http.request<ProductApiImportProductsStocksData, ProductApiImportProductsStocksError>({
-            path: `/v1/product/import/stocks`,
+    productApiProductInfoWrongVolume = (data: V1ProductInfoWrongVolumeRequest, params: RequestParams = {}) =>
+        this.http.request<ProductApiProductInfoWrongVolumeData, ProductApiProductInfoWrongVolumeError>({
+            path: `/v1/product/info/wrong-volume`,
             method: 'POST',
             body: data,
             type: ContentType.Json,
@@ -632,6 +1378,78 @@ export class V1<SecurityDataType = unknown> {
         });
     /**
      * No description
+     *
+     * @tags ProductAPI
+     * @name ProductApiGetProductPlacementZoneInfo
+     * @summary Получить зоны размещения товаров по SKU перед поставкой
+     * @request POST:/v1/product/placement-zone/info
+     * @response `200` `ProductApiGetProductPlacementZoneInfoData` Информация о зонах размещения
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    productApiGetProductPlacementZoneInfo = (data: V1GetProductPlacementZoneInfoRequest, params: RequestParams = {}) =>
+        this.http.request<ProductApiGetProductPlacementZoneInfoData, ProductApiGetProductPlacementZoneInfoError>({
+            path: `/v1/product/placement-zone/info`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Если у товара есть штрихкод, который не указан в системе Ozon, привяжите его с помощью этого метода. Если штрихкода нет, вы можете создать его через метод [/v1/barcode/generate](#operation/generate-barcode). На одном товаре может быть до 100 штрихкодов. С одного аккаунта продавца можно использовать метод не больше 20 раз в минуту.
+     *
+     * @tags BarcodeAPI
+     * @name AddBarcode
+     * @summary Привязать штрихкод к товару
+     * @request POST:/v1/barcode/add
+     * @response `200` `AddBarcodeData` Штрихкод привязан
+     * @response `default` `RpcStatus` Ошибка
+     */
+    addBarcode = (data: V1AddBarcodeRequest, params: RequestParams = {}) =>
+        this.http.request<AddBarcodeData, AddBarcodeError>({
+            path: `/v1/barcode/add`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Если у товара нет штрихкода, вы можете создать его с помощью этого метода. Если штрихкод уже есть, но он не указан в системе Ozon, вы можете привязать его через метод [/v1/barcode/add](#operation/add-barcode). За один запрос вы можете создать штрихкоды не больше чем для 100 товаров. С одного аккаунта продавца можно использовать метод не больше 20 раз в минуту.
+     *
+     * @tags BarcodeAPI
+     * @name GenerateBarcode
+     * @summary Создать штрихкод для товара
+     * @request POST:/v1/barcode/generate
+     * @response `200` `GenerateBarcodeData` Штрихкод создан
+     * @response `default` `RpcStatus` Ошибка
+     */
+    generateBarcode = (data: V1GenerateBarcodeRequest, params: RequestParams = {}) =>
+        this.http.request<GenerateBarcodeData, GenerateBarcodeError>({
+            path: `/v1/barcode/generate`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags Prices&StocksAPI
+     * @name ProductInfoWarehouseStocks
+     * @summary Получить информацию по остаткам на складе FBS и rFBS
+     * @request POST:/v1/product/info/warehouse/stocks
+     * @response `200` `ProductInfoWarehouseStocksData` Количество товара на складе FBS и rFBS
+     * @response `default` `RpcStatus` Ошибка
+     */
+    productInfoWarehouseStocks = (data: V1ProductInfoWarehouseStocksRequest, params: RequestParams = {}) =>
+        this.http.request<ProductInfoWarehouseStocksData, ProductInfoWarehouseStocksError>({
+            path: `/v1/product/info/warehouse/stocks`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description <aside class="warning"> Метод устаревает и будет отключён 7 апреля 2026 года. Переключитесь на <a href="#operation/ProductAPI_GetProductInfoStocksByWarehouseFbsV2">/v2/product/info/stocks-by-warehouse/fbs</a>. </aside> Передайте в запросе `offer_id` или `sku`. Если укажете оба, будет использован только `sku`.
      *
      * @tags Prices&StocksAPI
      * @name ProductApiProductStocksByWarehouseFbs
@@ -656,7 +1474,7 @@ export class V1<SecurityDataType = unknown> {
             ...params,
         });
     /**
-     * @description Позволяет изменить цену одного или нескольких товаров. За один запрос можно изменить цены для 1000 товаров. Чтобы сбросить `old_price` или `premium_price` — поставьте `0` у этих параметров. Новая цена должна отличаться от старой минимум на 5%.
+     * @description Позволяет изменить цену одного или нескольких товаров. Цену каждого товара можно обновлять не больше 10 раз в час. Чтобы сбросить `old_price`, поставьте `0` у этого параметра. Если у товара установлена минимальная цена и включено автоприменение в акции, отключите его и обновите минимальную цену. Иначе вернётся ошибка `action_price_enabled_min_price_missing`. Если запрос содержит оба параметра — `offer_id` и `product_id`, изменения применятся к товару с `offer_id`. Для избежания неоднозначности используйте только один из параметров.
      *
      * @tags Prices&StocksAPI
      * @name ProductApiImportProductsPrices
@@ -678,7 +1496,43 @@ export class V1<SecurityDataType = unknown> {
             ...params,
         });
     /**
-     * @description Метод для получения информации о состоянии и дефектах уценённого товара по его SKU. Также метод возвращает SKU основного товара.
+     * No description
+     *
+     * @tags Prices&StocksAPI
+     * @name ProductApiActionTimerUpdate
+     * @summary Обновление таймера актуальности минимальной цены
+     * @request POST:/v1/product/action/timer/update
+     * @response `200` `ProductApiActionTimerUpdateData` Обновлено
+     * @response `default` `RpcStatus` Ошибка
+     */
+    productApiActionTimerUpdate = (data: V1ProductActionTimerUpdateRequest, params: RequestParams = {}) =>
+        this.http.request<ProductApiActionTimerUpdateData, ProductApiActionTimerUpdateError>({
+            path: `/v1/product/action/timer/update`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags Prices&StocksAPI
+     * @name ProductApiActionTimerStatus
+     * @summary Получить статус установленного таймера
+     * @request POST:/v1/product/action/timer/status
+     * @response `200` `ProductApiActionTimerStatusData` Статусы
+     * @response `default` `RpcStatus` Ошибка
+     */
+    productApiActionTimerStatus = (data: V1ProductActionTimerStatusRequest, params: RequestParams = {}) =>
+        this.http.request<ProductApiActionTimerStatusData, ProductApiActionTimerStatusError>({
+            path: `/v1/product/action/timer/status`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Метод для получения информации о состоянии и дефектах уценённого товара по его SKU. Работает только с уценёнными товарами по схеме FBO. Также метод возвращает SKU основного товара.
      *
      * @tags Prices&StocksAPI
      * @name ProductApiGetProductInfoDiscounted
@@ -722,7 +1576,7 @@ export class V1<SecurityDataType = unknown> {
             ...params,
         });
     /**
-     * @description Метод для получения списка акций, в которых можно участвовать.
+     * @description Метод для получения списка акций Ozon, в которых можно участвовать. [Подробнее об акциях Ozon](https://seller-edu.ozon.ru/ceny-i-akcii/akcii-skidki-i-kupony/promo)
      *
      * @tags Promos
      * @name Promos
@@ -738,7 +1592,7 @@ export class V1<SecurityDataType = unknown> {
             ...params,
         });
     /**
-     * @description Метод для получения списка товаров, которые могут участвовать в акции, по её идентификатору.
+     * @description Метод для получения списка товаров, которые могут участвовать в акции, по её идентификатору. <br> <aside class="warning"> С 5 мая 2025 параметр пагинации <tt>offset<tt> будет отключён. Переключитесь на параметр <tt>last_id<tt>. </aside>
      *
      * @tags Promos
      * @name PromosCandidates
@@ -756,7 +1610,7 @@ export class V1<SecurityDataType = unknown> {
             ...params,
         });
     /**
-     * @description Метод для получения списка товаров, участвующих в акции, по её идентификатору.
+     * @description Метод для получения списка товаров, участвующих в акции, по её идентификатору. <br> <aside class="warning"> С 5 мая 2025 параметр пагинации <tt>offset<tt> будет отключён. Переключитесь на параметр <tt>last_id<tt>. </aside>
      *
      * @tags Promos
      * @name PromosProducts
@@ -810,79 +1664,7 @@ export class V1<SecurityDataType = unknown> {
             ...params,
         });
     /**
-     * No description
-     *
-     * @tags Promos
-     * @name ActionsApiGetHotSalesList
-     * @summary Список доступных акций Hot Sale
-     * @request POST:/v1/actions/hotsales/list
-     * @response `200` `ActionsApiGetHotSalesListData` Список доступных акций Hot Sale
-     * @response `default` `RpcStatus` Ошибка
-     */
-    actionsApiGetHotSalesList = (data: V1GetHotSalesListRequest, params: RequestParams = {}) =>
-        this.http.request<ActionsApiGetHotSalesListData, ActionsApiGetHotSalesListError>({
-            path: `/v1/actions/hotsales/list`,
-            method: 'POST',
-            body: data,
-            type: ContentType.Json,
-            ...params,
-        });
-    /**
-     * @description Метод для получения списка товаров, которые могут участвовать или уже участвуют в акции Hot Sale.
-     *
-     * @tags Promos
-     * @name ActionsApiGetHotSalesProducts
-     * @summary Список товаров, которые участвуют в акции Hot Sale
-     * @request POST:/v1/actions/hotsales/products
-     * @response `200` `ActionsApiGetHotSalesProductsData` Товары, которые участвуют в Hot Sale
-     * @response `default` `RpcStatus` Ошибка
-     */
-    actionsApiGetHotSalesProducts = (data: V1GetHotSalesProductsRequest, params: RequestParams = {}) =>
-        this.http.request<ActionsApiGetHotSalesProductsData, ActionsApiGetHotSalesProductsError>({
-            path: `/v1/actions/hotsales/products`,
-            method: 'POST',
-            body: data,
-            type: ContentType.Json,
-            ...params,
-        });
-    /**
-     * No description
-     *
-     * @tags Promos
-     * @name ActionsApiActivateHotSalesProducts
-     * @summary Добавить товары в акцию Hot Sale
-     * @request POST:/v1/actions/hotsales/activate
-     * @response `200` `ActionsApiActivateHotSalesProductsData` Товары в акции Hot Sale
-     * @response `default` `RpcStatus` Ошибка
-     */
-    actionsApiActivateHotSalesProducts = (data: V1ActivateHotSalesProductsRequest, params: RequestParams = {}) =>
-        this.http.request<ActionsApiActivateHotSalesProductsData, ActionsApiActivateHotSalesProductsError>({
-            path: `/v1/actions/hotsales/activate`,
-            method: 'POST',
-            body: data,
-            type: ContentType.Json,
-            ...params,
-        });
-    /**
-     * No description
-     *
-     * @tags Promos
-     * @name ActionsApiDeactivateHotSalesProducts
-     * @summary Удалить товары из акции Hot Sale
-     * @request POST:/v1/actions/hotsales/deactivate
-     * @response `200` `ActionsApiDeactivateHotSalesProductsData` Товары из акции Hot Sale удалены
-     * @response `default` `RpcStatus` Ошибка
-     */
-    actionsApiDeactivateHotSalesProducts = (data: V1DeactivateHotSalesProductsRequest, params: RequestParams = {}) =>
-        this.http.request<ActionsApiDeactivateHotSalesProductsData, ActionsApiDeactivateHotSalesProductsError>({
-            path: `/v1/actions/hotsales/deactivate`,
-            method: 'POST',
-            body: data,
-            type: ContentType.Json,
-            ...params,
-        });
-    /**
-     * @description Метод для получения списка товаров, которые покупатели хотят купить со скидкой.
+     * @description <aside class="warning"> Метод устаревает и будет отключён в будущем. Переключитесь на <a href="#operation/GetDiscountTaskListV2">/v2/actions/discounts-task/list</a>. </aside> Метод для получения списка товаров, которые покупатели хотят купить со скидкой.
      *
      * @tags Promos
      * @name PromosTaskList
@@ -1077,7 +1859,7 @@ export class V1<SecurityDataType = unknown> {
             ...params,
         });
     /**
-     * No description
+     * @description Если вы добавили товар в стратегию ценообразования, метод вернёт цену и ссылку на товар у конкурента.
      *
      * @tags PricingStrategyAPI
      * @name PricingItemsInfo
@@ -1144,6 +1926,132 @@ export class V1<SecurityDataType = unknown> {
             path: `/v1/pricing-strategy/delete`,
             method: 'POST',
             body: data,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags Pass
+     * @name PassList
+     * @summary Список пропусков
+     * @request POST:/v1/pass/list
+     * @response `200` `PassListData` Список пропусков
+     * @response `default` `RpcStatus` Ошибка
+     */
+    passList = (data: ArrivalpassArrivalPassListRequest, params: RequestParams = {}) =>
+        this.http.request<PassListData, PassListError>({
+            path: `/v1/pass/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Идентификатор созданного пропуска добавится к перевозке.
+     *
+     * @tags Pass
+     * @name CarriagePassCreate
+     * @summary Создать пропуск
+     * @request POST:/v1/carriage/pass/create
+     * @response `200` `CarriagePassCreateData` Пропуск создан
+     * @response `default` `RpcStatus` Ошибка
+     */
+    carriagePassCreate = (data: SellerSellerAPIArrivalPassCreateRequest, params: RequestParams = {}) =>
+        this.http.request<CarriagePassCreateData, CarriagePassCreateError>({
+            path: `/v1/carriage/pass/create`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags Pass
+     * @name CarriagePassUpdate
+     * @summary Обновить пропуск
+     * @request POST:/v1/carriage/pass/update
+     * @response `200` `CarriagePassUpdateData` Пропуск обновлён
+     * @response `default` `RpcStatus` Ошибка
+     */
+    carriagePassUpdate = (data: SellerSellerAPIArrivalPassUpdateRequest, params: RequestParams = {}) =>
+        this.http.request<CarriagePassUpdateData, CarriagePassUpdateError>({
+            path: `/v1/carriage/pass/update`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags Pass
+     * @name CarriagePassDelete
+     * @summary Удалить пропуск
+     * @request POST:/v1/carriage/pass/delete
+     * @response `200` `CarriagePassDeleteData` Пропуск удалён
+     * @response `default` `RpcStatus` Ошибка
+     */
+    carriagePassDelete = (data: SellerSellerAPIArrivalPassDeleteRequest, params: RequestParams = {}) =>
+        this.http.request<CarriagePassDeleteData, CarriagePassDeleteError>({
+            path: `/v1/carriage/pass/delete`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags Pass
+     * @name ReturnPassCreate
+     * @summary Создать пропуск для возврата
+     * @request POST:/v1/return/pass/create
+     * @response `200` `ReturnPassCreateData` Пропуск создан
+     * @response `default` `RpcStatus` Ошибка
+     */
+    returnPassCreate = (data: ArrivalpassArrivalPassCreateRequest, params: RequestParams = {}) =>
+        this.http.request<ReturnPassCreateData, ReturnPassCreateError>({
+            path: `/v1/return/pass/create`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags Pass
+     * @name ReturnPassUpdate
+     * @summary Обновить пропуск для возврата
+     * @request POST:/v1/return/pass/update
+     * @response `200` `ReturnPassUpdateData` Пропуск обновлён
+     * @response `default` `RpcStatus` Ошибка
+     */
+    returnPassUpdate = (data: ArrivalpassArrivalPassUpdateRequest, params: RequestParams = {}) =>
+        this.http.request<ReturnPassUpdateData, ReturnPassUpdateError>({
+            path: `/v1/return/pass/update`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags Pass
+     * @name ReturnPassDelete
+     * @summary Удалить пропуск для возврата
+     * @request POST:/v1/return/pass/delete
+     * @response `200` `ReturnPassDeleteData` Пропуск удалён
+     * @response `default` `RpcStatus` Ошибка
+     */
+    returnPassDelete = (data: ArrivalpassArrivalPassDeleteRequest, params: RequestParams = {}) =>
+        this.http.request<ReturnPassDeleteData, ReturnPassDeleteError>({
+            path: `/v1/return/pass/delete`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
             ...params,
         });
     /**
@@ -1215,21 +2123,21 @@ export class V1<SecurityDataType = unknown> {
             ...params,
         });
     /**
-     * No description
+     * @description <aside class="warning"> 14 апреля 2025 года метод будет отключён. Переключитесь на <a href="#operation/ProductAPI_ProductCertificationList">/v2/product/certification/list</a>. </aside>
      *
      * @tags CertificationAPI
-     * @name ProductApiProductCertificationList
+     * @name ProductApiV1ProductCertificationList
      * @summary Список сертифицируемых категорий
      * @request POST:/v1/product/certification/list
-     * @response `200` `ProductApiProductCertificationListData` Список сертифицируемых категорий
+     * @response `200` `ProductApiV1ProductCertificationListData` Список сертифицируемых категорий
      * @response `400` `RpcStatus` Неверный параметр
      * @response `403` `RpcStatus` Доступ запрещён
      * @response `404` `RpcStatus` Ответ не найден
      * @response `409` `RpcStatus` Конфликт запроса
      * @response `500` `RpcStatus` Внутренняя ошибка сервера
      */
-    productApiProductCertificationList = (data: ProductProductCertificationListRequest, params: RequestParams = {}) =>
-        this.http.request<ProductApiProductCertificationListData, ProductApiProductCertificationListError>({
+    productApiV1ProductCertificationList = (data: ProductProductCertificationListRequest, params: RequestParams = {}) =>
+        this.http.request<ProductApiV1ProductCertificationListData, ProductApiV1ProductCertificationListError>({
             path: `/v1/product/certification/list`,
             method: 'POST',
             body: data,
@@ -1428,7 +2336,7 @@ export class V1<SecurityDataType = unknown> {
             ...params,
         });
     /**
-     * @description В запросе не нужно указывать параметры. Ваша компания будет определена по `Client-ID`.
+     * @description <aside class="warning"> Метод устаревает и будет отключён 7 апреля 2026 года. Переключитесь на <a href="#operation/WarehouseListV2">/v2/warehouse/list</a>. </aside> Возвращает список складов FBS и rFBS. Чтобы получить список складов FBO, используйте метод [/v1/cluster/list](#operation/SupplyDraftAPI_DraftClusterList). Метод можно использовать 1 раз в минуту.
      *
      * @tags WarehouseAPI
      * @name WarehouseApiWarehouseList
@@ -1441,14 +2349,16 @@ export class V1<SecurityDataType = unknown> {
      * @response `409` `RpcStatus` Конфликт запроса
      * @response `500` `RpcStatus` Внутренняя ошибка сервера
      */
-    warehouseApiWarehouseList = (params: RequestParams = {}) =>
+    warehouseApiWarehouseList = (data: V1WarehouseListRequest, params: RequestParams = {}) =>
         this.http.request<WarehouseApiWarehouseListData, WarehouseApiWarehouseListError>({
             path: `/v1/warehouse/list`,
             method: 'POST',
+            body: data,
+            type: ContentType.Json,
             ...params,
         });
     /**
-     * No description
+     * @description <aside class="warning"> Метод устаревает и будет отключён 7 апреля 2026 года. Переключитесь на <a href="#operation/WarehouseAPI_DeliveryMethodListV2">/v2/delivery-method/list</a>. </aside>
      *
      * @tags WarehouseAPI
      * @name WarehouseApiDeliveryMethodList
@@ -1467,6 +2377,115 @@ export class V1<SecurityDataType = unknown> {
             method: 'POST',
             body: data,
             type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags WarehouseAPI
+     * @name GetDeliveryMethodReturnSettingsV1
+     * @summary Получить информацию по возвратным настройкам rFBS и rFBS Express
+     * @request POST:/v1/delivery-method/return/settings/get
+     * @response `200` `GetDeliveryMethodReturnSettingsV1Data` Информация получена
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    getDeliveryMethodReturnSettingsV1 = (
+        data: V1GetDeliveryMethodReturnSettingsV1Request,
+        params: RequestParams = {},
+    ) =>
+        this.http.request<GetDeliveryMethodReturnSettingsV1Data, GetDeliveryMethodReturnSettingsV1Error>({
+            path: `/v1/delivery-method/return/settings/get`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags WarehouseAPI
+     * @name GetWarehouseFbsOperationStatus
+     * @summary Получить статус операции
+     * @request POST:/v1/warehouse/operation/status
+     * @response `200` `GetWarehouseFbsOperationStatusData` Статус операции
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    getWarehouseFbsOperationStatus = (data: V1GetWarehouseFBSOperationStatusRequest, params: RequestParams = {}) =>
+        this.http.request<GetWarehouseFbsOperationStatusData, GetWarehouseFbsOperationStatusError>({
+            path: `/v1/warehouse/operation/status`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags WarehouseAPI
+     * @name ArchiveWarehouseFbs
+     * @summary Перенести склад в архив
+     * @request POST:/v1/warehouse/archive
+     * @response `200` `ArchiveWarehouseFbsData` Склад перенесён в архив
+     * @response `default` `RpcStatus` Ошибка
+     */
+    archiveWarehouseFbs = (data: V1ArchiveWarehouseFBSRequest, params: RequestParams = {}) =>
+        this.http.request<ArchiveWarehouseFbsData, ArchiveWarehouseFbsError>({
+            path: `/v1/warehouse/archive`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags WarehouseAPI
+     * @name UnarchiveWarehouseFbs
+     * @summary Перенести склад из архива
+     * @request POST:/v1/warehouse/unarchive
+     * @response `200` `UnarchiveWarehouseFbsData` Склад перенесён из архива
+     * @response `default` `RpcStatus` Ошибка
+     */
+    unarchiveWarehouseFbs = (data: V1UnarchiveWarehouseFBSRequest, params: RequestParams = {}) =>
+        this.http.request<UnarchiveWarehouseFbsData, UnarchiveWarehouseFbsError>({
+            path: `/v1/warehouse/unarchive`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags WarehouseAPI
+     * @name WarehouseInvalidProductsGet
+     * @summary Получить список товаров с ограничениями по доставке
+     * @request POST:/v1/warehouse/invalid-products/get
+     * @response `200` `WarehouseInvalidProductsGetData` Список товаров с ограничениями
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    warehouseInvalidProductsGet = (data: V1WarehouseInvalidProductsGetRequest, params: RequestParams = {}) =>
+        this.http.request<WarehouseInvalidProductsGetData, WarehouseInvalidProductsGetError>({
+            path: `/v1/warehouse/invalid-products/get`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Возвращает идентификаторы складов, на которых находятся товары с ограничениями. Такие товары недоступны для доставки со склада.
+     *
+     * @tags WarehouseAPI
+     * @name WarehouseWithInvalidProducts
+     * @summary Получить список складов с ограниченными для доставки товарами
+     * @request POST:/v1/warehouse/warehouses-with-invalid-products
+     * @response `200` `WarehouseWithInvalidProductsData` Список складов
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    warehouseWithInvalidProducts = (params: RequestParams = {}) =>
+        this.http.request<WarehouseWithInvalidProductsData, WarehouseWithInvalidProductsError>({
+            path: `/v1/warehouse/warehouses-with-invalid-products`,
+            method: 'POST',
             ...params,
         });
     /**
@@ -1492,7 +2511,7 @@ export class V1<SecurityDataType = unknown> {
             ...params,
         });
     /**
-     * No description
+     * @description <aside class="warning"> Метод устаревает и будет отключён в будущем. Переключитесь на <a href="#operation/PolygonBind">/v2/polygon/bind </a>. </aside>
      *
      * @tags PolygonAPI
      * @name PolygonApiBindPolygon
@@ -1514,58 +2533,402 @@ export class V1<SecurityDataType = unknown> {
             ...params,
         });
     /**
+     * @description Возвращает список причин отмены для всех FBO-отправлений.
+     *
+     * @tags FBO
+     * @name PostingApiGetPostingFboCancelReasonList
+     * @summary Причины отмены отправлений по схеме FBO
+     * @request POST:/v1/posting/fbo/cancel-reason/list
+     * @response `200` `PostingApiGetPostingFboCancelReasonListData` Причины отмены отправлений
+     * @response `default` `RpcStatus` Ошибка
+     */
+    postingApiGetPostingFboCancelReasonList = (params: RequestParams = {}) =>
+        this.http.request<PostingApiGetPostingFboCancelReasonListData, PostingApiGetPostingFboCancelReasonListError>({
+            path: `/v1/posting/fbo/cancel-reason/list`,
+            method: 'POST',
+            ...params,
+        });
+    /**
+     * @description Возвращает количество заявок в конкретном статусе.
+     *
+     * @tags FBO
+     * @name SupplyOrderApiSupplyOrderStatusCounter
+     * @summary Количество заявок по статусам
+     * @request POST:/v1/supply-order/status/counter
+     * @response `200` `SupplyOrderApiSupplyOrderStatusCounterData` Статус заявки и количество заявок в этом статусе
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    supplyOrderApiSupplyOrderStatusCounter = (data: CommonEmpty, params: RequestParams = {}) =>
+        this.http.request<SupplyOrderApiSupplyOrderStatusCounterData, SupplyOrderApiSupplyOrderStatusCounterError>({
+            path: `/v1/supply-order/status/counter`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Используйте метод, чтобы получить товарный состав поставки или черновика заявки на поставку. Одним вызовом метода можно получить состав одной поставки или черновика заявки.
+     *
+     * @tags FBO
+     * @name SupplyOrderBundle
+     * @summary Состав поставки или заявки на поставку
+     * @request POST:/v1/supply-order/bundle
+     * @response `200` `SupplyOrderBundleData` Состав поставки
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    supplyOrderBundle = (data: V1GetSupplyOrderBundleRequest, params: RequestParams = {}) =>
+        this.http.request<SupplyOrderBundleData, SupplyOrderBundleError>({
+            path: `/v1/supply-order/bundle`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
      * No description
      *
-     * @tags PolygonAPI
-     * @name PolygonApiDeletePolygon
-     * @summary Удалите полигон
-     * @request POST:/v1/polygon/delete
-     * @response `200` `PolygonApiDeletePolygonData` Успешно
+     * @tags FBO
+     * @name SupplyOrderApiGetSupplyOrderTimeslots
+     * @summary Интервалы поставки
+     * @request POST:/v1/supply-order/timeslot/get
+     * @response `200` `SupplyOrderApiGetSupplyOrderTimeslotsData` Список интервалов поставки
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    supplyOrderApiGetSupplyOrderTimeslots = (data: V1GetSupplyOrderTimeslotsRequest, params: RequestParams = {}) =>
+        this.http.request<SupplyOrderApiGetSupplyOrderTimeslotsData, SupplyOrderApiGetSupplyOrderTimeslotsError>({
+            path: `/v1/supply-order/timeslot/get`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags FBO
+     * @name SupplyOrderApiUpdateSupplyOrderTimeslot
+     * @summary Обновить интервал поставки
+     * @request POST:/v1/supply-order/timeslot/update
+     * @response `200` `SupplyOrderApiUpdateSupplyOrderTimeslotData` Интервал обновлён
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    supplyOrderApiUpdateSupplyOrderTimeslot = (data: V1UpdateSupplyOrderTimeslotRequest, params: RequestParams = {}) =>
+        this.http.request<SupplyOrderApiUpdateSupplyOrderTimeslotData, SupplyOrderApiUpdateSupplyOrderTimeslotError>({
+            path: `/v1/supply-order/timeslot/update`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags FBO
+     * @name SupplyOrderApiGetSupplyOrderTimeslotStatus
+     * @summary Статус интервала поставки
+     * @request POST:/v1/supply-order/timeslot/status
+     * @response `200` `SupplyOrderApiGetSupplyOrderTimeslotStatusData` Статус данных
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    supplyOrderApiGetSupplyOrderTimeslotStatus = (
+        data: V1GetSupplyOrderTimeslotStatusRequest,
+        params: RequestParams = {},
+    ) =>
+        this.http.request<
+            SupplyOrderApiGetSupplyOrderTimeslotStatusData,
+            SupplyOrderApiGetSupplyOrderTimeslotStatusError
+        >({
+            path: `/v1/supply-order/timeslot/status`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags FBO
+     * @name SupplyOrderApiSupplyOrderPassCreate
+     * @summary Указать данные о водителе и автомобиле
+     * @request POST:/v1/supply-order/pass/create
+     * @response `200` `SupplyOrderApiSupplyOrderPassCreateData` Данные указаны
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    supplyOrderApiSupplyOrderPassCreate = (data: V1SupplyOrderPassCreateRequest, params: RequestParams = {}) =>
+        this.http.request<SupplyOrderApiSupplyOrderPassCreateData, SupplyOrderApiSupplyOrderPassCreateError>({
+            path: `/v1/supply-order/pass/create`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags FBO
+     * @name SupplyOrderApiSupplyOrderPassStatus
+     * @summary Статус ввода данных о водителе и автомобиле
+     * @request POST:/v1/supply-order/pass/status
+     * @response `200` `SupplyOrderApiSupplyOrderPassStatusData` Статус
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    supplyOrderApiSupplyOrderPassStatus = (data: V1SupplyOrderPassStatusRequest, params: RequestParams = {}) =>
+        this.http.request<SupplyOrderApiSupplyOrderPassStatusData, SupplyOrderApiSupplyOrderPassStatusError>({
+            path: `/v1/supply-order/pass/status`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags FBO
+     * @name SupplyOrderApiSupplyOrderDetails
+     * @summary Получить подробную информацию о заявке на поставку
+     * @request POST:/v1/supply-order/details
+     * @response `200` `SupplyOrderApiSupplyOrderDetailsData` Подробная информация о заявке
      * @response `400` `RpcStatus` Неверный параметр
      * @response `403` `RpcStatus` Доступ запрещён
      * @response `404` `RpcStatus` Ответ не найден
      * @response `409` `RpcStatus` Конфликт запроса
      * @response `500` `RpcStatus` Внутренняя ошибка сервера
      */
-    polygonApiDeletePolygon = (data: Polygonv1PolygonDeleteRequest, params: RequestParams = {}) =>
-        this.http.request<PolygonApiDeletePolygonData, PolygonApiDeletePolygonError>({
-            path: `/v1/polygon/delete`,
+    supplyOrderApiSupplyOrderDetails = (data: V1SupplyOrderDetailsRequest, params: RequestParams = {}) =>
+        this.http.request<SupplyOrderApiSupplyOrderDetailsData, SupplyOrderApiSupplyOrderDetailsError>({
+            path: `/v1/supply-order/details`,
             method: 'POST',
             body: data,
             type: ContentType.Json,
             ...params,
         });
     /**
-     * @description Метод для получения списка заявок на поставку. Учитываются заявки с поставкой на конкретный склад и [через виртуальный распределительный центр (вРЦ)](https://seller-edu.ozon.ru/fbo/scheme-of-work/about#чем-отличаются-процессы-при-заявках-через-врц-и-напрямую-на-склад).
+     * @description Метод возвращает список активных складов Ozon с информацией об их средней загруженности на ближайшее время.
      *
      * @tags FBO
-     * @name SupplyOrderApiGetSupplyOrdersList
-     * @summary Список заявок на поставку на склад Ozon
-     * @request POST:/v1/supply-order/list
-     * @response `200` `SupplyOrderApiGetSupplyOrdersListData` Список заявок на поставку
+     * @name SupplierApiSupplierAvailableWarehouses
+     * @summary Загруженность складов Ozon
+     * @request GET:/v1/supplier/available_warehouses
+     * @response `200` `SupplierApiSupplierAvailableWarehousesData` Информация о загруженности складов
      * @response `default` `RpcStatus` Ошибка
      */
-    supplyOrderApiGetSupplyOrdersList = (data: V1GetSupplyOrdersListRequest, params: RequestParams = {}) =>
-        this.http.request<SupplyOrderApiGetSupplyOrdersListData, SupplyOrderApiGetSupplyOrdersListError>({
-            path: `/v1/supply-order/list`,
+    supplierApiSupplierAvailableWarehouses = (params: RequestParams = {}) =>
+        this.http.request<SupplierApiSupplierAvailableWarehousesData, SupplierApiSupplierAvailableWarehousesError>({
+            path: `/v1/supplier/available_warehouses`,
+            method: 'GET',
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags FboSupplyRequest
+     * @name SupplyDraftApiDraftClusterList
+     * @summary Информация о кластерах и их складах
+     * @request POST:/v1/cluster/list
+     * @response `200` `SupplyDraftApiDraftClusterListData` Информация о кластерах
+     * @response `default` `RpcStatus` Ошибка
+     */
+    supplyDraftApiDraftClusterList = (data: V1DraftClusterListRequest, params: RequestParams = {}) =>
+        this.http.request<SupplyDraftApiDraftClusterListData, SupplyDraftApiDraftClusterListError>({
+            path: `/v1/cluster/list`,
             method: 'POST',
             body: data,
             type: ContentType.Json,
             ...params,
         });
     /**
-     * @description Метод для получения детальной информации по заявке на поставку. Учитываются заявки с поставкой на конкретный склад и [через виртуальный распределительный центр (вРЦ)](https://seller-edu.ozon.ru/fbo/scheme-of-work/about#чем-отличаются-процессы-при-заявках-через-врц-и-напрямую-на-склад).
+     * @description Используйте метод, чтобы найти точки отгрузки для кросс-докинга и прямых поставок. Вы можете посмотреть адреса всех точек на карте и в виде таблицы в [Базе знаний](https://seller-edu.ozon.ru/fbo/warehouses/adresa-skladov-fbo).
      *
-     * @tags FBO
-     * @name SupplyOrderApiGetSupplyOrder
-     * @summary Информация о заявке на поставку
-     * @request POST:/v1/supply-order/get
-     * @response `200` `SupplyOrderApiGetSupplyOrderData` Информация о заявке
+     * @tags FboSupplyRequest
+     * @name SupplyDraftApiDraftGetWarehouseFboList
+     * @summary Поиск точек для отгрузки поставки
+     * @request POST:/v1/warehouse/fbo/list
+     * @response `200` `SupplyDraftApiDraftGetWarehouseFboListData` Информация о складах
      * @response `default` `RpcStatus` Ошибка
      */
-    supplyOrderApiGetSupplyOrder = (data: V1GetSupplyOrderRequest, params: RequestParams = {}) =>
-        this.http.request<SupplyOrderApiGetSupplyOrderData, SupplyOrderApiGetSupplyOrderError>({
-            path: `/v1/supply-order/get`,
+    supplyDraftApiDraftGetWarehouseFboList = (data: V1DraftGetWarehouseFboListRequest, params: RequestParams = {}) =>
+        this.http.request<SupplyDraftApiDraftGetWarehouseFboListData, SupplyDraftApiDraftGetWarehouseFboListError>({
+            path: `/v1/warehouse/fbo/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description <aside class="warning"> Метод устаревает и будет отключён 16 марта 2026 года. Используйте <a href="#operation/DraftCrossdockCreate">/v1/draft/crossdock/create</a>, <a href="#operation/DraftDirectCreate">/v1/draft/direct/create</a> или <a href="#operation/DraftMultiClusterCreate">/v1/draft/multi-cluster/create</a>. </aside> <aside class="warning">Черновик заявки на поставку доступен 30 минут. Вы можете создавать черновики заявки на поставку 2 раза в минуту и 50 раз в час. Максимум — 500 черновиков в день. Если превысите лимит, вернётся ошибка 429.</aside> Создать черновик заявки на поставку — прямой или кросс-докинг, а также указать поставляемые товары.
+     *
+     * @tags FboSupplyRequest
+     * @name SupplyDraftApiDraftCreate
+     * @summary Создать черновик заявки на поставку
+     * @request POST:/v1/draft/create
+     * @response `200` `SupplyDraftApiDraftCreateData` Черновик заявки создан
+     * @response `default` `RpcStatus` Ошибка
+     */
+    supplyDraftApiDraftCreate = (data: V1DraftCreateRequest, params: RequestParams = {}) =>
+        this.http.request<SupplyDraftApiDraftCreateData, SupplyDraftApiDraftCreateError>({
+            path: `/v1/draft/create`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description <aside class="warning">Черновик заявки на поставку доступен 30 минут.</aside> Вы можете создавать черновики заявки на поставку: - 2 раза в минуту; - 50 раз в час; - 500 раз в день. Если превысите лимит, вернётся ошибка 429.
+     *
+     * @tags FboSupplyRequest
+     * @name DraftCrossdockCreate
+     * @summary Создать черновик заявки на поставку кросс-докингом
+     * @request POST:/v1/draft/crossdock/create
+     * @response `200` `DraftCrossdockCreateData` Черновик создан
+     * @response `default` `RpcStatus` Ошибка
+     */
+    draftCrossdockCreate = (data: V1DraftCrossdockCreateRequest, params: RequestParams = {}) =>
+        this.http.request<DraftCrossdockCreateData, DraftCrossdockCreateError>({
+            path: `/v1/draft/crossdock/create`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description <aside class="warning">Черновик заявки на поставку доступен 30 минут.</aside> Вы можете создавать черновики заявки на поставку: - 2 раза в минуту; - 50 раз в час; - 500 раз в день. Если превысите лимит, вернётся ошибка 429.
+     *
+     * @tags FboSupplyRequest
+     * @name DraftDirectCreate
+     * @summary Создать черновик заявки на прямую поставку
+     * @request POST:/v1/draft/direct/create
+     * @response `200` `DraftDirectCreateData` Черновик создан
+     * @response `default` `RpcStatus` Ошибка
+     */
+    draftDirectCreate = (data: V1DraftDirectCreateRequest, params: RequestParams = {}) =>
+        this.http.request<DraftDirectCreateData, DraftDirectCreateError>({
+            path: `/v1/draft/direct/create`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description <aside class="warning">Черновик заявки на поставку доступен 30 минут.</aside> Вы можете создавать черновики заявки на поставку: - 2 раза в минуту; - 50 раз в час; - 500 раз в день. Если превысите лимит, вернётся ошибка 429.
+     *
+     * @tags FboSupplyRequest
+     * @name DraftMultiClusterCreate
+     * @summary Создать черновик заявки на поставку для нескольких кластеров
+     * @request POST:/v1/draft/multi-cluster/create
+     * @response `200` `DraftMultiClusterCreateData` Черновик создан
+     * @response `default` `RpcStatus` Ошибка
+     */
+    draftMultiClusterCreate = (data: V1DraftMultiClusterCreateRequest, params: RequestParams = {}) =>
+        this.http.request<DraftMultiClusterCreateData, DraftMultiClusterCreateError>({
+            path: `/v1/draft/multi-cluster/create`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description <aside class="warning"> Метод устаревает и будет отключён 16 марта 2026 года. Используйте <a href="#operation/DraftCreateInfo">/v2/draft/create/info</a>. </aside> <aside class="warning">Вы можете создавать черновики заявки на поставку 2 раза в минуту и 50 раз в час. Если превысите лимит, вернётся ошибка 429.</aside> Возвращает информацию о созданном черновике заявки на поставку. В ответе вернутся склады размещения в каждом выбранном кластере, которые примут все товары.
+     *
+     * @tags FboSupplyRequest
+     * @name SupplyDraftApiDraftCreateInfo
+     * @summary Информация о черновике заявки на поставку
+     * @request POST:/v1/draft/create/info
+     * @response `200` `SupplyDraftApiDraftCreateInfoData` Информация о черновике заявки на поставку
+     * @response `default` `RpcStatus` Ошибка
+     */
+    supplyDraftApiDraftCreateInfo = (data: V1DraftCreateInfoRequest, params: RequestParams = {}) =>
+        this.http.request<SupplyDraftApiDraftCreateInfoData, SupplyDraftApiDraftCreateInfoError>({
+            path: `/v1/draft/create/info`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description <aside class="warning"> Метод устаревает и будет отключён 16 марта 2026 года. Используйте <a href="#operation/DraftTimeslotInfo">/v2/draft/timeslot/info</a>. </aside> <aside class="warning">Черновик заявки на поставку доступен 30 минут.</aside> Возвращает доступные таймслоты на конечных складах отгрузки. Для кросс-док поставок вернутся таймслоты склада отгрузки, который был передан при создании черновика.
+     *
+     * @tags FboSupplyRequest
+     * @name SupplyDraftApiDraftTimeslotInfo
+     * @summary Доступные таймслоты
+     * @request POST:/v1/draft/timeslot/info
+     * @response `200` `SupplyDraftApiDraftTimeslotInfoData` Таймслоты
+     * @response `default` `RpcStatus` Ошибка
+     */
+    supplyDraftApiDraftTimeslotInfo = (data: V1DraftTimeslotInfoRequest, params: RequestParams = {}) =>
+        this.http.request<SupplyDraftApiDraftTimeslotInfoData, SupplyDraftApiDraftTimeslotInfoError>({
+            path: `/v1/draft/timeslot/info`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description <aside class="warning"> Метод устаревает и будет отключён 16 марта 2026 года. Используйте <a href="#operation/DraftSupplyCreate">/v2/draft/supply/create</a>. </aside>
+     *
+     * @tags FboSupplyRequest
+     * @name SupplyDraftApiDraftSupplyCreate
+     * @summary Создать заявку на поставку по черновику
+     * @request POST:/v1/draft/supply/create
+     * @response `200` `SupplyDraftApiDraftSupplyCreateData` Заявка создана
+     * @response `default` `RpcStatus` Ошибка
+     */
+    supplyDraftApiDraftSupplyCreate = (data: V1DraftSupplyCreateRequest, params: RequestParams = {}) =>
+        this.http.request<SupplyDraftApiDraftSupplyCreateData, SupplyDraftApiDraftSupplyCreateError>({
+            path: `/v1/draft/supply/create`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description <aside class="warning"> Метод устаревает и будет отключён 16 марта 2026 года. Используйте <a href="#operation/DraftSupplyCreateStatus">/v2/draft/supply/create/status</a>. </aside>
+     *
+     * @tags FboSupplyRequest
+     * @name SupplyDraftApiDraftSupplyCreateStatus
+     * @summary Информация о создании заявки на поставку
+     * @request POST:/v1/draft/supply/create/status
+     * @response `200` `SupplyDraftApiDraftSupplyCreateStatusData` Информация о создании заявки на поставку
+     * @response `default` `RpcStatus` Ошибка
+     */
+    supplyDraftApiDraftSupplyCreateStatus = (data: V1DraftSupplyCreateStatusRequest, params: RequestParams = {}) =>
+        this.http.request<SupplyDraftApiDraftSupplyCreateStatusData, SupplyDraftApiDraftSupplyCreateStatusError>({
+            path: `/v1/draft/supply/create/status`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Используйте метод, чтобы передать грузоместа и товарный состав в заявку на поставку.
+     *
+     * @tags FboSupplyRequest
+     * @name CargoesApiCargoesCreate
+     * @summary Установка грузомест
+     * @request POST:/v1/cargoes/create
+     * @response `200` `CargoesApiCargoesCreateData` Грузоместа установлены
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    cargoesApiCargoesCreate = (data: V1CargoesCreateRequest, params: RequestParams = {}) =>
+        this.http.request<CargoesApiCargoesCreateData, CargoesApiCargoesCreateError>({
+            path: `/v1/cargoes/create`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description <aside class="warning"> 7 ноября 2025 года метод будет отключён. Переключитесь на <a href="#operation/CargoesCreateInfoV2">/v2/cargoes/create/info</a>. </aside>
+     *
+     * @tags FboSupplyRequest
+     * @name CargoesApiCargoesCreateInfo
+     * @summary Получить информацию по установке грузомест
+     * @request POST:/v1/cargoes/create/info
+     * @response `200` `CargoesApiCargoesCreateInfoData` Результат запроса
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    cargoesApiCargoesCreateInfo = (data: V1CargoesCreateInfoRequest, params: RequestParams = {}) =>
+        this.http.request<CargoesApiCargoesCreateInfoData, CargoesApiCargoesCreateInfoError>({
+            path: `/v1/cargoes/create/info`,
             method: 'POST',
             body: data,
             type: ContentType.Json,
@@ -1574,16 +2937,629 @@ export class V1<SecurityDataType = unknown> {
     /**
      * No description
      *
-     * @tags FBO
-     * @name SupplyOrderApiGetSupplyOrderItems
-     * @summary Список товаров в заявке на поставку
-     * @request POST:/v1/supply-order/items
-     * @response `200` `SupplyOrderApiGetSupplyOrderItemsData` Список товаров
+     * @tags FboSupplyRequest
+     * @name CargoesGet
+     * @summary Получить информацию о грузоместах
+     * @request POST:/v1/cargoes/get
+     * @response `200` `CargoesGetData` Информация о грузоместах
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    cargoesGet = (data: V1CargoesGetRequest, params: RequestParams = {}) =>
+        this.http.request<CargoesGetData, CargoesGetError>({
+            path: `/v1/cargoes/get`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Метод для удаления грузомест в заявке на поставку. Чтобы проверить статус удаления, используйте метод [/v1/cargoes/delete/status](#operation/CargoesAPI_CargoesDeleteStatus).
+     *
+     * @tags FboSupplyRequest
+     * @name CargoesApiCargoesDelete
+     * @summary Удалить грузоместо в заявке на поставку
+     * @request POST:/v1/cargoes/delete
+     * @response `200` `CargoesApiCargoesDeleteData` Грузоместо удалено
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    cargoesApiCargoesDelete = (data: V1CargoesDeleteRequest, params: RequestParams = {}) =>
+        this.http.request<CargoesApiCargoesDeleteData, CargoesApiCargoesDeleteError>({
+            path: `/v1/cargoes/delete`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Метод для получения статуса удаления грузомест в заявке на поставку.
+     *
+     * @tags FboSupplyRequest
+     * @name CargoesApiCargoesDeleteStatus
+     * @summary Информация о статусе удаления грузоместа
+     * @request POST:/v1/cargoes/delete/status
+     * @response `200` `CargoesApiCargoesDeleteStatusData` Статус удаления грузоместа
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    cargoesApiCargoesDeleteStatus = (data: V1CargoesDeleteStatusRequest, params: RequestParams = {}) =>
+        this.http.request<CargoesApiCargoesDeleteStatusData, CargoesApiCargoesDeleteStatusError>({
+            path: `/v1/cargoes/delete/status`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Метод для получения чек-листа с правилами по установке грузомест.
+     *
+     * @tags FboSupplyRequest
+     * @name CargoesApiCargoesRulesGet
+     * @summary Чек-лист по установке грузомест FBO
+     * @request POST:/v1/cargoes/rules/get
+     * @response `200` `CargoesApiCargoesRulesGetData` Чек-лист по установке грузомест
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    cargoesApiCargoesRulesGet = (data: V1CargoesRulesGetRequest, params: RequestParams = {}) =>
+        this.http.request<CargoesApiCargoesRulesGetData, CargoesApiCargoesRulesGetError>({
+            path: `/v1/cargoes/rules/get`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Используйте метод, чтобы сгенерировать этикетки для грузомест из заявки на поставку.
+     *
+     * @tags FboSupplyRequest
+     * @name CargoesApiCargoesLabelCreate
+     * @summary Сгенерировать этикетки для грузомест
+     * @request POST:/v1/cargoes-label/create
+     * @response `200` `CargoesApiCargoesLabelCreateData` Результат запроса
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    cargoesApiCargoesLabelCreate = (data: V1CargoesLabelCreateRequest, params: RequestParams = {}) =>
+        this.http.request<CargoesApiCargoesLabelCreateData, CargoesApiCargoesLabelCreateError>({
+            path: `/v1/cargoes-label/create`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Возвращает статус формирования этикеток и ссылку на PDF-файл с ними.
+     *
+     * @tags FboSupplyRequest
+     * @name CargoesApiCargoesLabelGet
+     * @summary Получить идентификатор этикетки для грузомест
+     * @request POST:/v1/cargoes-label/get
+     * @response `200` `CargoesApiCargoesLabelGetData` Этикетка для грузомест
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    cargoesApiCargoesLabelGet = (data: V1CargoesLabelGetRequest, params: RequestParams = {}) =>
+        this.http.request<CargoesApiCargoesLabelGetData, CargoesApiCargoesLabelGetError>({
+            path: `/v1/cargoes-label/get`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description <aside class="warning"> 10 апреля 2026 года отключим метод. Переключитесь на <a href="#operation/CargoesAPI_CargoesLabelGet">/v1/cargoes-label/get</a>. </aside>
+     *
+     * @tags FboSupplyRequest
+     * @name CargoesApiCargoesLabelFile
+     * @summary Получить PDF с этикетками грузовых мест
+     * @request GET:/v1/cargoes-label/file/{file_guid}
+     * @response `200` `CargoesApiCargoesLabelFileData` Этикетки грузовых мест
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    cargoesApiCargoesLabelFile = (fileGuid: string, params: RequestParams = {}) =>
+        this.http.request<CargoesApiCargoesLabelFileData, CargoesApiCargoesLabelFileError>({
+            path: `/v1/cargoes-label/file/${fileGuid}`,
+            method: 'GET',
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags FboSupplyRequest
+     * @name SupplyOrderApiSupplyOrderCancel
+     * @summary Отменить заявку на поставку
+     * @request POST:/v1/supply-order/cancel
+     * @response `200` `SupplyOrderApiSupplyOrderCancelData` Отмена заявки на поставку в процессе
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    supplyOrderApiSupplyOrderCancel = (data: V1SupplyOrderCancelRequest, params: RequestParams = {}) =>
+        this.http.request<SupplyOrderApiSupplyOrderCancelData, SupplyOrderApiSupplyOrderCancelError>({
+            path: `/v1/supply-order/cancel`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags FboSupplyRequest
+     * @name SupplyOrderApiSupplyOrderCancelStatus
+     * @summary Получить статус отмены заявки на поставку
+     * @request POST:/v1/supply-order/cancel/status
+     * @response `200` `SupplyOrderApiSupplyOrderCancelStatusData` Статус отмены заявки на поставку
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    supplyOrderApiSupplyOrderCancelStatus = (data: V1SupplyOrderCancelStatusRequest, params: RequestParams = {}) =>
+        this.http.request<SupplyOrderApiSupplyOrderCancelStatusData, SupplyOrderApiSupplyOrderCancelStatusError>({
+            path: `/v1/supply-order/cancel/status`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Метод для редактирования товарного состава в заявке на поставку. Чтобы проверить статус редактирования, используйте метод [/v1/supply-order/content/update/status](#operation/SupplyOrderAPI_SupplyOrderContentUpdateStatus).
+     *
+     * @tags FboSupplyRequest
+     * @name SupplyOrderApiSupplyOrderContentUpdate
+     * @summary Редактирование товарного состава
+     * @request POST:/v1/supply-order/content/update
+     * @response `200` `SupplyOrderApiSupplyOrderContentUpdateData` Товарный состав обновлён
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    supplyOrderApiSupplyOrderContentUpdate = (data: V1SupplyOrderContentUpdateRequest, params: RequestParams = {}) =>
+        this.http.request<SupplyOrderApiSupplyOrderContentUpdateData, SupplyOrderApiSupplyOrderContentUpdateError>({
+            path: `/v1/supply-order/content/update`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Метод для получения статуса редактирования товарного состава.
+     *
+     * @tags FboSupplyRequest
+     * @name SupplyOrderApiSupplyOrderContentUpdateStatus
+     * @summary Информация о статусе редактирования товарного состава
+     * @request POST:/v1/supply-order/content/update/status
+     * @response `200` `SupplyOrderApiSupplyOrderContentUpdateStatusData` Статус редактирования
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    supplyOrderApiSupplyOrderContentUpdateStatus = (
+        data: V1SupplyOrderContentUpdateStatusRequest,
+        params: RequestParams = {},
+    ) =>
+        this.http.request<
+            SupplyOrderApiSupplyOrderContentUpdateStatusData,
+            SupplyOrderApiSupplyOrderContentUpdateStatusError
+        >({
+            path: `/v1/supply-order/content/update/status`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Используйте этот метод, если в [/v1/supply-order/content/update/status](#operation/SupplyOrderAPI_SupplyOrderContentUpdateStatus) вы получили ошибку `SUPPLY_CONTENT_NOT_VALID`.
+     *
+     * @tags FboSupplyRequest
+     * @name SupplyOrderContentUpdateValidation
+     * @summary Проверить новый товарный состав
+     * @request POST:/v1/supply-order/content/update/validation
+     * @response `200` `SupplyOrderContentUpdateValidationData` Успешно
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    supplyOrderContentUpdateValidation = (
+        data: V1SupplyOrderContentUpdateValidationRequest,
+        params: RequestParams = {},
+    ) =>
+        this.http.request<SupplyOrderContentUpdateValidationData, SupplyOrderContentUpdateValidationError>({
+            path: `/v1/supply-order/content/update/validation`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags FboSupplyRequest
+     * @name WarehouseFboSellerList
+     * @summary Получить список складов продавца
+     * @request POST:/v1/warehouse/fbo/seller/list
+     * @response `200` `WarehouseFboSellerListData` Список складов
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    warehouseFboSellerList = (params: RequestParams = {}) =>
+        this.http.request<WarehouseFboSellerListData, WarehouseFboSellerListError>({
+            path: `/v1/warehouse/fbo/seller/list`,
+            method: 'POST',
+            ...params,
+        });
+    /**
+     * @description Используйте метод после передачи информации по экземплярам методом [/v6/fbs/posting/product/exemplar/set](#operation/PostingAPI_FbsPostingProductExemplarSetV6), чтобы сохранить обновлённые данные по экземплярам для отправлений в статусе «Ожидает отгрузки».
+     *
+     * @tags FBS&rFBSMarks
+     * @name PostingApiFbsPostingProductExemplarUpdate
+     * @summary Обновить данные экземпляров
+     * @request POST:/v1/fbs/posting/product/exemplar/update
+     * @response `200` `PostingApiFbsPostingProductExemplarUpdateData` Данные обновлены
      * @response `default` `RpcStatus` Ошибка
      */
-    supplyOrderApiGetSupplyOrderItems = (data: V1GetSupplyOrderItemsRequest, params: RequestParams = {}) =>
-        this.http.request<SupplyOrderApiGetSupplyOrderItemsData, SupplyOrderApiGetSupplyOrderItemsError>({
-            path: `/v1/supply-order/items`,
+    postingApiFbsPostingProductExemplarUpdate = (
+        data: V1FbsPostingProductExemplarUpdateRequest,
+        params: RequestParams = {},
+    ) =>
+        this.http.request<
+            PostingApiFbsPostingProductExemplarUpdateData,
+            PostingApiFbsPostingProductExemplarUpdateError
+        >({
+            path: `/v1/fbs/posting/product/exemplar/update`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description <aside class="warning"> Если вы продавец не из России, обратите внимание на доступность <a href="https://seller-edu.ozon.ru/fbs/ozon-logistika/sobrat-zakazy#шаг-2-сформируите-отгрузку">рекомендованного времени</a> в личном кабинете. Если вам не доступен этот функционал, создайте отгрузку через метод <a href="#operation/PostingAPI_PostingFBSActCreate">/v2/posting/fbs/act/create</a>. Подтверждать отгрузку, которую создали через этот метод, не нужно. Вы не сможете отредактировать состав отгрузки. </aside> Используйте метод для создания первой FBS отгрузки. В неё попадут все отправления со статусом «Готов к отгрузке». Созданная отгрузка получит статус `new`. Для отгрузки в статусе `new` можно перезаписать состав отправлений методом [/v1/carriage/set-postings](#operation/CarriageAPI_SetPostings). Если из отгрузки исключить часть отправлений, они могут попасть в следующую отгрузку. Чтобы получить список отправлений в отгрузке, используйте метод [/v2/posting/fbs/act/get-postings](#operation/PostingAPI_ActPostingList).
+     *
+     * @tags DeliveryFBS
+     * @name CarriageApiCarriageCreate
+     * @summary Создание отгрузки
+     * @request POST:/v1/carriage/create
+     * @response `200` `CarriageApiCarriageCreateData` Информация об отгрузке
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    carriageApiCarriageCreate = (data: V1CarriageCreateRequest, params: RequestParams = {}) =>
+        this.http.request<CarriageApiCarriageCreateData, CarriageApiCarriageCreateError>({
+            path: `/v1/carriage/create`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Используйте метод, чтобы подтвердить отгрузку после её создания. После подтверждения отгрузка перейдёт в статус «Сформирована». После подтверждения отгрузки вы можете получить лист отгрузки методом [/v2/posting/fbs/act/get-pdf](#operation/PostingAPI_PostingFBSGetAct) и штрихкод отгрузки методом [/v2/posting/fbs/act/get-barcode](#operation/PostingAPI_PostingFBSGetBarcode).
+     *
+     * @tags DeliveryFBS
+     * @name CarriageApiCarriageApprove
+     * @summary Подтверждение отгрузки
+     * @request POST:/v1/carriage/approve
+     * @response `200` `CarriageApiCarriageApproveData` Отгрузка подтверждена
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    carriageApiCarriageApprove = (data: V1CarriageApproveRequest, params: RequestParams = {}) =>
+        this.http.request<CarriageApiCarriageApproveData, CarriageApiCarriageApproveError>({
+            path: `/v1/carriage/approve`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description <aside class="warning"> Метод недоступен для продавцов из СНГ. <br> Полностью перезаписывает список заказов в отгрузке. Передавайте только те заказы, которые находятся в статусе <code>Ожидает отгрузки</code>, и вы готовы их отгрузить. </aside> <br> <aside class="notice"> Чтобы вернуться к списку заказов, удалите отгрузку с помощью метода <a href="#operation/CarriageAPI_CarriageCancel">/v1/carriage/cancel</a>, и создайте новую. </aside>
+     *
+     * @tags DeliveryFBS
+     * @name CarriageApiSetPostings
+     * @summary Изменение состава отгрузки
+     * @request POST:/v1/carriage/set-postings
+     * @response `200` `CarriageApiSetPostingsData` Информация об отправлении
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    carriageApiSetPostings = (data: V1SetPostingsRequest, params: RequestParams = {}) =>
+        this.http.request<CarriageApiSetPostingsData, CarriageApiSetPostingsError>({
+            path: `/v1/carriage/set-postings`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags DeliveryFBS
+     * @name CarriageApiCarriageCancel
+     * @summary Удаление отгрузки
+     * @request POST:/v1/carriage/cancel
+     * @response `200` `CarriageApiCarriageCancelData` Информация об отправлении
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    carriageApiCarriageCancel = (data: V1CarriageCancelRequest, params: RequestParams = {}) =>
+        this.http.request<CarriageApiCarriageCancelData, CarriageApiCarriageCancelError>({
+            path: `/v1/carriage/cancel`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description <aside class="warning"> Метод не возвращает информацию по методам доставки, у которых нет отправлений. </aside> Используйте метод, чтобы получить список созданных отгрузок для метода доставки и их статусы. <aside class="warning"> 20 марта 2026 года отключим метод. Переключитесь на <a href="#operation/CarriageAPI_CarriageDeliveryListV2">/v2/carriage/delivery/list</a>. </aside>
+     *
+     * @tags DeliveryFBS
+     * @name CarriageApiCarriageDeliveryList
+     * @summary Список методов доставки и отгрузок
+     * @request POST:/v1/carriage/delivery/list
+     * @response `200` `CarriageApiCarriageDeliveryListData` Список методов и отгрузок
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    carriageApiCarriageDeliveryList = (data: V1CarriageDeliveryListRequest, params: RequestParams = {}) =>
+        this.http.request<CarriageApiCarriageDeliveryListData, CarriageApiCarriageDeliveryListError>({
+            path: `/v1/carriage/delivery/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description <aside class="warning"> 20 марта 2026 года отключим метод. Переключитесь на <a href="#operation/CarriageAPI_CarriageDeliveryListV2">/v2/carriage/delivery/list</a>. </aside> Метод для получения перевозок, по которым нужно распечатать штрихкод для отгрузки и документы: - для продацов из России — лист отгрузки и транспортную накладную; - для продавцов из СНГ — акт и транспортную накладную.
+     *
+     * @tags DeliveryFBS
+     * @name PostingApiGetCarriageAvailableList
+     * @summary Список доступных перевозок
+     * @request POST:/v1/posting/carriage-available/list
+     * @response `200` `PostingApiGetCarriageAvailableListData` Список перевозок
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    postingApiGetCarriageAvailableList = (data: Postingv1GetCarriageAvailableListRequest, params: RequestParams = {}) =>
+        this.http.request<PostingApiGetCarriageAvailableListData, PostingApiGetCarriageAvailableListError>({
+            path: `/v1/posting/carriage-available/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags DeliveryFBS
+     * @name CarriageGet
+     * @summary Информация о перевозке
+     * @request POST:/v1/carriage/get
+     * @response `200` `CarriageGetData` Информация о перевозке
+     * @response `default` `RpcStatus` Ошибка
+     */
+    carriageGet = (data: CarriageCarriageGetRequest, params: RequestParams = {}) =>
+        this.http.request<CarriageGetData, CarriageGetError>({
+            path: `/v1/carriage/get`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags DeliveryFBS
+     * @name FbsSplit
+     * @summary Разделить заказ на отправления без сборки
+     * @request POST:/v1/posting/fbs/split
+     * @response `200` `FbsSplitData` Заказ разделён
+     * @response `default` `RpcStatus` Ошибка
+     */
+    fbsSplit = (data: V1PostingFbsSplitRequest, params: RequestParams = {}) =>
+        this.http.request<FbsSplitData, FbsSplitError>({
+            path: `/v1/posting/fbs/split`,
+            method: 'POST',
+            body: data,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags DeliveryFBS
+     * @name PostingFbsTraceableSplit
+     * @summary Разделить отправление с прослеживаемыми товарами
+     * @request POST:/v1/posting/fbs/traceable/split
+     * @response `200` `PostingFbsTraceableSplitData` Заказ разделён
+     * @response `default` `RpcStatus` Ошибка
+     */
+    postingFbsTraceableSplit = (data: V1PostingFbsTraceableSplitRequest, params: RequestParams = {}) =>
+        this.http.request<PostingFbsTraceableSplitData, PostingFbsTraceableSplitError>({
+            path: `/v1/posting/fbs/traceable/split`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags DeliveryFBS
+     * @name PostingFbsProductTraceableAttribute
+     * @summary Получить список незаполненных атрибутов для прослеживаемых товаров
+     * @request POST:/v1/posting/fbs/product/traceable/attribute
+     * @response `200` `PostingFbsProductTraceableAttributeData` Список незаполненных атрибутов
+     * @response `default` `RpcStatus` Ошибка
+     */
+    postingFbsProductTraceableAttribute = (
+        data: V1PostingFbsProductTraceableAttributeRequest,
+        params: RequestParams = {},
+    ) =>
+        this.http.request<PostingFbsProductTraceableAttributeData, PostingFbsProductTraceableAttributeError>({
+            path: `/v1/posting/fbs/product/traceable/attribute`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags DeliveryFBS
+     * @name CarriageEttnStatus
+     * @summary Получить статус проверки электронной ТТН на прослеживаемой перевозке FBS
+     * @request POST:/v1/carriage/ettn/status
+     * @response `200` `CarriageEttnStatusData` Статус проверки электронной ТТН
+     * @response `default` `RpcStatus` Ошибка
+     */
+    carriageEttnStatus = (data: V1CarriageEttnStatusRequest, params: RequestParams = {}) =>
+        this.http.request<CarriageEttnStatusData, CarriageEttnStatusError>({
+            path: `/v1/carriage/ettn/status`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags DeliveryFBS
+     * @name AssemblyCarriagePostingList
+     * @summary Получить список отправлений в отгрузке
+     * @request POST:/v1/assembly/carriage/posting/list
+     * @response `200` `AssemblyCarriagePostingListData` Список отправлений
+     * @response `default` `RpcStatus` Ошибка
+     */
+    assemblyCarriagePostingList = (data: V1AssemblyCarriagePostingListRequest, params: RequestParams = {}) =>
+        this.http.request<AssemblyCarriagePostingListData, AssemblyCarriagePostingListError>({
+            path: `/v1/assembly/carriage/posting/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags DeliveryFBS
+     * @name AssemblyCarriageProductList
+     * @summary Получить список товаров в отгрузке
+     * @request POST:/v1/assembly/carriage/product/list
+     * @response `200` `AssemblyCarriageProductListData` Список товаров
+     * @response `default` `RpcStatus` Ошибка
+     */
+    assemblyCarriageProductList = (data: V1AssemblyCarriageProductListRequest, params: RequestParams = {}) =>
+        this.http.request<AssemblyCarriageProductListData, AssemblyCarriageProductListError>({
+            path: `/v1/assembly/carriage/product/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags DeliveryFBS
+     * @name AssemblyFbsPostingList
+     * @summary Получить список отправлений
+     * @request POST:/v1/assembly/fbs/posting/list
+     * @response `200` `AssemblyFbsPostingListData` Список отправлений
+     * @response `default` `RpcStatus` Ошибка
+     */
+    assemblyFbsPostingList = (data: V1AssemblyFbsPostingListRequest, params: RequestParams = {}) =>
+        this.http.request<AssemblyFbsPostingListData, AssemblyFbsPostingListError>({
+            path: `/v1/assembly/fbs/posting/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags DeliveryFBS
+     * @name AssemblyFbsProductList
+     * @summary Получить список товаров в отправлениях
+     * @request POST:/v1/assembly/fbs/product/list
+     * @response `200` `AssemblyFbsProductListData` Список товаров в отправлениях
+     * @response `default` `RpcStatus` Ошибка
+     */
+    assemblyFbsProductList = (data: V1AssemblyFbsProductListRequest, params: RequestParams = {}) =>
+        this.http.request<AssemblyFbsProductListData, AssemblyFbsProductListError>({
+            path: `/v1/assembly/fbs/product/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Метод для получения доступных дат для переноса доставки и количества доступных переносов.
+     *
+     * @tags DeliveryrFBS
+     * @name PostingApiPostingTimeslotChangeRestrictions
+     * @summary Доступные даты для переноса доставки
+     * @request POST:/v1/posting/fbs/timeslot/change-restrictions
+     * @response `200` `PostingApiPostingTimeslotChangeRestrictionsData` Доступные даты и количество
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    postingApiPostingTimeslotChangeRestrictions = (
+        data: V1PostingFbsTimeslotChangeRestrictionsRequest,
+        params: RequestParams = {},
+    ) =>
+        this.http.request<
+            PostingApiPostingTimeslotChangeRestrictionsData,
+            PostingApiPostingTimeslotChangeRestrictionsError
+        >({
+            path: `/v1/posting/fbs/timeslot/change-restrictions`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете изменить дату доставки отправления не больше двух раз.
+     *
+     * @tags DeliveryrFBS
+     * @name PostingApiSetPostingTimeslot
+     * @summary Перенести дату доставки
+     * @request POST:/v1/posting/fbs/timeslot/set
+     * @response `200` `PostingApiSetPostingTimeslotData` Результат запроса
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    postingApiSetPostingTimeslot = (data: V1PostingFbsTimeslotSetRequest, params: RequestParams = {}) =>
+        this.http.request<PostingApiSetPostingTimeslotData, PostingApiSetPostingTimeslotError>({
+            path: `/v1/posting/fbs/timeslot/set`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Метод для отправлений, которые доставляет продавец или неинтегрированный перевозчик.
+     *
+     * @tags DeliveryrFBS
+     * @name PostingApiSetPostingCutoff
+     * @summary Уточнить дату отгрузки отправления
+     * @request POST:/v1/posting/cutoff/set
+     * @response `200` `PostingApiSetPostingCutoffData` Результат уточнения даты
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    postingApiSetPostingCutoff = (data: V1SetPostingCutoffRequest, params: RequestParams = {}) =>
+        this.http.request<PostingApiSetPostingCutoffData, PostingApiSetPostingCutoffError>({
+            path: `/v1/posting/cutoff/set`,
             method: 'POST',
             body: data,
             type: ContentType.Json,
@@ -1612,29 +3588,7 @@ export class V1<SecurityDataType = unknown> {
             ...params,
         });
     /**
-     * @description Метод для получения перевозок, для которых нужно распечатать акт приёма-передачи и транспортную накладную.
-     *
-     * @tags FBS
-     * @name PostingApiGetCarriageAvailableList
-     * @summary Список доступных перевозок
-     * @request POST:/v1/posting/carriage-available/list
-     * @response `200` `PostingApiGetCarriageAvailableListData` Список перевозок
-     * @response `400` `RpcStatus` Неверный параметр
-     * @response `403` `RpcStatus` Доступ запрещён
-     * @response `404` `RpcStatus` Ответ не найден
-     * @response `409` `RpcStatus` Конфликт запроса
-     * @response `500` `RpcStatus` Внутренняя ошибка сервера
-     */
-    postingApiGetCarriageAvailableList = (data: Postingv1GetCarriageAvailableListRequest, params: RequestParams = {}) =>
-        this.http.request<PostingApiGetCarriageAvailableListData, PostingApiGetCarriageAvailableListError>({
-            path: `/v1/posting/carriage-available/list`,
-            method: 'POST',
-            body: data,
-            type: ContentType.Json,
-            ...params,
-        });
-    /**
-     * @description Метод для создания задания на асинхронное формирование этикеток. Для получения этикеток, созданных в результате вызова метода, используйте [/v1/posting/fbs/package-label/get](#operation/PostingAPI_GetLabelBatch).
+     * @description <aside class="warning"> В будущем метод будет отключён. Мы предупредим вас об этом за месяц. Переключитесь на <a href="#operation/PostingAPI_CreateLabelBatchV2">/v2/posting/fbs/package-label/create</a>. </aside> Метод для создания задания на асинхронное формирование этикеток. Для получения этикеток, созданных в результате вызова метода, используйте [/v1/posting/fbs/package-label/get](#operation/PostingAPI_GetLabelBatch).
      *
      * @tags FBS
      * @name PostingApiCreateLabelBatch
@@ -1700,50 +3654,18 @@ export class V1<SecurityDataType = unknown> {
             ...params,
         });
     /**
-     * @description Метод для получения доступных дат для переноса доставки и количества доступных переносов.
+     * @description Метод позволяет проверить код курьера при передаче отправлений realFBS Express. Подробнее о передаче отправлений в [Базе знаний продавца](https://seller-edu.ozon.ru/contract-for-sellers/regulations-fbs-realfbs/reglament-prodaji-so-svoego-sklada-fbs-express#7-порядок-передачи-отправлении-через-партнёров-ozon-при-экспресс-доставке).
      *
      * @tags FBS
-     * @name PostingApiPostingTimeslotChangeRestrictions
-     * @summary Доступные даты для переноса доставки
-     * @request POST:/v1/posting/fbs/timeslot/change-restrictions
-     * @response `200` `PostingApiPostingTimeslotChangeRestrictionsData` Доступные даты и количество
-     * @response `400` `RpcStatus` Неверный параметр
-     * @response `403` `RpcStatus` Доступ запрещён
-     * @response `404` `RpcStatus` Ответ не найден
-     * @response `409` `RpcStatus` Конфликт запроса
-     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     * @name PostingApiPostingFbsPickupCodeVerify
+     * @summary Проверить код курьера
+     * @request POST:/v1/posting/fbs/pick-up-code/verify
+     * @response `200` `PostingApiPostingFbsPickupCodeVerifyData` Результат проверки
+     * @response `default` `RpcStatus` Ошибка
      */
-    postingApiPostingTimeslotChangeRestrictions = (
-        data: V1PostingFbsTimeslotChangeRestrictionsRequest,
-        params: RequestParams = {},
-    ) =>
-        this.http.request<
-            PostingApiPostingTimeslotChangeRestrictionsData,
-            PostingApiPostingTimeslotChangeRestrictionsError
-        >({
-            path: `/v1/posting/fbs/timeslot/change-restrictions`,
-            method: 'POST',
-            body: data,
-            type: ContentType.Json,
-            ...params,
-        });
-    /**
-     * @description Вы можете изменить дату доставки отправления не больше двух раз.
-     *
-     * @tags FBS
-     * @name PostingApiSetPostingTimeslot
-     * @summary Перенести дату доставки
-     * @request POST:/v1/posting/fbs/timeslot/set
-     * @response `200` `PostingApiSetPostingTimeslotData` Результат запроса
-     * @response `400` `RpcStatus` Неверный параметр
-     * @response `403` `RpcStatus` Доступ запрещён
-     * @response `404` `RpcStatus` Ответ не найден
-     * @response `409` `RpcStatus` Конфликт запроса
-     * @response `500` `RpcStatus` Внутренняя ошибка сервера
-     */
-    postingApiSetPostingTimeslot = (data: V1PostingFbsTimeslotSetRequest, params: RequestParams = {}) =>
-        this.http.request<PostingApiSetPostingTimeslotData, PostingApiSetPostingTimeslotError>({
-            path: `/v1/posting/fbs/timeslot/set`,
+    postingApiPostingFbsPickupCodeVerify = (data: V1PostingFBSPickupCodeVerifyRequest, params: RequestParams = {}) =>
+        this.http.request<PostingApiPostingFbsPickupCodeVerifyData, PostingApiPostingFbsPickupCodeVerifyError>({
+            path: `/v1/posting/fbs/pick-up-code/verify`,
             method: 'POST',
             body: data,
             type: ContentType.Json,
@@ -1772,163 +3694,259 @@ export class V1<SecurityDataType = unknown> {
             ...params,
         });
     /**
-     * @description Метод для получения информации о заявке на отмену rFBS-заказа.
+     * No description
      *
-     * @tags CancellationAPI
-     * @name CancellationApiGetConditionalCancellation
-     * @summary Получить информацию о заявке на отмену rFBS
-     * @request POST:/v1/conditional-cancellation/get
-     * @response `200` `CancellationApiGetConditionalCancellationData` Информация о заявке на отмену
+     * @tags FBS
+     * @name PostingApiUnpaidLegalProductList
+     * @summary Список неоплаченных товаров, заказанных юридическими лицами
+     * @request POST:/v1/posting/unpaid-legal/product/list
+     * @response `200` `PostingApiUnpaidLegalProductListData` Список неоплаченных товаров
      * @response `400` `RpcStatus` Неверный параметр
      * @response `403` `RpcStatus` Доступ запрещён
      * @response `404` `RpcStatus` Ответ не найден
      * @response `409` `RpcStatus` Конфликт запроса
      * @response `500` `RpcStatus` Внутренняя ошибка сервера
      */
-    cancellationApiGetConditionalCancellation = (
-        data: V1GetConditionalCancellationRequest,
-        params: RequestParams = {},
-    ) =>
-        this.http.request<
-            CancellationApiGetConditionalCancellationData,
-            CancellationApiGetConditionalCancellationError
-        >({
-            path: `/v1/conditional-cancellation/get`,
+    postingApiUnpaidLegalProductList = (data: V1PostingUnpaidLegalProductListRequest, params: RequestParams = {}) =>
+        this.http.request<PostingApiUnpaidLegalProductListData, PostingApiUnpaidLegalProductListError>({
+            path: `/v1/posting/unpaid-legal/product/list`,
             method: 'POST',
             body: data,
             type: ContentType.Json,
             ...params,
         });
     /**
-     * @description Метод для получения списка заявок на отмену rFBS-заказов.
+     * @description Метод для передачи действий для возврата rFBS.
      *
-     * @tags CancellationAPI
-     * @name CancellationApiGetConditionalCancellationList
-     * @summary Получить список заявок на отмену rFBS
-     * @request POST:/v1/conditional-cancellation/list
-     * @response `200` `CancellationApiGetConditionalCancellationListData` Список заявок на отмену
-     * @response `400` `RpcStatus` Неверный параметр
-     * @response `403` `RpcStatus` Доступ запрещён
-     * @response `404` `RpcStatus` Ответ не найден
-     * @response `409` `RpcStatus` Конфликт запроса
-     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     * @tags RFBSReturnsAPI
+     * @name ReturnsApiReturnsRfbsActionSet
+     * @summary Передать доступные действия для rFBS возвратов
+     * @request POST:/v1/returns/rfbs/action/set
+     * @response `200` `ReturnsApiReturnsRfbsActionSetData` Действие передано
+     * @response `default` `RpcStatus` Ошибка
      */
-    cancellationApiGetConditionalCancellationList = (
-        data: V1GetConditionalCancellationListRequest,
-        params: RequestParams = {},
-    ) =>
-        this.http.request<
-            CancellationApiGetConditionalCancellationListData,
-            CancellationApiGetConditionalCancellationListError
-        >({
-            path: `/v1/conditional-cancellation/list`,
+    returnsApiReturnsRfbsActionSet = (data: V1ReturnsRfbsActionSetRequest, params: RequestParams = {}) =>
+        this.http.request<ReturnsApiReturnsRfbsActionSetData, ReturnsApiReturnsRfbsActionSetError>({
+            path: `/v1/returns/rfbs/action/set`,
             method: 'POST',
             body: data,
             type: ContentType.Json,
             ...params,
         });
     /**
-     * @description Метод позволяет согласовать заявку на отмену в статусе `ON_APPROVAL`. Метод применим для rFBS-заказов. Заказ будет отменён, а деньги вернутся покупателю.
+     * @description Метод для получения информации о возвратах FBO и FBS.
      *
-     * @tags CancellationAPI
-     * @name CancellationApiConditionalCancellationApprove
-     * @summary Подтвердить заявку на отмену rFBS
-     * @request POST:/v1/conditional-cancellation/approve
-     * @response `200` `CancellationApiConditionalCancellationApproveData` Заявка подтверждена
-     * @response `400` `RpcStatus` Неверный параметр
-     * @response `403` `RpcStatus` Доступ запрещён
-     * @response `404` `RpcStatus` Ответ не найден
-     * @response `409` `RpcStatus` Конфликт запроса
-     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     * @tags ReturnsAPI
+     * @name ReturnsList
+     * @summary Информация о возвратах FBO и FBS
+     * @request POST:/v1/returns/list
+     * @response `200` `ReturnsListData` Информация по возвратам
+     * @response `default` `RpcStatus` Ошибка
      */
-    cancellationApiConditionalCancellationApprove = (
-        data: V1ConditionalCancellationMoveRequest,
-        params: RequestParams = {},
-    ) =>
-        this.http.request<
-            CancellationApiConditionalCancellationApproveData,
-            CancellationApiConditionalCancellationApproveError
-        >({
-            path: `/v1/conditional-cancellation/approve`,
+    returnsList = (data: V1GetReturnsListRequest, params: RequestParams = {}) =>
+        this.http.request<ReturnsListData, ReturnsListError>({
+            path: `/v1/returns/list`,
             method: 'POST',
             body: data,
             type: ContentType.Json,
             ...params,
         });
     /**
-     * @description Метод позволяет отклонить заявку на отмену в статусе `ON_APPROVAL`. Метод применим для rFBS-заказов. Объясните своё решение в параметре `comment`. Заказ останется в том же статусе, и его нужно будет доставить покупателю.
+     * @description Метод для получения информации о возвратах FBS и их количестве.
      *
-     * @tags CancellationAPI
-     * @name CancellationApiConditionalCancellationReject
-     * @summary Отклонить заявку на отмену rFBS
-     * @request POST:/v1/conditional-cancellation/reject
-     * @response `200` `CancellationApiConditionalCancellationRejectData` Заявка отклонена
-     * @response `400` `RpcStatus` Неверный параметр
-     * @response `403` `RpcStatus` Доступ запрещён
-     * @response `404` `RpcStatus` Ответ не найден
-     * @response `409` `RpcStatus` Конфликт запроса
-     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     * @tags ReturnAPI
+     * @name ReturnsCompanyFbsInfo
+     * @summary Количество возвратов FBS
+     * @request POST:/v1/returns/company/fbs/info
+     * @response `200` `ReturnsCompanyFbsInfoData` Количество возвратов FBS
+     * @response `default` `RpcStatus` Ошибка
      */
-    cancellationApiConditionalCancellationReject = (
-        data: V1ConditionalCancellationMoveRequest,
-        params: RequestParams = {},
-    ) =>
-        this.http.request<
-            CancellationApiConditionalCancellationRejectData,
-            CancellationApiConditionalCancellationRejectError
-        >({
-            path: `/v1/conditional-cancellation/reject`,
+    returnsCompanyFbsInfo = (data: V1ReturnsCompanyFbsInfoRequest, params: RequestParams = {}) =>
+        this.http.request<ReturnsCompanyFbsInfoData, ReturnsCompanyFbsInfoError>({
+            path: `/v1/returns/company/fbs/info`,
             method: 'POST',
             body: data,
             type: ContentType.Json,
             ...params,
         });
     /**
-     * @description Возвращает информацию о чатах с указанными идентификаторами. В ответе метода могут быть чаты с `last_message_id = 0` и без сообщений. Это происходит, когда покупатель открыл чат с продавцом, но ничего не написал.
+     * No description
      *
-     * @tags ChatAPI
-     * @name ChatApiChatList
-     * @summary Список чатов
-     * @request POST:/v1/chat/list
-     * @response `200` `ChatApiChatListData` Список чатов
-     * @response `400` `RpcStatus` Неверный параметр
-     * @response `403` `RpcStatus` Доступ запрещён
-     * @response `404` `RpcStatus` Ответ не найден
-     * @response `409` `RpcStatus` Конфликт запроса
-     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     * @tags ReturnsAPI
+     * @name UtilizationHistory
+     * @summary Получить историю изменений автоутилизации
+     * @request POST:/v1/returns/settings/utilization/history
+     * @response `200` `UtilizationHistoryData` История изменений
+     * @response `default` `GooglerpcStatus` Ошибка
      */
-    chatApiChatList = (data: ChatChatListRequest, params: RequestParams = {}) =>
-        this.http.request<ChatApiChatListData, ChatApiChatListError>({
-            path: `/v1/chat/list`,
+    utilizationHistory = (params: RequestParams = {}) =>
+        this.http.request<UtilizationHistoryData, UtilizationHistoryError>({
+            path: `/v1/returns/settings/utilization/history`,
             method: 'POST',
-            body: data,
-            type: ContentType.Json,
             ...params,
         });
     /**
-     * @description Отправляет сообщение в существующий чат по его идентификатору.
+     * No description
      *
-     * @tags ChatAPI
-     * @name ChatApiChatSendMessage
-     * @summary Отправить сообщение
-     * @request POST:/v1/chat/send/message
-     * @response `200` `ChatApiChatSendMessageData` Сообщение отправлено
-     * @response `400` `RpcStatus` Неверный параметр
-     * @response `403` `RpcStatus` Доступ запрещён
-     * @response `404` `RpcStatus` Ответ не найден
-     * @response `409` `RpcStatus` Конфликт запроса
-     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     * @tags ReturnsAPI
+     * @name UtilizationInfo
+     * @summary Получить настройки автоутилизации
+     * @request POST:/v1/returns/settings/utilization/info
+     * @response `200` `UtilizationInfoData` Настройки автоутилизации
+     * @response `default` `GooglerpcStatus` Ошибка
      */
-    chatApiChatSendMessage = (data: ChatChatSendMessageRequest, params: RequestParams = {}) =>
-        this.http.request<ChatApiChatSendMessageData, ChatApiChatSendMessageError>({
-            path: `/v1/chat/send/message`,
+    utilizationInfo = (params: RequestParams = {}) =>
+        this.http.request<UtilizationInfoData, UtilizationInfoError>({
+            path: `/v1/returns/settings/utilization/info`,
+            method: 'POST',
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags ReturnsAPI
+     * @name UtilizationUpdate
+     * @summary Обновить настройки автоутилизации
+     * @request POST:/v1/returns/settings/utilization/update
+     * @response `200` `UtilizationUpdateData` Настройки обновлены
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    utilizationUpdate = (data: V1ReturnsSettingsUtilizationUpdateRequest, params: RequestParams = {}) =>
+        this.http.request<UtilizationUpdateData, UtilizationUpdateError>({
+            path: `/v1/returns/settings/utilization/update`,
             method: 'POST',
             body: data,
             type: ContentType.Json,
             ...params,
         });
     /**
-     * @description Отправляет файл в существующий чат по его идентификатору.
+     * @description Если у вас есть доступ, в параметре `enabled` будет указано значение `true`.
+     *
+     * @tags ReturnAPI
+     * @name ReturnApiGiveoutIsEnabled
+     * @summary Проверить возможность получения возвратных отгрузок по штрихкоду
+     * @request POST:/v1/return/giveout/is-enabled
+     * @response `200` `ReturnApiGiveoutIsEnabledData` Результат проверки
+     * @response `default` `RpcStatus` Ошибка
+     */
+    returnApiGiveoutIsEnabled = (data: V1Empty, params: RequestParams = {}) =>
+        this.http.request<ReturnApiGiveoutIsEnabledData, ReturnApiGiveoutIsEnabledError>({
+            path: `/v1/return/giveout/is-enabled`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Метод для получения списка активных возвратов. Возвратная отгрузка становится активной после сканирования штрихкода. После сканирования штрихкода второй раз активная выдача переходит в статус неактивной.
+     *
+     * @tags ReturnAPI
+     * @name ReturnApiGiveoutList
+     * @summary Список возвратных отгрузок
+     * @request POST:/v1/return/giveout/list
+     * @response `200` `ReturnApiGiveoutListData` Список возвратных отгрузок
+     * @response `default` `RpcStatus` Ошибка
+     */
+    returnApiGiveoutList = (data: V1GiveoutListRequest, params: RequestParams = {}) =>
+        this.http.request<ReturnApiGiveoutListData, ReturnApiGiveoutListError>({
+            path: `/v1/return/giveout/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Метод для получения информации о возвратной отгрузке. В параметр `giveout_id` передаётся значение, полученное в методе [/v1/return/giveout/list](#operation/ReturnAPI_GiveoutList).
+     *
+     * @tags ReturnAPI
+     * @name ReturnApiGiveoutInfo
+     * @summary Информация о возвратной отгрузке
+     * @request POST:/v1/return/giveout/info
+     * @response `200` `ReturnApiGiveoutInfoData` Информация о возвратной отгрузке
+     * @response `default` `RpcStatus` Ошибка
+     */
+    returnApiGiveoutInfo = (data: V1GiveoutInfoRequest, params: RequestParams = {}) =>
+        this.http.request<ReturnApiGiveoutInfoData, ReturnApiGiveoutInfoError>({
+            path: `/v1/return/giveout/info`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Используйте этот метод, чтобы получить штрихкод из ответа методов [/v1/return/giveout/get-png](#operation/ReturnAPI_GiveoutGetPNG) и [/v1/return/giveout/get-pdf](#operation/ReturnAPI_GiveoutGetPDF) в текстовом виде.
+     *
+     * @tags ReturnAPI
+     * @name ReturnApiGiveoutGetBarcode
+     * @summary Значение штрихкода для возвратных отгрузок
+     * @request POST:/v1/return/giveout/barcode
+     * @response `200` `ReturnApiGiveoutGetBarcodeData` Значение штрихкода
+     * @response `default` `RpcStatus` Ошибка
+     */
+    returnApiGiveoutGetBarcode = (data: V1Empty, params: RequestParams = {}) =>
+        this.http.request<ReturnApiGiveoutGetBarcodeData, ReturnApiGiveoutGetBarcodeError>({
+            path: `/v1/return/giveout/barcode`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Возвращает PDF-файл со штрихкодом. Метод работает только для схемы FBS.
+     *
+     * @tags ReturnAPI
+     * @name ReturnApiGiveoutGetPdf
+     * @summary Штрихкод для получения возвратной отгрузки в формате PDF
+     * @request POST:/v1/return/giveout/get-pdf
+     * @response `200` `ReturnApiGiveoutGetPdfData` Штрихкод для возвратной отгрузки
+     * @response `default` `RpcStatus` Ошибка
+     */
+    returnApiGiveoutGetPdf = (data: V1Empty, params: RequestParams = {}) =>
+        this.http.request<ReturnApiGiveoutGetPdfData, ReturnApiGiveoutGetPdfError>({
+            path: `/v1/return/giveout/get-pdf`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Возвращает PNG-файл со штрихкодом.
+     *
+     * @tags ReturnAPI
+     * @name ReturnApiGiveoutGetPng
+     * @summary Штрихкод для получения возвратной отгрузки в формате PNG
+     * @request POST:/v1/return/giveout/get-png
+     * @response `200` `ReturnApiGiveoutGetPngData` Штрихкод для возвратной отгрузки
+     * @response `default` `RpcStatus` Ошибка
+     */
+    returnApiGiveoutGetPng = (data: V1Empty, params: RequestParams = {}) =>
+        this.http.request<ReturnApiGiveoutGetPngData, ReturnApiGiveoutGetPngError>({
+            path: `/v1/return/giveout/get-png`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Используйте метод, если ваш штрихкод попал в посторонние руки. Метод возвращает PNG-файл с новым штрихкодом. После использования метода вы не сможете получить возвратную отгрузку по старым штрихкодам. Чтобы получить новый штрихкод в PDF-формате, запросите его методом [/v1/return/giveout/get-pdf](#operation/ReturnAPI_GiveoutGetPDF).
+     *
+     * @tags ReturnAPI
+     * @name ReturnApiGiveoutBarcodeReset
+     * @summary Сгенерировать новый штрихкод
+     * @request POST:/v1/return/giveout/barcode-reset
+     * @response `200` `ReturnApiGiveoutBarcodeResetData` Новый штрихкод
+     * @response `default` `RpcStatus` Ошибка
+     */
+    returnApiGiveoutBarcodeReset = (data: V1Empty, params: RequestParams = {}) =>
+        this.http.request<ReturnApiGiveoutBarcodeResetData, ReturnApiGiveoutBarcodeResetError>({
+            path: `/v1/return/giveout/barcode-reset`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Отправляет файл в существующий чат по его идентификатору. <br><br> Отправить файл в чат с покупателем могут только продавцы с подпиской [Premium Plus](https://seller-edu.ozon.ru/seller-rating/about-rating/subscription-premium-plus) или [Premium Pro](https://seller-edu.ozon.ru/seller-rating/about-rating/podpiska-premium-pro). Получите список чатов с покупателем `chats.chat.chat_type="Buyer_Seller"` в ответе метода [/v3/chat/list](#operation/ChatAPI_ChatListV3). Для отправлений: - FBO — вы можете отправить файл в течение 48 часов с момента получения последнего сообщения от покупателя. - FBS или rFBS — вы можете отправить файл покупателю после оплаты и в течение 72 часов после доставки отправления. После этого вы можете только отвечать на сообщения в течение 48 часов с момента получения последнего сообщения от покупателя.
      *
      * @tags ChatAPI
      * @name ChatApiChatSendFile
@@ -1950,102 +3968,18 @@ export class V1<SecurityDataType = unknown> {
             ...params,
         });
     /**
-     * @description Возвращает историю сообщений в чате. По умолчанию сообщения показываются от старого к новому. Чтобы получить историю сообщений от самого нового сообщения до самого старого, используйте метод [/v1/chat/updates](#operation/ChatAPI_ChatUpdates). У методов [/v1/chat/history](#operation/ChatAPI_ChatHistory) и [/v1/chat/updates](#operation/ChatAPI_ChatUpdates) одинаковая структура запроса и ответа.
-     *
-     * @tags ChatAPI
-     * @name ChatApiChatHistory
-     * @summary История чата
-     * @request POST:/v1/chat/history
-     * @response `200` `ChatApiChatHistoryData` История чата
-     * @response `400` `RpcStatus` Неверный параметр
-     * @response `403` `RpcStatus` Доступ запрещён
-     * @response `404` `RpcStatus` Ответ не найден
-     * @response `409` `RpcStatus` Конфликт запроса
-     * @response `500` `RpcStatus` Внутренняя ошибка сервера
-     */
-    chatApiChatHistory = (data: ChatChatHistoryRequest, params: RequestParams = {}) =>
-        this.http.request<ChatApiChatHistoryData, ChatApiChatHistoryError>({
-            path: `/v1/chat/history`,
-            method: 'POST',
-            body: data,
-            type: ContentType.Json,
-            ...params,
-        });
-    /**
-     * No description
-     *
-     * @tags ChatAPI
-     * @name ChatApiChatUpdates
-     * @summary Обновить чат
-     * @request POST:/v1/chat/updates
-     * @response `200` `ChatApiChatUpdatesData` Чат обновлён
-     * @response `400` `RpcStatus` Неверный параметр
-     * @response `403` `RpcStatus` Доступ запрещён
-     * @response `404` `RpcStatus` Ответ не найден
-     * @response `409` `RpcStatus` Конфликт запроса
-     * @response `500` `RpcStatus` Внутренняя ошибка сервера
-     */
-    chatApiChatUpdates = (data: ChatChatUpdatesRequest, params: RequestParams = {}) =>
-        this.http.request<ChatApiChatUpdatesData, ChatApiChatUpdatesError>({
-            path: `/v1/chat/updates`,
-            method: 'POST',
-            body: data,
-            type: ContentType.Json,
-            ...params,
-        });
-    /**
-     * @description Создает новый чат с покупателем по отправлению. Например, чтобы уточнить адрес или модель товара.
-     *
-     * @tags ChatAPI
-     * @name ChatApiChatStart
-     * @summary Создать новый чат
-     * @request POST:/v1/chat/start
-     * @response `200` `ChatApiChatStartData` Создан новый чат
-     * @response `400` `RpcStatus` Неверный параметр
-     * @response `403` `RpcStatus` Доступ запрещён
-     * @response `404` `RpcStatus` Ответ не найден
-     * @response `409` `RpcStatus` Конфликт запроса
-     * @response `500` `RpcStatus` Внутренняя ошибка сервера
-     */
-    chatApiChatStart = (data: ChatChatStartRequest, params: RequestParams = {}) =>
-        this.http.request<ChatApiChatStartData, ChatApiChatStartError>({
-            path: `/v1/chat/start`,
-            method: 'POST',
-            body: data,
-            type: ContentType.Json,
-            ...params,
-        });
-    /**
-     * @description Создание или изменение ссылки на таможенную счёт-проформу для возврата НДС продавцам из Турции.
+     * @description Доступные форматы: JPEG и PDF. Максимальный размер файла: 10 МБ.
      *
      * @tags SupplierAPI
-     * @name InvoiceCreate
-     * @summary Создать или изменить ссылку на счёт-проформу
-     * @request POST:/v1/invoice/create-or-update
-     * @response `200` `InvoiceCreateData` Ссылка создана или изменена
+     * @name InvoiceUpload
+     * @summary Загрузка счёта-фактуры
+     * @request POST:/v1/invoice/file/upload
+     * @response `200` `InvoiceUploadData` Ссылка на счёт-фактуру
      * @response `default` `RpcStatus` Ошибка
      */
-    invoiceCreate = (data: V1InvoiceCreateOrUpdateRequest, params: RequestParams = {}) =>
-        this.http.request<InvoiceCreateData, InvoiceCreateError>({
-            path: `/v1/invoice/create-or-update`,
-            method: 'POST',
-            body: data,
-            type: ContentType.Json,
-            ...params,
-        });
-    /**
-     * No description
-     *
-     * @tags SupplierAPI
-     * @name InvoiceGet
-     * @summary Получить ссылку на счёт-проформу
-     * @request POST:/v1/invoice/get
-     * @response `200` `InvoiceGetData` Ссылка на счёт-проформу
-     * @response `default` `RpcStatus` Ошибка
-     */
-    invoiceGet = (data: V1InvoiceGetRequest, params: RequestParams = {}) =>
-        this.http.request<InvoiceGetData, InvoiceGetError>({
-            path: `/v1/invoice/get`,
+    invoiceUpload = (data: V1InvoiceFileUploadRequest, params: RequestParams = {}) =>
+        this.http.request<InvoiceUploadData, InvoiceUploadError>({
+            path: `/v1/invoice/file/upload`,
             method: 'POST',
             body: data,
             type: ContentType.Json,
@@ -2056,7 +3990,7 @@ export class V1<SecurityDataType = unknown> {
      *
      * @tags SupplierAPI
      * @name InvoiceDelete
-     * @summary Удалить ссылку на счёт-проформу
+     * @summary Удалить ссылку на счёт-фактуру
      * @request POST:/v1/invoice/delete
      * @response `200` `InvoiceDeleteData` Ссылка удалена
      * @response `default` `RpcStatus` Ошибка
@@ -2114,7 +4048,7 @@ export class V1<SecurityDataType = unknown> {
             ...params,
         });
     /**
-     * @description Метод для получения отчёта с данными о товарах. Например, Ozon ID, количества товаров, цен, статуса. Пояснения к некоторым полям: - __Ozon Product ID__ — идентификатор товара в нашей системе. Например, если вы продаёте товар со склада Ozon и со своего склада, Ozon Product ID будет для них одинаковым. - __FBO Ozon SKU ID__ — идентификатор товара, который продаётся со склада Ozon. - __FBS Ozon SKU ID__ — идентификатор товара, который продаётся с вашего склада. - __CrossBorder Ozon SKU__ — идентификатор товара, который продаётся из-за границы. - __Barcode__ — штрихкод товара, который печатается на маркировке. - __Статус товара__ — можно ли купить товар на Ozon. Если статус «Готов к продаже», товар купить нельзя. - __Доступно на складе Ozon, шт__ — сколько штук товара на складе доступно для продажи. Это количество не включает зарезервированные товары. - __Зарезервировано, шт__ — сколько штук товара со статусом «Зарезервировано». Товар зарезервирован с момента получения заказа на Ozon и до упаковки для передачи покупателю. - __Текущая цена с учётом скидки, руб.__ — цена, по которой товар продаётся сейчас (на момент загрузки отчёта, с учётом скидки). Если товар участвует в акции, указана цена без её учёта. - __Базовая цена (цена до скидок), руб.__ — цена без учёта скидки. - __Цена Premium, руб.__ — цена для покупателей с подпиской Ozon Premium. - __Рекомендованная цена, руб.__ — минимальная цена на товар на другой торговой площадке. - __Актуальная ссылка на рекомендованную цену__ — ссылка на товар с рекомендованной ценой на другой торговой площадке.
+     * @description Метод для получения отчёта с данными о товарах. Например, Ozon ID, количества товаров, цен, статуса. Соответствует разделу/действию **Товары и цены → Список товаров → Скачать → Товары CSV** в личном кабинете. Пояснения к некоторым полям: - __Ozon Product ID__ — идентификатор товара в нашей системе. Например, если вы продаёте товар со склада Ozon и со своего склада, Ozon Product ID будет для них одинаковым. - __FBO Ozon SKU ID__ — идентификатор товара, который продаётся со склада Ozon. - __FBS Ozon SKU ID__ — идентификатор товара, который продаётся с вашего склада. - __CrossBorder Ozon SKU__ — идентификатор товара, который продаётся из-за границы. - __Barcode__ — штрихкод товара, который печатается на маркировке. - __Статус товара__ — можно ли купить товар на Ozon. Если статус «Готов к продаже», товар купить нельзя. - __Доступно на складе Ozon, шт__ — сколько штук товара на складе доступно для продажи. Это количество не включает зарезервированные товары. - __Зарезервировано, шт__ — сколько штук товара со статусом «Зарезервировано». Товар зарезервирован с момента получения заказа на Ozon и до упаковки для передачи покупателю. - __Текущая цена с учётом скидки, руб.__ — цена, по которой товар продаётся сейчас (на момент загрузки отчёта, с учётом скидки). Если товар участвует в акции, указана цена без её учёта. - __Базовая цена (цена до скидок), руб.__ — цена без учёта скидки. - __Цена Premium, руб.__ — цена для покупателей с подпиской Ozon Premium. - __Рекомендованная цена, руб.__ — минимальная цена на товар на другой торговой площадке. - __Актуальная ссылка на рекомендованную цену__ — ссылка на товар с рекомендованной ценой на другой торговой площадке.
      *
      * @tags ReportAPI
      * @name ReportApiCreateCompanyProductsReport
@@ -2139,129 +4073,7 @@ export class V1<SecurityDataType = unknown> {
             ...params,
         });
     /**
-     * @description <aside class="warning">С 30 сентября 2022 года метод будет отключён. Для получения информации о транзакциях используйте метод <a href="#operation/FinanceAPI_FinanceTransactionListV3">/v3/finance/transaction/list</a>.</aside> Отчёт по транзакциям с информацией о начислениях за выбранный период: - дата и тип начисления, - идентификатор отправления или услуги, - детали по отправлению или услуге, - сумма, полученная за продажу или удержанная за возврат, - комиссия за продажу, - сумма, удержанная за обработку и доставку, - сумма, удержанная за возврат и отмену, - общая сумма.
-     *
-     * @tags ReportAPI
-     * @name ReportApiCreateCompanyTransactionsReport
-     * @summary Отчёт по транзакциям
-     * @request POST:/v1/report/transactions/create
-     * @response `200` `ReportApiCreateCompanyTransactionsReportData` Отчёт по транзакциям
-     * @response `400` `RpcStatus` Неверный параметр
-     * @response `403` `RpcStatus` Доступ запрещён
-     * @response `404` `RpcStatus` Ответ не найден
-     * @response `409` `RpcStatus` Конфликт запроса
-     * @response `500` `RpcStatus` Внутренняя ошибка сервера
-     */
-    reportApiCreateCompanyTransactionsReport = (
-        data: ReportCreateCompanyTransactionsReportRequest,
-        params: RequestParams = {},
-    ) =>
-        this.http.request<ReportApiCreateCompanyTransactionsReportData, ReportApiCreateCompanyTransactionsReportError>({
-            path: `/v1/report/transactions/create`,
-            method: 'POST',
-            body: data,
-            type: ContentType.Json,
-            ...params,
-        });
-    /**
-     * @description <aside class="warning">С 30 сентября 2022 года метод будет отключён. Для получения информации о ценах используйте метод <a href="#operation/ProductAPI_GetProductInfoPricesV4">/v4/product/info/prices</a>.</aside> Отчёт по товарам, который содержит: - цены, - комиссии, - информацию о скидках, - рыночную цену на товар, - информацию об участии в акциях.
-     *
-     * @tags ReportAPI
-     * @name ReportApiCreateCompanyProductsPricesReport
-     * @summary Отчёт по ценам
-     * @request POST:/v1/report/products/prices/create
-     * @response `200` `ReportApiCreateCompanyProductsPricesReportData` Отчёт по ценам
-     * @response `400` `RpcStatus` Неверный параметр
-     * @response `403` `RpcStatus` Доступ запрещён
-     * @response `404` `RpcStatus` Ответ не найден
-     * @response `409` `RpcStatus` Конфликт запроса
-     * @response `500` `RpcStatus` Внутренняя ошибка сервера
-     */
-    reportApiCreateCompanyProductsPricesReport = (
-        data: ReportCreateCompanyProductsPricesReportRequest,
-        params: RequestParams = {},
-    ) =>
-        this.http.request<
-            ReportApiCreateCompanyProductsPricesReportData,
-            ReportApiCreateCompanyProductsPricesReportError
-        >({
-            path: `/v1/report/products/prices/create`,
-            method: 'POST',
-            body: data,
-            type: ContentType.Json,
-            ...params,
-        });
-    /**
-     * @description Отчёт с информацией о количестве доступных и зарезервированных единиц товара на складе.
-     *
-     * @tags ReportAPI
-     * @name ReportApiCreateCompanyStockReport
-     * @summary Отчёт об остатках
-     * @request POST:/v1/report/stock/create
-     * @response `200` `ReportApiCreateCompanyStockReportData` Отчёт об остатках
-     * @response `400` `RpcStatus` Неверный параметр
-     * @response `403` `RpcStatus` Доступ запрещён
-     * @response `404` `RpcStatus` Ответ не найден
-     * @response `409` `RpcStatus` Конфликт запроса
-     * @response `500` `RpcStatus` Внутренняя ошибка сервера
-     */
-    reportApiCreateCompanyStockReport = (data: ReportCreateCompanyStockReportRequest, params: RequestParams = {}) =>
-        this.http.request<ReportApiCreateCompanyStockReportData, ReportApiCreateCompanyStockReportError>({
-            path: `/v1/report/stock/create`,
-            method: 'POST',
-            body: data,
-            type: ContentType.Json,
-            ...params,
-        });
-    /**
-     * @description Отчёт с полной информацией по товарам, а также количество единиц товара со статусами: - товары с браком или на инвентаризации, - товары в перемещении между фулфилмент-центрами, - товары в доставке, - товары, подлежащие реализации.
-     *
-     * @tags ReportAPI
-     * @name ReportApiCreateProductsMovementReport
-     * @summary Отчёт о перемещении товаров
-     * @request POST:/v1/report/products/movement/create
-     * @response `200` `ReportApiCreateProductsMovementReportData` Отчёт о перемещении товаров
-     * @response `400` `RpcStatus` Неверный параметр
-     * @response `403` `RpcStatus` Доступ запрещён
-     * @response `404` `RpcStatus` Ответ не найден
-     * @response `409` `RpcStatus` Конфликт запроса
-     * @response `500` `RpcStatus` Внутренняя ошибка сервера
-     */
-    reportApiCreateProductsMovementReport = (
-        data: ReportCreateProductsMovementReportRequest,
-        params: RequestParams = {},
-    ) =>
-        this.http.request<ReportApiCreateProductsMovementReportData, ReportApiCreateProductsMovementReportError>({
-            path: `/v1/report/products/movement/create`,
-            method: 'POST',
-            body: data,
-            type: ContentType.Json,
-            ...params,
-        });
-    /**
-     * @description Отчёт содержит информацию о возвращённых товарах, которые приняты от покупателя, готовы к получению или переданы продавцу. Метод подходит только для заказов, которые отправлены со склада продавца. Пояснения к некоторым полям в отчёте: - __ID товара в возврате__ — идентификатор товара в возврате. - __ID отправления__ — идентификатор отправления в нашей системе. - __Статус__ — статус возврата. - __Артикул товара__ — ваш артикул товара. - __Ozon ID__ — идентификатор товара в нашей системе. - __Причина возврата__ — почему заказ пришлось вернуть или почему от него отказался покупатель. - __Стоимость размещения__ — стоимость размещения возврата в пункте выдачи. - __Переход в «Готов к получению»__ — дата, с которой возврат находится в пункте выдачи. - __Последний день бесплатного размещения__ — последний день, когда возврат размещается в пункте выдачи бесплатно. Со следующего дня размещение становится платным. Подробнее о стоимости размещения в [Базе знаний продавца](https://seller-edu.ozon.ru/docs/prices/fees/kak-schitat-stoimost-razmechenia.html). - __Дата возврата продавцу__ — когда возврат передали вам. - __Местоположение__ — название пункта выдачи, в котором находится возврат. - __Отправление вскрыто__ — если до возвращения заказа покупатель вскрыл его упаковку, в строке будет указано «Да». - __Процент комиссии__ — ставка комиссии за продажу товара в процентах. Фиксируется в момент создания заказа покупателем. Подробнее о комиссиях в [Базе знаний продавца](https://seller-edu.ozon.ru/docs/prices/fees/comissions-tariffs.html#комиссии-за-продажу). - __Комиссия (руб.)__ — комиссия Ozon за продажу товара в рублях, рассчитывается от цены товара. - __Цена без комиссии (руб.)__ — стоимость товара за вычетом комиссии: Цена без комиссии = Стоимость товара − Комиссия. Статусы возвратов: - __В пути__ — покупатель передал нам возврат с товарами, которые ему не подошли. - __В пункте выдачи__ — возврат прибыл в пункт выдачи, откуда вы можете его забрать. Пункт выдачи указан в столбце «Местоположение». - __Получен__ — возврат передали вам.
-     *
-     * @tags ReportAPI
-     * @name ReportApiCreateCompanyReturnsReport
-     * @summary Отчёт о возвратах
-     * @request POST:/v1/report/returns/create
-     * @response `200` `ReportApiCreateCompanyReturnsReportData` Отчёт о возвратах
-     * @response `400` `RpcStatus` Неверный параметр
-     * @response `403` `RpcStatus` Доступ запрещён
-     * @response `404` `RpcStatus` Ответ не найден
-     * @response `409` `RpcStatus` Конфликт запроса
-     * @response `500` `RpcStatus` Внутренняя ошибка сервера
-     */
-    reportApiCreateCompanyReturnsReport = (data: ReportCreateCompanyReturnsReportRequest, params: RequestParams = {}) =>
-        this.http.request<ReportApiCreateCompanyReturnsReportData, ReportApiCreateCompanyReturnsReportError>({
-            path: `/v1/report/returns/create`,
-            method: 'POST',
-            body: data,
-            type: ContentType.Json,
-            ...params,
-        });
-    /**
-     * @description Отчёт об отправлениях с информацией по заказам: - статусы заказов, - дата начала обработки, - номера заказов, - номера отправлений, - стоимость отправлений, - содержимое отправлений.
+     * @description Отчёт об отправлениях с информацией по заказам: - статусы заказов, - дата начала обработки, - номера заказов, - номера отправлений, - стоимость отправлений, - содержимое отправлений. Соответствует разделу **FBO → Заказы со склада Ozon** и **FBS → Заказы с моих складов → CSV** в личном кабинете.
      *
      * @tags ReportAPI
      * @name ReportApiCreateCompanyPostingsReport
@@ -2286,29 +4098,7 @@ export class V1<SecurityDataType = unknown> {
             ...params,
         });
     /**
-     * @description <aside class="warning">С 30 сентября 2022 года метод будет отключён. Для получения информации о финансах используйте метод <a href="#operation/FinanceAPI_FinanceCashFlowStatementList">/v1/finance/cash-flow-statement/list</a>.</aside> Отчёт по финансам за выбранный период с информацией о балансе на начало и конец периода. Отчёт содержит: -	сумма, полученная за доставленные заказы; -	сумма комиссии за доставленные заказы; -	сумма за возвращённые товары; -	сумма, возвращённая за возвраты; -	сумма оплаты за услуги.
-     *
-     * @tags ReportAPI
-     * @name ReportApiCreateCompanyFinanceReport
-     * @summary Отчёт о финансах
-     * @request POST:/v1/report/finance/create
-     * @response `200` `ReportApiCreateCompanyFinanceReportData` Отчёт о финансах
-     * @response `400` `RpcStatus` Неверный параметр
-     * @response `403` `RpcStatus` Доступ запрещён
-     * @response `404` `RpcStatus` Ответ не найден
-     * @response `409` `RpcStatus` Конфликт запроса
-     * @response `500` `RpcStatus` Внутренняя ошибка сервера
-     */
-    reportApiCreateCompanyFinanceReport = (data: ReportCreateCompanyFinanceReportRequest, params: RequestParams = {}) =>
-        this.http.request<ReportApiCreateCompanyFinanceReportData, ReportApiCreateCompanyFinanceReportError>({
-            path: `/v1/report/finance/create`,
-            method: 'POST',
-            body: data,
-            type: ContentType.Json,
-            ...params,
-        });
-    /**
-     * No description
+     * @description Метод для получения финансового отчёта за периоды с 01 по 15 и с 16 по 31. Запросить отчёт за отдельные дни не получится. Соответствует разделу **Финансы → Выплаты** в личном кабинете.
      *
      * @tags ReportAPI
      * @name FinanceApiFinanceCashFlowStatementList
@@ -2333,11 +4123,11 @@ export class V1<SecurityDataType = unknown> {
             ...params,
         });
     /**
-     * @description Запускает генерацию отчёта по уценённым товарам на складе Ozon. Ozon может сам уценить товар, например, при повреждении. В результате запроса будет не сам отчёт, а его уникальный идентификатор. Чтобы получить отчёт, отправьте идентификатор в запросе метода [/v1/report/discounted/info](#operation/ReportAPI_DiscountedReportInfo).
+     * @description Запускает генерацию отчёта по уценённым товарам на складе Ozon. Ozon может сам уценить товар, например, при повреждении. В результате запроса будет не сам отчёт, а его уникальный идентификатор. Чтобы получить отчёт, отправьте идентификатор в запросе метода [/v1/report/info](#operation/ReportAPI_ReportInfo). С одного аккаунта продавца можно отправить 1 запрос в минуту. Соответствует разделу **Аналитика → Отчёты → Продажи со склада Ozon → Товары, уценённые Ozon** в личном кабинете.
      *
      * @tags ReportAPI
      * @name ReportApiCreateDiscountedReport
-     * @summary Выпуск отчёта об уценённых товарах
+     * @summary Отчёт об уценённых товарах
      * @request POST:/v1/report/discounted/create
      * @response `200` `ReportApiCreateDiscountedReportData` Результат запроса
      * @response `400` `RpcStatus` Неверный параметр
@@ -2355,53 +4145,2912 @@ export class V1<SecurityDataType = unknown> {
             ...params,
         });
     /**
-     * @description Возвращает информацию о созданном ранее отчёте по его идентификатору.
+     * @description Отчёт с информацией о количестве доступных и зарезервированных единиц товара на складе. Соответствует разделу **FBS → Управление логистикой → Управление остатками → Скачать в XLS** в личном кабинете. В результате запроса будет не сам отчёт, а его уникальный идентификатор. Чтобы получить отчёт, отправьте идентификатор в запросе метода [/v1/report/info](#operation/ReportAPI_ReportInfo).
      *
      * @tags ReportAPI
-     * @name ReportApiDiscountedReportInfo
-     * @summary Отчёт об уценённых товарах
-     * @request POST:/v1/report/discounted/info
-     * @response `200` `ReportApiDiscountedReportInfoData` Результат запроса
+     * @name ReportApiCreateStockByWarehouseReport
+     * @summary Отчёт об остатках на FBS-складе
+     * @request POST:/v1/report/warehouse/stock
+     * @response `200` `ReportApiCreateStockByWarehouseReportData` Результат запроса
      * @response `400` `RpcStatus` Неверный параметр
      * @response `403` `RpcStatus` Доступ запрещён
      * @response `404` `RpcStatus` Ответ не найден
      * @response `409` `RpcStatus` Конфликт запроса
      * @response `500` `RpcStatus` Внутренняя ошибка сервера
      */
-    reportApiDiscountedReportInfo = (data: ReportDiscountedInfoRequest, params: RequestParams = {}) =>
-        this.http.request<ReportApiDiscountedReportInfoData, ReportApiDiscountedReportInfoError>({
-            path: `/v1/report/discounted/info`,
+    reportApiCreateStockByWarehouseReport = (data: V1CreateStockByWarehouseReportRequest, params: RequestParams = {}) =>
+        this.http.request<ReportApiCreateStockByWarehouseReportData, ReportApiCreateStockByWarehouseReportError>({
+            path: `/v1/report/warehouse/stock`,
             method: 'POST',
             body: data,
             type: ContentType.Json,
             ...params,
         });
     /**
-     * @description Возвращает список отчётов, которые были сформированы раньше.
+     * @description Соответствует разделу **FBO → Стоимость размещения** в личном кабинете. Отчёт можно получить не больше 5 раз в день.
      *
      * @tags ReportAPI
-     * @name ReportApiDiscountedReportList
-     * @summary Список отчётов об уценённых товарах
-     * @request POST:/v1/report/discounted/list
-     * @response `200` `ReportApiDiscountedReportListData` Результат запроса
-     * @response `400` `RpcStatus` Неверный параметр
-     * @response `403` `RpcStatus` Доступ запрещён
-     * @response `404` `RpcStatus` Ответ не найден
-     * @response `409` `RpcStatus` Конфликт запроса
-     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     * @name CreatePlacementByProductsReport
+     * @summary Получить отчёт о стоимости размещения по товарам
+     * @request POST:/v1/report/placement/by-products/create
+     * @response `200` `CreatePlacementByProductsReportData` Отчёт о стоимости размещения
+     * @response `default` `RpcStatus` Ошибка
      */
-    reportApiDiscountedReportList = (data: ReportDiscountedListRequest, params: RequestParams = {}) =>
-        this.http.request<ReportApiDiscountedReportListData, ReportApiDiscountedReportListError>({
-            path: `/v1/report/discounted/list`,
+    createPlacementByProductsReport = (data: V1CreatePlacementByProductsReportRequest, params: RequestParams = {}) =>
+        this.http.request<CreatePlacementByProductsReportData, CreatePlacementByProductsReportError>({
+            path: `/v1/report/placement/by-products/create`,
             method: 'POST',
             body: data,
             type: ContentType.Json,
             ...params,
         });
     /**
-     * @description Уĸажите период и метриĸи, ĸоторые нужно посчитать — в ответе будет аналитиĸа, сгруппированная по параметру `dimensions`.
+     * @description Соответствует разделу **FBO → Стоимость размещения** в личном кабинете. Отчёт можно получить не больше 5 раз в день.
+     *
+     * @tags ReportAPI
+     * @name CreatePlacementBySuppliesReport
+     * @summary Получить отчёт о стоимости размещения по поставкам
+     * @request POST:/v1/report/placement/by-supplies/create
+     * @response `200` `CreatePlacementBySuppliesReportData` Отчёт о стоимости размещения
+     * @response `default` `RpcStatus` Ошибка
+     */
+    createPlacementBySuppliesReport = (data: V1CreatePlacementBySuppliesReportRequest, params: RequestParams = {}) =>
+        this.http.request<CreatePlacementBySuppliesReportData, CreatePlacementBySuppliesReportError>({
+            path: `/v1/report/placement/by-supplies/create`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description В одном отчёте вы можете получить не больше 50 000 кодов маркировки. Чтобы получить остальные данные, уменьшите период формирования отчёта.
+     *
+     * @tags ReportAPI
+     * @name CreateCompanyMarkedProductsSalesReport
+     * @summary Сгенерировать отчёт по продажам товаров с маркировкой
+     * @request POST:/v1/report/marked-products-sales/create
+     * @response `200` `CreateCompanyMarkedProductsSalesReportData` Результат запроса
+     * @response `default` `RpcStatus` Ошибка
+     */
+    createCompanyMarkedProductsSalesReport = (
+        data: V1ReportMarkedProductsSalesCreateRequest,
+        params: RequestParams = {},
+    ) =>
+        this.http.request<CreateCompanyMarkedProductsSalesReportData, CreateCompanyMarkedProductsSalesReportError>({
+            path: `/v1/report/marked-products-sales/create`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Используйте метод, чтобы узнать оборачиваемость товара и количество дней, на которое хватит текущего остатка. Метод соответствует разделу [**FBO -> Управление остатками**](https://seller.ozon.ru/app/supply/stocks-management) в личном кабинете. Вы можете делать не больше 1 запроса в минуту по одному кабинету `Client-Id`. Если вы запрашиваете список товаров по `sku`, параметры `limit` и `offset` необязательны.
      *
      * @tags AnalyticsAPI
+     * @name AnalyticsApiStocksTurnover
+     * @summary Оборачиваемость товара
+     * @request POST:/v1/analytics/turnover/stocks
+     * @response `200` `AnalyticsApiStocksTurnoverData` Информация об оборачиваемости
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    analyticsApiStocksTurnover = (data: V1AnalyticsTurnoverStocksRequest, params: RequestParams = {}) =>
+        this.http.request<AnalyticsApiStocksTurnoverData, AnalyticsApiStocksTurnoverError>({
+            path: `/v1/analytics/turnover/stocks`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Метод позволяет получить аналитику по среднему времени доставки товара до покупателя. Соответствует разделу **Аналитика → Локальность продаж → Среднее время доставки** в личном кабинете. Детальную аналитику по каждому кластеру можно получить с помощью метода [/v1/analytics/average-delivery-time/details](#operation/AnalyticsAPI_AverageDeliveryTimeDetails). [Подробнее о среднем времени доставки в Базе знаний продавца](https://seller-edu.ozon.ru/analytics-and-metrics/graphs/srednee-vremya-dostavki)
+     *
+     * @tags AnalyticsAPI
+     * @name AnalyticsApiAverageDeliveryTime
+     * @summary Получить аналитику по среднему времени доставки
+     * @request POST:/v1/analytics/average-delivery-time
+     * @response `200` `AnalyticsApiAverageDeliveryTimeData` Аналитика по среднему времени доставки
+     * @response `default` `RpcStatus` Ошибка
+     */
+    analyticsApiAverageDeliveryTime = (data: V1AverageDeliveryTimeRequest, params: RequestParams = {}) =>
+        this.http.request<AnalyticsApiAverageDeliveryTimeData, AnalyticsApiAverageDeliveryTimeError>({
+            path: `/v1/analytics/average-delivery-time`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Метод является аналогом вкладки **Аналитика → Локальность продаж → Среднее время доставки** в личном кабинете продавца. [Подробнее о среднем времени доставки в Базе знаний продавца](https://seller-edu.ozon.ru/analytics-and-metrics/graphs/srednee-vremya-dostavki). Чтобы получить общую аналитику по кластерам, используйте метод <a href="#operation/AnalyticsAPI_AverageDeliveryTime">/v1/analytics/average-delivery-time</a>.
+     *
+     * @tags AnalyticsAPI
+     * @name AnalyticsApiAverageDeliveryTimeDetails
+     * @summary Получить детальную аналитику по среднему времени доставки
+     * @request POST:/v1/analytics/average-delivery-time/details
+     * @response `200` `AnalyticsApiAverageDeliveryTimeDetailsData` Детальная аналитика
+     * @response `default` `RpcStatus` Ошибка
+     */
+    analyticsApiAverageDeliveryTimeDetails = (data: V1AverageDeliveryTimeDetailsRequest, params: RequestParams = {}) =>
+        this.http.request<AnalyticsApiAverageDeliveryTimeDetailsData, AnalyticsApiAverageDeliveryTimeDetailsError>({
+            path: `/v1/analytics/average-delivery-time/details`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Метод позволяет получить общую аналитику по среднему времени доставки товара до покупателя. Соответствует разделу **Аналитика → Локальность продаж → Среднее время доставки** в личном кабинете. Детальную аналитику по каждому кластеру можно получить с помощью метода [/v1/analytics/average-delivery-time/details](#operation/AnalyticsAPI_AverageDeliveryTimeDetails). Чтобы получить аналитику по среднему времени доставки, используйте метод [/v1/analytics/average-delivery-time](#operation/AnalyticsAPI_AverageDeliveryTime). [Подробнее о среднем времени доставки в Базе знаний продавца](https://seller-edu.ozon.ru/analytics-and-metrics/graphs/srednee-vremya-dostavki)
+     *
+     * @tags AnalyticsAPI
+     * @name AverageDeliveryTimeSummary
+     * @summary Получить общую аналитику по среднему времени доставки
+     * @request POST:/v1/analytics/average-delivery-time/summary
+     * @response `200` `AverageDeliveryTimeSummaryData` Общая аналитика
+     * @response `default` `RpcStatus` Ошибка
+     */
+    averageDeliveryTimeSummary = (params: RequestParams = {}) =>
+        this.http.request<AverageDeliveryTimeSummaryData, AverageDeliveryTimeSummaryError>({
+            path: `/v1/analytics/average-delivery-time/summary`,
+            method: 'POST',
+            ...params,
+        });
+    /**
+     * @description Используйте метод, чтобы получить аналитику по остаткам товаров на складах. Метод соответствует разделу [**FBO → Управление остатками**](https://seller.ozon.ru/app/fbo-stocks/stocks-management/) в личном кабинете. Аналитика обновляется два раза в день: примерно в 07:00 и 16:00 по UTC. В запросе используйте только одно из полей: `cluster_ids` или `macrolocal_cluster_ids`, иначе вернётся ошибка.
+     *
+     * @tags AnalyticsAPI
+     * @name AnalyticsApiAnalyticsStocks
+     * @summary Получить аналитику по остаткам
+     * @request POST:/v1/analytics/stocks
+     * @response `200` `AnalyticsApiAnalyticsStocksData` Аналитика по остаткам на складах
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    analyticsApiAnalyticsStocks = (data: V1AnalyticsStocksRequest, params: RequestParams = {}) =>
+        this.http.request<AnalyticsApiAnalyticsStocksData, AnalyticsApiAnalyticsStocksError>({
+            path: `/v1/analytics/stocks`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description <aside class="warning"> Метод недоступен для продавцов, которые заключили договор с ТОО «ОЗОН Маркетплейс Казахстан». </aside> Отчёт о реализации доставленных и возвращённых товаров с детализацией по каждому заказу. Отмены и невыкупы не включаются. Отчёт доступен с настоящего времени по август 2023 года включительно.
+     *
+     * @tags FinanceAPI
+     * @name FinanceApiGetRealizationReportV1
+     * @summary Позаказный отчёт о реализации товаров
+     * @request POST:/v1/finance/realization/posting
+     * @response `200` `FinanceApiGetRealizationReportV1Data` Позаказный отчёт о реализации
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    financeApiGetRealizationReportV1 = (data: V1GetRealizationReportPostingRequest, params: RequestParams = {}) =>
+        this.http.request<FinanceApiGetRealizationReportV1Data, FinanceApiGetRealizationReportV1Error>({
+            path: `/v1/finance/realization/posting`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Используйте метод, чтобы получить отчёт по продажам юридическим лицам. Соответствует разделу **Финансы → Документы → Реестр продаж юр. лицам** в личном кабинете.
+     *
+     * @tags FinanceAPI
+     * @name ReportApiCreateDocumentB2BSalesReport
+     * @summary Реестр продаж юридическим лицам
+     * @request POST:/v1/finance/document-b2b-sales
+     * @response `200` `ReportApiCreateDocumentB2BSalesReportData` Результат запроса
+     * @response `default` `RpcStatus` Ошибка
+     */
+    reportApiCreateDocumentB2BSalesReport = (data: V1CreateDocumentB2BSalesReportRequest, params: RequestParams = {}) =>
+        this.http.request<ReportApiCreateDocumentB2BSalesReportData, ReportApiCreateDocumentB2BSalesReportError>({
+            path: `/v1/finance/document-b2b-sales`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Используйте метод, чтобы получить отчёт по продажам юридическим лицам в JSON-формате. Соответствует разделу **Финансы → Документы → Реестр продаж юр. лицам** в личном кабинете.
+     *
+     * @tags FinanceAPI
+     * @name ReportApiCreateDocumentB2BSalesJsonReport
+     * @summary Реестр продаж юридическим лицам в JSON-формате
+     * @request POST:/v1/finance/document-b2b-sales/json
+     * @response `200` `ReportApiCreateDocumentB2BSalesJsonReportData` Отчёт в JSON-формате
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    reportApiCreateDocumentB2BSalesJsonReport = (
+        data: V1CreateDocumentB2BSalesJSONReportRequest,
+        params: RequestParams = {},
+    ) =>
+        this.http.request<
+            ReportApiCreateDocumentB2BSalesJsonReportData,
+            ReportApiCreateDocumentB2BSalesJsonReportError
+        >({
+            path: `/v1/finance/document-b2b-sales/json`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Используйте метод, чтобы получить отчёт о взаиморасчетах. Соответствует разделу **Финансы → Документы → Аналитические отчеты → Отчет о взаиморасчетах** в личном кабинете.
+     *
+     * @tags FinanceAPI
+     * @name ReportApiCreateMutualSettlementReport
+     * @summary Отчёт о взаиморасчётах
+     * @request POST:/v1/finance/mutual-settlement
+     * @response `200` `ReportApiCreateMutualSettlementReportData` Результат запроса
+     * @response `default` `RpcStatus` Ошибка
+     */
+    reportApiCreateMutualSettlementReport = (data: V1CreateMutualSettlementReportRequest, params: RequestParams = {}) =>
+        this.http.request<ReportApiCreateMutualSettlementReportData, ReportApiCreateMutualSettlementReportError>({
+            path: `/v1/finance/mutual-settlement`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Возвращает отчёт о товарах, которые выкупил Ozon для продажи в ЕАЭС и другие страны. Соответствует разделу **Финансы → Документы → УПД по сделкам с юр. лицами → УПД по выкупленным товарам** в личном кабинете. [Подробнее о продаже товаров в ЕАЭС и другие страны в Базе знаний](https://seller-edu.ozon.ru/commissions-tariffs/commissions-tariffs-ozon/prodaji-tovarov-v-eaes-i-drugie-strany?search=выкупленные+товары)
+     *
+     * @tags FinanceAPI
+     * @name GetFinanceProductsBuyout
+     * @summary Отчёт о выкупленных товарах
+     * @request POST:/v1/finance/products/buyout
+     * @response `200` `GetFinanceProductsBuyoutData` Отчёт по выкупленным товарам
+     * @response `default` `RpcStatus` Ошибка
+     */
+    getFinanceProductsBuyout = (data: V1GetFinanceProductsBuyoutRequest, params: RequestParams = {}) =>
+        this.http.request<GetFinanceProductsBuyoutData, GetFinanceProductsBuyoutError>({
+            path: `/v1/finance/products/buyout`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Метод для получения отчёта о компенсациях. Соответствует отчёту из раздела **Финансы → Документы → Компенсации и прочие начисления** в личном кабинете.
+     *
+     * @tags FinanceAPI
+     * @name ReportApiGetCompensationReport
+     * @summary Отчёт о компенсациях
+     * @request POST:/v1/finance/compensation
+     * @response `200` `ReportApiGetCompensationReportData` Отчёт о компенсациях
+     * @response `default` `RpcStatus` Ошибка
+     */
+    reportApiGetCompensationReport = (data: V1GetCompensationReportRequest, params: RequestParams = {}) =>
+        this.http.request<ReportApiGetCompensationReportData, ReportApiGetCompensationReportError>({
+            path: `/v1/finance/compensation`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Метод для получения отчёта о декомпенсациях. Соответствует отчёту из раздела **Финансы → Документы → Компенсации и прочие начисления** в личном кабинете.
+     *
+     * @tags FinanceAPI
+     * @name ReportApiGetDecompensationReport
+     * @summary Отчёт о декомпенсациях
+     * @request POST:/v1/finance/decompensation
+     * @response `200` `ReportApiGetDecompensationReportData` Отчёт о декомпенсациях
+     * @response `default` `RpcStatus` Ошибка
+     */
+    reportApiGetDecompensationReport = (data: V1GetDecompensationReportRequest, params: RequestParams = {}) =>
+        this.http.request<ReportApiGetDecompensationReportData, ReportApiGetDecompensationReportError>({
+            path: `/v1/finance/decompensation`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description <aside class="warning"> Метод доступен продавцам, которые заключили договор с ТОО «ОЗОН Маркетплейс Казахстан». </aside>
+     *
+     * @tags Receipt
+     * @name GetReceipt
+     * @summary Получить чек в формате PDF
+     * @request POST:/v1/receipts/get
+     * @response `200` `GetReceiptData` Чек
+     * @response `default` `RpcStatus` Ошибка
+     */
+    getReceipt = (data: V1GetReceiptRequest, params: RequestParams = {}) =>
+        this.http.request<GetReceiptData, GetReceiptError>({
+            path: `/v1/receipts/get`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description <aside class="warning"> Метод доступен продавцам, которые заключили договор с ТОО «ОЗОН Маркетплейс Казахстан». </aside>
+     *
+     * @tags Receipt
+     * @name ReceiptsSellerList
+     * @summary Получить список чеков продавца
+     * @request POST:/v1/receipts/seller/list
+     * @response `200` `ReceiptsSellerListData` Список чеков продавца
+     * @response `default` `RpcStatus` Ошибка
+     */
+    receiptsSellerList = (data: V1ReceiptsSellerListRequest, params: RequestParams = {}) =>
+        this.http.request<ReceiptsSellerListData, ReceiptsSellerListError>({
+            path: `/v1/receipts/seller/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description <aside class="warning"> Метод доступен продавцам, которые заключили договор с ТОО «ОЗОН Маркетплейс Казахстан». </aside>
+     *
+     * @tags Receipt
+     * @name UploadReceipt
+     * @summary Загрузить чек
+     * @request POST:/v1/receipts/upload
+     * @response `200` `UploadReceiptData` Чек загружен
+     * @response `default` `RpcStatus` Ошибка
+     */
+    uploadReceipt = (data: V1UploadReceiptRequest, params: RequestParams = {}) =>
+        this.http.request<UploadReceiptData, UploadReceiptError>({
+            path: `/v1/receipts/upload`,
+            method: 'POST',
+            body: data,
+            type: ContentType.FormData,
+            ...params,
+        });
+    /**
+     * @description Рейтинг продавца по следующим показателям: индекс цен, доставки вовремя, процент отмен, жалобы и другие. Соответствует разделу **Рейтинги → Рейтинги продавца** в личном кабинете.
+     *
+     * @tags SellerRating
+     * @name RatingApiRatingSummaryV1
+     * @summary Получить информацию о текущих рейтингах продавца
+     * @request POST:/v1/rating/summary
+     * @response `200` `RatingApiRatingSummaryV1Data` Информация о рейтингах
+     * @response `default` `RpcStatus` Ошибка
+     */
+    ratingApiRatingSummaryV1 = (data: V1Empty, params: RequestParams = {}) =>
+        this.http.request<RatingApiRatingSummaryV1Data, RatingApiRatingSummaryV1Error>({
+            path: `/v1/rating/summary`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Информация о рейтингах за заданный период и с фильтром по нужному рейтингу. Соответствует разделу **Рейтинги → Рейтинги продавца** в личном кабинете.
+     *
+     * @tags SellerRating
+     * @name RatingApiRatingHistoryV1
+     * @summary Получить информацию о рейтингах продавца за период
+     * @request POST:/v1/rating/history
+     * @response `200` `RatingApiRatingHistoryV1Data` Информация о рейтингах
+     * @response `default` `RpcStatus` Ошибка
+     */
+    ratingApiRatingHistoryV1 = (data: V1RatingHistoryV1Request, params: RequestParams = {}) =>
+        this.http.request<RatingApiRatingHistoryV1Data, RatingApiRatingHistoryV1Error>({
+            path: `/v1/rating/history`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags SellerRating
+     * @name RatingApiGetFbsRatingIndexInfoV1
+     * @summary Получить индекс ошибок FBS и rFBS
+     * @request POST:/v1/rating/index/fbs/info
+     * @response `200` `RatingApiGetFbsRatingIndexInfoV1Data` Индекс ошибок
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    ratingApiGetFbsRatingIndexInfoV1 = (params: RequestParams = {}) =>
+        this.http.request<RatingApiGetFbsRatingIndexInfoV1Data, RatingApiGetFbsRatingIndexInfoV1Error>({
+            path: `/v1/rating/index/fbs/info`,
+            method: 'POST',
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags SellerRating
+     * @name RatingApiListFbsRatingIndexPostingsV1
+     * @summary Список отправлений, которые повлияли на индекс ошибок FBS и rFBS
+     * @request POST:/v1/rating/index/fbs/posting/list
+     * @response `200` `RatingApiListFbsRatingIndexPostingsV1Data` Список отправлений
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    ratingApiListFbsRatingIndexPostingsV1 = (data: V1ListFBSRatingIndexPostingsV1Request, params: RequestParams = {}) =>
+        this.http.request<RatingApiListFbsRatingIndexPostingsV1Data, RatingApiListFbsRatingIndexPostingsV1Error>({
+            path: `/v1/rating/index/fbs/posting/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Метод доступен только продавцам, работающим с цифровыми товарами. Вы можете загрузить коды цифровых товаров в течение 24 часов с момента получения заказа. Передайте все коды цифровых товаров к каждому товару в заказе за один запрос. Если передадите не все коды, запрос вернётся с ошибкой.
+     *
+     * @tags Digital
+     * @name UploadPostingCodes
+     * @summary Загрузить коды цифровых товаров для отправления
+     * @request POST:/v1/posting/digital/codes/upload
+     * @response `200` `UploadPostingCodesData` Коды цифровых товаров загружены
+     * @response `default` `RpcStatus` Ошибка
+     */
+    uploadPostingCodes = (data: V1UploadPostingCodesRequest, params: RequestParams = {}) =>
+        this.http.request<UploadPostingCodesData, UploadPostingCodesError>({
+            path: `/v1/posting/digital/codes/upload`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Возвращает список отправлений, по которым нужно загрузить коды цифровых товаров. Метод доступен только продавцам, работающим с цифровыми товарами. Чтобы получить список отправлений в любом статусе, воспользуйтесь методом [/v2/posting/fbo/list](#operation/PostingAPI_GetFboPostingList).
+     *
+     * @tags Digital
+     * @name ListPostingCodes
+     * @summary Получить список отправлений
+     * @request POST:/v1/posting/digital/list
+     * @response `200` `ListPostingCodesData` Список отправлений
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    listPostingCodes = (data: V1ListPostingCodesRequest, params: RequestParams = {}) =>
+        this.http.request<ListPostingCodesData, ListPostingCodesError>({
+            path: `/v1/posting/digital/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Метод доступен только продавцам, работающим с цифровыми товарами. Используйте метод, чтобы изменить информацию о количестве товара в наличии.
+     *
+     * @tags Digital
+     * @name DigitalProductApiStocksImport
+     * @summary Обновить количество цифровых товаров
+     * @request POST:/v1/product/digital/stocks/import
+     * @response `200` `DigitalProductApiStocksImportData` Количество товаров обновлено
+     * @response `default` `RpcStatus` Ошибка
+     */
+    digitalProductApiStocksImport = (data: V1StocksImportRequest, params: RequestParams = {}) =>
+        this.http.request<DigitalProductApiStocksImportData, DigitalProductApiStocksImportError>({
+            path: `/v1/product/digital/stocks/import`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description <aside class="warning"> 22 января 2026 года метод будет отключён. Переключитесь на <a href="#operation/AnalyticsAPI_AnalyticsStocks">/v1/analytics/stocks</a>. </aside> Используйте метод, чтобы узнать, сколько товаров осталось на складах FBO. Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1106-Razdel-upravleniia-ostatkami-analytics-manage-stocks) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags BetaMethod
+     * @name AnalyticsApiManageStocks
+     * @summary Управление остатками
+     * @request POST:/v1/analytics/manage/stocks
+     * @response `200` `AnalyticsApiManageStocksData` Информация об остатках
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    analyticsApiManageStocks = (data: V1AnalyticsManageStocksRequest, params: RequestParams = {}) =>
+        this.http.request<AnalyticsApiManageStocksData, AnalyticsApiManageStocksError>({
+            path: `/v1/analytics/manage/stocks`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Метод соответствует разделу [**FBO → Вывоз и утилизация**](https://seller.ozon.ru/app/fbo-operations/returns) в личном кабинете. Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1608-Novye-metody-po-vyvozu-i-utilizatsii) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags BetaMethod
+     * @name GetSupplyReturnsSummaryReport
+     * @summary Отчёт по вывозу и утилизации с поставки FBO
+     * @request POST:/v1/removal/from-supply/list
+     * @response `200` `GetSupplyReturnsSummaryReportData` Отчёт по вывозу и утилизации с поставки FBO
+     * @response `default` `RpcStatus` Ошибка
+     */
+    getSupplyReturnsSummaryReport = (data: V1GetSupplyReturnsSummaryReportRequest, params: RequestParams = {}) =>
+        this.http.request<GetSupplyReturnsSummaryReportData, GetSupplyReturnsSummaryReportError>({
+            path: `/v1/removal/from-supply/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Метод соответствует разделу [**FBO → Вывоз и утилизация**](https://seller.ozon.ru/app/fbo-operations/returns) в личном кабинете. Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1608-Novye-metody-po-vyvozu-i-utilizatsii) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags BetaMethod
+     * @name GetSupplierReturnsSummaryReport
+     * @summary Отчёт по вывозу и утилизации со стока FBO
+     * @request POST:/v1/removal/from-stock/list
+     * @response `200` `GetSupplierReturnsSummaryReportData` Отчёт по вывозу и утилизации со стока FBO
+     * @response `default` `RpcStatus` Ошибка
+     */
+    getSupplierReturnsSummaryReport = (data: V1GetSupplierReturnsSummaryReportRequest, params: RequestParams = {}) =>
+        this.http.request<GetSupplierReturnsSummaryReportData, GetSupplierReturnsSummaryReportError>({
+            path: `/v1/removal/from-stock/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Устанавливает или удаляет скидку на товар в зависимости от его количества в заказе. Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1719-Novye-metody-dlia-raboty-so-skidkoi-ot-kolichestva/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags BetaMethod
+     * @name ProductApiSetProductStairwayDiscountByQuantity
+     * @summary Управлять скидкой от количества
+     * @request POST:/v1/product/stairway-discount/by-quantity/set
+     * @response `200` `ProductApiSetProductStairwayDiscountByQuantityData` Настройки скидки изменены
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    productApiSetProductStairwayDiscountByQuantity = (
+        data: V1SetProductStairwayDiscountByQuantityRequest,
+        params: RequestParams = {},
+    ) =>
+        this.http.request<
+            ProductApiSetProductStairwayDiscountByQuantityData,
+            ProductApiSetProductStairwayDiscountByQuantityError
+        >({
+            path: `/v1/product/stairway-discount/by-quantity/set`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Возвращает информацию о скидке на товар в зависимости от его количества в заказе. Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1719-Novye-metody-dlia-raboty-so-skidkoi-ot-kolichestva/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags BetaMethod
+     * @name ProductApiGetProductStairwayDiscountByQuantity
+     * @summary Получить информацию о скидке от количества
+     * @request POST:/v1/product/stairway-discount/by-quantity/get
+     * @response `200` `ProductApiGetProductStairwayDiscountByQuantityData` Информация получена
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    productApiGetProductStairwayDiscountByQuantity = (
+        data: V1GetProductStairwayDiscountByQuantityRequest,
+        params: RequestParams = {},
+    ) =>
+        this.http.request<
+            ProductApiGetProductStairwayDiscountByQuantityData,
+            ProductApiGetProductStairwayDiscountByQuantityError
+        >({
+            path: `/v1/product/stairway-discount/by-quantity/get`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Соответствует разделу **Финансы → Баланс** в личном кабинете. Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1732-Novyi-metod-polucheniia-dannykh-po-balansu/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags BetaMethod
+     * @name GetFinanceBalanceV1
+     * @summary Получить отчёт о балансе
+     * @request POST:/v1/finance/balance
+     * @response `200` `GetFinanceBalanceV1Data` Отчёт о балансе
+     * @response `default` `RpcStatus` Ошибка
+     */
+    getFinanceBalanceV1 = (data: V1GetFinanceBalanceV1Request, params: RequestParams = {}) =>
+        this.http.request<GetFinanceBalanceV1Data, GetFinanceBalanceV1Error>({
+            path: `/v1/finance/balance`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Акт о расхождениях доступен только для отгрузок в статусе `closed` и только для продавцов из СНГ. Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1876-Novyi-metod-dlia-polucheniia-akta-o-raskhozhdeniiakh-FBS/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags BetaMethod
+     * @name CarriageActDiscrepancyPdf
+     * @summary Получить акт о расхождениях по отгрузке FBS
+     * @request POST:/v1/carriage/act-discrepancy/pdf
+     * @response `200` `CarriageActDiscrepancyPdfData` Акт о расхождениях
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    carriageActDiscrepancyPdf = (data: V1CarriageActDiscrepancyPDFRequest, params: RequestParams = {}) =>
+        this.http.request<CarriageActDiscrepancyPdfData, CarriageActDiscrepancyPdfError>({
+            path: `/v1/carriage/act-discrepancy/pdf`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Возвращает список складов Ozon, которые работают по схемам FBO и FBO Fresh, и возвратных складов. Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1889-Novyi-metod-dlia-polucheniia-FBO-skladov/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags BetaMethod
+     * @name WarehouseOzonList
+     * @summary Получить список складов Ozon
+     * @request POST:/v1/warehouse/ozon/list
+     * @response `200` `WarehouseOzonListData` Список складов Ozon
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    warehouseOzonList = (data: V1WarehouseOZONListRequest, params: RequestParams = {}) =>
+        this.http.request<WarehouseOzonListData, WarehouseOzonListError>({
+            path: `/v1/warehouse/ozon/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1951-Novyi-metod-upravleniia-vidimostiu-na-vitrinakh/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags BetaMethod
+     * @name ProductVisibilitySet
+     * @summary Настроить видимость товара на витрине Ozon и Ozon Селект
+     * @request POST:/v1/product/visibility/set
+     * @response `200` `ProductVisibilitySetData` Видимость товара настроена
+     * @response `default` `RpcStatus` Ошибка
+     */
+    productVisibilitySet = (data: ProductV1ProductVisibilitySetRequest, params: RequestParams = {}) =>
+        this.http.request<ProductVisibilitySetData, ProductVisibilitySetError>({
+            path: `/v1/product/visibility/set`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Скрывает товары склада с витрины. Изменять сток не нужно. Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1967-Novye-metody-dlia-ustanovki-pauzy-na-skladakh-rFBS/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags BetaMethod
+     * @name WarehouseRfbsPause
+     * @summary Поставить rFBS-склад на паузу
+     * @request POST:/v1/warehouse/rfbs/pause
+     * @response `200` `WarehouseRfbsPauseData` Склад на паузе
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    warehouseRfbsPause = (data: WarehouseV1WarehouseRfbsPauseRequest, params: RequestParams = {}) =>
+        this.http.request<WarehouseRfbsPauseData, WarehouseRfbsPauseError>({
+            path: `/v1/warehouse/rfbs/pause`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Возвращает товары склада на витрину. Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1967-Novye-metody-dlia-ustanovki-pauzy-na-skladakh-rFBS/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags BetaMethod
+     * @name WarehouseRfbsUnpause
+     * @summary Снять rFBS-склад с паузы
+     * @request POST:/v1/warehouse/rfbs/unpause
+     * @response `200` `WarehouseRfbsUnpauseData` Склад снят с паузы
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    warehouseRfbsUnpause = (data: WarehouseV1WarehouseRfbsUnpauseRequest, params: RequestParams = {}) =>
+        this.http.request<WarehouseRfbsUnpauseData, WarehouseRfbsUnpauseError>({
+            path: `/v1/warehouse/rfbs/unpause`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags FBSWarehouseSetup
+     * @name WarehouseApiListDropOffPointsForCreateFbsWarehouse
+     * @summary Получить список drop-off пунктов для создания склада
+     * @request POST:/v1/warehouse/fbs/create/drop-off/list
+     * @response `200` `WarehouseApiListDropOffPointsForCreateFbsWarehouseData` Список получен
+     * @response `default` `RpcStatus` Ошибка
+     */
+    warehouseApiListDropOffPointsForCreateFbsWarehouse = (
+        data: V1ListDropOffPointsForCreateFBSWarehouseRequest,
+        params: RequestParams = {},
+    ) =>
+        this.http.request<
+            WarehouseApiListDropOffPointsForCreateFbsWarehouseData,
+            WarehouseApiListDropOffPointsForCreateFbsWarehouseError
+        >({
+            path: `/v1/warehouse/fbs/create/drop-off/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags FBSWarehouseSetup
+     * @name WarehouseApiListDropOffPointsForUpdateFbsWarehouse
+     * @summary Получить список drop-off пунктов для изменения информации склада
+     * @request POST:/v1/warehouse/fbs/update/drop-off/list
+     * @response `200` `WarehouseApiListDropOffPointsForUpdateFbsWarehouseData` Список получен
+     * @response `default` `RpcStatus` Ошибка
+     */
+    warehouseApiListDropOffPointsForUpdateFbsWarehouse = (
+        data: V1ListDropOffPointsForUpdateFBSWarehouseRequest,
+        params: RequestParams = {},
+    ) =>
+        this.http.request<
+            WarehouseApiListDropOffPointsForUpdateFbsWarehouseData,
+            WarehouseApiListDropOffPointsForUpdateFbsWarehouseError
+        >({
+            path: `/v1/warehouse/fbs/update/drop-off/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags FBSWarehouseSetup
+     * @name WarehouseFbsCreateDropOffTimeslotList
+     * @summary Получить список таймслотов для создания склада с отгрузкой drop-off
+     * @request POST:/v1/warehouse/fbs/create/drop-off/timeslot/list
+     * @response `200` `WarehouseFbsCreateDropOffTimeslotListData` Список таймслотов
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    warehouseFbsCreateDropOffTimeslotList = (
+        data: V1WarehouseFbsCreateDropOffTimeslotListRequest,
+        params: RequestParams = {},
+    ) =>
+        this.http.request<WarehouseFbsCreateDropOffTimeslotListData, WarehouseFbsCreateDropOffTimeslotListError>({
+            path: `/v1/warehouse/fbs/create/drop-off/timeslot/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags FBSWarehouseSetup
+     * @name WarehouseFbsUpdateDropOffTimeslotList
+     * @summary Получить список таймслотов для обновления склада с отгрузкой drop-off
+     * @request POST:/v1/warehouse/fbs/update/drop-off/timeslot/list
+     * @response `200` `WarehouseFbsUpdateDropOffTimeslotListData` Список таймслотов
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    warehouseFbsUpdateDropOffTimeslotList = (
+        data: V1WarehouseFbsUpdateDropOffTimeslotListRequest,
+        params: RequestParams = {},
+    ) =>
+        this.http.request<WarehouseFbsUpdateDropOffTimeslotListData, WarehouseFbsUpdateDropOffTimeslotListError>({
+            path: `/v1/warehouse/fbs/update/drop-off/timeslot/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags FBSWarehouseSetup
+     * @name WarehouseFbsCreatePickUpTimeslotList
+     * @summary Получить список таймслотов для создания склада с отгрузкой pick-up
+     * @request POST:/v1/warehouse/fbs/create/pick-up/timeslot/list
+     * @response `200` `WarehouseFbsCreatePickUpTimeslotListData` Список таймслотов
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    warehouseFbsCreatePickUpTimeslotList = (
+        data: V1WarehouseFbsCreatePickUpTimeslotListRequest,
+        params: RequestParams = {},
+    ) =>
+        this.http.request<WarehouseFbsCreatePickUpTimeslotListData, WarehouseFbsCreatePickUpTimeslotListError>({
+            path: `/v1/warehouse/fbs/create/pick-up/timeslot/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags FBSWarehouseSetup
+     * @name WarehouseFbsUpdatePickUpTimeslotList
+     * @summary Получить список таймслотов для обновления склада с отгрузкой pick-up
+     * @request POST:/v1/warehouse/fbs/update/pick-up/timeslot/list
+     * @response `200` `WarehouseFbsUpdatePickUpTimeslotListData` Список таймслотов
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    warehouseFbsUpdatePickUpTimeslotList = (
+        data: V1WarehouseFbsUpdatePickUpTimeslotListRequest,
+        params: RequestParams = {},
+    ) =>
+        this.http.request<WarehouseFbsUpdatePickUpTimeslotListData, WarehouseFbsUpdatePickUpTimeslotListError>({
+            path: `/v1/warehouse/fbs/update/pick-up/timeslot/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Если создаёте склад с доставкой в drop-off пункт, используйте метод [/v1/warehouse/fbs/create/drop-off/list](#operation/WarehouseAPI_ListDropOffPointsForCreateFBSWarehouse), чтобы получить точки.
+     *
+     * @tags FBSWarehouseSetup
+     * @name WarehouseApiCreateWarehouseFbs
+     * @summary Создать склад
+     * @request POST:/v1/warehouse/fbs/create
+     * @response `200` `WarehouseApiCreateWarehouseFbsData` Склад создан
+     * @response `default` `RpcStatus` Ошибка
+     */
+    warehouseApiCreateWarehouseFbs = (data: V1CreateWarehouseFBSRequest, params: RequestParams = {}) =>
+        this.http.request<WarehouseApiCreateWarehouseFbsData, WarehouseApiCreateWarehouseFbsError>({
+            path: `/v1/warehouse/fbs/create`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags FBSWarehouseSetup
+     * @name UpdateWarehouseFbs
+     * @summary Обновить склад
+     * @request POST:/v1/warehouse/fbs/update
+     * @response `200` `UpdateWarehouseFbsData` Склад обновлён
+     * @response `default` `RpcStatus` Ошибка
+     */
+    updateWarehouseFbs = (data: V1UpdateWarehouseFBSRequest, params: RequestParams = {}) =>
+        this.http.request<UpdateWarehouseFbsData, UpdateWarehouseFbsError>({
+            path: `/v1/warehouse/fbs/update`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags FBSWarehouseSetup
+     * @name UpdateWarehouseFbsFirstMile
+     * @summary Обновить первую милю
+     * @request POST:/v1/warehouse/fbs/first-mile/update
+     * @response `200` `UpdateWarehouseFbsFirstMileData` Первая миля обновлена
+     * @response `default` `RpcStatus` Ошибка
+     */
+    updateWarehouseFbsFirstMile = (data: V1UpdateWarehouseFBSFirstMileRequest, params: RequestParams = {}) =>
+        this.http.request<UpdateWarehouseFbsFirstMileData, UpdateWarehouseFbsFirstMileError>({
+            path: `/v1/warehouse/fbs/first-mile/update`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags FBSWarehouseSetup
+     * @name WarehouseFbsCreateReturnPointList
+     * @summary Получить список пунктов возврата для создания склада
+     * @request POST:/v1/warehouse/fbs/create/return-point/list
+     * @response `200` `WarehouseFbsCreateReturnPointListData` Успешно
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    warehouseFbsCreateReturnPointList = (
+        data: V1WarehouseFBSCreateReturnPointListRequest,
+        params: RequestParams = {},
+    ) =>
+        this.http.request<WarehouseFbsCreateReturnPointListData, WarehouseFbsCreateReturnPointListError>({
+            path: `/v1/warehouse/fbs/create/return-point/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags FBSWarehouseSetup
+     * @name WarehouseFbsUpdateReturnPointList
+     * @summary Получить список пунктов возврата для обновления склада
+     * @request POST:/v1/warehouse/fbs/update/return-point/list
+     * @response `200` `WarehouseFbsUpdateReturnPointListData` Успешно
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    warehouseFbsUpdateReturnPointList = (
+        data: V1WarehouseFBSUpdateReturnPointListRequest,
+        params: RequestParams = {},
+    ) =>
+        this.http.request<WarehouseFbsUpdateReturnPointListData, WarehouseFbsUpdateReturnPointListError>({
+            path: `/v1/warehouse/fbs/update/return-point/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags FBSWarehouseSetup
+     * @name WarehouseFbsReturnMileInfo
+     * @summary Получить информацию о возвратной миле
+     * @request POST:/v1/warehouse/fbs/return-mile/info
+     * @response `200` `WarehouseFbsReturnMileInfoData` Успешно
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    warehouseFbsReturnMileInfo = (data: V1WarehouseFBSReturnMileInfoRequest, params: RequestParams = {}) =>
+        this.http.request<WarehouseFbsReturnMileInfoData, WarehouseFbsReturnMileInfoError>({
+            path: `/v1/warehouse/fbs/return-mile/info`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags FBSWarehouseSetup
+     * @name WarehouseFbsReturnMileCheck
+     * @summary Проверить необходимость установки возвратной мили на склад
+     * @request POST:/v1/warehouse/fbs/return-mile/check
+     * @response `200` `WarehouseFbsReturnMileCheckData` Успешно
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    warehouseFbsReturnMileCheck = (data: V1WarehouseFbsReturnMileCheckRequest, params: RequestParams = {}) =>
+        this.http.request<WarehouseFbsReturnMileCheckData, WarehouseFbsReturnMileCheckError>({
+            path: `/v1/warehouse/fbs/return-mile/check`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Метод позволяет запланировать приезд курьера для отгрузки ему отправлений. [Подробнее об отгрузках курьеру на FBS в Базе знаний](https://seller-edu.ozon.ru/fbs/ozon-logistika/otgruzka-kyruery)
+     *
+     * @tags FBSWarehouseSetup
+     * @name WarehouseFbsPickUpCourierCreate
+     * @summary Создать вызов курьера на забор отгрузки pick-up
+     * @request POST:/v1/warehouse/fbs/pickup/courier/create
+     * @response `200` `WarehouseFbsPickUpCourierCreateData` Вызов создан
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    warehouseFbsPickUpCourierCreate = (data: V1WarehouseFbsPickUpCourierCreateRequest, params: RequestParams = {}) =>
+        this.http.request<WarehouseFbsPickUpCourierCreateData, WarehouseFbsPickUpCourierCreateError>({
+            path: `/v1/warehouse/fbs/pickup/courier/create`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Метод позволяет отменить запланированный приезд курьера. [Подробнее об отгрузках курьеру на FBS в Базе знаний](https://seller-edu.ozon.ru/fbs/ozon-logistika/otgruzka-kyruery)
+     *
+     * @tags FBSWarehouseSetup
+     * @name WarehouseFbsPickUpCourierCancel
+     * @summary Отменить вызов курьера на забор отгрузки pick-up
+     * @request POST:/v1/warehouse/fbs/pickup/courier/cancel
+     * @response `200` `WarehouseFbsPickUpCourierCancelData` Вызов отменён
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    warehouseFbsPickUpCourierCancel = (data: V1WarehouseFbsPickUpCourierCancelRequest, params: RequestParams = {}) =>
+        this.http.request<WarehouseFbsPickUpCourierCancelData, WarehouseFbsPickUpCourierCancelError>({
+            path: `/v1/warehouse/fbs/pickup/courier/cancel`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description [Подробнее об отгрузках курьеру в Базе знаний продавца](https://seller-edu.ozon.ru/fbs/ozon-logistika/otgruzka-kyruery)
+     *
+     * @tags FBSWarehouseSetup
+     * @name WarehouseFbsPickUpHistoryList
+     * @summary Получить историю отгрузок курьерам
+     * @request POST:/v1/warehouse/fbs/pickup/history/list
+     * @response `200` `WarehouseFbsPickUpHistoryListData` История отгрузок
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    warehouseFbsPickUpHistoryList = (data: V1WarehouseFbsPickUpHistoryListRequest, params: RequestParams = {}) =>
+        this.http.request<WarehouseFbsPickUpHistoryListData, WarehouseFbsPickUpHistoryListError>({
+            path: `/v1/warehouse/fbs/pickup/history/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Чтобы создать отгрузку, используйте метод [/v1/warehouse/fbs/pickup/courier/create](#operation/WarehouseFbsPickUpCourierCreate). [Подробнее об отгрузках курьеру на FBS в Базе знаний](https://seller-edu.ozon.ru/fbs/ozon-logistika/otgruzka-kyruery)
+     *
+     * @tags FBSWarehouseSetup
+     * @name WarehouseFbsPickUpPlanningList
+     * @summary Получить список складов для планирования отгрузок курьеру
+     * @request POST:/v1/warehouse/fbs/pickup/planning/list
+     * @response `200` `WarehouseFbsPickUpPlanningListData` Список складов
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    warehouseFbsPickUpPlanningList = (params: RequestParams = {}) =>
+        this.http.request<WarehouseFbsPickUpPlanningListData, WarehouseFbsPickUpPlanningListError>({
+            path: `/v1/warehouse/fbs/pickup/planning/list`,
+            method: 'POST',
+            ...params,
+        });
+    /**
+     * @description [Подробнее о схеме realFBS Express](https://seller-edu.ozon.ru/rfbs/scheme-of-work/rfbs-express#%D1%87%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-realfbs-express)
+     *
+     * @tags rFBSWarehouseSetup
+     * @name WarehouseErfbsAggregatorCreate
+     * @summary Создать склад с методом доставки «Партнёры Ozon»
+     * @request POST:/v1/warehouse/erfbs/aggregator/create
+     * @response `200` `WarehouseErfbsAggregatorCreateData` Склад создан
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    warehouseErfbsAggregatorCreate = (data: V1WarehouseERFBSAggregatorCreateRequest, params: RequestParams = {}) =>
+        this.http.request<WarehouseErfbsAggregatorCreateData, WarehouseErfbsAggregatorCreateError>({
+            path: `/v1/warehouse/erfbs/aggregator/create`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description [Подробнее о схеме realFBS Express](https://seller-edu.ozon.ru/rfbs/scheme-of-work/rfbs-express#%D1%87%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-realfbs-express)
+     *
+     * @tags rFBSWarehouseSetup
+     * @name WarehouseErfbsUpdate
+     * @summary Обновить склад
+     * @request POST:/v1/warehouse/erfbs/update
+     * @response `200` `WarehouseErfbsUpdateData` Склад обновлён
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    warehouseErfbsUpdate = (data: V1WarehouseERFBSUpdateRequest, params: RequestParams = {}) =>
+        this.http.request<WarehouseErfbsUpdateData, WarehouseErfbsUpdateError>({
+            path: `/v1/warehouse/erfbs/update`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description [Подробнее о схеме rFBS Express](https://seller-edu.ozon.ru/rfbs/scheme-of-work/rfbs-express#%D1%87%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-realfbs-express)
+     *
+     * @tags rFBSWarehouseSetup
+     * @name WarehouseErfbsAggregatorDeliveryMethodUpdate
+     * @summary Обновить метод доставки «Партнёры Ozon»
+     * @request POST:/v1/warehouse/erfbs/aggregator/delivery-method/update
+     * @response `200` `WarehouseErfbsAggregatorDeliveryMethodUpdateData` Успешно
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    warehouseErfbsAggregatorDeliveryMethodUpdate = (
+        data: V1WarehouseERFBSAggregatorDeliveryMethodUpdateRequest,
+        params: RequestParams = {},
+    ) =>
+        this.http.request<
+            WarehouseErfbsAggregatorDeliveryMethodUpdateData,
+            WarehouseErfbsAggregatorDeliveryMethodUpdateError
+        >({
+            path: `/v1/warehouse/erfbs/aggregator/delivery-method/update`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description [Подробнее о схеме realFBS Express](https://seller-edu.ozon.ru/rfbs/scheme-of-work/rfbs-express#%D1%87%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-realfbs-express)
+     *
+     * @tags rFBSWarehouseSetup
+     * @name WarehouseErfbsNonIntegratedCreate
+     * @summary Создать склад с методом доставки «Вы или сторонняя служба»
+     * @request POST:/v1/warehouse/erfbs/non-integrated/create
+     * @response `200` `WarehouseErfbsNonIntegratedCreateData` Склад создан
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    warehouseErfbsNonIntegratedCreate = (
+        data: V1WarehouseERFBSNonIntegratedCreateRequest,
+        params: RequestParams = {},
+    ) =>
+        this.http.request<WarehouseErfbsNonIntegratedCreateData, WarehouseErfbsNonIntegratedCreateError>({
+            path: `/v1/warehouse/erfbs/non-integrated/create`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description [Подробнее о схеме rFBS Express](https://seller-edu.ozon.ru/rfbs/scheme-of-work/rfbs-express#%D1%87%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-realfbs-express)
+     *
+     * @tags rFBSWarehouseSetup
+     * @name WarehouseErfbsNonIntegratedDeliveryMethodUpdate
+     * @summary Обновить метод доставки «Вы или сторонняя служба»
+     * @request POST:/v1/warehouse/erfbs/non-integrated/delivery-method/update
+     * @response `200` `WarehouseErfbsNonIntegratedDeliveryMethodUpdateData` Успешно
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    warehouseErfbsNonIntegratedDeliveryMethodUpdate = (
+        data: V1WarehouseERFBSNonIntegratedDeliveryMethodUpdateRequest,
+        params: RequestParams = {},
+    ) =>
+        this.http.request<
+            WarehouseErfbsNonIntegratedDeliveryMethodUpdateData,
+            WarehouseErfbsNonIntegratedDeliveryMethodUpdateError
+        >({
+            path: `/v1/warehouse/erfbs/non-integrated/delivery-method/update`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags PolygonAPI
+     * @name PolygonDelete
+     * @summary Удалить полигон из области доставки
+     * @request POST:/v1/polygon/delete
+     * @response `200` `PolygonDeleteData` Успешно
+     * @response `default` `RpcStatus` Ошибка
+     */
+    polygonDelete = (data: V1PolygonDeleteRequest, params: RequestParams = {}) =>
+        this.http.request<PolygonDeleteData, PolygonDeleteError>({
+            path: `/v1/polygon/delete`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags PolygonAPI
+     * @name PolygonList
+     * @summary Получить список установленных полигонов на метод доставки
+     * @request POST:/v1/polygon/list
+     * @response `200` `PolygonListData` Список полигонов
+     * @response `default` `RpcStatus` Ошибка
+     */
+    polygonList = (data: V1PolygonListRequest, params: RequestParams = {}) =>
+        this.http.request<PolygonListData, PolygonListError>({
+            path: `/v1/polygon/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags PolygonAPI
+     * @name PolygonTimeCoordinatesUpdate
+     * @summary Обновить координаты полигона доставки
+     * @request POST:/v1/polygon/time/coordinates/update
+     * @response `200` `PolygonTimeCoordinatesUpdateData` Успешно
+     * @response `default` `RpcStatus` Ошибка
+     */
+    polygonTimeCoordinatesUpdate = (data: V1PolygonTimeCoordinatesUpdateRequest, params: RequestParams = {}) =>
+        this.http.request<PolygonTimeCoordinatesUpdateData, PolygonTimeCoordinatesUpdateError>({
+            path: `/v1/polygon/time/coordinates/update`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * No description
+     *
+     * @tags PolygonAPI
+     * @name PolygonTimeSet
+     * @summary Установить новое время доставки в полигоне
+     * @request POST:/v1/polygon/time/set
+     * @response `200` `PolygonTimeSetData` Успешно
+     * @response `default` `RpcStatus` Ошибка
+     */
+    polygonTimeSet = (data: V1PolygonTimeSetRequest, params: RequestParams = {}) =>
+        this.http.request<PolygonTimeSetData, PolygonTimeSetError>({
+            path: `/v1/polygon/time/set`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Доступно для продавцов с подпиской [Управление отзывами](https://seller-edu.ozon.ru/libra/seller-rating/podpiska-upravlenie-otzyvami) или [Premium Pro](https://seller-edu.ozon.ru/seller-rating/about-rating/podpiska-premium-pro). Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1190-Metody-dlia-raboty-s-otzyvami) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags ReviewAPI
+     * @name ReviewApiCommentCreate
+     * @summary Оставить комментарий на отзыв
+     * @request POST:/v1/review/comment/create
+     * @response `200` `ReviewApiCommentCreateData` Комментарий создан
+     * @response `default` `RpcStatus` Ошибка
+     */
+    reviewApiCommentCreate = (data: V1CommentCreateRequest, params: RequestParams = {}) =>
+        this.http.request<ReviewApiCommentCreateData, ReviewApiCommentCreateError>({
+            path: `/v1/review/comment/create`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Доступно для продавцов с подпиской [Управление отзывами](https://seller-edu.ozon.ru/libra/seller-rating/podpiska-upravlenie-otzyvami) или [Premium Pro](https://seller-edu.ozon.ru/seller-rating/about-rating/podpiska-premium-pro). Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1190-Metody-dlia-raboty-s-otzyvami) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags ReviewAPI
+     * @name ReviewApiCommentDelete
+     * @summary Удалить комментарий на отзыв
+     * @request POST:/v1/review/comment/delete
+     * @response `200` `ReviewApiCommentDeleteData` Комментарий удалён
+     * @response `default` `RpcStatus` Ошибка
+     */
+    reviewApiCommentDelete = (data: V1CommentDeleteRequest, params: RequestParams = {}) =>
+        this.http.request<ReviewApiCommentDeleteData, ReviewApiCommentDeleteError>({
+            path: `/v1/review/comment/delete`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Доступно для продавцов с подпиской [Управление отзывами](https://seller-edu.ozon.ru/libra/seller-rating/podpiska-upravlenie-otzyvami) или [Premium Pro](https://seller-edu.ozon.ru/seller-rating/about-rating/podpiska-premium-pro). Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1190-Metody-dlia-raboty-s-otzyvami) в сообществе разработчиков Ozon for dev. Метод возвращает информацию по комментариям на отзывы, которые прошли модерацию.
+     *
+     * @tags ReviewAPI
+     * @name ReviewApiCommentList
+     * @summary Список комментариев на отзыв
+     * @request POST:/v1/review/comment/list
+     * @response `200` `ReviewApiCommentListData` Информация о комментариях на отзыв
+     * @response `default` `RpcStatus` Ошибка
+     */
+    reviewApiCommentList = (data: V1CommentListRequest, params: RequestParams = {}) =>
+        this.http.request<ReviewApiCommentListData, ReviewApiCommentListError>({
+            path: `/v1/review/comment/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Доступно для продавцов с подпиской [Управление отзывами](https://seller-edu.ozon.ru/libra/seller-rating/podpiska-upravlenie-otzyvami) или [Premium Pro](https://seller-edu.ozon.ru/seller-rating/about-rating/podpiska-premium-pro). Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1190-Metody-dlia-raboty-s-otzyvami) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags ReviewAPI
+     * @name ReviewApiReviewChangeStatus
+     * @summary Изменить статус отзывов
+     * @request POST:/v1/review/change-status
+     * @response `200` `ReviewApiReviewChangeStatusData` Статус изменён
+     * @response `default` `RpcStatus` Ошибка
+     */
+    reviewApiReviewChangeStatus = (data: V1ReviewChangeStatusRequest, params: RequestParams = {}) =>
+        this.http.request<ReviewApiReviewChangeStatusData, ReviewApiReviewChangeStatusError>({
+            path: `/v1/review/change-status`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Доступно для продавцов с подпиской [Управление отзывами](https://seller-edu.ozon.ru/libra/seller-rating/podpiska-upravlenie-otzyvami) или [Premium Pro](https://seller-edu.ozon.ru/seller-rating/about-rating/podpiska-premium-pro). Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1190-Metody-dlia-raboty-s-otzyvami) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags ReviewAPI
+     * @name ReviewApiReviewCount
+     * @summary Количество отзывов по статусам
+     * @request POST:/v1/review/count
+     * @response `200` `ReviewApiReviewCountData` Количество обработанных и необработанных отзывов
+     * @response `default` `RpcStatus` Ошибка
+     */
+    reviewApiReviewCount = (data: object, params: RequestParams = {}) =>
+        this.http.request<ReviewApiReviewCountData, ReviewApiReviewCountError>({
+            path: `/v1/review/count`,
+            method: 'POST',
+            body: data,
+            ...params,
+        });
+    /**
+     * @description Доступно для продавцов с подпиской [Управление отзывами](https://seller-edu.ozon.ru/libra/seller-rating/podpiska-upravlenie-otzyvami) или [Premium Pro](https://seller-edu.ozon.ru/seller-rating/about-rating/podpiska-premium-pro). Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1190-Metody-dlia-raboty-s-otzyvami) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags ReviewAPI
+     * @name ReviewApiReviewInfo
+     * @summary Получить информацию об отзыве
+     * @request POST:/v1/review/info
+     * @response `200` `ReviewApiReviewInfoData` Информация об отзыве
+     * @response `default` `RpcStatus` Ошибка
+     */
+    reviewApiReviewInfo = (data: V1ReviewInfoRequest, params: RequestParams = {}) =>
+        this.http.request<ReviewApiReviewInfoData, ReviewApiReviewInfoError>({
+            path: `/v1/review/info`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Доступно для продавцов с подпиской [Управление отзывами](https://seller-edu.ozon.ru/libra/seller-rating/podpiska-upravlenie-otzyvami) или [Premium Pro](https://seller-edu.ozon.ru/seller-rating/about-rating/podpiska-premium-pro). Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1190-Metody-dlia-raboty-s-otzyvami) в сообществе разработчиков Ozon for dev. Метод не возвращает параметры «Достоинства» и «Недостатки», если они есть в отзывах на товар. Эти параметры устарели, в новых отзывах их нет.
+     *
+     * @tags ReviewAPI
+     * @name ReviewApiReviewList
+     * @summary Получить список отзывов
+     * @request POST:/v1/review/list
+     * @response `200` `ReviewApiReviewListData` Список отзывов
+     * @response `default` `RpcStatus` Ошибка
+     */
+    reviewApiReviewList = (data: V1ReviewListRequest, params: RequestParams = {}) =>
+        this.http.request<ReviewApiReviewListData, ReviewApiReviewListError>({
+            path: `/v1/review/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1084-Metody-po-tarifu-Ekonom) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags Quants
+     * @name QuantProductList
+     * @summary Список эконом-товаров
+     * @request POST:/v1/product/quant/list
+     * @response `200` `QuantProductListData` Эконом-товары
+     * @response `default` `RpcStatus` Ошибка
+     */
+    quantProductList = (data: ProductV1QuantListRequest, params: RequestParams = {}) =>
+        this.http.request<QuantProductListData, QuantProductListError>({
+            path: `/v1/product/quant/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1084-Metody-po-tarifu-Ekonom) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags Quants
+     * @name QuantGetInfo
+     * @summary Информация об эконом-товаре
+     * @request POST:/v1/product/quant/info
+     * @response `200` `QuantGetInfoData` Информация об эконом-товаре
+     * @response `default` `RpcStatus` Ошибка
+     */
+    quantGetInfo = (data: ProductV1QuantInfoRequest, params: RequestParams = {}) =>
+        this.http.request<QuantGetInfoData, QuantGetInfoError>({
+            path: `/v1/product/quant/info`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Доступно для продавцов с подпиской [Premium Plus](https://seller-edu.ozon.ru/seller-rating/about-rating/subscription-premium-plus). Вы можете оставить обратную связь по этому методу в комментариях к обсуждению в [сообществе разработчиков Ozon for dev](https://dev.ozon.ru/community/1198-Metody-dlia-raboty-s-voprosami-otvetami).
+     *
+     * @tags Questions&Answers
+     * @name QuestionAnswerCreate
+     * @summary Создать ответ на вопрос
+     * @request POST:/v1/question/answer/create
+     * @response `200` `QuestionAnswerCreateData` Идентификатор ответа на вопрос
+     * @response `default` `V1QuestionAnswerCreateDefault` Ошибка
+     */
+    questionAnswerCreate = (data: V1QuestionAnswerCreateRequest, params: RequestParams = {}) =>
+        this.http.request<QuestionAnswerCreateData, QuestionAnswerCreateError>({
+            path: `/v1/question/answer/create`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Доступно для продавцов с подпиской [Premium Plus](https://seller-edu.ozon.ru/seller-rating/about-rating/subscription-premium-plus). Вы можете оставить обратную связь по этому методу в комментариях к обсуждению в [сообществе разработчиков Ozon for dev](https://dev.ozon.ru/community/1198-Metody-dlia-raboty-s-voprosami-otvetami).
+     *
+     * @tags Questions&Answers
+     * @name QuestionAnswerDelete
+     * @summary Удалить ответ на вопрос
+     * @request POST:/v1/question/answer/delete
+     * @response `200` `QuestionAnswerDeleteData` Ответ удалён
+     * @response `default` `V1QuestionAnswerCreateDefault` Ошибка
+     */
+    questionAnswerDelete = (data: V1QuestionAnswerDeleteRequest, params: RequestParams = {}) =>
+        this.http.request<QuestionAnswerDeleteData, QuestionAnswerDeleteError>({
+            path: `/v1/question/answer/delete`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Доступно для продавцов с подпиской [Premium Plus](https://seller-edu.ozon.ru/seller-rating/about-rating/subscription-premium-plus). Вы можете оставить обратную связь по этому методу в комментариях к обсуждению в [сообществе разработчиков Ozon for dev](https://dev.ozon.ru/community/1198-Metody-dlia-raboty-s-voprosami-otvetami).
+     *
+     * @tags Questions&Answers
+     * @name QuestionAnswerList
+     * @summary Список ответов на вопрос
+     * @request POST:/v1/question/answer/list
+     * @response `200` `QuestionAnswerListData` Список ответов на вопрос
+     * @response `default` `V1QuestionAnswerCreateDefault` Ошибка
+     */
+    questionAnswerList = (data: V1QuestionAnswerListRequest, params: RequestParams = {}) =>
+        this.http.request<QuestionAnswerListData, QuestionAnswerListError>({
+            path: `/v1/question/answer/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Доступно для продавцов с подпиской [Premium Plus](https://seller-edu.ozon.ru/seller-rating/about-rating/subscription-premium-plus). Вы можете оставить обратную связь по этому методу в комментариях к обсуждению в [сообществе разработчиков Ozon for dev](https://dev.ozon.ru/community/1198-Metody-dlia-raboty-s-voprosami-otvetami).
+     *
+     * @tags Questions&Answers
+     * @name QuestionChangeStatus
+     * @summary Изменить статус вопросов
+     * @request POST:/v1/question/change-status
+     * @response `200` `QuestionChangeStatusData` Статус изменён
+     * @response `default` `V1QuestionAnswerCreateDefault` Ошибка
+     */
+    questionChangeStatus = (data: V1QuestionChangeStatusRequest, params: RequestParams = {}) =>
+        this.http.request<QuestionChangeStatusData, QuestionChangeStatusError>({
+            path: `/v1/question/change-status`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Доступно для продавцов с подпиской [Premium Plus](https://seller-edu.ozon.ru/seller-rating/about-rating/subscription-premium-plus). Вы можете оставить обратную связь по этому методу в комментариях к обсуждению в [сообществе разработчиков Ozon for dev](https://dev.ozon.ru/community/1198-Metody-dlia-raboty-s-voprosami-otvetami).
+     *
+     * @tags Questions&Answers
+     * @name QuestionCount
+     * @summary Количество вопросов по статусам
+     * @request POST:/v1/question/count
+     * @response `200` `QuestionCountData` Количество вопросов по статусам
+     * @response `default` `V1QuestionAnswerCreateDefault` Ошибка
+     */
+    questionCount = (params: RequestParams = {}) =>
+        this.http.request<QuestionCountData, QuestionCountError>({
+            path: `/v1/question/count`,
+            method: 'POST',
+            ...params,
+        });
+    /**
+     * @description Доступно для продавцов с подпиской [Premium Plus](https://seller-edu.ozon.ru/seller-rating/about-rating/subscription-premium-plus). Вы можете оставить обратную связь по этому методу в комментариях к обсуждению в [сообществе разработчиков Ozon for dev](https://dev.ozon.ru/community/1198-Metody-dlia-raboty-s-voprosami-otvetami).
+     *
+     * @tags Questions&Answers
+     * @name QuestionInfo
+     * @summary Информация о вопросе
+     * @request POST:/v1/question/info
+     * @response `200` `QuestionInfoData` Информация о вопросе
+     * @response `default` `V1QuestionAnswerCreateDefault` Ошибка
+     */
+    questionInfo = (data: V1QuestionInfoRequest, params: RequestParams = {}) =>
+        this.http.request<QuestionInfoData, QuestionInfoError>({
+            path: `/v1/question/info`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Доступно для продавцов с подпиской [Premium Plus](https://seller-edu.ozon.ru/seller-rating/about-rating/subscription-premium-plus). Вы можете оставить обратную связь по этому методу в комментариях к обсуждению в [сообществе разработчиков Ozon for dev](https://dev.ozon.ru/community/1198-Metody-dlia-raboty-s-voprosami-otvetami).
+     *
+     * @tags Questions&Answers
+     * @name QuestionList
+     * @summary Список вопросов
+     * @request POST:/v1/question/list
+     * @response `200` `QuestionListData` Список вопросов
+     * @response `default` `V1QuestionAnswerCreateDefault` Ошибка
+     */
+    questionList = (data: V1QuestionListRequest, params: RequestParams = {}) =>
+        this.http.request<QuestionListData, QuestionListError>({
+            path: `/v1/question/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Доступно для продавцов с подпиской [Premium Plus](https://seller-edu.ozon.ru/seller-rating/about-rating/subscription-premium-plus). Вы можете оставить обратную связь по этому методу в комментариях к обсуждению в [сообществе разработчиков Ozon for dev](https://dev.ozon.ru/community/1198-Metody-dlia-raboty-s-voprosami-otvetami).
+     *
+     * @tags Questions&Answers
+     * @name QuestionTopSku
+     * @summary Товары с наибольшим количеством вопросов
+     * @request POST:/v1/question/top-sku
+     * @response `200` `QuestionTopSkuData` Идентификаторы товаров
+     * @response `default` `V1QuestionAnswerCreateDefault` Ошибка
+     */
+    questionTopSku = (data: V1QuestionTopSkuRequest, params: RequestParams = {}) =>
+        this.http.request<QuestionTopSkuData, QuestionTopSkuError>({
+            path: `/v1/question/top-sku`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description <aside class="warning"> Недоступен для продавцов из СНГ. </aside> Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1872-Novye-metody-dlia-raboty-s-aktsiiami-sellera) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags SellerActions
+     * @name SellerActionsCreateDiscount
+     * @summary Создать акцию с механикой «Скидка»
+     * @request POST:/v1/seller-actions/create/discount
+     * @response `200` `SellerActionsCreateDiscountData` Акция создана
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    sellerActionsCreateDiscount = (data: V1SellerActionsCreateDiscountRequest, params: RequestParams = {}) =>
+        this.http.request<SellerActionsCreateDiscountData, SellerActionsCreateDiscountError>({
+            path: `/v1/seller-actions/create/discount`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1872-Novye-metody-dlia-raboty-s-aktsiiami-sellera) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags SellerActions
+     * @name SellerActionsCreateDiscountWithCondition
+     * @summary Создать акцию с механикой «Скидка от суммы заказа»
+     * @request POST:/v1/seller-actions/create/discount-with-condition
+     * @response `200` `SellerActionsCreateDiscountWithConditionData` Акция создана
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    sellerActionsCreateDiscountWithCondition = (
+        data: V1SellerActionsCreateDiscountWithConditionRequest,
+        params: RequestParams = {},
+    ) =>
+        this.http.request<SellerActionsCreateDiscountWithConditionData, SellerActionsCreateDiscountWithConditionError>({
+            path: `/v1/seller-actions/create/discount-with-condition`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Период рассрочки — 6 месяцев. Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1872-Novye-metody-dlia-raboty-s-aktsiiami-sellera) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags SellerActions
+     * @name SellerActionsCreateInstallment
+     * @summary Создать акцию с механикой «Беспроцентная рассрочка»
+     * @request POST:/v1/seller-actions/create/installment
+     * @response `200` `SellerActionsCreateInstallmentData` Акция создана
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    sellerActionsCreateInstallment = (data: V1SellerActionsCreateInstallmentRequest, params: RequestParams = {}) =>
+        this.http.request<SellerActionsCreateInstallmentData, SellerActionsCreateInstallmentError>({
+            path: `/v1/seller-actions/create/installment`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Товары в акцию добавляются автоматически, использовать метод [/v1/seller-actions/products/add](#operation/SellerActionsProductsAdd) не нужно. Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1872-Novye-metody-dlia-raboty-s-aktsiiami-sellera) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags SellerActions
+     * @name SellerActionsCreateMultiLevelDiscount
+     * @summary Создать акцию с механикой «Многоуровневая скидка от суммы»
+     * @request POST:/v1/seller-actions/create/multi-level-discount
+     * @response `200` `SellerActionsCreateMultiLevelDiscountData` Акция создана
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    sellerActionsCreateMultiLevelDiscount = (
+        data: V1SellerActionsCreateMultiLevelDiscountRequest,
+        params: RequestParams = {},
+    ) =>
+        this.http.request<SellerActionsCreateMultiLevelDiscountData, SellerActionsCreateMultiLevelDiscountError>({
+            path: `/v1/seller-actions/create/multi-level-discount`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1872-Novye-metody-dlia-raboty-s-aktsiiami-sellera) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags SellerActions
+     * @name SellerActionsCreateVoucher
+     * @summary Создать акцию с механикой «Скидка по промокоду»
+     * @request POST:/v1/seller-actions/create/voucher
+     * @response `200` `SellerActionsCreateVoucherData` Акция создана
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    sellerActionsCreateVoucher = (data: V1SellerActionsCreateVoucherRequest, params: RequestParams = {}) =>
+        this.http.request<SellerActionsCreateVoucherData, SellerActionsCreateVoucherError>({
+            path: `/v1/seller-actions/create/voucher`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description <aside class="warning"> Недоступен для продавцов из СНГ. </aside> Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1872-Novye-metody-dlia-raboty-s-aktsiiami-sellera/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags SellerActions
+     * @name SellerActionsUpdateDiscount
+     * @summary Обновить акцию с механикой «Скидка»
+     * @request POST:/v1/seller-actions/update/discount
+     * @response `200` `SellerActionsUpdateDiscountData` Акция обновлена
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    sellerActionsUpdateDiscount = (data: V1SellerActionsUpdateDiscountRequest, params: RequestParams = {}) =>
+        this.http.request<SellerActionsUpdateDiscountData, SellerActionsUpdateDiscountError>({
+            path: `/v1/seller-actions/update/discount`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1872-Novye-metody-dlia-raboty-s-aktsiiami-sellera/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags SellerActions
+     * @name SellerActionsUpdateDiscountWithCondition
+     * @summary Обновить акцию с механикой «Скидка от суммы заказа»
+     * @request POST:/v1/seller-actions/update/discount-with-condition
+     * @response `200` `SellerActionsUpdateDiscountWithConditionData` Акция обновлена
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    sellerActionsUpdateDiscountWithCondition = (
+        data: V1SellerActionsUpdateDiscountWithConditionRequest,
+        params: RequestParams = {},
+    ) =>
+        this.http.request<SellerActionsUpdateDiscountWithConditionData, SellerActionsUpdateDiscountWithConditionError>({
+            path: `/v1/seller-actions/update/discount-with-condition`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Период рассрочки — 6 месяцев. Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1872-Novye-metody-dlia-raboty-s-aktsiiami-sellera/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags SellerActions
+     * @name SellerActionsUpdateInstallment
+     * @summary Обновить акцию с механикой «Беспроцентная рассрочка»
+     * @request POST:/v1/seller-actions/update/installment
+     * @response `200` `SellerActionsUpdateInstallmentData` Акция обновлена
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    sellerActionsUpdateInstallment = (data: V1SellerActionsUpdateInstallmentRequest, params: RequestParams = {}) =>
+        this.http.request<SellerActionsUpdateInstallmentData, SellerActionsUpdateInstallmentError>({
+            path: `/v1/seller-actions/update/installment`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Товары в акцию добавляются автоматически, вызывать метод [/v1/seller-actions/products/add](#operation/SellerActionsProductsAdd) не нужно. Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1872-Novye-metody-dlia-raboty-s-aktsiiami-sellera/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags SellerActions
+     * @name SellerActionsUpdateMultiLevelDiscount
+     * @summary Обновить акцию с механикой «Многоуровневая скидка от суммы»
+     * @request POST:/v1/seller-actions/update/multi-level-discount
+     * @response `200` `SellerActionsUpdateMultiLevelDiscountData` Акция обновлена
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    sellerActionsUpdateMultiLevelDiscount = (
+        data: V1SellerActionsUpdateMultiLevelDiscountRequest,
+        params: RequestParams = {},
+    ) =>
+        this.http.request<SellerActionsUpdateMultiLevelDiscountData, SellerActionsUpdateMultiLevelDiscountError>({
+            path: `/v1/seller-actions/update/multi-level-discount`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1872-Novye-metody-dlia-raboty-s-aktsiiami-sellera/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags SellerActions
+     * @name SellerActionsUpdateVoucher
+     * @summary Обновить акцию с механикой «Скидка по промокоду»
+     * @request POST:/v1/seller-actions/update/voucher
+     * @response `200` `SellerActionsUpdateVoucherData` Акция обновлена
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    sellerActionsUpdateVoucher = (data: V1SellerActionsUpdateVoucherRequest, params: RequestParams = {}) =>
+        this.http.request<SellerActionsUpdateVoucherData, SellerActionsUpdateVoucherError>({
+            path: `/v1/seller-actions/update/voucher`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1872-Novye-metody-dlia-raboty-s-aktsiiami-sellera) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags SellerActions
+     * @name SellerActionsProductsAdd
+     * @summary Добавить товары в акцию
+     * @request POST:/v1/seller-actions/products/add
+     * @response `200` `SellerActionsProductsAddData` Товары добавлены
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    sellerActionsProductsAdd = (data: V1SellerActionsProductsAddRequest, params: RequestParams = {}) =>
+        this.http.request<SellerActionsProductsAddData, SellerActionsProductsAddError>({
+            path: `/v1/seller-actions/products/add`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1872-Novye-metody-dlia-raboty-s-aktsiiami-sellera) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags SellerActions
+     * @name SellerActionsProductsCandidates
+     * @summary Получить список доступных для акции товаров
+     * @request POST:/v1/seller-actions/products/candidates
+     * @response `200` `SellerActionsProductsCandidatesData` Список товаров
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    sellerActionsProductsCandidates = (data: V1SellerActionsProductsCandidatesRequest, params: RequestParams = {}) =>
+        this.http.request<SellerActionsProductsCandidatesData, SellerActionsProductsCandidatesError>({
+            path: `/v1/seller-actions/products/candidates`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1872-Novye-metody-dlia-raboty-s-aktsiiami-sellera) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags SellerActions
+     * @name SellerActionsProductsDelete
+     * @summary Удалить товары из акции
+     * @request POST:/v1/seller-actions/products/delete
+     * @response `200` `SellerActionsProductsDeleteData` Товары удалены
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    sellerActionsProductsDelete = (data: V1SellerActionsProductsDeleteRequest, params: RequestParams = {}) =>
+        this.http.request<SellerActionsProductsDeleteData, SellerActionsProductsDeleteError>({
+            path: `/v1/seller-actions/products/delete`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1872-Novye-metody-dlia-raboty-s-aktsiiami-sellera) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags SellerActions
+     * @name SellerActionsProductsList
+     * @summary Получить список участвующих в акции товаров
+     * @request POST:/v1/seller-actions/products/list
+     * @response `200` `SellerActionsProductsListData` Список товаров
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    sellerActionsProductsList = (data: V1SellerActionsProductsListRequest, params: RequestParams = {}) =>
+        this.http.request<SellerActionsProductsListData, SellerActionsProductsListError>({
+            path: `/v1/seller-actions/products/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1872-Novye-metody-dlia-raboty-s-aktsiiami-sellera) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags SellerActions
+     * @name SellerActionsArchive
+     * @summary Перенести акцию в архив
+     * @request POST:/v1/seller-actions/archive
+     * @response `200` `SellerActionsArchiveData` Акция в архиве
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    sellerActionsArchive = (data: V1SellerActionsArchiveRequest, params: RequestParams = {}) =>
+        this.http.request<SellerActionsArchiveData, SellerActionsArchiveError>({
+            path: `/v1/seller-actions/archive`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1872-Novye-metody-dlia-raboty-s-aktsiiami-sellera) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags SellerActions
+     * @name SellerActionsChangeActivity
+     * @summary Включить или выключить акцию
+     * @request POST:/v1/seller-actions/change-activity
+     * @response `200` `SellerActionsChangeActivityData` Успешно
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    sellerActionsChangeActivity = (data: V1SellerActionsChangeActivityRequest, params: RequestParams = {}) =>
+        this.http.request<SellerActionsChangeActivityData, SellerActionsChangeActivityError>({
+            path: `/v1/seller-actions/change-activity`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1872-Novye-metody-dlia-raboty-s-aktsiiami-sellera) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags SellerActions
+     * @name SellerActionsList
+     * @summary Получить список акций
+     * @request POST:/v1/seller-actions/list
+     * @response `200` `SellerActionsListData` Список акций
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    sellerActionsList = (data: V1SellerActionsListRequest, params: RequestParams = {}) =>
+        this.http.request<SellerActionsListData, SellerActionsListError>({
+            path: `/v1/seller-actions/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1872-Novye-metody-dlia-raboty-s-aktsiiami-sellera) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags SellerActions
+     * @name SellerActionsVoucherGet
+     * @summary Получить файл с промокодами в формате CSV
+     * @request POST:/v1/seller-actions/voucher/get
+     * @response `200` `SellerActionsVoucherGetData` Файл с промокодами
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    sellerActionsVoucherGet = (data: V1SellerActionsVoucherGetRequest, params: RequestParams = {}) =>
+        this.http.request<SellerActionsVoucherGetData, SellerActionsVoucherGetError>({
+            path: `/v1/seller-actions/voucher/get`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1978-Novye-beta-metody-dlia-upravleniia-podkliucheniiami-PUSH-uvedomlenii/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags Notification
+     * @name SetNotification
+     * @summary Подключить URL-адрес для уведомлений
+     * @request POST:/v1/notification/set
+     * @response `200` `SetNotificationData` URL-адрес подключён
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    setNotification = (data: NotificationV1SetNotificationRequest, params: RequestParams = {}) =>
+        this.http.request<SetNotificationData, SetNotificationError>({
+            path: `/v1/notification/set`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1978-Novye-beta-metody-dlia-upravleniia-podkliucheniiami-PUSH-uvedomlenii/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags Notification
+     * @name UpdateNotification
+     * @summary Изменить URL-адрес для уведомлений
+     * @request POST:/v1/notification/update
+     * @response `200` `UpdateNotificationData` URL-адрес изменён
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    updateNotification = (data: NotificationV1UpdateNotificationRequest, params: RequestParams = {}) =>
+        this.http.request<UpdateNotificationData, UpdateNotificationError>({
+            path: `/v1/notification/update`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1978-Novye-beta-metody-dlia-upravleniia-podkliucheniiami-PUSH-uvedomlenii/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags Notification
+     * @name DeleteNotification
+     * @summary Удалить URL-адрес для уведомлений
+     * @request POST:/v1/notification/delete
+     * @response `200` `DeleteNotificationData` URL-адрес удалён
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    deleteNotification = (data: NotificationV1DeleteNotificationRequest, params: RequestParams = {}) =>
+        this.http.request<DeleteNotificationData, DeleteNotificationError>({
+            path: `/v1/notification/delete`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1978-Novye-beta-metody-dlia-upravleniia-podkliucheniiami-PUSH-uvedomlenii/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags Notification
+     * @name CheckNotification
+     * @summary Проверить URL-адрес для уведомлений
+     * @request POST:/v1/notification/check
+     * @response `200` `CheckNotificationData` Результат проверки
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    checkNotification = (data: NotificationV1CheckNotificationRequest, params: RequestParams = {}) =>
+        this.http.request<CheckNotificationData, CheckNotificationError>({
+            path: `/v1/notification/check`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1978-Novye-beta-metody-dlia-upravleniia-podkliucheniiami-PUSH-uvedomlenii/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags Notification
+     * @name EnableNotification
+     * @summary Включить или выключить уведомления на URL-адрес
+     * @request POST:/v1/notification/enable
+     * @response `200` `EnableNotificationData` Уведомления включены или выключены
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    enableNotification = (data: NotificationV1EnableNotificationRequest, params: RequestParams = {}) =>
+        this.http.request<EnableNotificationData, EnableNotificationError>({
+            path: `/v1/notification/enable`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1978-Novye-beta-metody-dlia-upravleniia-podkliucheniiami-PUSH-uvedomlenii/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags Notification
+     * @name NotificationList
+     * @summary Получить информацию по подключённым URL-адресам
+     * @request POST:/v1/notification/list
+     * @response `200` `NotificationListData` Подключённые URL-адреса
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    notificationList = (params: RequestParams = {}) =>
+        this.http.request<NotificationListData, NotificationListError>({
+            path: `/v1/notification/list`,
+            method: 'POST',
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1978-Novye-beta-metody-dlia-upravleniia-podkliucheniiami-PUSH-uvedomlenii/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags Notification
+     * @name GetNotificationPushTypeList
+     * @summary Получить типы пуш-уведомлений
+     * @request POST:/v1/notification/push-type/list
+     * @response `200` `GetNotificationPushTypeListData` Типы пуш-уведомлений
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    getNotificationPushTypeList = (params: RequestParams = {}) =>
+        this.http.request<GetNotificationPushTypeListData, GetNotificationPushTypeListError>({
+            path: `/v1/notification/push-type/list`,
+            method: 'POST',
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DraftDirectFBP
+     * @name FbpDraftDirectSellerDlvCreate
+     * @summary Создать черновик с доставкой силами продавца
+     * @request POST:/v1/fbp/draft/direct/seller-dlv/create
+     * @response `200` `FbpDraftDirectSellerDlvCreateData` Черновик создан
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpDraftDirectSellerDlvCreate = (data: V1FbpDraftDirectSellerDlvCreateRequest, params: RequestParams = {}) =>
+        this.http.request<FbpDraftDirectSellerDlvCreateData, FbpDraftDirectSellerDlvCreateError>({
+            path: `/v1/fbp/draft/direct/seller-dlv/create`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DraftDirectFBP
+     * @name FbpDraftDirectSellerDlvEdit
+     * @summary Обновить информацию о доставке силами продавца в черновике
+     * @request POST:/v1/fbp/draft/direct/seller-dlv/edit
+     * @response `200` `FbpDraftDirectSellerDlvEditData` Черновик обновлён
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpDraftDirectSellerDlvEdit = (data: V1FbpDraftDirectSellerDlvEditRequest, params: RequestParams = {}) =>
+        this.http.request<FbpDraftDirectSellerDlvEditData, FbpDraftDirectSellerDlvEditError>({
+            path: `/v1/fbp/draft/direct/seller-dlv/edit`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DraftDirectFBP
+     * @name FbpDraftDirectTimeslotEdit
+     * @summary Отредактировать таймслот в черновике
+     * @request POST:/v1/fbp/draft/direct/timeslot/edit
+     * @response `200` `FbpDraftDirectTimeslotEditData` Таймслот отредактирован
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpDraftDirectTimeslotEdit = (data: V1FbpDraftDirectTimeslotEditRequest, params: RequestParams = {}) =>
+        this.http.request<FbpDraftDirectTimeslotEditData, FbpDraftDirectTimeslotEditError>({
+            path: `/v1/fbp/draft/direct/timeslot/edit`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DraftDirectFBP
+     * @name FbpDraftDirectGetTimeslot
+     * @summary Получить список таймслотов для прямой поставки
+     * @request POST:/v1/fbp/draft/direct/timeslot/get
+     * @response `200` `FbpDraftDirectGetTimeslotData` Список таймслотов
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpDraftDirectGetTimeslot = (data: V1FbpDraftDirectGetTimeslotRequest, params: RequestParams = {}) =>
+        this.http.request<FbpDraftDirectGetTimeslotData, FbpDraftDirectGetTimeslotError>({
+            path: `/v1/fbp/draft/direct/timeslot/get`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DraftDirectFBP
+     * @name FbpDraftDirectCreate
+     * @summary Создать черновик заявки на поставку без указания способа доставки
+     * @request POST:/v1/fbp/draft/direct/create
+     * @response `200` `FbpDraftDirectCreateData` Черновик создан
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpDraftDirectCreate = (data: V1FbpDraftDirectCreateRequest, params: RequestParams = {}) =>
+        this.http.request<FbpDraftDirectCreateData, FbpDraftDirectCreateError>({
+            path: `/v1/fbp/draft/direct/create`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DraftDirectFBP
+     * @name FbpDraftDirectDelete
+     * @summary Удалить черновик заявки на поставку
+     * @request POST:/v1/fbp/draft/direct/delete
+     * @response `200` `FbpDraftDirectDeleteData` Черновик удалён
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpDraftDirectDelete = (data: V1FbpDraftDirectDeleteRequest, params: RequestParams = {}) =>
+        this.http.request<FbpDraftDirectDeleteData, FbpDraftDirectDeleteError>({
+            path: `/v1/fbp/draft/direct/delete`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DraftDirectFBP
+     * @name FbpDraftDirectProductValidate
+     * @summary Проверить список товаров для склада партнёра
+     * @request POST:/v1/fbp/draft/direct/product/validate
+     * @response `200` `FbpDraftDirectProductValidateData` Результат проверки
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpDraftDirectProductValidate = (data: V1FbpDraftDirectProductValidateRequest, params: RequestParams = {}) =>
+        this.http.request<FbpDraftDirectProductValidateData, FbpDraftDirectProductValidateError>({
+            path: `/v1/fbp/draft/direct/product/validate`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DraftDirectFBP
+     * @name FbpDraftDirectRegistrate
+     * @summary Перевести черновик в действующую поставку
+     * @request POST:/v1/fbp/draft/direct/registrate
+     * @response `200` `FbpDraftDirectRegistrateData` Успешно
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpDraftDirectRegistrate = (data: V1FbpDraftDirectRegistrateRequest, params: RequestParams = {}) =>
+        this.http.request<FbpDraftDirectRegistrateData, FbpDraftDirectRegistrateError>({
+            path: `/v1/fbp/draft/direct/registrate`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DraftDropOffFBP
+     * @name FbpDraftDropOffCreate
+     * @summary Создать черновик для доставки в drop-off пункт
+     * @request POST:/v1/fbp/draft/drop-off/create
+     * @response `200` `FbpDraftDropOffCreateData` Черновик создан
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpDraftDropOffCreate = (data: V1FbpDraftDropOffCreateRequest, params: RequestParams = {}) =>
+        this.http.request<FbpDraftDropOffCreateData, FbpDraftDropOffCreateError>({
+            path: `/v1/fbp/draft/drop-off/create`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DraftDropOffFBP
+     * @name FbpDraftDropOffDelete
+     * @summary Удалить черновик для доставки в drop-off пункт
+     * @request POST:/v1/fbp/draft/drop-off/delete
+     * @response `200` `FbpDraftDropOffDeleteData` Черновик удалён
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpDraftDropOffDelete = (data: V1FbpDraftDropOffDeleteRequest, params: RequestParams = {}) =>
+        this.http.request<FbpDraftDropOffDeleteData, FbpDraftDropOffDeleteError>({
+            path: `/v1/fbp/draft/drop-off/delete`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DraftDropOffFBP
+     * @name FbpDraftDropOffDlvEdit
+     * @summary Отредактировать детали доставки для drop-off черновика
+     * @request POST:/v1/fbp/draft/drop-off/dlv/edit
+     * @response `200` `FbpDraftDropOffDlvEditData` Успешно
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpDraftDropOffDlvEdit = (data: V1FbpDraftDropOffDlvEditRequest, params: RequestParams = {}) =>
+        this.http.request<FbpDraftDropOffDlvEditData, FbpDraftDropOffDlvEditError>({
+            path: `/v1/fbp/draft/drop-off/dlv/edit`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DraftDropOffFBP
+     * @name FbpDraftDropOffRegistrate
+     * @summary Перевести черновик в действующую поставку
+     * @request POST:/v1/fbp/draft/drop-off/registrate
+     * @response `200` `FbpDraftDropOffRegistrateData` Успешно
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpDraftDropOffRegistrate = (data: V1FbpDraftDropOffRegistrateRequest, params: RequestParams = {}) =>
+        this.http.request<FbpDraftDropOffRegistrateData, FbpDraftDropOffRegistrateError>({
+            path: `/v1/fbp/draft/drop-off/registrate`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DraftDropOffFBP
+     * @name FbpDraftDropOffProvinceList
+     * @summary Получить список провинций
+     * @request POST:/v1/fbp/draft/drop-off/province/list
+     * @response `200` `FbpDraftDropOffProvinceListData` Список провинций
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpDraftDropOffProvinceList = (data: V1FbpDraftDropOffProvinceListRequest, params: RequestParams = {}) =>
+        this.http.request<FbpDraftDropOffProvinceListData, FbpDraftDropOffProvinceListError>({
+            path: `/v1/fbp/draft/drop-off/province/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DraftDropOffFBP
+     * @name FbpDraftDropOffPointList
+     * @summary Получить список drop-off пунктов в провинции
+     * @request POST:/v1/fbp/draft/drop-off/point/list
+     * @response `200` `FbpDraftDropOffPointListData` Список drop-off пунктов
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpDraftDropOffPointList = (data: V1FbpDraftDropOffPointListRequest, params: RequestParams = {}) =>
+        this.http.request<FbpDraftDropOffPointListData, FbpDraftDropOffPointListError>({
+            path: `/v1/fbp/draft/drop-off/point/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DraftDropOffFBP
+     * @name FbpDraftDropOffPointTimetable
+     * @summary Получить расписание работы drop-off пункта
+     * @request POST:/v1/fbp/draft/drop-off/point/timetable
+     * @response `200` `FbpDraftDropOffPointTimetableData` Расписание работы
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpDraftDropOffPointTimetable = (data: V1FbpDraftDropOffPointTimetableRequest, params: RequestParams = {}) =>
+        this.http.request<FbpDraftDropOffPointTimetableData, FbpDraftDropOffPointTimetableError>({
+            path: `/v1/fbp/draft/drop-off/point/timetable`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DraftDropOffFBP
+     * @name FbpDraftDropOffProductValidate
+     * @summary Проверить список товаров, которые склад партнёра может принять
+     * @request POST:/v1/fbp/draft/drop-off/product/validate
+     * @response `200` `FbpDraftDropOffProductValidateData` Результат проверки
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpDraftDropOffProductValidate = (data: V1FbpDraftDropOffProductValidateRequest, params: RequestParams = {}) =>
+        this.http.request<FbpDraftDropOffProductValidateData, FbpDraftDropOffProductValidateError>({
+            path: `/v1/fbp/draft/drop-off/product/validate`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags OrderDirectFBP
+     * @name FbpApiFbpOrderDirectCancel
+     * @summary Отменить поставку
+     * @request POST:/v1/fbp/order/direct/cancel
+     * @response `200` `FbpApiFbpOrderDirectCancelData` Результат отмены
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpApiFbpOrderDirectCancel = (data: V1FbpOrderDirectCancelRequest, params: RequestParams = {}) =>
+        this.http.request<FbpApiFbpOrderDirectCancelData, FbpApiFbpOrderDirectCancelError>({
+            path: `/v1/fbp/order/direct/cancel`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags OrderDirectFBP
+     * @name FbpApiFbpOrderDirectSellerDlvEdit
+     * @summary Обновить информацию о доставке силами продавца
+     * @request POST:/v1/fbp/order/direct/seller-dlv/edit
+     * @response `200` `FbpApiFbpOrderDirectSellerDlvEditData` Информация обновлена
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpApiFbpOrderDirectSellerDlvEdit = (data: V1FbpOrderDirectSellerDlvEditRequest, params: RequestParams = {}) =>
+        this.http.request<FbpApiFbpOrderDirectSellerDlvEditData, FbpApiFbpOrderDirectSellerDlvEditError>({
+            path: `/v1/fbp/order/direct/seller-dlv/edit`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags OrderDirectFBP
+     * @name FbpApiFbpEditTimeslot
+     * @summary Отредактировать таймслот в заявке на поставку
+     * @request POST:/v1/fbp/order/direct/timeslot/edit
+     * @response `200` `FbpApiFbpEditTimeslotData` Таймслот отредактирован
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpApiFbpEditTimeslot = (data: V1FbpEditTimeslotRequest, params: RequestParams = {}) =>
+        this.http.request<FbpApiFbpEditTimeslotData, FbpApiFbpEditTimeslotError>({
+            path: `/v1/fbp/order/direct/timeslot/edit`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags OrderDirectFBP
+     * @name FbpApiFbpAvailableTimeslotList
+     * @summary Получить список таймслотов для поставки
+     * @request POST:/v1/fbp/order/direct/timeslot/list
+     * @response `200` `FbpApiFbpAvailableTimeslotListData` Список таймслотов
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpApiFbpAvailableTimeslotList = (data: V1FbpAvailableTimeslotListRequest, params: RequestParams = {}) =>
+        this.http.request<FbpApiFbpAvailableTimeslotListData, FbpApiFbpAvailableTimeslotListError>({
+            path: `/v1/fbp/order/direct/timeslot/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DeliveryFBP
+     * @name FbpApiFbpCreateAct
+     * @summary Сгенерировать акт приёмки
+     * @request POST:/v1/fbp/act-from/create
+     * @response `200` `FbpApiFbpCreateActData` Успешно
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpApiFbpCreateAct = (data: V1FbpCreateActRequest, params: RequestParams = {}) =>
+        this.http.request<FbpApiFbpCreateActData, FbpApiFbpCreateActError>({
+            path: `/v1/fbp/act-from/create`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DeliveryFBP
+     * @name FbpApiFbpCheckActState
+     * @summary Получить статус генерации акта приёмки
+     * @request POST:/v1/fbp/act-from/get
+     * @response `200` `FbpApiFbpCheckActStateData` Статус генерации акта приёмки
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpApiFbpCheckActState = (data: V1FbpCheckActStateRequest, params: RequestParams = {}) =>
+        this.http.request<FbpApiFbpCheckActStateData, FbpApiFbpCheckActStateError>({
+            path: `/v1/fbp/act-from/get`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DeliveryFBP
+     * @name FbpApiFbpCreateConsignmentNote
+     * @summary Сгенерировать транспортную накладную
+     * @request POST:/v1/fbp/act-to/create
+     * @response `200` `FbpApiFbpCreateConsignmentNoteData` Успешно
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpApiFbpCreateConsignmentNote = (data: V1FbpCreateConsignmentNoteRequest, params: RequestParams = {}) =>
+        this.http.request<FbpApiFbpCreateConsignmentNoteData, FbpApiFbpCreateConsignmentNoteError>({
+            path: `/v1/fbp/act-to/create`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DeliveryFBP
+     * @name FbpApiFbpCheckConsignmentNoteState
+     * @summary Получить статус генерации транспортной накладной
+     * @request POST:/v1/fbp/act-to/get
+     * @response `200` `FbpApiFbpCheckConsignmentNoteStateData` Статус генерации транспортной накладной
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpApiFbpCheckConsignmentNoteState = (data: V1FbpCheckConsignmentNoteStateRequest, params: RequestParams = {}) =>
+        this.http.request<FbpApiFbpCheckConsignmentNoteStateData, FbpApiFbpCheckConsignmentNoteStateError>({
+            path: `/v1/fbp/act-to/get`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DeliveryFBP
+     * @name FbpApiFbpArchiveGet
+     * @summary Получить информацию о завершённой поставке
+     * @request POST:/v1/fbp/archive/get
+     * @response `200` `FbpApiFbpArchiveGetData` Информация о завершённой поставке
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpApiFbpArchiveGet = (data: V1FbpArchiveGetRequest, params: RequestParams = {}) =>
+        this.http.request<FbpApiFbpArchiveGetData, FbpApiFbpArchiveGetError>({
+            path: `/v1/fbp/archive/get`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DeliveryFBP
+     * @name FbpApiFbpArchiveList
+     * @summary Получить список завершённых поставок
+     * @request POST:/v1/fbp/archive/list
+     * @response `200` `FbpApiFbpArchiveListData` Список завершённых поставок
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpApiFbpArchiveList = (data: V1FbpArchiveListRequest, params: RequestParams = {}) =>
+        this.http.request<FbpApiFbpArchiveListData, FbpApiFbpArchiveListError>({
+            path: `/v1/fbp/archive/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DeliveryFBP
+     * @name FbpApiFbpCreateLabel
+     * @summary Cоздать задание на генерацию этикеток
+     * @request POST:/v1/fbp/label/create
+     * @response `200` `FbpApiFbpCreateLabelData` Задание создано
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpApiFbpCreateLabel = (data: V1FbpCreateLabelRequest, params: RequestParams = {}) =>
+        this.http.request<FbpApiFbpCreateLabelData, FbpApiFbpCreateLabelError>({
+            path: `/v1/fbp/label/create`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DeliveryFBP
+     * @name FbpApiFbpGetLabel
+     * @summary Получить статус задания на генерацию этикеток
+     * @request POST:/v1/fbp/label/get
+     * @response `200` `FbpApiFbpGetLabelData` Задание создано
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpApiFbpGetLabel = (data: V1FbpGetLabelRequest, params: RequestParams = {}) =>
+        this.http.request<FbpApiFbpGetLabelData, FbpApiFbpGetLabelError>({
+            path: `/v1/fbp/label/get`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DraftPickupFBP
+     * @name FbpApiFbpDraftPickupCreate
+     * @summary Создать черновик заявки на pick-up поставку
+     * @request POST:/v1/fbp/draft/pick-up/create
+     * @response `200` `FbpApiFbpDraftPickupCreateData` Черновик создан
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpApiFbpDraftPickupCreate = (data: V1FbpDraftPickupCreateRequest, params: RequestParams = {}) =>
+        this.http.request<FbpApiFbpDraftPickupCreateData, FbpApiFbpDraftPickupCreateError>({
+            path: `/v1/fbp/draft/pick-up/create`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DraftPickupFBP
+     * @name FbpApiFbpDraftPickUpDelete
+     * @summary Отменить черновик заявки на pick-up поставку
+     * @request POST:/v1/fbp/draft/pick-up/delete
+     * @response `200` `FbpApiFbpDraftPickUpDeleteData` Черновик отменён
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpApiFbpDraftPickUpDelete = (data: V1FbpDraftPickUpDeleteRequest, params: RequestParams = {}) =>
+        this.http.request<FbpApiFbpDraftPickUpDeleteData, FbpApiFbpDraftPickUpDeleteError>({
+            path: `/v1/fbp/draft/pick-up/delete`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DraftPickupFBP
+     * @name FbpApiFbpDraftPickupDlvEdit
+     * @summary Изменить черновик заявки на pick-up поставку
+     * @request POST:/v1/fbp/draft/pick-up/dlv/edit
+     * @response `200` `FbpApiFbpDraftPickupDlvEditData` Информация отредактирована
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpApiFbpDraftPickupDlvEdit = (data: V1FbpDraftPickupDlvEditRequest, params: RequestParams = {}) =>
+        this.http.request<FbpApiFbpDraftPickupDlvEditData, FbpApiFbpDraftPickupDlvEditError>({
+            path: `/v1/fbp/draft/pick-up/dlv/edit`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DraftPickupFBP
+     * @name FbpApiFbpDraftPickUpProductValidate
+     * @summary Провалидировать список товаров для pick-up поставки
+     * @request POST:/v1/fbp/draft/pick-up/product/validate
+     * @response `200` `FbpApiFbpDraftPickUpProductValidateData` Список провалидирован
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpApiFbpDraftPickUpProductValidate = (data: V1FbpDraftPickUpProductValidateRequest, params: RequestParams = {}) =>
+        this.http.request<FbpApiFbpDraftPickUpProductValidateData, FbpApiFbpDraftPickUpProductValidateError>({
+            path: `/v1/fbp/draft/pick-up/product/validate`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DeliveryFBPDraft
+     * @name FbpWarehouseList
+     * @summary Получить список партнёрских складов
+     * @request POST:/v1/fbp/warehouse/list
+     * @response `200` `FbpWarehouseListData` Список партнёрских складов
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpWarehouseList = (params: RequestParams = {}) =>
+        this.http.request<FbpWarehouseListData, FbpWarehouseListError>({
+            path: `/v1/fbp/warehouse/list`,
+            method: 'POST',
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DraftPickupFBP
+     * @name FbpDraftPickUpRegistrate
+     * @summary Перевести черновик в действующую поставку
+     * @request POST:/v1/fbp/draft/pick-up/registrate
+     * @response `200` `FbpDraftPickUpRegistrateData` Успешно
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpDraftPickUpRegistrate = (data: V1FbpDraftPickUpRegistrateRequest, params: RequestParams = {}) =>
+        this.http.request<FbpDraftPickUpRegistrateData, FbpDraftPickUpRegistrateError>({
+            path: `/v1/fbp/draft/pick-up/registrate`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DeliveryFBPDraft
+     * @name FbpApiFbpDraftGet
+     * @summary Получить информацию о черновике поставки
+     * @request POST:/v1/fbp/draft/get
+     * @response `200` `FbpApiFbpDraftGetData` Детали черновика поставки
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpApiFbpDraftGet = (data: V1FbpDraftGetRequest, params: RequestParams = {}) =>
+        this.http.request<FbpApiFbpDraftGetData, FbpApiFbpDraftGetError>({
+            path: `/v1/fbp/draft/get`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DeliveryFBPDraft
+     * @name FbpApiFbpDraftList
+     * @summary Список черновиков поставки
+     * @request POST:/v1/fbp/draft/list
+     * @response `200` `FbpApiFbpDraftListData` Список черновиков поставки
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpApiFbpDraftList = (data: V1FbpDraftListRequest, params: RequestParams = {}) =>
+        this.http.request<FbpApiFbpDraftListData, FbpApiFbpDraftListError>({
+            path: `/v1/fbp/draft/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DraftDirectFBP
+     * @name FbpApiFbpDraftDirectTplDlvCreate
+     * @summary Создать черновик заявки на доставку сторонней транспортной компанией
+     * @request POST:/v1/fbp/draft/direct/tpl-dlv/create
+     * @response `200` `FbpApiFbpDraftDirectTplDlvCreateData` Статус генерации
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpApiFbpDraftDirectTplDlvCreate = (data: V1FbpDraftDirectTplDlvCreateRequest, params: RequestParams = {}) =>
+        this.http.request<FbpApiFbpDraftDirectTplDlvCreateData, FbpApiFbpDraftDirectTplDlvCreateError>({
+            path: `/v1/fbp/draft/direct/tpl-dlv/create`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь о работе метода в [комментариях](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DraftDirectFBP
+     * @name FbpApiFbpDraftDirectTplDlvEdit
+     * @summary Редактировать черновик поставки со способом доставки сторонней транспортной компанией
+     * @request POST:/v1/fbp/draft/direct/tpl-dlv/edit
+     * @response `200` `FbpApiFbpDraftDirectTplDlvEditData` Черновик изменён
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpApiFbpDraftDirectTplDlvEdit = (data: V1FbpDraftDirectTplDlvEditRequest, params: RequestParams = {}) =>
+        this.http.request<FbpApiFbpDraftDirectTplDlvEditData, FbpApiFbpDraftDirectTplDlvEditError>({
+            path: `/v1/fbp/draft/direct/tpl-dlv/edit`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags OrderDropOffFBP
+     * @name FbpApiFbpOrderDropOffCancel
+     * @summary Отменить поставку drop-off
+     * @request POST:/v1/fbp/order/drop-off/cancel
+     * @response `200` `FbpApiFbpOrderDropOffCancelData` Поставка отменена
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpApiFbpOrderDropOffCancel = (data: V1FbpOrderDropOffCancelRequest, params: RequestParams = {}) =>
+        this.http.request<FbpApiFbpOrderDropOffCancelData, FbpApiFbpOrderDropOffCancelError>({
+            path: `/v1/fbp/order/drop-off/cancel`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags OrderDropOffFBP
+     * @name FbpApiFbpOrderDropOffDlvEdit
+     * @summary Отредактировать информацию о поставке на drop-off пункт
+     * @request POST:/v1/fbp/order/drop-off/dlv/edit
+     * @response `200` `FbpApiFbpOrderDropOffDlvEditData` Информация передана
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpApiFbpOrderDropOffDlvEdit = (data: V1FbpOrderDropOffDlvEditRequest, params: RequestParams = {}) =>
+        this.http.request<FbpApiFbpOrderDropOffDlvEditData, FbpApiFbpOrderDropOffDlvEditError>({
+            path: `/v1/fbp/order/drop-off/dlv/edit`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags OrderDropOffFBP
+     * @name FbpApiFbpOrderDropOffTimetable
+     * @summary Получить график работы drop-off пункта
+     * @request POST:/v1/fbp/order/drop-off/timetable
+     * @response `200` `FbpApiFbpOrderDropOffTimetableData` График работы получен
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpApiFbpOrderDropOffTimetable = (data: V1FbpOrderDropOffTimetableRequest, params: RequestParams = {}) =>
+        this.http.request<FbpApiFbpOrderDropOffTimetableData, FbpApiFbpOrderDropOffTimetableError>({
+            path: `/v1/fbp/order/drop-off/timetable`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DeliveryFBP
+     * @name FbpApiFbpOrderGet
+     * @summary Получить информацию о конкретной поставке
+     * @request POST:/v1/fbp/order/get
+     * @response `200` `FbpApiFbpOrderGetData` Детали поставки
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpApiFbpOrderGet = (data: V1FbpOrderGetRequest, params: RequestParams = {}) =>
+        this.http.request<FbpApiFbpOrderGetData, FbpApiFbpOrderGetError>({
+            path: `/v1/fbp/order/get`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags DeliveryFBP
+     * @name FbpApiFbpOrderList
+     * @summary Получить список поставок
+     * @request POST:/v1/fbp/order/list
+     * @response `200` `FbpApiFbpOrderListData` Список поставок
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpApiFbpOrderList = (data: V1FbpOrderListRequest, params: RequestParams = {}) =>
+        this.http.request<FbpApiFbpOrderListData, FbpApiFbpOrderListError>({
+            path: `/v1/fbp/order/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags OrderPickupFBP
+     * @name FbpApiFbpOrderPickUpCancel
+     * @summary Отменить pick-up поставку
+     * @request POST:/v1/fbp/order/pick-up/cancel
+     * @response `200` `FbpApiFbpOrderPickUpCancelData` Статус отмены
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpApiFbpOrderPickUpCancel = (data: V1FbpOrderPickUpCancelRequest, params: RequestParams = {}) =>
+        this.http.request<FbpApiFbpOrderPickUpCancelData, FbpApiFbpOrderPickUpCancelError>({
+            path: `/v1/fbp/order/pick-up/cancel`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Вы можете оставить обратную связь по этому методу в комментариях к [обсуждению](https://dev.ozon.ru/community/1700-FBP-metody/) в сообществе разработчиков Ozon for dev.
+     *
+     * @tags OrderPickupFBP
+     * @name FbpApiFbpOrderPickUpDlvEdit
+     * @summary Изменить данные о точке забора
+     * @request POST:/v1/fbp/order/pick-up/dlv/edit
+     * @response `200` `FbpApiFbpOrderPickUpDlvEditData` Статус изменения
+     * @response `default` `GooglerpcStatus` Ошибка
+     */
+    fbpApiFbpOrderPickUpDlvEdit = (data: V1FbpOrderPickUpDlvEditRequest, params: RequestParams = {}) =>
+        this.http.request<FbpApiFbpOrderPickUpDlvEditData, FbpApiFbpOrderPickUpDlvEditError>({
+            path: `/v1/fbp/order/pick-up/dlv/edit`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Доступно для продавцов с подпиской [Premium Plus](https://seller-edu.ozon.ru/seller-rating/about-rating/subscription-premium-plus) или [Premium Pro](https://seller-edu.ozon.ru/seller-rating/about-rating/podpiska-premium-pro). Отправляет сообщение в существующий чат по его идентификатору. <br><br> Получите список чатов с покупателем `chats.chat.chat_type="Buyer_Seller"` в ответе метода [/v3/chat/list](#operation/ChatAPI_ChatListV3). Для отправлений: - FBO — вы можете отправить сообщение в течение 48 часов с момента получения последнего сообщения от покупателя. - FBS или rFBS — вы можете отправить сообщение покупателю после оплаты и в течение 72 часов после доставки отправления. После этого вы можете только отвечать на сообщения в течение 48 часов с момента получения последнего сообщения от покупателя.
+     *
+     * @tags Premium
+     * @name ChatApiChatSendMessage
+     * @summary Отправить сообщение
+     * @request POST:/v1/chat/send/message
+     * @response `200` `ChatApiChatSendMessageData` Сообщение отправлено
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    chatApiChatSendMessage = (data: ChatChatSendMessageRequest, params: RequestParams = {}) =>
+        this.http.request<ChatApiChatSendMessageData, ChatApiChatSendMessageError>({
+            path: `/v1/chat/send/message`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Доступно для продавцов с подпиской [Premium Plus](https://seller-edu.ozon.ru/seller-rating/about-rating/subscription-premium-plus) или [Premium Pro](https://seller-edu.ozon.ru/seller-rating/about-rating/podpiska-premium-pro). Создает новый чат с покупателем по отправлению. Например, чтобы уточнить адрес или модель товара. Для отправлений: - FBO — начать чат может только покупатель. - FBS и rFBS — вы можете открыть чат в течение 72 часов после оплаты или доставки отправления.
+     *
+     * @tags Premium
+     * @name ChatApiChatStart
+     * @summary Создать новый чат
+     * @request POST:/v1/chat/start
+     * @response `200` `ChatApiChatStartData` Создан новый чат
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    chatApiChatStart = (data: ChatChatStartRequest, params: RequestParams = {}) =>
+        this.http.request<ChatApiChatStartData, ChatApiChatStartError>({
+            path: `/v1/chat/start`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Уĸажите период и метриĸи, ĸоторые нужно посчитать. В ответе будет аналитиĸа, сгруппированная по параметру `dimensions`. Для продавцов без подписки [Premium Plus](https://seller-edu.ozon.ru/seller-rating/about-rating/subscription-premium-plus): - доступны данные за последние 3 месяца, - есть ограничения по способам группировки данных и метрикам. Для продавцов с подпиской [Premium Plus](https://seller-edu.ozon.ru/seller-rating/about-rating/subscription-premium-plus) или [Premium Pro](https://seller-edu.ozon.ru/seller-rating/about-rating/podpiska-premium-pro) ограничений нет. Метод можно использовать не больше 1 раза в минуту. Соответствует разделу **Аналитика → Графики** в личном кабинете.
+     *
+     * @tags Premium
      * @name AnalyticsApiAnalyticsGetData
      * @summary Данные аналитики
      * @request POST:/v1/analytics/data
@@ -2421,75 +7070,293 @@ export class V1<SecurityDataType = unknown> {
             ...params,
         });
     /**
-     * @description <aside class="warning"> 1 апреля 2023 года мы отключим этот метод. Переключитесь на метод <a href="#operation/AnalyticsAPI_AnalyticsGetStockOnWarehousesV2">/v2/analytics/stock_on_warehouses</a>. Чтобы получить отчёт, запросите его в <a href="https://seller.ozon.ru/app/analytics/fulfillment-reports/stocks-and-movement-products-to-ozon-warehouses">личном кабинете</a>. </aside> Отчёт по остаткам и товарам в перемещении по складам Ozon.
+     * @description Используйте метод, чтобы получить данные о запросах ваших товаров. Полная аналитика доступна с подпиской [Premium](https://seller-edu.ozon.ru/seller-rating/about-rating/premium-program), [Premium Plus](https://seller-edu.ozon.ru/seller-rating/about-rating/subscription-premium-plus) или [Premium Pro](https://seller-edu.ozon.ru/seller-rating/about-rating/podpiska-premium-pro). Без подписки вы можете посмотреть часть показателей. Метод аналогичен вкладке **Товары в поиске → Запросы моего товара** в личном кабинете. Аналитику по запросам можно проверить за определённые даты. Для этого укажите интервал в полях `date_from` и `date_to`. Данные за последний месяц доступны в любом интервале, кроме текущей даты — расчёт происходит в течение 1–2 дней. Аналитика за даты раньше месяца назад доступна только с подпиской [Premium](https://seller-edu.ozon.ru/seller-rating/about-rating/premium-program), [Premium Plus](https://seller-edu.ozon.ru/seller-rating/about-rating/subscription-premium-plus) или [Premium Pro](https://seller-edu.ozon.ru/seller-rating/about-rating/podpiska-premium-pro) и только по неделям — в запросе укажите параметр `date_from`. [Подробнее о работе с запросами товара в Базе знаний продавца](https://seller-edu.ozon.ru/analytics-and-metrics/graphs/analitika-po-zaprosu)
      *
-     * @tags AnalyticsAPI
-     * @name AnalyticsApiAnalyticsGetStockOnWarehouses
-     * @summary Отчёт по остаткам и товарам
-     * @request POST:/v1/analytics/stock_on_warehouses
-     * @response `200` `AnalyticsApiAnalyticsGetStockOnWarehousesData` Отчёт по остаткам и товарам
+     * @tags Premium
+     * @name AnalyticsApiAnalyticsProductQueries
+     * @summary Получить информацию о запросах моих товаров
+     * @request POST:/v1/analytics/product-queries
+     * @response `200` `AnalyticsApiAnalyticsProductQueriesData` Информация о запросах моих товаров
      * @response `400` `RpcStatus` Неверный параметр
      * @response `403` `RpcStatus` Доступ запрещён
      * @response `404` `RpcStatus` Ответ не найден
      * @response `409` `RpcStatus` Конфликт запроса
      * @response `500` `RpcStatus` Внутренняя ошибка сервера
      */
-    analyticsApiAnalyticsGetStockOnWarehouses = (
-        data: AnalyticsAnalyticsGetStockOnWarehousesRequest,
+    analyticsApiAnalyticsProductQueries = (data: V1AnalyticsProductQueriesRequest, params: RequestParams = {}) =>
+        this.http.request<AnalyticsApiAnalyticsProductQueriesData, AnalyticsApiAnalyticsProductQueriesError>({
+            path: `/v1/analytics/product-queries`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Используйте метод, чтобы получить данные по запросам на конкретный товар. Полная аналитика доступна с подпиской [Premium](https://seller-edu.ozon.ru/seller-rating/about-rating/premium-program), [Premium Plus](https://seller-edu.ozon.ru/seller-rating/about-rating/subscription-premium-plus) или [Premium Pro](https://seller-edu.ozon.ru/seller-rating/about-rating/podpiska-premium-pro). Без подписки вы можете посмотреть часть показателей. Метод аналогичен просмотру данных по товару на вкладке **Товары в поиске → Запросы моего товара** в личном кабинете. Аналитику по запросам можно проверить за определённые даты. Для этого укажите интервал в полях `date_from` и `date_to`. Данные за последний месяц доступны в любом интервале, кроме текущей даты — расчёт происходит в течение 1–2 дней. Аналитика за даты раньше месяца назад доступна только с подпиской [Premium](https://seller-edu.ozon.ru/seller-rating/about-rating/premium-program), [Premium Plus](https://seller-edu.ozon.ru/seller-rating/about-rating/subscription-premium-plus) или [Premium Pro](https://seller-edu.ozon.ru/seller-rating/about-rating/podpiska-premium-pro) и только по неделям — в запросе укажите параметр `date_from`. [Подробнее о работе с запросами товара в Базе знаний продавца](https://seller-edu.ozon.ru/analytics-and-metrics/graphs/analitika-po-zaprosu)
+     *
+     * @tags Premium
+     * @name AnalyticsApiAnalyticsProductQueriesDetails
+     * @summary Получить детализацию запросов по товару
+     * @request POST:/v1/analytics/product-queries/details
+     * @response `200` `AnalyticsApiAnalyticsProductQueriesDetailsData` Информация о запросах по конкретному товару
+     * @response `400` `RpcStatus` Неверный параметр
+     */
+    analyticsApiAnalyticsProductQueriesDetails = (
+        data: V1AnalyticsProductQueriesDetailsRequest,
         params: RequestParams = {},
     ) =>
         this.http.request<
-            AnalyticsApiAnalyticsGetStockOnWarehousesData,
-            AnalyticsApiAnalyticsGetStockOnWarehousesError
+            AnalyticsApiAnalyticsProductQueriesDetailsData,
+            AnalyticsApiAnalyticsProductQueriesDetailsError
         >({
-            path: `/v1/analytics/stock_on_warehouses`,
+            path: `/v1/analytics/product-queries/details`,
             method: 'POST',
             body: data,
             type: ContentType.Json,
             ...params,
         });
     /**
-     * @description <aside class="warning"> 1 апреля 2023 года мы отключим этот метод. Новый метод в разработке — следите за обновлениями. Чтобы получить отчёт, запросите его в <a href="https://seller.ozon.ru/app/analytics/fulfillment-reports/turnover">личном кабинете</a>. </aside> Метод для получения отчёта по оборачиваемости (FBO) по категориям за 15 дней.
+     * @description Доступно для продавцов с подпиской [Premium Plus](https://seller-edu.ozon.ru/seller-rating/about-rating/subscription-premium-plus) или [Premium Pro](https://seller-edu.ozon.ru/seller-rating/about-rating/podpiska-premium-pro). Возвращает данные о суммах реализации из [отчёта о реализации товаров](#operation/FinanceAPI_GetRealizationReportV2) за день. Отмены и невыкупы не включаются. Данные доступны не более чем за 32 календарных дня от текущей даты.
      *
-     * @tags AnalyticsAPI
-     * @name AnalyticsApiAnalyticsItemTurnoverDataV3
-     * @summary Отчёт по оборачиваемости (FBO)
-     * @request POST:/v1/analytics/item_turnover
-     * @response `200` `AnalyticsApiAnalyticsItemTurnoverDataV3Data` Отчёт по оборачиваемости
+     * @tags Premium
+     * @name FinanceApiGetRealizationByDayReportV1
+     * @summary Отчёт о реализации товаров за день
+     * @request POST:/v1/finance/realization/by-day
+     * @response `200` `FinanceApiGetRealizationByDayReportV1Data` Отчёт о реализации за день
      * @response `400` `RpcStatus` Неверный параметр
      * @response `403` `RpcStatus` Доступ запрещён
      * @response `404` `RpcStatus` Ответ не найден
      * @response `409` `RpcStatus` Конфликт запроса
      * @response `500` `RpcStatus` Внутренняя ошибка сервера
      */
-    analyticsApiAnalyticsItemTurnoverDataV3 = (
-        data: V1AnalyticsItemTurnoverDataV3Request,
-        params: RequestParams = {},
-    ) =>
-        this.http.request<AnalyticsApiAnalyticsItemTurnoverDataV3Data, AnalyticsApiAnalyticsItemTurnoverDataV3Error>({
-            path: `/v1/analytics/item_turnover`,
+    financeApiGetRealizationByDayReportV1 = (data: V1GetRealizationReportByDayRequest, params: RequestParams = {}) =>
+        this.http.request<FinanceApiGetRealizationByDayReportV1Data, FinanceApiGetRealizationByDayReportV1Error>({
+            path: `/v1/finance/realization/by-day`,
             method: 'POST',
             body: data,
             type: ContentType.Json,
             ...params,
         });
     /**
-     * @description Отчёт о реализации доставленных и возвращённых товаров за месяц. Отмены и невыкупы не включаются. Отчёт придёт не позднее 5-го числа следующего месяца. [Подробнее об отчёте в Базе знаний продавца](https://seller-edu.ozon.ru/docs/finances-documents/calculations-documents/otchet-o-realizacii-tovarov.html)
+     * @description Доступно для продавцов с подпиской [Premium Pro](https://seller-edu.ozon.ru/seller-rating/about-rating/podpiska-premium-pro).
      *
-     * @tags FinanceAPI
-     * @name FinanceApiGetRealizationReport
-     * @summary Отчёт о реализации товаров
-     * @request POST:/v1/finance/realization
-     * @response `200` `FinanceApiGetRealizationReportData` Отчёт о реализации
+     * @tags Premium
+     * @name SearchQueriesApiSearchQueriesText
+     * @summary Получить список поисковых запросов по тексту
+     * @request POST:/v1/search-queries/text
+     * @response `200` `SearchQueriesApiSearchQueriesTextData` Список поисковых запросов
      * @response `400` `RpcStatus` Неверный параметр
      * @response `403` `RpcStatus` Доступ запрещён
      * @response `404` `RpcStatus` Ответ не найден
      * @response `409` `RpcStatus` Конфликт запроса
      * @response `500` `RpcStatus` Внутренняя ошибка сервера
      */
-    financeApiGetRealizationReport = (data: FinanceGetRealizationReportRequest, params: RequestParams = {}) =>
-        this.http.request<FinanceApiGetRealizationReportData, FinanceApiGetRealizationReportError>({
-            path: `/v1/finance/realization`,
+    searchQueriesApiSearchQueriesText = (data: V1SearchQueriesTextRequest, params: RequestParams = {}) =>
+        this.http.request<SearchQueriesApiSearchQueriesTextData, SearchQueriesApiSearchQueriesTextError>({
+            path: `/v1/search-queries/text`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Доступно для продавцов с подпиской [Premium Pro](https://seller-edu.ozon.ru/seller-rating/about-rating/podpiska-premium-pro).
+     *
+     * @tags Premium
+     * @name SearchQueriesApiSearchQueriesTop
+     * @summary Получить список популярных поисковых запросов
+     * @request POST:/v1/search-queries/top
+     * @response `200` `SearchQueriesApiSearchQueriesTopData` Список популярных поисковых запросов
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    searchQueriesApiSearchQueriesTop = (data: V1SearchQueriesTopRequest, params: RequestParams = {}) =>
+        this.http.request<SearchQueriesApiSearchQueriesTopData, SearchQueriesApiSearchQueriesTopError>({
+            path: `/v1/search-queries/top`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Доступно для продавцов с подпиской Premium Pro.
+     *
+     * @tags Premium
+     * @name ProductPricesDetails
+     * @summary Получить подробную информацию о ценах товаров
+     * @request POST:/v1/product/prices/details
+     * @response `200` `ProductPricesDetailsData` Информация о ценах товаров
+     * @response `400` `RpcStatus` Неверный параметр
+     * @response `403` `RpcStatus` Доступ запрещён
+     * @response `404` `RpcStatus` Ответ не найден
+     * @response `409` `RpcStatus` Конфликт запроса
+     * @response `500` `RpcStatus` Внутренняя ошибка сервера
+     */
+    productPricesDetails = (data: V1ProductPricesDetailsRequest, params: RequestParams = {}) =>
+        this.http.request<ProductPricesDetailsData, ProductPricesDetailsError>({
+            path: `/v1/product/prices/details`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Возвращает возможные причины отмены отправлений и заказов.
+     *
+     * @tags CancelReasonAPI
+     * @name CancelReasonList
+     * @summary Причины отмены отправлений
+     * @request POST:/v1/cancel-reason/list
+     * @response `200` `CancelReasonListData` Причины отмены отправлений
+     * @response `default` `RpcStatus` Ошибка
+     */
+    cancelReasonList = (params: RequestParams = {}) =>
+        this.http.request<CancelReasonListData, CancelReasonListError>({
+            path: `/v1/cancel-reason/list`,
+            method: 'POST',
+            ...params,
+        });
+    /**
+     * @description Возвращает возможные причины отмены для заказа.
+     *
+     * @tags CancelReasonAPI
+     * @name CancelReasonListByOrder
+     * @summary Причины отмены заказа
+     * @request POST:/v1/cancel-reason/list-by-order
+     * @response `200` `CancelReasonListByOrderData` Причины отмены заказа
+     * @response `default` `RpcStatus` Ошибка
+     */
+    cancelReasonListByOrder = (data: V1CancelReasonListByOrderRequest, params: RequestParams = {}) =>
+        this.http.request<CancelReasonListByOrderData, CancelReasonListByOrderError>({
+            path: `/v1/cancel-reason/list-by-order`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Возвращает возможные причины отмены для отправления.
+     *
+     * @tags CancelReasonAPI
+     * @name CancelReasonApiCancelReasonListByPosting
+     * @summary Причины отмены отправления
+     * @request POST:/v1/cancel-reason/list-by-posting
+     * @response `200` `CancelReasonApiCancelReasonListByPostingData` Причины отмены отправления
+     * @response `default` `RpcStatus` Ошибка
+     */
+    cancelReasonApiCancelReasonListByPosting = (data: V1CancelReasonListByPostingRequest, params: RequestParams = {}) =>
+        this.http.request<CancelReasonApiCancelReasonListByPostingData, CancelReasonApiCancelReasonListByPostingError>({
+            path: `/v1/cancel-reason/list-by-posting`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Проверяет доступность доставки Ozon для покупателя. Не учитывает ограничения по сумме покупки, категории товаров и географии.
+     *
+     * @tags DeliveryAPI
+     * @name DeliveryCheck
+     * @summary Проверить доступность доставки для покупателя
+     * @request POST:/v1/delivery/check
+     * @response `200` `DeliveryCheckData` Успешно
+     * @response `default` `RpcStatus` Ошибка
+     */
+    deliveryCheck = (data: V1DeliveryCheckRequest, params: RequestParams = {}) =>
+        this.http.request<DeliveryCheckData, DeliveryCheckError>({
+            path: `/v1/delivery/check`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Возвращает объединённые кластеры точек самовывоза на области из параметра `viewport`. Используйте значения из параметра `clusters.viewport`, чтобы получить список точек или мелких кластеров внутри большого кластера. Используйте метод [/v1/delivery/point/info](#operation/DeliveryPointInfo), чтобы получить информацию о конкретной точке самовывоза.
+     *
+     * @tags DeliveryAPI
+     * @name DeliveryMap
+     * @summary Отрисовать точки на карте
+     * @request POST:/v1/delivery/map
+     * @response `200` `DeliveryMapData` Успешно
+     * @response `default` `RpcStatus` Ошибка
+     */
+    deliveryMap = (data: V1DeliveryMapRequest, params: RequestParams = {}) =>
+        this.http.request<DeliveryMapData, DeliveryMapError>({
+            path: `/v1/delivery/map`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Возвращает подробную информацию о точке самовывоза для пользователя.
+     *
+     * @tags DeliveryAPI
+     * @name DeliveryPointInfo
+     * @summary Получить информацию о точке самовывоза
+     * @request POST:/v1/delivery/point/info
+     * @response `200` `DeliveryPointInfoData` Информация о точке самовывоза
+     * @response `default` `RpcStatus` Ошибка
+     */
+    deliveryPointInfo = (data: V1DeliveryPointInfoRequest, params: RequestParams = {}) =>
+        this.http.request<DeliveryPointInfoData, DeliveryPointInfoError>({
+            path: `/v1/delivery/point/info`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Возвращает координаты всех точек самовывоза без объединения в кластеры.
+     *
+     * @tags DeliveryAPI
+     * @name DeliveryApiDeliveryPointList
+     * @summary Получить список точек самовывоза
+     * @request POST:/v1/delivery/point/list
+     * @response `200` `DeliveryApiDeliveryPointListData` Список точек самовывоза
+     */
+    deliveryApiDeliveryPointList = (data: V1DeliveryPointListRequest, params: RequestParams = {}) =>
+        this.http.request<DeliveryApiDeliveryPointListData, any>({
+            path: `/v1/delivery/point/list`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Отменяет заказ со всеми отправлениями. Используйте идентификатор причины отмены `reasons.id` из метода [/v1/cancel-reason/list-by-order](#operation/CancelReasonListByOrder).
+     *
+     * @tags OrderAPI
+     * @name OrderApiOrderCancel
+     * @summary Отменить заказ
+     * @request POST:/v1/order/cancel
+     * @response `200` `OrderApiOrderCancelData` Заказ отменён
+     * @response `default` `RpcStatus` Ошибка
+     */
+    orderApiOrderCancel = (data: V1OrderCancelRequest, params: RequestParams = {}) =>
+        this.http.request<OrderApiOrderCancelData, OrderApiOrderCancelError>({
+            path: `/v1/order/cancel`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Возвращает возможность отмены заказа для покупателя.
+     *
+     * @tags OrderAPI
+     * @name OrderApiOrderCancelCheck
+     * @summary Проверить возможность отмены заказа
+     * @request POST:/v1/order/cancel/check
+     * @response `200` `OrderApiOrderCancelCheckData` Результат проверки
+     * @response `default` `RpcStatus` Ошибка
+     */
+    orderApiOrderCancelCheck = (data: V1OrderCancelCheckRequest, params: RequestParams = {}) =>
+        this.http.request<OrderApiOrderCancelCheckData, OrderApiOrderCancelCheckError>({
+            path: `/v1/order/cancel/check`,
             method: 'POST',
             body: data,
             type: ContentType.Json,
@@ -2498,16 +7365,34 @@ export class V1<SecurityDataType = unknown> {
     /**
      * No description
      *
-     * @tags SellerRating
-     * @name RatingApiRatingSummaryV1
-     * @summary Получить информацию о текущих рейтингах продавца
-     * @request POST:/v1/rating/summary
-     * @response `200` `RatingApiRatingSummaryV1Data` Информация о рейтингах
+     * @tags OrderAPI
+     * @name OrderApiOrderCancelStatus
+     * @summary Получить статус отмены заказа
+     * @request POST:/v1/order/cancel/status
+     * @response `200` `OrderApiOrderCancelStatusData` Статус отмены заказа
      * @response `default` `RpcStatus` Ошибка
      */
-    ratingApiRatingSummaryV1 = (data: V1Empty, params: RequestParams = {}) =>
-        this.http.request<RatingApiRatingSummaryV1Data, RatingApiRatingSummaryV1Error>({
-            path: `/v1/rating/summary`,
+    orderApiOrderCancelStatus = (data: V1OrderCancelStatusRequest, params: RequestParams = {}) =>
+        this.http.request<OrderApiOrderCancelStatusData, OrderApiOrderCancelStatusError>({
+            path: `/v1/order/cancel/status`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Отменяет отправление из заказа. Используйте идентификатор причины отмены `reasons.id` из метода [/v1/cancel-reason/list-by-posting](#operation/CancelReasonAPI_CancelReasonListByPosting).
+     *
+     * @tags FboPostingAPI
+     * @name PostingApiPostingCancel
+     * @summary Отменить отправление из заказа
+     * @request POST:/v1/posting/cancel
+     * @response `200` `PostingApiPostingCancelData` Сообщение со статусом отмены
+     * @response `default` `RpcStatus` Ошибка
+     */
+    postingApiPostingCancel = (data: V1PostingCancelRequest, params: RequestParams = {}) =>
+        this.http.request<PostingApiPostingCancelData, PostingApiPostingCancelError>({
+            path: `/v1/posting/cancel`,
             method: 'POST',
             body: data,
             type: ContentType.Json,
@@ -2516,16 +7401,34 @@ export class V1<SecurityDataType = unknown> {
     /**
      * No description
      *
-     * @tags SellerRating
-     * @name RatingApiRatingHistoryV1
-     * @summary Получить информацию о рейтингах продавца за период
-     * @request POST:/v1/rating/history
-     * @response `200` `RatingApiRatingHistoryV1Data` Информация о рейтингах
+     * @tags FboPostingAPI
+     * @name PostingApiPostingCancelStatus
+     * @summary Проверить статус отмены отправления
+     * @request POST:/v1/posting/cancel/status
+     * @response `200` `PostingApiPostingCancelStatusData` Статус отмены отправления
      * @response `default` `RpcStatus` Ошибка
      */
-    ratingApiRatingHistoryV1 = (data: V1RatingHistoryV1Request, params: RequestParams = {}) =>
-        this.http.request<RatingApiRatingHistoryV1Data, RatingApiRatingHistoryV1Error>({
-            path: `/v1/rating/history`,
+    postingApiPostingCancelStatus = (data: V1PostingCancelStatusRequest, params: RequestParams = {}) =>
+        this.http.request<PostingApiPostingCancelStatusData, PostingApiPostingCancelStatusError>({
+            path: `/v1/posting/cancel/status`,
+            method: 'POST',
+            body: data,
+            type: ContentType.Json,
+            ...params,
+        });
+    /**
+     * @description Возвращает статусы выдачи экземпляров и коды маркировки «Честный ЗНАК» для каждого отправления. Укажите в чеке и выведите из оборота маркировки экземпляров из параметра `issued_exemplars` в ответе.
+     *
+     * @tags FboPostingAPI
+     * @name PostingApiPostingMarks
+     * @summary Получить маркировки экземпляров из отправления
+     * @request POST:/v1/posting/marks
+     * @response `200` `PostingApiPostingMarksData` Список экземпляров отправления с маркировками
+     * @response `default` `RpcStatus` Ошибка
+     */
+    postingApiPostingMarks = (data: V1PostingMarksRequest, params: RequestParams = {}) =>
+        this.http.request<PostingApiPostingMarksData, PostingApiPostingMarksError>({
+            path: `/v1/posting/marks`,
             method: 'POST',
             body: data,
             type: ContentType.Json,

@@ -88,6 +88,13 @@ namespace Ozon_ {
             /** товары, для которых заблокирована модерация. */
             | 'MODERATION_BLOCK';
 
+        export interface Productv3GetProductListResponseItemQuant {
+            /** Идентификатор эконом-товара. */
+            quant_code?: string;
+            /** Размер кванта. */
+            quant_size?: number;
+        }
+
         export interface Productv3GetProductListResponseItem {
             /** SKU */
             product_id: number;
@@ -95,18 +102,14 @@ namespace Ozon_ {
             offer_id: string;
             /** Есть остатки на складах FBO. */
             has_fbo_stocks?: boolean;
-            /** Есть остатки на складах FBO. */
+            /** Есть остатки на складах FBS. */
             has_fbs_stocks?: boolean;
             /** Товар в архиве */
             archived?: boolean;
             /** Уценённый товар. */
             is_discounted?: boolean;
-            quants: {
-                /** Идентификатор эконом-товара. */
-                quant_code: string;
-                /** Размер кванта. */
-                quant_size: number;
-            }
+            /** Список квантов. */
+            quants?: Productv3GetProductListResponseItemQuant[];
         }
 
         export interface Productv2GetProductListResponseItem {
@@ -293,6 +296,366 @@ namespace Ozon_ {
             color_image: string;
             /**Описание состояния товара. */
             status: ProductStatus;
+        }
+
+        // --- v2/product/info/stocks-by-warehouse/fbs ---
+
+        export interface V2GetProductInfoStocksByWarehouseFbsRequest {
+            /** Указатель для выборки следующих данных. */
+            cursor?: string;
+            /** Количество значений в ответе. Максимум 1000. */
+            limit: number;
+            /** Идентификаторы товаров в системе продавца -- артикул. Максимум 1000. */
+            offer_id?: string[];
+            /** Идентификаторы товаров в системе Ozon -- SKU. Максимум 1000. */
+            sku?: string[];
+        }
+
+        export interface V2GetProductInfoStocksByWarehouseFbsResponseProduct {
+            /** Количество доступных для продажи товаров. */
+            free_stock?: number;
+            /** Идентификатор товара в системе продавца -- артикул. */
+            offer_id?: string;
+            /** Общее количество товара на складе. */
+            present?: number;
+            /** Идентификатор товара. */
+            product_id?: number;
+            /** Количество зарезервированных товаров на складе. */
+            reserved?: number;
+            /** Идентификатор товара в системе Ozon -- SKU. */
+            sku?: number;
+            /** Идентификатор склада. */
+            warehouse_id?: number;
+            /** Название склада. */
+            warehouse_name?: string;
+        }
+
+        export interface ProductApiGetProductInfoStocksByWarehouseFbsV2Data {
+            /** Указатель для выборки следующих данных. */
+            cursor?: string;
+            /** true, если в ответе вернули не все товары. */
+            has_next?: boolean;
+            /** Остатки товаров. */
+            products?: V2GetProductInfoStocksByWarehouseFbsResponseProduct[];
+        }
+
+        // --- v2/warehouse/list ---
+
+        export interface V2WarehouseListRequest {
+            /** Количество значений в ответе. Максимум 200. */
+            limit: number;
+            /** Указатель для выборки следующих данных. */
+            cursor?: string;
+            /** Идентификаторы складов. Максимум 200. */
+            warehouse_ids?: string[];
+        }
+
+        /** Информация о расположении склада. */
+        export interface WarehouseAddressInfo {
+            /** Адрес склада. */
+            address?: string;
+            /** Широта. */
+            latitude?: number;
+            /** Долгота. */
+            longitude?: number;
+            /** Часовой пояс. */
+            utc?: string;
+        }
+
+        export interface WarehouseListV2ResponseWarehouse {
+            /** Информация о расположении склада. */
+            address_info?: WarehouseAddressInfo;
+            /** Тип этикетки: UNSPECIFIED, BIG, SMALL. */
+            carriage_label_type?: string;
+            /** Комментарий для курьера. */
+            courier_comment?: string;
+            /** Номера телефонов для связи с курьером. */
+            courier_phones?: string[];
+            /** Дата и время создания склада. */
+            created_at?: string;
+            /** Время на отгрузку в минутах. */
+            cut_in_time?: number;
+            /** Первая миля. */
+            first_mile?: { [key: string]: any };
+            /** Признак подключения доверительной приемки. */
+            has_entrusted_acceptance?: boolean;
+            /** Признак наличия лимита минимального количества заказов. */
+            has_postings_limit?: boolean;
+            /** Признак включённой автосборки. */
+            is_auto_assembly?: boolean;
+            /** Признак доставки comfort. */
+            is_comfort?: boolean;
+            /** Признак доставки express. */
+            is_express?: boolean;
+            /** Склад принимает крупногабаритные товары. */
+            is_kgt?: boolean;
+            /** Склад работает по схеме rFBS. */
+            is_rfbs?: boolean;
+            /** Печать транспортной накладной включена. */
+            is_waybill_enabled?: boolean;
+            /** Минимальное количество заказов в одной поставке. */
+            min_postings_limit?: number;
+            /** Название склада. */
+            name?: string;
+            /** Дата постановки склада на паузу (rFBS). */
+            pause_at?: string;
+            /** Номер телефона склада. */
+            phone?: string;
+            /** Лимит заказов (-1 если лимита нет). */
+            postings_limit?: number;
+            /** Идентификатор склада. */
+            warehouse_id?: number;
+        }
+
+        export interface WarehouseListV2Data {
+            /** Указатель для выборки следующих данных. */
+            cursor?: string;
+            /** Список складов. */
+            warehouses?: WarehouseListV2ResponseWarehouse[];
+            /** true, если в ответе вернулись не все значения. */
+            has_next?: boolean;
+        }
+
+        // --- v2/delivery-method/list ---
+
+        export interface DeliveryMethodListV2RequestFilter {
+            /** Идентификаторы методов доставки. */
+            delivery_method_ids?: string[];
+            /** Идентификаторы служб доставки. */
+            provider_ids?: string[];
+            /** Статус метода доставки. */
+            status?: string[];
+            /** Идентификаторы складов. */
+            warehouse_ids?: string[];
+        }
+
+        export interface V2DeliveryMethodListRequest {
+            /** Указатель для выборки следующих данных. */
+            cursor?: string;
+            /** Фильтр для поиска методов доставки. */
+            filter?: DeliveryMethodListV2RequestFilter;
+            /** Количество значений в ответе. Минимум 1, максимум 100. */
+            limit: number;
+            /** Направление сортировки. */
+            sort_dir?: 'ASC' | 'DESC';
+        }
+
+        export interface DeliveryMethodListV2ResponseDeliveryMethod {
+            /** Дата создания метода доставки. */
+            created_at?: string;
+            /** Время, до которого продавцу нужно собрать заказ. */
+            cutoff?: string;
+            /** Идентификатор метода доставки. */
+            id?: number;
+            /** Доступна быстрая доставка Ozon Express. */
+            is_express?: boolean;
+            /** Название метода доставки. */
+            name?: string;
+            /** Идентификатор службы доставки. */
+            provider_id?: number;
+            /** Минимальное время на сборку заказа в минутах. */
+            sla_cut_in?: number;
+            /** Статус: NEW, EDITED, ACTIVE, DISABLED, WAITING, BROKEN. */
+            status?: string;
+            /** Идентификатор услуги по доставке заказа. */
+            template_id?: number;
+            /** Тип интеграции со службой доставки: aggregator, 3pl_tracking, non_integrated, hybrid. */
+            tpl_integration_type?: string;
+            /** Дата и время последнего обновления. */
+            updated_at?: string;
+            /** Идентификатор склада. */
+            warehouse_id?: number;
+        }
+
+        export interface WarehouseApiDeliveryMethodListV2Data {
+            /** Указатель для выборки следующих данных. */
+            cursor?: string;
+            /** true, если в ответе вернули не все методы доставки. */
+            has_next?: boolean;
+            /** Методы доставки. */
+            delivery_methods?: DeliveryMethodListV2ResponseDeliveryMethod[];
+        }
+
+        // --- v2/carriage/delivery/list ---
+
+        export interface CarriageDeliveryListV2RequestFilter {
+            /** Идентификатор метода доставки. */
+            delivery_method_id?: number;
+            /** Дата отгрузки (YYYY-MM-DD). По умолчанию -- текущая дата. */
+            departure_date?: string;
+        }
+
+        export interface V2CarriageDeliveryListRequest {
+            /** Указатель для выборки следующих данных. */
+            cursor?: string;
+            /** Фильтр для поиска методов доставки и отгрузок. */
+            filter?: CarriageDeliveryListV2RequestFilter;
+            /** Количество значений на странице. Максимум 1000. */
+            limit: number;
+        }
+
+        /** Стоимость отгрузки pick-up. */
+        export interface CarriagePickupFee {
+            /** Код валюты. */
+            currency_code?: string;
+            /** Предварительная стоимость отгрузки курьеру Ozon. */
+            value?: number;
+        }
+
+        export interface DeliveryMethodCarriage {
+            /** В отгрузке есть товары для которых нужны документы в Беларусь. */
+            all_blr_traceable?: boolean;
+            /** Доступные действия с отгрузкой. */
+            available_actions?: string[];
+            /** Объём отгрузки в литрах. */
+            carriage_volume?: number;
+            /** Идентификатор отгрузки. 0 -- отгрузка, которую можно создать. */
+            id?: number;
+            /** Стоимость отгрузки pick-up. */
+            pickup_fee?: CarriagePickupFee;
+            /** Количество отправлений в отгрузке. */
+            postings_count?: number;
+            /** Количество квантов в отгрузке. */
+            quantum_count?: number;
+            /** Статус отгрузки для запрашиваемых метода и даты. */
+            status?: string;
+        }
+
+        export interface DeliveryMethodError {
+            /** Код ошибки. */
+            code?: string;
+            /** Описание ошибки. */
+            description?: string;
+            /** Статус ошибки. */
+            status?: string;
+        }
+
+        export interface CarriageDeliveryListV2ResponseDeliveryMethod {
+            /** Количество отправлений во всех отгрузках. */
+            carriage_postings_count?: number;
+            /** Список отгрузок. */
+            carriages?: DeliveryMethodCarriage[];
+            /** Время начала сборки и часовой пояс времени склада. */
+            cut_in?: string;
+            /** Дата и время, до которых нужно собрать отправление. */
+            cutoff_at?: string;
+            /** Идентификатор метода доставки. */
+            delivery_method_id?: number;
+            /** Название метода доставки. */
+            delivery_method_name?: string;
+            /** Статус метода доставки. */
+            delivery_method_status?: string;
+            /** Дата отгрузки. */
+            departure_date?: string;
+            /** Адрес точки отгрузки. */
+            dropoff_address?: string;
+            /** Статус возможности смены точки отгрузки. */
+            dropoff_change_availability?: string;
+            /** Идентификатор точки отгрузки. */
+            dropoff_point_id?: number;
+            /** Способ отгрузки. */
+            dropoff_point_type?: string;
+            /** Список ошибок. */
+            errors?: DeliveryMethodError[];
+            /** Точка отгрузки изменилась. */
+            first_mile_changing?: boolean;
+            /** Тип первой мили. */
+            first_mile_type?: string;
+            /** На складе включена доверительная приёмка. */
+            has_entrusted_acceptance?: boolean;
+            /** Тип интеграции со службой доставки. */
+            integration_type?: string;
+            /** Отгрузка не обязательна. */
+            is_optional_carriage?: boolean;
+            /** Отгрузка с предсортировкой. */
+            is_presort?: boolean;
+            /** Склад работает по схеме rFBS. */
+            is_rfbs?: boolean;
+            /** Количество собранных обязательных отправлений. */
+            mandatory_packaged_count?: number;
+            /** Количество отправлений, которые нужно собрать. */
+            mandatory_postings_count?: number;
+            /** Количество собранных необязательных отправлений. */
+            optional_packaged_count?: number;
+            /** Рекомендуемое местное время отгрузки. */
+            recommended_time_local?: string;
+            /** Смещение часового пояса рекомендуемого времени от UTC-0 в минутах. */
+            recommended_time_utc_offset_in_minutes?: number;
+            /** Начало таймслота в точке отгрузки. */
+            timeslot_from?: string;
+            /** Окончание таймслота в точке отгрузки. */
+            timeslot_to?: string;
+            /** Ссылка на иконку службы доставки. */
+            tpl_provider_icon_url?: string;
+            /** Название службы доставки. */
+            tpl_provider_name?: string;
+            /** Город склада. */
+            warehouse_city?: string;
+            /** Идентификатор склада. */
+            warehouse_id?: number;
+            /** Название склада. */
+            warehouse_name?: string;
+        }
+
+        export interface CarriageApiCarriageDeliveryListV2Data {
+            /** Указатель для выборки следующих данных. */
+            cursor?: string;
+            /** true, если в ответе вернулись не все методы доставки. */
+            has_next?: boolean;
+            /** Список методов доставки. */
+            methods?: CarriageDeliveryListV2ResponseDeliveryMethod[];
+        }
+
+        // --- v2/posting/fbs/act/check-status ---
+
+        export interface PostingFBSActCheckStatusRequest {
+            /**
+             * Номер задания на формирование документов (идентификатор перевозки).
+             * В Swagger тип int64. Передавайте как строку, если значение превышает
+             * `Number.MAX_SAFE_INTEGER` (2^53-1) во избежание потери точности.
+             */
+            id: number | string;
+        }
+
+        export interface PostingFBSActCheckStatusResponseStatus {
+            /** Тип документов. */
+            act_type?: string;
+            /** Номера отправлений, добавленных в перевозку. */
+            added_to_act?: string[];
+            /** Номера отправлений, не попавших в перевозку. */
+            removed_from_act?: string[];
+            /** Статус: in_process, ready, error, cancelled, или "The next postings aren't ready". */
+            status?: 'in_process' | 'ready' | 'error' | 'cancelled' | "The next postings aren't ready";
+            /** Признак частичной перевозки. */
+            is_partial?: boolean;
+        }
+
+        export interface PostingApiPostingFbsActCheckStatusData {
+            /** Результат работы метода. */
+            result?: PostingFBSActCheckStatusResponseStatus;
+        }
+
+        // --- v2/posting/fbs/act/get-pdf ---
+
+        export interface PostingFBSGetActRequest {
+            /**
+             * Номер задания на формирование документов (идентификатор перевозки).
+             * В Swagger тип int64. Передавайте как строку, если значение превышает
+             * `Number.MAX_SAFE_INTEGER` (2^53-1) во избежание потери точности.
+             */
+            id: number | string;
+        }
+
+        export interface PostingApiPostingFbsGetActData {
+            /**
+             * Содержимое файла в base64.
+             * Для записи в Drive/Blob декодируйте через `Utilities.base64Decode(file_content)`.
+             */
+            file_content?: string;
+            /** Название файла. */
+            file_name?: string;
+            /** Тип файла (например, application/pdf). */
+            content_type?: string;
         }
     }
 }
