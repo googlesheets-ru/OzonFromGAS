@@ -4,9 +4,12 @@
   "description": "Реализация методов Ozon Seller Api",
   "main": "",
   "scripts": {
-    "updateApi": "npx swagger-typescript-api -p https://docs.ozon.ru/api/seller/swagger.json -o ./ozon_api -n ozonDoc.ts --modular --extract-request-params --extract-request-body --extract-response-body  --extract-response-error -r --single-http-client --patch",
+    "build": "tsc",
+    "clean": "rm -f Ozon/*.js",
+    "rebuild": "npm run clean && npm run build",
     "pull": "clasp_config_auth=\"$PWD/.clasprc.json\" clasp pull",
-    "push": "clasp_config_auth=\"$PWD/.clasprc.json\" clasp push"
+    "push": "clasp_config_auth=\"$PWD/.clasprc.json\" clasp push",
+    "updateApi": "npx swagger-typescript-api -p https://docs.ozon.ru/api/seller/swagger.json -o ./ozon_api -n ozonDoc.ts --modular --extract-request-params --extract-request-body --extract-response-body --extract-response-error -r --single-http-client --patch"
   },
   "repository": {
     "type": "git",
