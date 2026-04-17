@@ -86,6 +86,12 @@ declare namespace Ozon_ {
          | 'IMAGE_ABSENT'
         /** товары, для которых заблокирована модерация. */
          | 'MODERATION_BLOCK';
+        interface Productv3GetProductListResponseItemQuant {
+            /** Идентификатор эконом-товара. */
+            quant_code?: string;
+            /** Размер кванта. */
+            quant_size?: number;
+        }
         interface Productv3GetProductListResponseItem {
             /** SKU */
             product_id: number;
@@ -93,18 +99,14 @@ declare namespace Ozon_ {
             offer_id: string;
             /** Есть остатки на складах FBO. */
             has_fbo_stocks?: boolean;
-            /** Есть остатки на складах FBO. */
+            /** Есть остатки на складах FBS. */
             has_fbs_stocks?: boolean;
             /** Товар в архиве */
             archived?: boolean;
             /** Уценённый товар. */
             is_discounted?: boolean;
-            quants: {
-                /** Идентификатор эконом-товара. */
-                quant_code: string;
-                /** Размер кванта. */
-                quant_size: number;
-            };
+            /** Список квантов. */
+            quants?: Productv3GetProductListResponseItemQuant[];
         }
         interface Productv2GetProductListResponseItem {
             product_id: number;
