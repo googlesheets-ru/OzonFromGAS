@@ -18,7 +18,10 @@
 
 ### Изменено
 
-- Миграция всех затронутых устаревших эндпоинтов v1 -> v2 (issue #4, отключение 20 марта 2026 + 7 апреля 2026)
+- Миграция всех затронутых устаревших эндпоинтов v1 -> v2 (issue #4):
+  - **20 марта 2026**: `/v1/carriage/delivery/list` -> `/v2/carriage/delivery/list`
+  - **22 марта 2026**: `/v2/posting/fbs/digital/act/check-status` -> `/v2/posting/fbs/act/check-status`, `/v2/posting/fbs/digital/act/get-pdf` -> `/v2/posting/fbs/act/get-pdf`
+  - **7 апреля 2026**: `/v1/product/info/stocks-by-warehouse/fbs` -> `/v2/...`, `/v1/warehouse/list` -> `/v2/warehouse/list`, `/v1/delivery-method/list` -> `/v2/delivery-method/list`
 - `tsconfig.json`: убран `emitDeclarationOnly`, добавлен `"include": ["Ozon/**/*.ts"]` -- теперь эмитит `.js` рядом с `.ts` в `Ozon/` и `.d.ts` в `declarations/Ozon/`
 - `.claspignore`: переписан на whitelist с негацией (clasp v3 поддерживает через micromatch), в GAS улетают только `appsscript.json` + `Ozon/**/*.js`
 - `package.json`: добавлены скрипты `build`, `clean`, `rebuild`
